@@ -354,9 +354,11 @@ body {
   padding: 0.45rem 1rem;
   border-radius: 6px;
   margin: 0.45rem 0;
-  display: inline-block;
+  display: block;
+  text-align: center;
   border: 1px dashed #e0d6c2;
   transition: background 0.2s, box-shadow 0.2s;
+  overflow-x: auto;
 }
 .formula:hover {
   background: #fef3c0;
@@ -794,8 +796,12 @@ body.dark .summary-box {
 body.dark .formula {
   background: #1c1c28;
   border-color: #2a2a3a;
-  color: #d4c472;
+  color: var(--text);
 }
+
+/* KaTeX içi boşluk düzeltmesi */
+.formula .katex-display { margin: 0.2em 0; }
+body.dark .katex { color: inherit; }
 body.dark .formula:hover {
   background: #24243a;
   box-shadow: 0 0 0 1.5px var(--accent);

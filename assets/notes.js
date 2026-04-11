@@ -32,38 +32,19 @@ function parsePage() {
   return { week: +m[1], part: +m[2] };
 }
 
-async function exists(file) {
-  try {
-    const r = await fetch(file, { method: 'HEAD' });
-    return r.ok;
-  } catch {
-    return false;
-  }
-}
-
 async function findLinks(week, part) {
-  let prev = null, next = null;
-
-  // Önceki: aynı haftada bir önceki bölüm, yoksa önceki haftanın sonuncusu
-  if (part > 1 && await exists(`w${week}-${part - 1}.html`)) {
-    prev = `w${week}-${part - 1}.html`;
-  } else if (week > 1) {
-    for (let p = 10; p >= 1; p--) {
-      if (await exists(`w${week - 1}-${p}.html`)) {
-        prev = `w${week - 1}-${p}.html`;
-        break;
-      }
-    }
+  try {
+    const res = await fetch('../manifest.json');
+    const pages = await res.json();
+    const current = `w${week}-${part}.html`;
+    const idx = pages.findIndex(p => p.file === current);
+    return {
+      prev: idx > 0 ? pages[idx - 1].file : null,
+      next: idx >= 0 && idx < pages.length - 1 ? pages[idx + 1].file : null,
+    };
+  } catch {
+    return { prev: null, next: null };
   }
-
-  // Sonraki: aynı haftada bir sonraki bölüm, yoksa sonraki haftanın ilki
-  if (await exists(`w${week}-${part + 1}.html`)) {
-    next = `w${week}-${part + 1}.html`;
-  } else if (await exists(`w${week + 1}-1.html`)) {
-    next = `w${week + 1}-1.html`;
-  }
-
-  return { prev, next };
 }
 
 /* ── Site Header ────────────────────────────────────────── */
@@ -80,7 +61,7 @@ function buildHeader() {
       Önceki
     </a>
     <div class="header-center">
-      <a href="index.html" class="nav-btn home-btn" title="Ana Sayfa">
+      <a href="../index.html" class="nav-btn home-btn" title="Ana Sayfa">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2.2"
              stroke-linecap="round" stroke-linejoin="round"
@@ -164,6 +145,33 @@ function initAnimations() {
   });
 }
 
+/* ── KaTeX ──────────────────────────────────────────────── */
+
+function loadKaTeX() {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
+  document.head.appendChild(link);
+
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js';
+  script.onload = () => {
+    const ar = document.createElement('script');
+    ar.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js';
+    ar.onload = () => {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$',  right: '$',  display: false },
+        ],
+        throwOnError: false,
+      });
+    };
+    document.head.appendChild(ar);
+  };
+  document.head.appendChild(script);
+}
+
 /* ── Init ───────────────────────────────────────────────── */
 
 const page = parsePage();
@@ -171,6 +179,7 @@ const page = parsePage();
 buildHeader();
 buildFooter();
 initAnimations();
+loadKaTeX();
 
 if (page) {
   findLinks(page.week, page.part).then(({ prev, next }) => {

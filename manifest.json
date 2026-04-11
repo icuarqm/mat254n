@@ -1,0 +1,16 @@
+[
+  {"file": "w1-1.html", "title": "Cisim (Field) Aksiyomları",                         "subtitle": "Lineer Cebir — Temel Tanımlar (Hafta 1 - Bölüm 1)"},
+  {"file": "w1-2.html", "title": "Skalerler & Matrisler",                              "subtitle": "Lineer Cebir — Temel Tanımlar (Hafta 1 - Bölüm 2)"},
+  {"file": "w1-3.html", "title": "Kronecker Delta, Birim Matris, Eşitlik & Transpoz", "subtitle": "Lineer Cebir — Temel Tanımlar (Hafta 1 - Bölüm 3)"},
+  {"file": "w1-4.html", "title": "Matris İşlemleri",                                  "subtitle": "Lineer Cebir — Toplama, Skaler Çarpma & Matris Çarpımı (Hafta 1 - Bölüm 4)"},
+  {"file": "w2-1.html", "title": "Transpoz Özellikleri & Pratik Sorular",              "subtitle": "Lineer Cebir — (Hafta 2 - Bölüm 1)"},
+  {"file": "w2-2.html", "title": "Ödev Çözümleri",                                    "subtitle": "Lineer Cebir — (Hafta 2 - Bölüm 2)"},
+  {"file": "w2-3.html", "title": "Özel Matris Türleri",                               "subtitle": "Lineer Cebir — Köşegen, Skaler, Üçgen, Simetrik & Echelon (Hafta 2 - Bölüm 3)"},
+  {"file": "w2-4.html", "title": "Simetri Pratik & Ödev Çözümleri",                   "subtitle": "Lineer Cebir — (Hafta 2 - Bölüm 4)"},
+  {"file": "w2-5.html", "title": "Elementer Satır İşlemleri & Satır Denkliği",        "subtitle": "Lineer Cebir — (Hafta 2 - Bölüm 5)"},
+  {"file": "w3-1.html", "title": "Echelon Forma İndirgeme & RREF",                    "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 1)"},
+  {"file": "w3-2.html", "title": "Elementer Matrisler & Augmented Matris",             "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 2)"},
+  {"file": "w3-3.html", "title": "Ters Matrisler (Inverse Matrices)",                 "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 3)"},
+  {"file": "w3-4.html", "title": "Pratik: Elementer Matrisler & Tersinirlik",         "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 4)"},
+  {"file": "w3-5.html", "title": "Warm-up: Lineer Denklem Sistemleri",                "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 5)"}
+]

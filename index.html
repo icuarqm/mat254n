@@ -401,42 +401,18 @@
         '#6bbf8a', '#cf7b5f', '#8b8fd4',
     ];
 
-    async function fileExists(url) {
-        try {
-            const r = await fetch(url, { method: 'HEAD' });
-            return r.ok;
-        } catch { return false; }
-    }
-
-    async function getPageInfo(file) {
-        try {
-            const res = await fetch(file);
-            if (!res.ok) return { title: null, subtitle: null };
-            const html = await res.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            const title = doc.querySelector('.header h1')?.textContent?.trim() ?? null;
-            const subtitle = doc.querySelector('.header .subtitle')?.textContent?.trim() ?? null;
-            return { title, subtitle };
-        } catch { return { title: null, subtitle: null }; }
-    }
-
-    async function discoverNotes() {
+    async function loadNotes() {
+        const res = await fetch('manifest.json');
+        if (!res.ok) throw new Error('manifest.json bulunamadı');
+        const pages = await res.json();
         const found = {};
-
-        for (let w = 1; w <= 30; w++) {
-            if (!await fileExists(`w${w}-1.html`)) break;
-
-            const firstInfo = await getPageInfo(`w${w}-1.html`);
-            found[w] = [{ week: w, part: 1, file: `w${w}-1.html`, ...firstInfo }];
-
-            for (let p = 2; p <= 30; p++) {
-                const file = `w${w}-${p}.html`;
-                if (!await fileExists(file)) break;
-                const info = await getPageInfo(file);
-                found[w].push({ week: w, part: p, file, ...info });
-            }
-        }
-
+        pages.forEach(p => {
+            const m = p.file.match(/^w(\d+)-(\d+)\.html$/);
+            if (!m) return;
+            const w = +m[1], part = +m[2];
+            if (!found[w]) found[w] = [];
+            found[w].push({ week: w, part, file: 'pages/' + p.file, title: p.title, subtitle: p.subtitle });
+        });
         return found;
     }
 
@@ -508,7 +484,7 @@
         document.head.appendChild(style);
     }
 
-    discoverNotes().then(renderNotes);
+    loadNotes().then(renderNotes);
 </script>
 
 </body>

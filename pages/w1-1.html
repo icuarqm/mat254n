@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lineer Cebir — Cisim (Field) Aksiyomları</title>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="notes.css">
+<link rel="stylesheet" href="../assets/notes.css">
 <script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
 </head>
 <body>
@@ -17,7 +17,7 @@
 
 <!-- TANIM -->
 <div class="def-box">
-  <p><strong>Cisim (Field):</strong> <em>F</em> boş olmayan bir küme olsun. Üzerinde iki işlem tanımlı: <strong>+</strong> (toplama) ve <strong>·</strong> (çarpma). Aşağıdaki 10 aksiyomu sağlıyorsa <em>F</em> kümesine <strong>cisim</strong> denir.</p>
+  <p><strong>Cisim (Field):</strong> $F$ boş olmayan bir küme olsun. Üzerinde iki işlem tanımlı: $+$ (toplama) ve $\cdot$ (çarpma). Aşağıdaki 10 aksiyomu sağlıyorsa $F$ kümesine <strong>cisim</strong> denir.</p>
 </div>
 
 <!-- TOPLAMA AKSİYOMLARI -->
@@ -29,9 +29,9 @@
     <span class="axiom-name">Kapalılık</span>
     <span class="tag add">Toplama</span>
   </div>
-  <div class="condition">∀ a, b ∈ F</div>
-  <div class="formula">a + b ∈ F &nbsp;&nbsp;ve&nbsp;&nbsp; a · b ∈ F</div>
-  <div class="note">Toplama ve çarpma sonucu yine F'in içinde kalır.</div>
+  <div class="condition">$\forall\, a, b \in F$</div>
+  <div class="formula">$$a + b \in F \quad \text{ve} \quad a \cdot b \in F$$</div>
+  <div class="note">Toplama ve çarpma sonucu yine $F$'in içinde kalır.</div>
 </div>
 
 <div class="card addition">
@@ -40,8 +40,8 @@
     <span class="axiom-name">Birleşme (Associative)</span>
     <span class="tag add">Toplama</span>
   </div>
-  <div class="condition">∀ a, b, c ∈ F</div>
-  <div class="formula">a + (b + c) = (a + b) + c</div>
+  <div class="condition">$\forall\, a, b, c \in F$</div>
+  <div class="formula">$$a + (b + c) = (a + b) + c$$</div>
   <div class="note">Parantezin yeri fark etmez.</div>
 </div>
 
@@ -51,9 +51,9 @@
     <span class="axiom-name">Birim Eleman (Etkisiz Eleman)</span>
     <span class="tag add">Toplama</span>
   </div>
-  <div class="condition">∀ a ∈ F, ∃ e ∈ F öyle ki:</div>
-  <div class="formula">a + e = e + a = a</div>
-  <div class="note">Bu eleman <strong>0</strong> ile gösterilir. Herhangi bir cisimde toplamaya göre birim eleman sıfırdır.</div>
+  <div class="condition">$\forall\, a \in F,\; \exists\, e \in F$ öyle ki:</div>
+  <div class="formula">$$a + e = e + a = a$$</div>
+  <div class="note">Bu eleman $\mathbf{0}$ ile gösterilir. Herhangi bir cisimde toplamaya göre birim eleman sıfırdır.</div>
 </div>
 
 <div class="card addition">
@@ -62,9 +62,9 @@
     <span class="axiom-name">Ters Eleman (Inverse)</span>
     <span class="tag add">Toplama</span>
   </div>
-  <div class="condition">∀ a ∈ F, ∃ b ∈ F öyle ki:</div>
-  <div class="formula">a + b = b + a = 0</div>
-  <div class="note">Bu eleman <strong>b = −a</strong> ile gösterilir. Her elemanın toplamaya göre bir tersi vardır.</div>
+  <div class="condition">$\forall\, a \in F,\; \exists\, b \in F$ öyle ki:</div>
+  <div class="formula">$$a + b = b + a = 0$$</div>
+  <div class="note">Bu eleman $b = -a$ ile gösterilir. Her elemanın toplamaya göre bir tersi vardır.</div>
 </div>
 
 <div class="card addition">
@@ -73,8 +73,8 @@
     <span class="axiom-name">Değişme (Commutative)</span>
     <span class="tag add">Toplama</span>
   </div>
-  <div class="condition">∀ a, b ∈ F</div>
-  <div class="formula">a + b = b + a</div>
+  <div class="condition">$\forall\, a, b \in F$</div>
+  <div class="formula">$$a + b = b + a$$</div>
   <div class="note">Toplama sırası fark etmez.</div>
 </div>
 
@@ -87,8 +87,8 @@
     <span class="axiom-name">Birleşme (Associative)</span>
     <span class="tag mul">Çarpma</span>
   </div>
-  <div class="condition">∀ a, b, c ∈ F</div>
-  <div class="formula">a · (b · c) = (a · b) · c</div>
+  <div class="condition">$\forall\, a, b, c \in F$</div>
+  <div class="formula">$$a \cdot (b \cdot c) = (a \cdot b) \cdot c$$</div>
   <div class="note">Çarpmada da parantezin yeri fark etmez.</div>
 </div>
 
@@ -98,8 +98,8 @@
     <span class="axiom-name">Değişme (Commutative)</span>
     <span class="tag mul">Çarpma</span>
   </div>
-  <div class="condition">∀ a, b ∈ F</div>
-  <div class="formula">a · b = b · a</div>
+  <div class="condition">$\forall\, a, b \in F$</div>
+  <div class="formula">$$a \cdot b = b \cdot a$$</div>
   <div class="note">Çarpma sırası fark etmez.</div>
 </div>
 
@@ -109,9 +109,9 @@
     <span class="axiom-name">Birim Eleman (Identity)</span>
     <span class="tag mul">Çarpma</span>
   </div>
-  <div class="condition">∃ x ∈ F \ {0} öyle ki ∀ a ∈ F:</div>
-  <div class="formula">a · x = x · a = a</div>
-  <div class="note">Bu eleman <strong>1</strong> ile gösterilir. Çarpmaya göre birim elemandır. <strong>1 ≠ 0</strong> olmalı!</div>
+  <div class="condition">$\exists\, x \in F \setminus \{0\}$ öyle ki $\forall\, a \in F$:</div>
+  <div class="formula">$$a \cdot x = x \cdot a = a$$</div>
+  <div class="note">Bu eleman $\mathbf{1}$ ile gösterilir. Çarpmaya göre birim elemandır. $1 \neq 0$ olmalı!</div>
 </div>
 
 <div class="card multiplication">
@@ -120,9 +120,9 @@
     <span class="axiom-name">Ters Eleman (Inverse)</span>
     <span class="tag mul">Çarpma</span>
   </div>
-  <div class="condition">∀ a ∈ F, a ≠ 0, ∃ b ∈ F öyle ki:</div>
-  <div class="formula">a · b = b · a = 1</div>
-  <div class="note">Bu eleman <strong>b = a⁻¹</strong> ile gösterilir. <strong>Sıfırın çarpmaya göre tersi yoktur!</strong></div>
+  <div class="condition">$\forall\, a \in F,\; a \neq 0,\; \exists\, b \in F$ öyle ki:</div>
+  <div class="formula">$$a \cdot b = b \cdot a = 1$$</div>
+  <div class="note">Bu eleman $b = a^{-1}$ ile gösterilir. <strong>Sıfırın çarpmaya göre tersi yoktur!</strong></div>
 </div>
 
 <!-- DAĞILMA AKSİYOMU -->
@@ -134,8 +134,8 @@
     <span class="axiom-name">Dağılma (Distributive)</span>
     <span class="tag dist">Dağılma</span>
   </div>
-  <div class="condition">∀ a, b, c ∈ F</div>
-  <div class="formula">a · (b + c) = a · b + a · c</div>
+  <div class="condition">$\forall\, a, b, c \in F$</div>
+  <div class="formula">$$a \cdot (b + c) = a \cdot b + a \cdot c$$</div>
   <div class="note">Çarpma, toplamaya göre dağılır. İki işlemi birbirine bağlayan tek aksiyomdur.</div>
 </div>
 
@@ -143,14 +143,14 @@
 <div class="summary-box">
   <h3>Hızlı Özet</h3>
   <p>
-    Toplama için 5 aksiyom (F₀–F₄): kapalılık, birleşme, birim eleman <strong>0</strong>, ters eleman <strong>−a</strong>, değişme.
+    Toplama için 5 aksiyom (F₀–F₄): kapalılık, birleşme, birim eleman $0$, ters eleman $-a$, değişme.
     <br>
-    Çarpma için 4 aksiyom (F₅, F₆, F₈, F₉): birleşme, değişme, birim eleman <strong>1</strong>, ters eleman <strong>a⁻¹</strong> (a≠0).
+    Çarpma için 4 aksiyom (F₅, F₆, F₈, F₉): birleşme, değişme, birim eleman $1$, ters eleman $a^{-1}$ ($a \neq 0$).
     <br>
     Köprü aksiyom (F₇): dağılma kuralı — iki işlemi bağlar.
   </p>
 </div>
 
-<script src="notes.js"></script>
+<script src="../assets/notes.js"></script>
 </body>
 </html>
