@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Warm-up: Lineer Denklem Sistemleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Warm-up: Lineer Denklem Sistemleri</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 3 - Bölüm 5)</div>
+</div>
+
+<!-- ═══════════════ GİRİŞ ═══════════════ -->
+<div class="section-title"><span>🎯</span> Bir Sonraki Haftaya Hazırlık</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Lineer denklem sisteminin 3 olası durumu</span>
+    <span class="tag prop">Motivasyon</span>
+  </div>
+  <p>Bir lineer denklem sistemi çözüldüğünde <strong>3 durumdan biri</strong> ortaya çıkar:</p>
+  <div class="prop-list">
+    <div class="prop-item"><span class="prop-label">1.</span> <strong>Tek çözüm</strong> (unique solution)</div>
+    <div class="prop-item"><span class="prop-label">2.</span> <strong>Sonsuz çözüm</strong> (infinitely many solutions)</div>
+    <div class="prop-item"><span class="prop-label">3.</span> <strong>Çözüm yok</strong> (no solution)</div>
+  </div>
+  <div class="note">Başka bir olasılık yoktur. Bu 3 durumu basit 2×2 sistemlerle görelim.</div>
+</div>
+
+<!-- ═══════════════ DURUM 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Durum 1: Tek Çözüm</div>
+
+<div class="q-box" data-label="Sistem ①">
+  <div class="formula">x₁ + x₂ = 3</div><br>
+  <div class="formula">x₁ − x₂ = 5</div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Sistem ①</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">İki denklemi topla</div>
+    <p>&nbsp; x₁ + x₂ = 3</p>
+    <p>+ x₁ − x₂ = 5</p>
+    <p style="border-top:1px solid var(--border); padding-top:.3rem; margin-top:.3rem;">
+      &nbsp; 2x₁ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 8
+    </p>
+    <div class="formula">x₁ = 4</div>
+  </div>
+  <div class="step">
+    <div class="step-label">x₂'yi bul</div>
+    <p>x₁ + x₂ = 3 → 4 + x₂ = 3</p>
+    <div class="formula">x₂ = −1</div>
+  </div>
+  <div class="result-box">Tek çözüm: &nbsp; x₁ = 4, &nbsp; x₂ = −1</div>
+</div>
+
+<!-- ═══════════════ DURUM 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Durum 2: Sonsuz Çözüm</div>
+
+<div class="q-box" data-label="Sistem ②">
+  <div class="formula">x₁ − x₂ = 1</div><br>
+  <div class="formula">−x₁ + x₂ = −1</div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Sistem ②</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">İkinci denklemi incele</div>
+    <p>−x₁ + x₂ = −1 denklemini −1 ile çarp:</p>
+    <div class="formula">x₁ − x₂ = 1</div>
+    <p style="margin-top:.3rem;">Bu, birinci denklemle <strong>aynı</strong>! İki denklem aslında tek bir denklem.</p>
+  </div>
+  <div class="step">
+    <div class="step-label">Genel çözüm</div>
+    <p>x₁ − x₂ = 1 → x₁ = 1 + x₂</p>
+    <p style="margin-top:.3rem;">x₂ ∈ ℝ herhangi bir değer alabilir, x₁ ona bağlı olarak belirlenir.</p>
+  </div>
+  <div class="result-box">Sonsuz çözüm: &nbsp; x₁ = 1 + x₂, &nbsp; x₂ ∈ ℝ serbest</div>
+</div>
+
+<!-- ═══════════════ DURUM 3 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Durum 3: Çözüm Yok</div>
+
+<div class="q-box" data-label="Sistem ③">
+  <div class="formula">x₁ − x₂ = 3</div><br>
+  <div class="formula">−x₁ + x₂ = 2</div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Sistem ③</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">İki denklemi topla</div>
+    <p>&nbsp;&nbsp; x₁ − x₂ = 3</p>
+    <p>+ −x₁ + x₂ = 2</p>
+    <p style="border-top:1px solid var(--border); padding-top:.3rem; margin-top:.3rem;">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 = 5 &nbsp; <strong>⚡ Çelişki!</strong>
+    </p>
+  </div>
+  <div class="false-box" style="display:block;">Çözüm yok — 0 = 5 çelişkisi. Denklemler tutarsız (inconsistent).</div>
+</div>
+
+<!-- ═══════════════ İLERİYE BAKIŞ ═══════════════ -->
+<div class="section-title"><span>🔮</span> İleriye Bakış</div>
+
+<div class="card warn">
+  <div class="card-header">
+    <span class="card-title">İkiden fazla bilinmeyen ve denklem varsa?</span>
+    <span class="tag warn">Soru</span>
+  </div>
+  <p>2 bilinmeyenli 2 denklemde toplama/çıkarma ile çözebildik. Ama bilinmeyen ve denklem sayısı artınca ne yapacağız?</p>
+  <p style="margin-top:.5rem; font-weight:600; color:var(--accent);">Cevap: Augmented matrisi yazıp ERO uygulayacağız → Gauss eliminasyonu! (Haftaya devam…)</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    Bir lineer denklem sisteminin <strong>3 olası sonucu</strong> vardır — başka bir olasılık yoktur:
+    <br><br>
+    <strong>① Tek çözüm:</strong> Denklemler bağımsız, kesişim tek bir nokta. (Sistem ①: x₁=4, x₂=−1)
+    <br><br>
+    <strong>② Sonsuz çözüm:</strong> Denklemler birbirine bağımlı, aslında aynı doğru. (Sistem ②: x₁=1+x₂, x₂ serbest)
+    <br><br>
+    <strong>③ Çözüm yok:</strong> Denklemler çelişkili, paralel doğrular. (Sistem ③: 0=5 çelişki)
+    <br><br>
+    <span style="color:var(--accent); font-weight:600;">Gelecek hafta: bu 3 durumu matris diliyle ifade edip, n bilinmeyenli m denklemli sistemleri sistematik olarak çözeceğiz.</span>
+  </p>
+</div>
+
+<script src="notes.js"></script>
+</body>
+</html>

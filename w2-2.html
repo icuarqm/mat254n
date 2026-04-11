@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Ödev Çözümleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Ödev Çözümleri</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 2 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SORU 1 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="q-box" data-label="Soru 1">
+  <p>A aşağıdaki matris iken <strong>A² − A − 3I₃</strong> hesaplayın.</p>
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table><tr><td>1</td><td>−3</td><td>1</td></tr><tr><td>0</td><td>−2</td><td>2</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Çözüm 1</span>
+    <span class="tag">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Adım 1: A² = A·A hesapla</div>
+    <p>Her (i,j) girişi: A'nın i. satırı · A'nın j. sütunu</p>
+    <br>
+    <strong>1. satır × sütunlar:</strong><br>
+    (1,1): 1·1 + (−3)·0 + 1·1 = 1+0+1 = <strong>2</strong><br>
+    (1,2): 1·(−3) + (−3)·(−2) + 1·1 = −3+6+1 = <strong>4</strong><br>
+    (1,3): 1·1 + (−3)·2 + 1·0 = 1−6+0 = <strong>−5</strong><br><br>
+    <strong>2. satır × sütunlar:</strong><br>
+    (2,1): 0·1 + (−2)·0 + 2·1 = <strong>2</strong><br>
+    (2,2): 0·(−3) + (−2)·(−2) + 2·1 = 0+4+2 = <strong>6</strong><br>
+    (2,3): 0·1 + (−2)·2 + 2·0 = −4 = <strong>−4</strong><br><br>
+    <strong>3. satır × sütunlar:</strong><br>
+    (3,1): 1·1 + 1·0 + 0·1 = <strong>1</strong><br>
+    (3,2): 1·(−3) + 1·(−2) + 0·1 = −3−2 = <strong>−5</strong><br>
+    (3,3): 1·1 + 1·2 + 0·0 = <strong>3</strong>
+  </div>
+  <div class="mw">
+    <span class="ml">A² =</span>
+    <div class="mb"><table><tr><td>2</td><td>4</td><td>−5</td></tr><tr><td>2</td><td>6</td><td>−4</td></tr><tr><td>1</td><td>−5</td><td>3</td></tr></table></div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Adım 2: A² − A − 3I₃</div>
+    Her girişten: (A²)<sub>ij</sub> − A<sub>ij</sub> − 3(I₃)<sub>ij</sub>
+  </div>
+
+  <div class="mw">
+    <div class="mb"><table><tr><td>2</td><td>4</td><td>−5</td></tr><tr><td>2</td><td>6</td><td>−4</td></tr><tr><td>1</td><td>−5</td><td>3</td></tr></table></div>
+    <span class="ml">−</span>
+    <div class="mb"><table><tr><td>1</td><td>−3</td><td>1</td></tr><tr><td>0</td><td>−2</td><td>2</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table></div>
+    <span class="ml">−</span>
+    <div class="mb"><table><tr><td>3</td><td>0</td><td>0</td></tr><tr><td>0</td><td>3</td><td>0</td></tr><tr><td>0</td><td>0</td><td>3</td></tr></table></div>
+  </div>
+
+  <div class="result-box">
+    <div class="mw">
+      <span class="ml">A² − A − 3I₃ =</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table><tr><td>−2</td><td>7</td><td>−6</td></tr><tr><td>2</td><td>5</td><td>−6</td></tr><tr><td>0</td><td>−6</td><td>0</td></tr></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SORU 2 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="q-box" data-label="Soru 2">
+  <p>Aşağıdaki matris için <strong>A⁶</strong> hesaplayın.</p>
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table><tr><td>0</td><td>a</td><td>b</td></tr><tr><td>0</td><td>0</td><td>c</td></tr><tr><td>0</td><td>0</td><td>0</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Çözüm 2</span>
+    <span class="tag">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Adım 1: A² hesapla</div>
+    Satır × sütun yapıyoruz. Çoğu giriş 0 çıkacak çünkü alt üçgen tamamen sıfır.
+    <br><br>
+    (1,1)=0, (1,2)=0, (1,3)= a·c = <strong>ac</strong><br>
+    (2,1)=0, (2,2)=0, (2,3)=0<br>
+    (3,1)=0, (3,2)=0, (3,3)=0
+  </div>
+  <div class="mw">
+    <span class="ml">A² =</span>
+    <div class="mb"><table><tr><td>0</td><td>0</td><td>ac</td></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>0</td></tr></table></div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Adım 2: A³ = A²·A</div>
+    A²'nin sadece (1,3) girişi sıfırdan farklı. Bu girişin 3. sütunla çarpımı:<br>
+    (1,3) girişi: ac · 0 = 0. Diğer her şey zaten 0.
+  </div>
+  <div class="mw">
+    <span class="ml">A³ =</span>
+    <div class="mb"><table><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>0</td></tr></table></div>
+    <span class="ml">= O</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Adım 3: A⁶ = (A³)² = O² = O</div>
+    A³ = O olduğuna göre A⁶ = A³·A³ = O·O = O.
+  </div>
+
+  <div class="result-box">
+    <div class="mw">
+      <span class="ml">A⁶ = O</span> <span class="ms">(3×3 sıfır matris)</span>
+    </div>
+    <div class="note">A nilpotent bir matris (A³ = O). Nilpotent matrisin her yüksek kuvveti de sıfırdır.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SORU 3 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="q-box" data-label="Soru 3">
+  <p>Aşağıdaki matrislerle <strong>komüt eden</strong> (AB = BA) tüm 2×2 matrisleri bulun.</p>
+  <div class="mw">
+    <span class="ml">E₁ =</span>
+    <div class="mb"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+    <span style="margin:0 .8rem;"></span>
+    <span class="ml">E₂ =</span>
+    <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Çözüm 3</span>
+    <span class="tag">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Genel 2×2 matris</div>
+    <div class="mw">
+      <span class="ml">A =</span>
+      <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table></div>
+    </div>
+    AE₁ = E₁A ve AE₂ = E₂A koşullarını sağlayan a, b, c, d'yi bulacağız.
+  </div>
+
+  <div class="step">
+    <div class="step-label">Koşul 1: AE₁ = E₁A</div>
+    <div class="mw">
+      <span class="ml">AE₁ =</span>
+      <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table></div>
+      <div class="mb"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <span class="ml">=</span>
+      <div class="mb"><table><tr><td>a</td><td>0</td></tr><tr><td>c</td><td>0</td></tr></table></div>
+    </div>
+    <div class="mw">
+      <span class="ml">E₁A =</span>
+      <div class="mb"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table></div>
+      <span class="ml">=</span>
+      <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+    </div>
+    Eşitlersek: b = 0 ve c = 0.
+  </div>
+
+  <div class="step">
+    <div class="step-label">Koşul 2: AE₂ = E₂A (b=0, c=0 ile)</div>
+    <div class="mw">
+      <span class="ml">AE₂ =</span>
+      <div class="mb"><table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>d</td></tr></table></div>
+      <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <span class="ml">=</span>
+      <div class="mb"><table><tr><td>0</td><td>a</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+    </div>
+    <div class="mw">
+      <span class="ml">E₂A =</span>
+      <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <div class="mb"><table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>d</td></tr></table></div>
+      <span class="ml">=</span>
+      <div class="mb"><table><tr><td>0</td><td>d</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+    </div>
+    Eşitlersek: a = d.
+  </div>
+
+  <div class="result-box">
+    <div class="mw">
+      <span class="ml">A =</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>a</td></tr></table>
+      </div>
+      <span class="ml">= a · I₂</span>
+    </div>
+    <p style="font-weight:400;margin-top:.4rem;">Hem E₁ hem E₂ ile komüt eden matrisler sadece <strong>skaler katları birim matrisin</strong>: A = aI. Yani a herhangi bir skaler, b = c = 0, d = a.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SORU 4 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="q-box" data-label="Soru 4">
+  <p>Aşağıdaki matrisler için mümkünse AB, BA, AC, CA, BC, CB, ABC, AC<sup>T</sup>, B<sup>T</sup>A<sup>T</sup> hesaplayın.</p>
+  <div class="mw" style="gap:.8rem;">
+    <div>
+      <span class="ml">A =</span>
+      <div class="mb"><table><tr><td>−1</td><td>1</td></tr><tr><td>0</td><td>−1</td></tr></table></div>
+      <span class="ms">2×2</span>
+    </div>
+    <div>
+      <span class="ml">B =</span>
+      <div class="mb"><table><tr><td>−1</td><td>1</td><td>0</td></tr><tr><td>−2</td><td>−3</td><td>2</td></tr></table></div>
+      <span class="ms">2×3</span>
+    </div>
+    <div>
+      <span class="ml">C =</span>
+      <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>−1</td><td>2</td></tr><tr><td>1</td><td>−2</td></tr></table></div>
+      <span class="ms">3×2</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Çözüm 4 — Boyut Kontrolü</span>
+    <span class="tag">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">Önce boyut uyumunu kontrol et</div>
+    A: 2×2, &nbsp; B: 2×3, &nbsp; C: 3×2<br><br>
+    AB: 2×<strong>2</strong> · <strong>2</strong>×3 → ✅ 2×3<br>
+    BA: 2×<strong>3</strong> · <strong>2</strong>×2 → ❌ 3≠2 <strong>tanımsız</strong><br>
+    AC: 2×<strong>2</strong> · <strong>3</strong>×2 → ❌ 2≠3 <strong>tanımsız</strong><br>
+    CA: 3×<strong>2</strong> · <strong>2</strong>×2 → ✅ 3×2<br>
+    BC: 2×<strong>3</strong> · <strong>3</strong>×2 → ✅ 2×2<br>
+    CB: 3×<strong>2</strong> · <strong>2</strong>×3 → ✅ 3×3<br>
+    ABC: (AB)C = 2×3 · 3×2 → ✅ 2×2<br>
+    AC<sup>T</sup>: A: 2×2, C<sup>T</sup>: 2×3 → ✅ 2×3<br>
+    B<sup>T</sup>A<sup>T</sup>: B<sup>T</sup>: 3×2, A<sup>T</sup>: 2×2 → ✅ 3×2
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">AB</span>
+    <span class="tag">2×3</span>
+  </div>
+  <div class="step">
+    (1,1): (−1)(−1)+1(−2) = 1−2 = −1<br>
+    (1,2): (−1)(1)+1(−3) = −1−3 = −4<br>
+    (1,3): (−1)(0)+1(2) = 2<br>
+    (2,1): 0(−1)+(−1)(−2) = 2<br>
+    (2,2): 0(1)+(−1)(−3) = 3<br>
+    (2,3): 0(0)+(−1)(2) = −2
+  </div>
+  <div class="mw">
+    <span class="ml">AB =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−1</td><td>−4</td><td>2</td></tr><tr><td>2</td><td>3</td><td>−2</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">BA</span>
+    <span class="tag" style="background:var(--tag-warn);color:var(--tag-warn-text);">Tanımsız</span>
+  </div>
+  <p>B: 2×<strong>3</strong>, A: <strong>2</strong>×2. Sütun sayısı 3 ≠ satır sayısı 2. Çarpılamaz.</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">AC</span>
+    <span class="tag" style="background:var(--tag-warn);color:var(--tag-warn-text);">Tanımsız</span>
+  </div>
+  <p>A: 2×<strong>2</strong>, C: <strong>3</strong>×2. Sütun sayısı 2 ≠ satır sayısı 3. Çarpılamaz.</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">CA</span>
+    <span class="tag">3×2</span>
+  </div>
+  <div class="step">
+    (1,1): 0(−1)+1(0) = 0, &nbsp; (1,2): 0(1)+1(−1) = −1<br>
+    (2,1): (−1)(−1)+2(0) = 1, &nbsp; (2,2): (−1)(1)+2(−1) = −3<br>
+    (3,1): 1(−1)+(−2)(0) = −1, &nbsp; (3,2): 1(1)+(−2)(−1) = 3
+  </div>
+  <div class="mw">
+    <span class="ml">CA =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>0</td><td>−1</td></tr><tr><td>1</td><td>−3</td></tr><tr><td>−1</td><td>3</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">BC</span>
+    <span class="tag">2×2</span>
+  </div>
+  <div class="step">
+    (1,1): (−1)(0)+1(−1)+0(1) = −1<br>
+    (1,2): (−1)(1)+1(2)+0(−2) = 1<br>
+    (2,1): (−2)(0)+(−3)(−1)+2(1) = 5<br>
+    (2,2): (−2)(1)+(−3)(2)+2(−2) = −12
+  </div>
+  <div class="mw">
+    <span class="ml">BC =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−1</td><td>1</td></tr><tr><td>5</td><td>−12</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">CB</span>
+    <span class="tag">3×3</span>
+  </div>
+  <div class="step">
+    (1,1): 0(−1)+1(−2)=−2, (1,2): 0(1)+1(−3)=−3, (1,3): 0(0)+1(2)=2<br>
+    (2,1): (−1)(−1)+2(−2)=−3, (2,2): (−1)(1)+2(−3)=−7, (2,3): (−1)(0)+2(2)=4<br>
+    (3,1): 1(−1)+(−2)(−2)=3, (3,2): 1(1)+(−2)(−3)=7, (3,3): 1(0)+(−2)(2)=−4
+  </div>
+  <div class="mw">
+    <span class="ml">CB =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−2</td><td>−3</td><td>2</td></tr><tr><td>−3</td><td>−7</td><td>4</td></tr><tr><td>3</td><td>7</td><td>−4</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">ABC = (AB)·C</span>
+    <span class="tag">2×2</span>
+  </div>
+  <div class="step">
+    AB yukarıda bulundu. (AB)·C hesaplıyoruz:<br><br>
+    (1,1): (−1)(0)+(−4)(−1)+2(1) = 0+4+2 = 6<br>
+    (1,2): (−1)(1)+(−4)(2)+2(−2) = −1−8−4 = −13<br>
+    (2,1): 2(0)+3(−1)+(−2)(1) = −3−2 = −5<br>
+    (2,2): 2(1)+3(2)+(−2)(−2) = 2+6+4 = 12
+  </div>
+  <div class="mw">
+    <span class="ml">ABC =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>6</td><td>−13</td></tr><tr><td>−5</td><td>12</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">AC<sup>T</sup></span>
+    <span class="tag">2×3</span>
+  </div>
+  <div class="step">
+    <div class="step-label">C<sup>T</sup> hesapla</div>
+    <div class="mw">
+      <span class="ml">C<sup>T</sup> =</span>
+      <div class="mb"><table><tr><td>0</td><td>−1</td><td>1</td></tr><tr><td>1</td><td>2</td><td>−2</td></tr></table></div>
+      <span class="ms">2×3</span>
+    </div>
+    <br>
+    (1,1): (−1)(0)+1(1) = 1, &nbsp; (1,2): (−1)(−1)+1(2) = 3, &nbsp; (1,3): (−1)(1)+1(−2) = −3<br>
+    (2,1): 0(0)+(−1)(1) = −1, &nbsp; (2,2): 0(−1)+(−1)(2) = −2, &nbsp; (2,3): 0(1)+(−1)(−2) = 2
+  </div>
+  <div class="mw">
+    <span class="ml">AC<sup>T</sup> =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>1</td><td>3</td><td>−3</td></tr><tr><td>−1</td><td>−2</td><td>2</td></tr></table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">B<sup>T</sup>A<sup>T</sup> = (AB)<sup>T</sup></span>
+    <span class="tag">3×2</span>
+  </div>
+  <div class="step">
+    <div class="step-label">Kısa yol: (AB)<sup>T</sup> özelliğini kullan</div>
+    B<sup>T</sup>A<sup>T</sup> = (AB)<sup>T</sup>. AB'yi zaten bulduk, transpozunu alalım.
+  </div>
+  <div class="mw">
+    <span class="ml">AB =</span>
+    <div class="mb"><table><tr><td>−1</td><td>−4</td><td>2</td></tr><tr><td>2</td><td>3</td><td>−2</td></tr></table></div>
+    <span class="ml" style="margin:0 .5rem;">→</span>
+    <span class="ml">B<sup>T</sup>A<sup>T</sup> = (AB)<sup>T</sup> =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−1</td><td>2</td></tr><tr><td>−4</td><td>3</td></tr><tr><td>2</td><td>−2</td></tr></table></div>
+  </div>
+  <div class="note">Transpoz özelliği sayesinde tekrar çarpmaya gerek kalmadı!</div>
+</div>
+
+<script src="notes.js"></script>
+</body>
+</html>

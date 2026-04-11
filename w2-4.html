@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Simetri Pratik & Ödev Çözümleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Simetri Pratik & Ödev Çözümleri</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 2 - Bölüm 4)</div>
+</div>
+
+<!-- ═══════════════ PRATİK 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Pratik Sorular</div>
+
+<div class="q-box" data-label="Pratik 1 — Ters-Simetrik Matris">
+  <p>Aşağıdaki matris <strong>ters-simetrik</strong> ise x, y, z değerleri ne olmalıdır?</p>
+  <div class="mw">
+    <div class="mb"><table>
+      <tr><td>x+y−1</td><td>−1</td><td>1</td></tr>
+      <tr><td>1</td><td>y+z−2</td><td>−1</td></tr>
+      <tr><td>−1</td><td>1</td><td>z+x−3</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Pratik 1</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Ters-simetrik ne demek?</div>
+    A<sup>T</sup> = −A, yani A<sub>ij</sub> = −A<sub>ji</sub> tüm i,j için. Özellikle <strong>köşegen elemanları = 0</strong> olmalı.
+  </div>
+
+  <div class="step">
+    <div class="step-label">Köşegen koşulları (A<sub>ii</sub> = 0)</div>
+    <div class="formula">x + y − 1 = 0 &nbsp;→&nbsp; x + y = 1</div><br>
+    <div class="formula">y + z − 2 = 0 &nbsp;→&nbsp; y + z = 2</div><br>
+    <div class="formula">z + x − 3 = 0 &nbsp;→&nbsp; z + x = 3</div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Denklem sistemi çöz</div>
+    İlk ikinden: (y+z) − (x+y) = 2 − 1 → <strong>z − x = 1</strong><br>
+    Üçüncü: z + x = 3<br><br>
+    Toplayalım: 2z = 4 → <strong>z = 2</strong><br>
+    z + x = 3 → <strong>x = 1</strong><br>
+    x + y = 1 → <strong>y = 0</strong>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Doğrulama: köşegen-dışı koşullar</div>
+    A₁₂ = −1, A₂₁ = 1 → A₁₂ = −A₂₁ ✓<br>
+    A₁₃ = 1, A₃₁ = −1 → A₁₃ = −A₃₁ ✓<br>
+    A₂₃ = −1, A₃₂ = 1 → A₂₃ = −A₃₂ ✓
+  </div>
+
+  <div class="result-box">x = 1, &nbsp; y = 0, &nbsp; z = 2</div>
+</div>
+
+<!-- ═══════════════ PRATİK 2 ═══════════════ -->
+<div class="q-box" data-label="Pratik 2 — İspat">
+  <p>A herhangi bir kare matris olsun. Gösterin ki:</p>
+  <p style="margin-top:.3rem;"><strong>a)</strong> A+A<sup>T</sup>, AA<sup>T</sup> ve A<sup>T</sup>A <strong>simetriktir</strong></p>
+  <p><strong>b)</strong> A−A<sup>T</sup> <strong>ters-simetriktir</strong></p>
+</div>
+
+<div class="card proof">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Pratik 2a: A+Aᵀ simetrik</span>
+    <span class="tag proof-t">İspat</span>
+  </div>
+  <div class="step blue">
+    <div class="step-label blue">Strateji: Simetrik olduğunu göstermek için transpozunu al, kendisi çıkmalı</div>
+    <div class="formula">(A + A<sup>T</sup>)<sup>T</sup> = A<sup>T</sup> + (A<sup>T</sup>)<sup>T</sup> = A<sup>T</sup> + A = A + A<sup>T</sup></div>
+    <p style="margin-top:.3rem;">Transpoz özelliği: toplamda transpoz dağılır + çift transpoz = kendisi.</p>
+  </div>
+  <div class="qed-box">Transpozunu aldık, kendisi çıktı → A+A<sup>T</sup> simetrik. ∎</div>
+</div>
+
+<div class="card proof">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Pratik 2a: AAᵀ simetrik</span>
+    <span class="tag proof-t">İspat</span>
+  </div>
+  <div class="step blue">
+    <div class="step-label blue">Çarpımda transpoz: sıra tersine döner</div>
+    <div class="formula">(AA<sup>T</sup>)<sup>T</sup> = (A<sup>T</sup>)<sup>T</sup> · A<sup>T</sup> = A · A<sup>T</sup> = AA<sup>T</sup></div>
+  </div>
+  <div class="qed-box">Transpozunu aldık, kendisi çıktı → AA<sup>T</sup> simetrik. ∎</div>
+</div>
+
+<div class="card proof">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Pratik 2a: AᵀA simetrik</span>
+    <span class="tag proof-t">İspat</span>
+  </div>
+  <div class="step blue">
+    <div class="formula">(A<sup>T</sup>A)<sup>T</sup> = A<sup>T</sup> · (A<sup>T</sup>)<sup>T</sup> = A<sup>T</sup> · A = A<sup>T</sup>A</div>
+  </div>
+  <div class="qed-box">Transpozunu aldık, kendisi çıktı → A<sup>T</sup>A simetrik. ∎</div>
+</div>
+
+<div class="card proof">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Pratik 2b: A−Aᵀ ters-simetrik</span>
+    <span class="tag proof-t">İspat</span>
+  </div>
+  <div class="step blue">
+    <div class="step-label blue">Ters-simetrik: transpoz = eksi kendisi</div>
+    <div class="formula">(A − A<sup>T</sup>)<sup>T</sup> = A<sup>T</sup> − (A<sup>T</sup>)<sup>T</sup> = A<sup>T</sup> − A = −(A − A<sup>T</sup>)</div>
+  </div>
+  <div class="qed-box">Transpozunu aldık, eksi kendisi çıktı → A−A<sup>T</sup> ters-simetrik. ∎</div>
+</div>
+
+<!-- ═══════════════ ÖDEV ═══════════════ -->
+<div class="section-title"><span>📝</span> Ödev Çözümleri</div>
+
+<!-- ÖDEV 1 -->
+<div class="q-box" data-label="Ödev 1">
+  <p>İki köşegen matrisin <strong>toplamı</strong> ve <strong>çarpımı</strong> da köşegen matristir. Bunu gösterin.</p>
+</div>
+
+<div class="card hw">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Ödev 1: Toplam</span>
+    <span class="tag hw-t">İspat</span>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">Kurulum</div>
+    A = diag(a₁, a₂, …, aₙ) ve B = diag(b₁, b₂, …, bₙ) köşegen matrisler olsun.
+    <br>Yani: A<sub>ij</sub> = 0 (i≠j) ve B<sub>ij</sub> = 0 (i≠j).
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">i ≠ j durumu</div>
+    <div class="formula">(A + B)<sub>ij</sub> = A<sub>ij</sub> + B<sub>ij</sub> = 0 + 0 = 0</div>
+    <p>Köşegen dışı her giriş sıfır.</p>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">i = j durumu</div>
+    <div class="formula">(A + B)<sub>ii</sub> = A<sub>ii</sub> + B<sub>ii</sub> = aᵢ + bᵢ</div>
+  </div>
+  <div class="qed-box">A + B = diag(a₁+b₁, a₂+b₂, …, aₙ+bₙ) → köşegen matris. ∎</div>
+</div>
+
+<div class="card hw">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Ödev 1: Çarpım</span>
+    <span class="tag hw-t">İspat</span>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">Genel (i,j) girişi</div>
+    <div class="formula">(A·B)<sub>ij</sub> = Σ<sub>k=1</sub><sup>n</sup> A<sub>ik</sub> · B<sub>kj</sub></div>
+    <p>A köşegen olduğundan A<sub>ik</sub> ≠ 0 ancak k = i ise. Yani toplamda sadece k = i terimi kalır:</p>
+    <div class="formula">(A·B)<sub>ij</sub> = A<sub>ii</sub> · B<sub>ij</sub></div>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">i ≠ j durumu</div>
+    <div class="formula">(A·B)<sub>ij</sub> = A<sub>ii</sub> · B<sub>ij</sub> = A<sub>ii</sub> · 0 = 0</div>
+    <p>B de köşegen olduğundan B<sub>ij</sub> = 0 (i≠j). Köşegen dışı girişler sıfır.</p>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">i = j durumu</div>
+    <div class="formula">(A·B)<sub>ii</sub> = A<sub>ii</sub> · B<sub>ii</sub> = aᵢ · bᵢ</div>
+  </div>
+  <div class="qed-box">A · B = diag(a₁b₁, a₂b₂, …, aₙbₙ) → köşegen matris. ∎</div>
+  <div class="note">Bonus: köşegen matrislerin çarpımı <strong>değişmelidir</strong> (AB = BA). Çünkü aᵢbᵢ = bᵢaᵢ.</div>
+</div>
+
+<!-- ÖDEV 2 -->
+<div class="q-box" data-label="Ödev 2">
+  <p>A ve B simetrik (veya ters-simetrik) ise <strong>A+B</strong> ve <strong>cA</strong> da simetrik (veya ters-simetrik) olduğunu gösterin.</p>
+</div>
+
+<div class="card hw">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Ödev 2: Simetrik durum</span>
+    <span class="tag hw-t">İspat</span>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">Varsayım</div>
+    A<sup>T</sup> = A ve B<sup>T</sup> = B (ikisi de simetrik).
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">A+B simetrik mi?</div>
+    <div class="formula">(A + B)<sup>T</sup> = A<sup>T</sup> + B<sup>T</sup> = A + B</div>
+    <p>Transpozunu aldık, kendisi çıktı. ✓</p>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">cA simetrik mi?</div>
+    <div class="formula">(cA)<sup>T</sup> = c · A<sup>T</sup> = c · A = cA</div>
+    <p>Skaler transpozdan etkilenmez, A<sup>T</sup> = A kullandık. ✓</p>
+  </div>
+  <div class="qed-box">A+B ve cA simetrik. ∎</div>
+</div>
+
+<div class="card hw">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Ödev 2: Ters-simetrik durum</span>
+    <span class="tag hw-t">İspat</span>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">Varsayım</div>
+    A<sup>T</sup> = −A ve B<sup>T</sup> = −B (ikisi de ters-simetrik).
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">A+B ters-simetrik mi?</div>
+    <div class="formula">(A + B)<sup>T</sup> = A<sup>T</sup> + B<sup>T</sup> = (−A) + (−B) = −(A + B)</div>
+    <p>Transpoz = eksi kendisi. ✓</p>
+  </div>
+  <div class="step purple">
+    <div class="step-label purple">cA ters-simetrik mi?</div>
+    <div class="formula">(cA)<sup>T</sup> = c · A<sup>T</sup> = c · (−A) = −(cA)</div>
+    <p>Transpoz = eksi kendisi. ✓</p>
+  </div>
+  <div class="qed-box">A+B ve cA ters-simetrik. ∎</div>
+  <div class="note">Bu ispatlar şunu söylüyor: simetrik matrisler kümesi ve ters-simetrik matrisler kümesi, toplama ve skaler çarpma altında <strong>kapalıdır</strong> (yani birer alt uzaydır — bunu ileride göreceksin).</div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Bu Bölümün İspat Kalıpları</h3>
+  <p>
+    <strong>"X simetrik mi?" sorusu:</strong> X<sup>T</sup> hesapla, X'in kendisi çıkıyorsa simetrik.
+    <br>
+    <strong>"X ters-simetrik mi?":</strong> X<sup>T</sup> hesapla, −X çıkıyorsa ters-simetrik.
+    <br><br>
+    <strong>Kullandığın araçlar her seferinde aynı:</strong>
+    <br>
+    → (A+B)<sup>T</sup> = A<sup>T</sup>+B<sup>T</sup> &nbsp; → (cA)<sup>T</sup> = cA<sup>T</sup> &nbsp; → (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup> &nbsp; → (A<sup>T</sup>)<sup>T</sup> = A
+    <br><br>
+    <strong>Köşegen matris ispatlarında:</strong> toplamda A<sub>ij</sub>+B<sub>ij</sub> hesapla, i≠j için sıfır olduğunu göster. Çarpımda Σ toplamında A köşegen olduğundan sadece k=i terimi sağ kalır.
+  </p>
+</div>
+
+<script src="notes.js"></script>
+</body>
+</html>

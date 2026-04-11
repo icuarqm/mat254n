@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Echelon Forma İndirgeme & RREF</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Echelon Forma İndirgeme & RREF</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 3 - Bölüm 1)</div>
+</div>
+
+<!-- ═══════════════ TEOREM 1 ═══════════════ -->
+<div class="section-title"><span>📐</span> Echelon Forma İndirgeme</div>
+
+<div class="def-box" data-label="Teorem">
+  <p>Her sıfır olmayan matris, bir <strong>echelon matrise</strong> satır denktir.</p>
+  <p style="margin-top:.3rem;">Yani: herhangi bir A ≠ O matrisi, sonlu sayıda elementer satır işlemiyle echelon forma getirilebilir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek: Echelon Forma İndirgeme</div>
+
+<div class="q-box" data-label="Soru">
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table>
+      <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+      <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+      <tr><td>1</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+      <tr><td>2</td><td>0</td><td>−6</td><td>9</td><td>7</td></tr>
+    </table></div>
+  </div>
+  <p>A'ya satır denk bir echelon matris bulun.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Adım 1</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₃ ↔ r₁ — pivotu başa getir</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>1</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>2</td><td>0</td><td>−6</td><td>9</td><td>7</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₃ ↔ r₁</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr class="highlight-row"><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr class="highlight-row"><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr><td>2</td><td>0</td><td>−6</td><td>9</td><td>7</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Adım 2</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₄ → r₄ − r₁ — 4. satırdaki öncüyü sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr><td>2</td><td>0</td><td>−6</td><td>9</td><td>7</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₄ → r₄ − r₁</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>−2</td><td>−1</td><td>7</td><td>3</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Adım 3</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₄ → r₄ + r₃ — 4. satırdaki 2. sütunu sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr><td>0</td><td>−2</td><td>−1</td><td>7</td><td>3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₄ → r₄ + r₃</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Adım 4</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₂ ↔ r₃ — pivotları merdiven düzenine getir</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₂ ↔ r₃</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr class="highlight-row"><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Adım 5 (Son)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₄ → r₄ − r₃ — aynı satırları sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₄ → r₄ − r₃</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−5</td><td>2</td><td>4</td></tr>
+        <tr><td>0</td><td>2</td><td>3</td><td>−4</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+      <span class="ml">= D</span>
+    </div>
+  </div>
+  <div class="result-box">D echelon matristir ve A ∼ D.</div>
+</div>
+
+<!-- ═══════════════ REMARKS ═══════════════ -->
+<div class="section-title"><span>📌</span> Notlar</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Echelon Form Hakkında Notlar</span>
+    <span class="tag prop">Not</span>
+  </div>
+  <div class="prop-list">
+    <div class="prop-item"><span class="prop-label">i)</span> A'ya satır denk olan echelon matrise, A'nın <strong>echelon formu</strong> denir.</div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Bir matrisin echelon formu <strong>tek (unique) olmak zorunda değildir</strong>. Farklı ERO sıralamalarıyla farklı echelon matrislere ulaşılabilir.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ TEOREM 2 — RREF ═══════════════ -->
+<div class="section-title"><span>🎯</span> Row-Reduced Echelon Form (RREF)</div>
+
+<div class="def-box" data-label="Teorem">
+  <p>Her sıfır olmayan matris, <strong>tek (unique)</strong> bir <strong>satır indirgenmiş echelon matrise</strong> (RREF) satır denktir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 2 — RREF ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek: RREF'e İndirgeme</div>
+
+<div class="q-box" data-label="Soru">
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+      <tr><td>1</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+      <tr><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+      <tr><td>2</td><td>0</td><td>1</td><td>7</td><td>2</td></tr>
+    </table></div>
+  </div>
+  <p>A'ya satır denk bir RREF matris bulun.</p>
+</div>
+
+<!-- İleri yönlü eliminasyon (echelon'a getirme) -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Aşağı Eliminasyon — Adım 1</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₂ → r₂ − r₁, &nbsp; r₄ → r₄ − 2r₁</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>1</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+        <tr><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+        <tr><td>2</td><td>0</td><td>1</td><td>7</td><td>2</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₂ → r₂ − r₁<br>r₄ → r₄ − 2r₁</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+        <tr><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Aşağı Eliminasyon — Adım 2</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₃ → r₃ − r₂ — aynı satırları sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+        <tr><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+        <tr><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₃ → r₃ − r₂</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Aşağı Eliminasyon — Adım 3</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₂ → r₂ − r₄ — 2. sütundaki fazlalığı at</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>3</td><td>−2</td><td>−2</td><td>−1</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₂ → r₂ − r₄</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>1</td><td>−1</td><td>−3</td><td>−1</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Aşağı Eliminasyon — Adım 4</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₃ ↔ r₄ — sıfır satırı alta at</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>−1</td><td>−3</td><td>−1</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₃ ↔ r₄</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>−1</td><td>−3</td><td>−1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Aşağı Eliminasyon — Adım 5</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₃ → r₃ − 2r₂ — 3. satırdaki 2. sütunu sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>−1</td><td>−3</td><td>−1</td></tr>
+        <tr><td>0</td><td>2</td><td>−1</td><td>1</td><td>0</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₃ → r₃ − 2r₂</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>−1</td><td>−3</td><td>−1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>1</td><td>7</td><td>2</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+    </div>
+  </div>
+  <div class="note">Artık echelon formda. Şimdi yukarı eliminasyonla RREF'e geçiyoruz.</div>
+</div>
+
+<!-- Yukarı eliminasyon (RREF'e getirme) -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Yukarı Eliminasyon — Adım 6</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₂ → r₂ + r₃, &nbsp; r₁ → r₁ − r₃</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>−1</td><td>−3</td><td>−1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>7</td><td>2</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₂ → r₂ + r₃<br>r₁ → r₁ − r₃</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr class="highlight-row"><td>1</td><td>−1</td><td>0</td><td>−4</td><td>−1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>1</td><td>0</td><td>4</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>7</td><td>2</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Yukarı Eliminasyon — Adım 7 (Son)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₁ → r₁ + r₂ — 1. satırdaki 2. sütunu sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>0</td><td>−4</td><td>−1</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td><td>4</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>7</td><td>2</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₁ → r₁ + r₂</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr class="highlight-row"><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td><td>4</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>7</td><td>2</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+      <span class="ml">= R</span>
+    </div>
+  </div>
+  <div class="result-box">R, row-reduced echelon (RREF) matristir ve A ∼ R.</div>
+</div>
+
+<!-- ═══════════════ SONUÇ (COROLLARY) ═══════════════ -->
+<div class="section-title"><span>💡</span> Sonuç (Corollary)</div>
+
+<div class="def-box" data-label="Sonuç">
+  <p>A ve B aynı <strong>row-reduced echelon matrise</strong> denk ise, A ve B birbirine <strong>satır denktir</strong>.</p>
+  <div class="formula" style="margin-top:.5rem;">A ∼ R &nbsp;ve&nbsp; B ∼ R &nbsp;⟹&nbsp; A ∼ B</div>
+</div>
+
+<div class="card proof">
+  <div class="card-header">
+    <span class="card-title">İspat — Corollary</span>
+    <span class="tag proof-t">İspat</span>
+  </div>
+  <div class="step blue">
+    <div class="step-label blue">Varsayım</div>
+    A ∼ R ve B ∼ R olsun (ikisi de aynı RREF matrise satır denk).
+  </div>
+  <div class="step blue">
+    <div class="step-label blue">Satır denkliği bir denklik bağıntısıdır</div>
+    <p>A ∼ R olduğundan (yansıma + simetri gereği) R ∼ A da doğrudur.</p>
+    <p style="margin-top:.3rem;">B ∼ R olduğundan, <strong>geçişlilik</strong> gereği:</p>
+    <div class="formula">A ∼ R &nbsp;ve&nbsp; R ∼ B &nbsp;⟹&nbsp; A ∼ B</div>
+    <p style="margin-top:.3rem;">Çünkü: A'dan R'ye giden ERO zincirini, R'den B'ye giden zinciriyle birleştirirsen A'dan B'ye giden sonlu bir ERO zinciri elde edersin.</p>
+  </div>
+  <div class="qed-box">A ∼ R ∼ B → A ∼ B. ∎</div>
+</div>
+
+<!-- ═══════════════ ALIŞTIRMAlar ═══════════════ -->
+<div class="section-title"><span>📝</span> Alıştırma</div>
+
+<div class="q-box" data-label="Alıştırma">
+  <p>Aşağıdaki A ve B matrislerinin <strong>satır denk</strong> olduğunu gösterin.</p>
+  <div class="mw" style="margin-top:.5rem;">
+    <span class="ml">A =</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+      <tr><td>−1</td><td>−2</td><td>1</td><td>4</td><td>3</td></tr>
+      <tr><td>2</td><td>4</td><td>0</td><td>−2</td><td>2</td></tr>
+    </table></div>
+  </div>
+  <div class="mw" style="margin-top:.3rem;">
+    <span class="ml">B =</span>
+    <div class="mb"><table>
+      <tr><td>−1</td><td>−2</td><td>0</td><td>1</td><td>−1</td></tr>
+      <tr><td>1</td><td>2</td><td>1</td><td>2</td><td>5</td></tr>
+      <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+    </table></div>
+  </div>
+  <div class="note" style="margin-top:.5rem;">İpucu: İkisini de ayrı ayrı RREF'e indirgeyin. Aynı RREF çıkarsa → A ∼ B (yukarıdaki sonuç gereği).</div>
+</div>
+
+<!-- A'yı RREF'e indirgeme -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — A'yı RREF'e İndirge</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₂ → r₂ + r₁, &nbsp; r₃ → r₃ − 2r₁</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+        <tr><td>−1</td><td>−2</td><td>1</td><td>4</td><td>3</td></tr>
+        <tr><td>2</td><td>4</td><td>0</td><td>−2</td><td>2</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₂ → r₂ + r₁<br>r₃ → r₃ − 2r₁</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+    </div>
+    <div class="note">Zaten RREF formda! Öncüler 1, öncülerin üstü ve altı sıfır, sıfır satır altta.</div>
+  </div>
+  <div class="result-box">
+    RREF(A) = 
+    <span style="font-family:'JetBrains Mono',monospace;">
+    [ 1 2 0 −1 1 | 0 0 1 3 4 | 0 0 0 0 0 ]
+    </span>
+  </div>
+</div>
+
+<!-- B'yi RREF'e indirgeme -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — B'yi RREF'e İndirge</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="step">
+    <div class="step-label">r₁ → −r₁ — öncüyü pozitif yap</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>−1</td><td>−2</td><td>0</td><td>1</td><td>−1</td></tr>
+        <tr><td>1</td><td>2</td><td>1</td><td>2</td><td>5</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₁ → −r₁</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr class="highlight-row"><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+        <tr><td>1</td><td>2</td><td>1</td><td>2</td><td>5</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+      </table></div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-label">r₂ → r₂ − r₁ — 2. satırdaki 1. sütunu sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+        <tr><td>1</td><td>2</td><td>1</td><td>2</td><td>5</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₂ → r₂ − r₁</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+      </table></div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-label">r₃ → r₃ − r₂ — aynı satırları sıfırla</div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+        <div class="op-label">r₃ → r₃ − r₂</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>0</td><td>−1</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>3</td><td>4</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table></div>
+    </div>
+    <div class="note">RREF formda. Öncüler 1, üstleri-altları sıfır.</div>
+  </div>
+  <div class="result-box">
+    RREF(B) = 
+    <span style="font-family:'JetBrains Mono',monospace;">
+    [ 1 2 0 −1 1 | 0 0 1 3 4 | 0 0 0 0 0 ]
+    </span>
+  </div>
+</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Sonuç</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>RREF(A) = RREF(B) olduğundan, Corollary gereği:</p>
+  <div class="result-box">A ∼ B &nbsp; (A ve B satır denktir)</div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Teorem 1:</strong> Her sıfır olmayan matris bir echelon matrise satır denktir. Echelon form <em>tek değildir</em>.
+    <br><br>
+    <strong>Teorem 2:</strong> Her sıfır olmayan matris <em>tek</em> bir RREF matrise satır denktir. RREF <em>tektir</em> (unique).
+    <br><br>
+    <strong>Strateji — İki aşamalı Gauss eliminasyonu:</strong>
+    <br>
+    ① Aşağı eliminasyon: üstten alta ilerle, pivotların altını sıfırla → echelon form.
+    <br>
+    ② Yukarı eliminasyon: alttan yukarı ilerle, pivotların üstünü sıfırla + öncüleri 1 yap → RREF.
+    <br><br>
+    <strong>Sonuç:</strong> A ∼ R ve B ∼ R ise A ∼ B. İki matrisin satır denk olduğunu göstermek için ikisini de RREF'e indirge ve karşılaştır.
+  </p>
+</div>
+
+<script src="notes.js"></script>
+</body>
+</html>

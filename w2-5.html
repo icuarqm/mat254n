@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Elementer Satır İşlemleri & Satır Denkliği</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Elementer Satır İşlemleri & Satır Denkliği</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 2 - Bölüm 5)</div>
+</div>
+
+<!-- ═══════════════ TANIM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Elementer Satır İşlemleri (ERO)</div>
+
+<div class="def-box" data-label="Tanım — Elementer Satır İşlemleri">
+  <p>rᵢ, bir matrisin i. satırı olsun. Aşağıdaki 3 işleme <strong>elementer satır işlemi</strong> denir:</p>
+</div>
+
+<div class="type-grid">
+  <div class="type-card t1">
+    <div class="type-num">Tip 1 — Satır Ekleme</div>
+    <div class="type-desc">i. satırın c katını j. satıra ekle (i ≠ j)</div>
+    <div class="formula">rⱼ → rⱼ + c·rᵢ</div>
+    <div class="note" style="color:#1b5e20;">En sık kullanılan işlem. Sütundaki elemanları sıfırlamak için.</div>
+  </div>
+  <div class="type-card t2">
+    <div class="type-num">Tip 2 — Satır Değiştirme</div>
+    <div class="type-desc">i. satır ile j. satırın yerini değiştir</div>
+    <div class="formula">rᵢ ↔ rⱼ</div>
+    <div class="note" style="color:#0d47a1;">Pivot pozisyonuna uygun satırı getirmek için.</div>
+  </div>
+  <div class="type-card t3">
+    <div class="type-num">Tip 3 — Skaler Çarpma</div>
+    <div class="type-desc">i. satırı sıfırdan farklı bir skaler c ile çarp</div>
+    <div class="formula">rᵢ → c·rᵢ &nbsp;&nbsp; (c ≠ 0)</div>
+    <div class="note" style="color:#bf360c;">Öncü girişi 1 yapmak için. c = 0 yasak (bilgi kaybı).</div>
+  </div>
+</div>
+
+<!-- ═══════════════ ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnekler</div>
+
+<div class="card t1">
+  <div class="card-header">
+    <span class="card-title">Örnek a — Tip 1</span>
+    <span class="tag t1">Satır Ekleme</span>
+  </div>
+  <div class="mw">
+    <div class="mb"><table>
+      <tr><td>−5</td><td>1</td><td>3</td><td>−1</td></tr>
+      <tr><td>1</td><td>−1</td><td>0</td><td>3</td></tr>
+      <tr><td>0</td><td>1</td><td>4</td><td>−2</td></tr>
+    </table></div>
+    <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+      <div class="op-label">r₃ → r₃ − 2r₁</div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="mb"><table>
+      <tr><td>−5</td><td>1</td><td>3</td><td>−1</td></tr>
+      <tr><td>1</td><td>−1</td><td>0</td><td>3</td></tr>
+      <tr class="highlight-row"><td>10</td><td>−1</td><td>−2</td><td>0</td></tr>
+    </table></div>
+  </div>
+  <div class="note">3. satırdan, 1. satırın 2 katı çıkarıldı. Diğer satırlar değişmedi.</div>
+</div>
+
+<div class="card t2">
+  <div class="card-header">
+    <span class="card-title">Örnek b — Tip 2</span>
+    <span class="tag t2">Satır Değiştirme</span>
+  </div>
+  <div class="mw">
+    <div class="mb"><table>
+      <tr><td>2</td><td>−3</td><td>6</td></tr>
+      <tr><td>−1</td><td>5</td><td>1</td></tr>
+      <tr><td>0</td><td>1</td><td>−2</td></tr>
+      <tr><td>2</td><td>−5</td><td>1</td></tr>
+    </table></div>
+    <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+      <div class="op-label">r₁ ↔ r₃</div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="mb"><table>
+      <tr class="highlight-row"><td>0</td><td>1</td><td>−2</td></tr>
+      <tr><td>−1</td><td>5</td><td>1</td></tr>
+      <tr class="highlight-row"><td>2</td><td>−3</td><td>6</td></tr>
+      <tr><td>2</td><td>−5</td><td>1</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card t3">
+  <div class="card-header">
+    <span class="card-title">Örnek c — Tip 3</span>
+    <span class="tag t3">Skaler Çarpma</span>
+  </div>
+  <div class="mw">
+    <div class="mb"><table>
+      <tr><td>2</td><td>−3</td><td>6</td></tr>
+      <tr><td>0</td><td>1</td><td>−2</td></tr>
+      <tr><td>−1</td><td>5</td><td>1</td></tr>
+    </table></div>
+    <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
+      <div class="op-label">r₃ → 5r₃</div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="mb"><table>
+      <tr><td>2</td><td>−3</td><td>6</td></tr>
+      <tr><td>0</td><td>1</td><td>−2</td></tr>
+      <tr class="highlight-row"><td>−5</td><td>25</td><td>5</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card warn">
+  <div class="card-header">
+    <span class="card-title">Uyarı — Aynı anda birden fazla işlem</span>
+    <span class="tag warn">Dikkat</span>
+  </div>
+  <div class="step">
+    <p>Örnek d'de iki işlem aynı anda yapılmış: <strong>r₃ → −2r₃</strong> ve <strong>r₄ → r₄ − r₁</strong>. Bu mümkündür çünkü birbirinden bağımsız satırlar etkileniyor.</p>
+    <p style="margin-top:.4rem;">Ama <strong>r₁ ↔ r₂</strong> gibi bir yer değiştirmeyi, aynı satırları kullanan başka bir işlemle aynı anda <strong>YAPMA!</strong> Çünkü hangi satırın eski, hangi satırın yeni olduğu karışır.</p>
+  </div>
+  <div class="note">Genel kural: aynı anda birden fazla işlem yaparsan, işlemler birbirinden bağımsız satırları etkilemeli.</div>
+</div>
+
+<!-- ═══════════════ TERSLERİ ═══════════════ -->
+<div class="section-title"><span>🔄</span> Her İşlemin Tersi Var</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Elementer Satır İşlemlerinin Tersleri</span>
+    <span class="tag prop">Özellik</span>
+  </div>
+  <p style="margin-bottom:.5rem;">Her elementer satır işleminin tersi <strong>aynı tipte</strong> bir işlemdir:</p>
+  <table class="inv-table">
+    <tr><th>İşlem</th><th>Tersi</th></tr>
+    <tr>
+      <td><strong>Tip 1:</strong> <span class="formula">rⱼ → rⱼ + c·rᵢ</span></td>
+      <td><strong>Tip 1:</strong> <span class="formula">rⱼ → rⱼ − c·rᵢ</span></td>
+    </tr>
+    <tr>
+      <td><strong>Tip 2:</strong> <span class="formula">rᵢ ↔ rⱼ</span></td>
+      <td><strong>Tip 2:</strong> <span class="formula">rᵢ ↔ rⱼ</span></td>
+    </tr>
+    <tr>
+      <td><strong>Tip 3:</strong> <span class="formula">rᵢ → c·rᵢ</span></td>
+      <td><strong>Tip 3:</strong> <span class="formula">rᵢ → (1/c)·rᵢ</span></td>
+    </tr>
+  </table>
+  <div class="note">Tip 1: eklediğini çıkar. Tip 2: aynı işlemi tekrarla (kendi tersi). Tip 3: c ile çarptıysan 1/c ile çarp.</div>
+</div>
+
+<!-- ═══════════════ SATIR DENKLİĞİ ═══════════════ -->
+<div class="section-title"><span>🔗</span> Satır Denkliği (Row Equivalence)</div>
+
+<div class="def-box" data-label="Tanım — Satır Denkliği">
+  <p>A ve B aynı boyutta matrisler olsun. B, A'ya <strong>sonlu sayıda elementer satır işlemi</strong> uygulanarak elde edilebiliyorsa A ve B <strong>satır denktir</strong>.</p>
+  <div class="formula" style="font-size:1rem;">A ∼ B</div>
+</div>
+
+<div class="card ex">
+  <div class="card-header">
+    <span class="card-title">Örnek</span>
+    <span class="tag ex">Örnek</span>
+  </div>
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table>
+      <tr><td>2</td><td>6</td></tr>
+      <tr><td>0</td><td>−2</td></tr>
+      <tr><td>−1</td><td>1</td></tr>
+      <tr><td>2</td><td>1</td></tr>
+    </table></div>
+    <span style="margin:0 .5rem;color:var(--muted);">ve</span>
+    <span class="ml">B =</span>
+    <div class="mb"><table>
+      <tr><td>0</td><td>−2</td></tr>
+      <tr><td>2</td><td>6</td></tr>
+      <tr><td>2</td><td>−2</td></tr>
+      <tr><td>0</td><td>−5</td></tr>
+    </table></div>
+    <span style="margin-left:.5rem;">satır denktir.</span>
+  </div>
+  <div class="step">
+    A'dan B'ye nasıl?<br>
+    <div class="formula" style="font-size:.82rem;">r₄ → r₄ − r₁, &nbsp; r₃ → −2r₃</div> (aynı anda, bağımsız satırlar) →
+    ara matris →
+    <div class="formula" style="font-size:.82rem;">r₁ ↔ r₂</div> → B
+  </div>
+</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Satır Denkliğinin Özellikleri</span>
+    <span class="tag prop">Özellik</span>
+  </div>
+  <p>Satır denkliği bir <strong>denklik bağıntısı</strong>dır (equivalence relation):</p>
+  <div style="margin:.5rem 0;">
+    <p><strong>i) Yansıma:</strong> <span class="formula">A ∼ A</span> — hiç işlem yapma, kendisiyle denk.</p>
+    <p><strong>ii) Simetri:</strong> <span class="formula">A ∼ B ⟹ B ∼ A</span> — her işlemin tersi var, geri dönebilirsin.</p>
+    <p><strong>iii) Geçişlilik:</strong> <span class="formula">A ∼ B ve B ∼ C ⟹ A ∼ C</span> — işlemleri art arda uygula.</p>
+  </div>
+  <div class="note">Simetri özelliği, işlemlerin terslerinin varlığından gelir. Bu yüzden "tersi var" bilgisi önemli.</div>
+</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Ek Notlar</span>
+    <span class="tag prop">Not</span>
+  </div>
+  <p><strong>i)</strong> A ∼ B ise B'den A'ya da dönebilirsin (ters işlemlerle): A ←<sup>ε⁻¹</sup> B</p>
+  <p style="margin-top:.3rem;"><strong>ii)</strong> Aynı mantıkla <strong>elementer sütun işlemleri</strong> de tanımlanabilir (sütunlara aynı 3 tip işlem uygulanır). Ama pratikte daha çok satır işlemleri kullanılır.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>3 tip elementer satır işlemi:</strong>
+    <br>
+    Tip 1: rⱼ → rⱼ + c·rᵢ (en sık — sıfırlama için)
+    <br>
+    Tip 2: rᵢ ↔ rⱼ (yer değiştir — pivot ayarla)
+    <br>
+    Tip 3: rᵢ → c·rᵢ, c≠0 (öncüyü 1 yap)
+    <br><br>
+    Her işlemin <strong>tersi aynı tipte</strong>: ekleyen çıkarır, değiştiren tekrar değiştirir, çarpan böler.
+    <br><br>
+    <strong>Satır denkliği (A ∼ B):</strong> A'dan B'ye sonlu ERO ile gidebiliyorsan denk. Bu bir denklik bağıntısı (yansıma, simetri, geçişlilik).
+    <br><br>
+    <span style="color:var(--accent);font-weight:600;">Bir sonraki hedef: herhangi bir matrisi ERO'larla echelon/RREF'e indirgemek → Gauss eliminasyonu.</span>
+  </p>
+</div>
+
+<script src="notes.js"></script>
+</body>
+</html>

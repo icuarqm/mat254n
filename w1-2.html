@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Skalerler & Matrisler</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Skalerler & Matrisler</h1>
+  <div class="subtitle">Lineer Cebir — Temel Tanımlar (Hafta 1 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════════════════════ SKALER ═══════════════════════════════ -->
+<div class="section-title"><span>🔢</span> Skaler (Scalar)</div>
+
+<div class="def-box" data-label="Tanım — Skaler">
+  <p>Bir cismin (<em>field</em>) elemanlarına <strong>skaler</strong> denir. Yani skaler = cismin içindeki sayılar.</p>
+</div>
+
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Cisim Örnekleri</span>
+    <span class="tag ex">Örnekler</span>
+  </div>
+  <table style="font-size:1rem; border-collapse:collapse; margin-top:0.3rem;">
+    <tr>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℚ</strong></td>
+      <td>Rasyonel sayılar</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart +, ·</td>
+    </tr>
+    <tr>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℝ</strong></td>
+      <td>Reel sayılar</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart +, ·</td>
+    </tr>
+    <tr>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℂ</strong></td>
+      <td>Kompleks sayılar</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart +, ·</td>
+    </tr>
+    <tr>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℤ₂</strong></td>
+      <td>= {0, 1} — İkili cisim</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">mod 2'de +, ·</td>
+    </tr>
+  </table>
+  <div class="note">ℤ₂'de: 1+1=0 (mod 2), 1·1=1. En küçük cisim!</div>
+</div>
+
+<!-- ═══════════════════════════════ MATRİS ═══════════════════════════════ -->
+<div class="section-title"><span>📐</span> Matris (Matrix)</div>
+
+<div class="def-box" data-label="Tanım — Matris">
+  <p><em>F</em> bir cisim olsun. <em>F</em> üzerinde <strong>n×m matris A</strong>, şu kümeden <em>F</em>'e bir fonksiyondur:</p>
+  <div class="formula">{(i,j) : i = 1,…,n &nbsp;ve&nbsp; j = 1,…,m} → F</div>
+  <p style="margin-top:0.5rem;">Yani matris = skalerlerden oluşan dikdörtgen bir tablo.</p>
+</div>
+
+<div class="card def">
+  <div class="card-header">
+    <span class="card-title">Giriş (Entry) Gösterimi</span>
+    <span class="tag def">Tanım</span>
+  </div>
+  <p>A(i,j) fonksiyonunun görüntüsüne matrisin <strong>(i,j)'inci girişi</strong> denir.</p>
+  <div class="formula">A(i,j) = A<sub>ij</sub></div>
+  <div class="note">i → satır numarası, j → sütun numarası.</div>
+</div>
+
+<div class="card notation">
+  <div class="card-header">
+    <span class="card-title">Genel Matris Gösterimi</span>
+    <span class="tag nota">Gösterim</span>
+  </div>
+  <div class="matrix-wrapper">
+    <span class="matrix-label">A =</span>
+    <div class="matrix-box">
+      <table>
+        <tr><td>A₁₁</td><td>A₁₂</td><td>⋯</td><td>A₁ₘ</td></tr>
+        <tr><td>A₂₁</td><td>A₂₂</td><td>⋯</td><td>A₂ₘ</td></tr>
+        <tr><td>⋮</td><td>⋮</td><td>⋱</td><td>⋮</td></tr>
+        <tr><td>Aₙ₁</td><td>Aₙ₂</td><td>⋯</td><td>Aₙₘ</td></tr>
+      </table>
+    </div>
+    <span class="matrix-size">n×m</span>
+  </div>
+  <div class="note">n satır, m sütun. Satırlar yatay, sütunlar dikey.</div>
+</div>
+
+<!-- Satır & Sütun -->
+<div class="card notation">
+  <div class="card-header">
+    <span class="card-title">Satır ve Sütun</span>
+    <span class="tag nota">Gösterim</span>
+  </div>
+  <div class="row-col-demo">
+    <div class="rc-item">
+      <div class="rc-label">i. Satır (1×m)</div>
+      <div class="rc-box">[ Aᵢ₁ &nbsp; Aᵢ₂ &nbsp; ⋯ &nbsp; Aᵢₘ ]</div>
+    </div>
+    <div class="rc-item">
+      <div class="rc-label">j. Sütun (n×1)</div>
+      <div class="rc-box" style="display:flex; flex-direction:column; align-items:center; gap:0.15rem;">
+        <span>A₁ⱼ</span>
+        <span>A₂ⱼ</span>
+        <span>⋮</span>
+        <span>Aₙⱼ</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ana Köşegen & Kare Matris -->
+<div class="card def">
+  <div class="card-header">
+    <span class="card-title">Ana Köşegen & Kare Matris</span>
+    <span class="tag def">Tanım</span>
+  </div>
+  <p><strong>Ana köşegen:</strong> A₁₁, A₂₂, A₃₃, …, Aₖₖ girişleridir (satır = sütun indeksi).</p>
+  <p style="margin-top:0.5rem;"><strong>Kare matris:</strong> n = m ise (satır sayısı = sütun sayısı), A'ya kare matris denir.</p>
+  <div class="formula">Mₙ(F) = F<sup>n×n</sup> → tüm n×n kare matrislerin kümesi</div>
+</div>
+
+<!-- Gösterim -->
+<div class="card notation">
+  <div class="card-header">
+    <span class="card-title">Küme Gösterimleri</span>
+    <span class="tag nota">Gösterim</span>
+  </div>
+  <p>Tüm n×m matrislerin kümesi:</p>
+  <div class="formula">F<sup>n×m</sup> &nbsp;&nbsp;(örn: ℝ<sup>n×m</sup>)</div>
+  <p style="margin-top:0.4rem;">Kare matrisler için özel gösterim:</p>
+  <div class="formula">Mₙ(F) = F<sup>n×n</sup></div>
+</div>
+
+<!-- ÖRNEK -->
+<div class="section-title"><span>✏️</span> Örnek</div>
+
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Somut Örnek</span>
+    <span class="tag ex">Örnek</span>
+  </div>
+  <div class="matrix-wrapper">
+    <span class="matrix-label">A =</span>
+    <div class="matrix-box">
+      <table>
+        <tr><td>−2</td><td>2</td><td>−1</td></tr>
+        <tr><td>1</td><td>0</td><td>−1</td></tr>
+      </table>
+    </div>
+    <span class="matrix-size">2×3</span>
+  </div>
+  <p style="margin-top:0.6rem;">Giriş örnekleri:</p>
+  <div style="display:flex; gap:2rem; margin-top:0.3rem; flex-wrap:wrap;">
+    <div class="formula">A₁₃ = <span class="highlight-entry">−1</span></div>
+    <div class="formula">A₂₂ = <span class="highlight-entry">0</span></div>
+  </div>
+  <div class="note">A₁₃ → 1. satır, 3. sütun. A₂₂ → 2. satır, 2. sütun.</div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Skaler</strong> = cismin elemanı (sayılar). ℚ, ℝ, ℂ, ℤ₂ hep cisim örnekleri.
+    <br>
+    <strong>Matris</strong> = skalerlerden oluşan n×m dikdörtgen tablo. Aslında bir fonksiyon: indeks çiftlerinden cisme.
+    <br>
+    <strong>Aᵢⱼ</strong> → i. satır, j. sütun'daki giriş. Önce satır, sonra sütun!
+    <br>
+    <strong>Kare matris</strong> → satır = sütun sayısı (n = m).
+    <br>
+    <strong>Ana köşegen</strong> → A₁₁, A₂₂, …, Aₖₖ (i = j olan girişler).
+  </p>
+</div>
+
+<script src="notes.js"></script>
+</body>
+</html>
