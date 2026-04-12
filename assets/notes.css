@@ -956,6 +956,7 @@ body.index-page::before {
   text-align: center;
   position: relative;
   padding: 2rem;
+  overflow: hidden;
 }
 .index-page .hero::before {
   content: '';
@@ -1136,9 +1137,23 @@ body.index-page::before {
 
 /* ── Index Responsive ── */
 @media (max-width: 600px) {
-  .index-page .parts-grid { grid-template-columns: 1fr; }
+  .index-page .parts-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
   .index-page .week-number { font-size: 2.5rem; }
-  .index-page .notes-section { padding: 3rem 1.25rem 4rem; }
+  .index-page .notes-section { padding: 3rem 1rem 4rem; }
+  .index-page .part-front {
+    padding: 1rem; align-items: center; text-align: center;
+    justify-content: center; gap: 0.5rem;
+  }
+  .index-page .part-icon { font-size: 1.5rem; }
+  .index-page .part-name { font-size: 1.05rem; }
+  .index-page .part-file { font-size: 0.72rem; }
+  .index-page .part-reveal { padding: 0.9rem 1rem; }
+  .index-page .reveal-title { font-size: 0.82rem; }
+  .index-page .reveal-subtitle { display: none; }
+  .index-page .search-fab {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    right: 1.25rem;
+  }
 }
 @media (min-width: 601px) and (max-width: 900px) {
   .index-page .parts-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1314,5 +1329,4 @@ body.index-page::before {
     transform: translateY(40px) scale(1);
   }
   .index-page .search-overlay.open .search-panel { transform: translateY(0) scale(1); }
-  .index-page .search-fab { bottom: 1.25rem; right: 1.25rem; }
 }
