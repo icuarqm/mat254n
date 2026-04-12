@@ -29,35 +29,35 @@
   </div>
   <table style="font-size:1rem; border-collapse:collapse; margin-top:0.3rem;">
     <tr>
-      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℚ</strong></td>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>$\mathbb{Q}$</strong></td>
       <td>Rasyonel sayılar</td>
-      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart +, ·</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart $+,\, \cdot$</td>
     </tr>
     <tr>
-      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℝ</strong></td>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>$\mathbb{R}$</strong></td>
       <td>Reel sayılar</td>
-      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart +, ·</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart $+,\, \cdot$</td>
     </tr>
     <tr>
-      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℂ</strong></td>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>$\mathbb{C}$</strong></td>
       <td>Kompleks sayılar</td>
-      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart +, ·</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">standart $+,\, \cdot$</td>
     </tr>
     <tr>
-      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>ℤ₂</strong></td>
-      <td>= {0, 1} — İkili cisim</td>
-      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">mod 2'de +, ·</td>
+      <td style="padding:0.3rem 1rem 0.3rem 0;"><strong>$\mathbb{Z}_2$</strong></td>
+      <td>$= \{0, 1\}$ — İkili cisim</td>
+      <td style="padding-left:1.5rem; color:#7a7067; font-size:0.9rem;">mod 2'de $+,\, \cdot$</td>
     </tr>
   </table>
-  <div class="note">ℤ₂'de: 1+1=0 (mod 2), 1·1=1. En küçük cisim!</div>
+  <div class="note">$\mathbb{Z}_2$'de: $1+1=0 \pmod{2}$, $1 \cdot 1 = 1$. En küçük cisim!</div>
 </div>
 
 <!-- ═══════════════════════════════ MATRİS ═══════════════════════════════ -->
 <div class="section-title"><span>📐</span> Matris (Matrix)</div>
 
 <div class="def-box" data-label="Tanım — Matris">
-  <p><em>F</em> bir cisim olsun. <em>F</em> üzerinde <strong>n×m matris A</strong>, şu kümeden <em>F</em>'e bir fonksiyondur:</p>
-  <div class="formula">{(i,j) : i = 1,…,n &nbsp;ve&nbsp; j = 1,…,m} → F</div>
+  <p>$F$ bir cisim olsun. $F$ üzerinde <strong>$n \times m$ matris $A$</strong>, şu kümeden $F$'e bir fonksiyondur:</p>
+  <div class="formula">$$\{(i,j) : i = 1, \ldots, n \text{ ve } j = 1, \ldots, m\} \longrightarrow F$$</div>
   <p style="margin-top:0.5rem;">Yani matris = skalerlerden oluşan dikdörtgen bir tablo.</p>
 </div>
 
@@ -66,9 +66,9 @@
     <span class="card-title">Giriş (Entry) Gösterimi</span>
     <span class="tag def">Tanım</span>
   </div>
-  <p>A(i,j) fonksiyonunun görüntüsüne matrisin <strong>(i,j)'inci girişi</strong> denir.</p>
-  <div class="formula">A(i,j) = A<sub>ij</sub></div>
-  <div class="note">i → satır numarası, j → sütun numarası.</div>
+  <p>$A(i,j)$ fonksiyonunun görüntüsüne matrisin <strong>$(i,j)$'inci girişi</strong> denir.</p>
+  <div class="formula">$$A(i,j) = A_{ij}$$</div>
+  <div class="note">$i$ → satır numarası, $j$ → sütun numarası.</div>
 </div>
 
 <div class="card notation">
@@ -76,19 +76,17 @@
     <span class="card-title">Genel Matris Gösterimi</span>
     <span class="tag nota">Gösterim</span>
   </div>
-  <div class="matrix-wrapper">
-    <span class="matrix-label">A =</span>
-    <div class="matrix-box">
-      <table>
-        <tr><td>A₁₁</td><td>A₁₂</td><td>⋯</td><td>A₁ₘ</td></tr>
-        <tr><td>A₂₁</td><td>A₂₂</td><td>⋯</td><td>A₂ₘ</td></tr>
-        <tr><td>⋮</td><td>⋮</td><td>⋱</td><td>⋮</td></tr>
-        <tr><td>Aₙ₁</td><td>Aₙ₂</td><td>⋯</td><td>Aₙₘ</td></tr>
-      </table>
-    </div>
-    <span class="matrix-size">n×m</span>
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table>
+      <tr><td>$A_{11}$</td><td>$A_{12}$</td><td>⋯</td><td>$A_{1m}$</td></tr>
+      <tr><td>$A_{21}$</td><td>$A_{22}$</td><td>⋯</td><td>$A_{2m}$</td></tr>
+      <tr><td>⋮</td><td>⋮</td><td>⋱</td><td>⋮</td></tr>
+      <tr><td>$A_{n1}$</td><td>$A_{n2}$</td><td>⋯</td><td>$A_{nm}$</td></tr>
+    </table></div>
+    <span class="ms">n×m</span>
   </div>
-  <div class="note">n satır, m sütun. Satırlar yatay, sütunlar dikey.</div>
+  <div class="note">$n$ satır, $m$ sütun. Satırlar yatay, sütunlar dikey.</div>
 </div>
 
 <!-- Satır & Sütun -->
@@ -99,16 +97,22 @@
   </div>
   <div class="row-col-demo">
     <div class="rc-item">
-      <div class="rc-label">i. Satır (1×m)</div>
-      <div class="rc-box">[ Aᵢ₁ &nbsp; Aᵢ₂ &nbsp; ⋯ &nbsp; Aᵢₘ ]</div>
+      <div class="rc-label">$i$. Satır $(1 \times m)$</div>
+      <div class="mw">
+        <div class="mb"><table><tr>
+          <td>$A_{i1}$</td><td>$A_{i2}$</td><td>⋯</td><td>$A_{im}$</td>
+        </tr></table></div>
+      </div>
     </div>
     <div class="rc-item">
-      <div class="rc-label">j. Sütun (n×1)</div>
-      <div class="rc-box" style="display:flex; flex-direction:column; align-items:center; gap:0.15rem;">
-        <span>A₁ⱼ</span>
-        <span>A₂ⱼ</span>
-        <span>⋮</span>
-        <span>Aₙⱼ</span>
+      <div class="rc-label">$j$. Sütun $(n \times 1)$</div>
+      <div class="mw">
+        <div class="mb"><table>
+          <tr><td>$A_{1j}$</td></tr>
+          <tr><td>$A_{2j}$</td></tr>
+          <tr><td>⋮</td></tr>
+          <tr><td>$A_{nj}$</td></tr>
+        </table></div>
       </div>
     </div>
   </div>
@@ -120,9 +124,9 @@
     <span class="card-title">Ana Köşegen & Kare Matris</span>
     <span class="tag def">Tanım</span>
   </div>
-  <p><strong>Ana köşegen:</strong> A₁₁, A₂₂, A₃₃, …, Aₖₖ girişleridir (satır = sütun indeksi).</p>
-  <p style="margin-top:0.5rem;"><strong>Kare matris:</strong> n = m ise (satır sayısı = sütun sayısı), A'ya kare matris denir.</p>
-  <div class="formula">Mₙ(F) = F<sup>n×n</sup> → tüm n×n kare matrislerin kümesi</div>
+  <p><strong>Ana köşegen:</strong> $A_{11}, A_{22}, A_{33}, \ldots, A_{kk}$ girişleridir (satır = sütun indeksi).</p>
+  <p style="margin-top:0.5rem;"><strong>Kare matris:</strong> $n = m$ ise (satır sayısı = sütun sayısı), $A$'ya kare matris denir.</p>
+  <div class="formula">$$M_n(F) = F^{n \times n} \quad \longrightarrow \text{ tüm } n \times n \text{ kare matrislerin kümesi}$$</div>
 </div>
 
 <!-- Gösterim -->
@@ -131,10 +135,10 @@
     <span class="card-title">Küme Gösterimleri</span>
     <span class="tag nota">Gösterim</span>
   </div>
-  <p>Tüm n×m matrislerin kümesi:</p>
-  <div class="formula">F<sup>n×m</sup> &nbsp;&nbsp;(örn: ℝ<sup>n×m</sup>)</div>
+  <p>Tüm $n \times m$ matrislerin kümesi:</p>
+  <div class="formula">$$F^{n \times m} \quad (\text{örn: } \mathbb{R}^{n \times m})$$</div>
   <p style="margin-top:0.4rem;">Kare matrisler için özel gösterim:</p>
-  <div class="formula">Mₙ(F) = F<sup>n×n</sup></div>
+  <div class="formula">$$M_n(F) = F^{n \times n}$$</div>
 </div>
 
 <!-- ÖRNEK -->
@@ -145,37 +149,35 @@
     <span class="card-title">Somut Örnek</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <div class="matrix-wrapper">
-    <span class="matrix-label">A =</span>
-    <div class="matrix-box">
-      <table>
-        <tr><td>−2</td><td>2</td><td>−1</td></tr>
-        <tr><td>1</td><td>0</td><td>−1</td></tr>
-      </table>
-    </div>
-    <span class="matrix-size">2×3</span>
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table>
+      <tr><td>−2</td><td>2</td><td>−1</td></tr>
+      <tr><td>1</td><td>0</td><td>−1</td></tr>
+    </table></div>
+    <span class="ms">2×3</span>
   </div>
   <p style="margin-top:0.6rem;">Giriş örnekleri:</p>
   <div style="display:flex; gap:2rem; margin-top:0.3rem; flex-wrap:wrap;">
-    <div class="formula">A₁₃ = <span class="highlight-entry">−1</span></div>
-    <div class="formula">A₂₂ = <span class="highlight-entry">0</span></div>
+    <div class="formula">$A_{13} = -1$</div>
+    <div class="formula">$A_{22} = 0$</div>
   </div>
-  <div class="note">A₁₃ → 1. satır, 3. sütun. A₂₂ → 2. satır, 2. sütun.</div>
+  <div class="note">$A_{13}$ → 1. satır, 3. sütun. $A_{22}$ → 2. satır, 2. sütun.</div>
 </div>
 
 <!-- ÖZET -->
 <div class="summary-box">
   <h3>Hızlı Özet</h3>
   <p>
-    <strong>Skaler</strong> = cismin elemanı (sayılar). ℚ, ℝ, ℂ, ℤ₂ hep cisim örnekleri.
+    <strong>Skaler</strong> = cismin elemanı (sayılar). $\mathbb{Q},\, \mathbb{R},\, \mathbb{C},\, \mathbb{Z}_2$ hep cisim örnekleri.
     <br>
-    <strong>Matris</strong> = skalerlerden oluşan n×m dikdörtgen tablo. Aslında bir fonksiyon: indeks çiftlerinden cisme.
+    <strong>Matris</strong> = skalerlerden oluşan $n \times m$ dikdörtgen tablo. Aslında bir fonksiyon: indeks çiftlerinden cisme.
     <br>
-    <strong>Aᵢⱼ</strong> → i. satır, j. sütun'daki giriş. Önce satır, sonra sütun!
+    $A_{ij}$ → $i$. satır, $j$. sütundaki giriş. Önce satır, sonra sütun!
     <br>
-    <strong>Kare matris</strong> → satır = sütun sayısı (n = m).
+    <strong>Kare matris</strong> → satır = sütun sayısı ($n = m$).
     <br>
-    <strong>Ana köşegen</strong> → A₁₁, A₂₂, …, Aₖₖ (i = j olan girişler).
+    <strong>Ana köşegen</strong> → $A_{11}, A_{22}, \ldots, A_{kk}$ ($i = j$ olan girişler).
   </p>
 </div>
 

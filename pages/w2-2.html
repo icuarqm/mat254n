@@ -15,384 +15,369 @@
   <div class="subtitle">Lineer Cebir — (Hafta 2 - Bölüm 2)</div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════ -->
 <!-- SORU 1 -->
-<!-- ═══════════════════════════════════════════════════════ -->
 <div class="q-box" data-label="Soru 1">
-  <p>A aşağıdaki matris iken <strong>A² − A − 3I₃</strong> hesaplayın.</p>
+  <p>$A$ aşağıdaki matris iken $A^2 - A - 3I_3$ hesaplayın.</p>
   <div class="mw">
     <span class="ml">A =</span>
-    <div class="mb"><table><tr><td>1</td><td>−3</td><td>1</td></tr><tr><td>0</td><td>−2</td><td>2</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table></div>
+    <div class="mb"><table>
+      <tr><td>1</td><td>−3</td><td>1</td></tr>
+      <tr><td>0</td><td>−2</td><td>2</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td></tr>
+    </table></div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">Çözüm 1</span>
-    <span class="tag">Çözüm</span>
-  </div>
-
+  <div class="card-header"><span class="card-title">Çözüm 1</span><span class="tag">Çözüm</span></div>
   <div class="step">
-    <div class="step-label">Adım 1: A² = A·A hesapla</div>
-    <p>Her (i,j) girişi: A'nın i. satırı · A'nın j. sütunu</p>
-    <br>
-    <strong>1. satır × sütunlar:</strong><br>
-    (1,1): 1·1 + (−3)·0 + 1·1 = 1+0+1 = <strong>2</strong><br>
-    (1,2): 1·(−3) + (−3)·(−2) + 1·1 = −3+6+1 = <strong>4</strong><br>
-    (1,3): 1·1 + (−3)·2 + 1·0 = 1−6+0 = <strong>−5</strong><br><br>
-    <strong>2. satır × sütunlar:</strong><br>
-    (2,1): 0·1 + (−2)·0 + 2·1 = <strong>2</strong><br>
-    (2,2): 0·(−3) + (−2)·(−2) + 2·1 = 0+4+2 = <strong>6</strong><br>
-    (2,3): 0·1 + (−2)·2 + 2·0 = −4 = <strong>−4</strong><br><br>
-    <strong>3. satır × sütunlar:</strong><br>
-    (3,1): 1·1 + 1·0 + 0·1 = <strong>1</strong><br>
-    (3,2): 1·(−3) + 1·(−2) + 0·1 = −3−2 = <strong>−5</strong><br>
-    (3,3): 1·1 + 1·2 + 0·0 = <strong>3</strong>
+    <div class="step-label">Adım 1: $A^2 = A \cdot A$ hesapla</div>
+    <p>Her $(i,j)$ girişi: $A$'nın $i$. satırı $\cdot$ $A$'nın $j$. sütunu</p><br>
+    <strong>1. satır:</strong> &nbsp;
+    $(1,1)$: $1{\cdot}1+(-3){\cdot}0+1{\cdot}1=\mathbf{2}$ &nbsp;
+    $(1,2)$: $1{\cdot}(-3)+(-3){\cdot}(-2)+1{\cdot}1=\mathbf{4}$ &nbsp;
+    $(1,3)$: $1{\cdot}1+(-3){\cdot}2+1{\cdot}0=\mathbf{-5}$<br>
+    <strong>2. satır:</strong> &nbsp;
+    $(2,1)$: $0+0+2=\mathbf{2}$ &nbsp;
+    $(2,2)$: $0+4+2=\mathbf{6}$ &nbsp;
+    $(2,3)$: $0-4+0=\mathbf{-4}$<br>
+    <strong>3. satır:</strong> &nbsp;
+    $(3,1)$: $1+0+0=\mathbf{1}$ &nbsp;
+    $(3,2)$: $-3-2+0=\mathbf{-5}$ &nbsp;
+    $(3,3)$: $1+2+0=\mathbf{3}$
   </div>
   <div class="mw">
-    <span class="ml">A² =</span>
-    <div class="mb"><table><tr><td>2</td><td>4</td><td>−5</td></tr><tr><td>2</td><td>6</td><td>−4</td></tr><tr><td>1</td><td>−5</td><td>3</td></tr></table></div>
+    <span class="ml">$A^2$ =</span>
+    <div class="mb"><table>
+      <tr><td>2</td><td>4</td><td>−5</td></tr>
+      <tr><td>2</td><td>6</td><td>−4</td></tr>
+      <tr><td>1</td><td>−5</td><td>3</td></tr>
+    </table></div>
   </div>
-
   <div class="step">
-    <div class="step-label">Adım 2: A² − A − 3I₃</div>
-    Her girişten: (A²)<sub>ij</sub> − A<sub>ij</sub> − 3(I₃)<sub>ij</sub>
+    <div class="step-label">Adım 2: $A^2 - A - 3I_3$ &nbsp; (her girişten: $(A^2)_{ij} - A_{ij} - 3(I_3)_{ij}$)</div>
   </div>
-
   <div class="mw">
-    <div class="mb"><table><tr><td>2</td><td>4</td><td>−5</td></tr><tr><td>2</td><td>6</td><td>−4</td></tr><tr><td>1</td><td>−5</td><td>3</td></tr></table></div>
+    <div class="mb"><table>
+      <tr><td>2</td><td>4</td><td>−5</td></tr>
+      <tr><td>2</td><td>6</td><td>−4</td></tr>
+      <tr><td>1</td><td>−5</td><td>3</td></tr>
+    </table></div>
     <span class="ml">−</span>
-    <div class="mb"><table><tr><td>1</td><td>−3</td><td>1</td></tr><tr><td>0</td><td>−2</td><td>2</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table></div>
+    <div class="mb"><table>
+      <tr><td>1</td><td>−3</td><td>1</td></tr>
+      <tr><td>0</td><td>−2</td><td>2</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td></tr>
+    </table></div>
     <span class="ml">−</span>
-    <div class="mb"><table><tr><td>3</td><td>0</td><td>0</td></tr><tr><td>0</td><td>3</td><td>0</td></tr><tr><td>0</td><td>0</td><td>3</td></tr></table></div>
+    <div class="mb"><table>
+      <tr><td class="diag">3</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">3</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">3</td></tr>
+    </table></div>
   </div>
-
   <div class="result-box">
     <div class="mw">
-      <span class="ml">A² − A − 3I₃ =</span>
+      <span class="ml">$A^2 - A - 3I_3$ =</span>
       <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
-        <table><tr><td>−2</td><td>7</td><td>−6</td></tr><tr><td>2</td><td>5</td><td>−6</td></tr><tr><td>0</td><td>−6</td><td>0</td></tr></table>
+        <table>
+          <tr><td>−2</td><td>7</td><td>−6</td></tr>
+          <tr><td>2</td><td>5</td><td>−6</td></tr>
+          <tr><td>0</td><td>−6</td><td>0</td></tr>
+        </table>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════ -->
 <!-- SORU 2 -->
-<!-- ═══════════════════════════════════════════════════════ -->
 <div class="q-box" data-label="Soru 2">
-  <p>Aşağıdaki matris için <strong>A⁶</strong> hesaplayın.</p>
+  <p>Aşağıdaki matris için $A^6$ hesaplayın.</p>
   <div class="mw">
     <span class="ml">A =</span>
-    <div class="mb"><table><tr><td>0</td><td>a</td><td>b</td></tr><tr><td>0</td><td>0</td><td>c</td></tr><tr><td>0</td><td>0</td><td>0</td></tr></table></div>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td>a</td><td>b</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>c</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">Çözüm 2</span>
-    <span class="tag">Çözüm</span>
-  </div>
-
+  <div class="card-header"><span class="card-title">Çözüm 2</span><span class="tag">Çözüm</span></div>
   <div class="step">
-    <div class="step-label">Adım 1: A² hesapla</div>
-    Satır × sütun yapıyoruz. Çoğu giriş 0 çıkacak çünkü alt üçgen tamamen sıfır.
-    <br><br>
-    (1,1)=0, (1,2)=0, (1,3)= a·c = <strong>ac</strong><br>
-    (2,1)=0, (2,2)=0, (2,3)=0<br>
-    (3,1)=0, (3,2)=0, (3,3)=0
+    <div class="step-label">Adım 1: $A^2$ hesapla</div>
+    Satır × sütun. Çoğu giriş 0 çıkacak (alt üçgen tamamen sıfır).<br>
+    $(1,3) = a \cdot c = ac$, diğer tüm girişler $= 0$.
   </div>
   <div class="mw">
-    <span class="ml">A² =</span>
-    <div class="mb"><table><tr><td>0</td><td>0</td><td>ac</td></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>0</td></tr></table></div>
+    <span class="ml">$A^2$ =</span>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>ac</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
   </div>
-
   <div class="step">
-    <div class="step-label">Adım 2: A³ = A²·A</div>
-    A²'nin sadece (1,3) girişi sıfırdan farklı. Bu girişin 3. sütunla çarpımı:<br>
-    (1,3) girişi: ac · 0 = 0. Diğer her şey zaten 0.
+    <div class="step-label">Adım 2: $A^3 = A^2 \cdot A$</div>
+    $A^2$'nin sadece $(1,3)$ girişi sıfırdan farklı. Bu girişin 3. sütunla çarpımı: $ac \cdot 0 = 0$.
   </div>
   <div class="mw">
-    <span class="ml">A³ =</span>
-    <div class="mb"><table><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>0</td></tr></table></div>
-    <span class="ml">= O</span>
+    <span class="ml">$A^3$ =</span>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <span class="ml">= $O$</span>
   </div>
-
   <div class="step">
-    <div class="step-label">Adım 3: A⁶ = (A³)² = O² = O</div>
-    A³ = O olduğuna göre A⁶ = A³·A³ = O·O = O.
+    <div class="step-label">Adım 3: $A^6 = (A^3)^2 = O^2 = O$</div>
   </div>
-
   <div class="result-box">
-    <div class="mw">
-      <span class="ml">A⁶ = O</span> <span class="ms">(3×3 sıfır matris)</span>
-    </div>
-    <div class="note">A nilpotent bir matris (A³ = O). Nilpotent matrisin her yüksek kuvveti de sıfırdır.</div>
+    $A^6 = O$ &nbsp; (3×3 sıfır matris)
+    <div class="note">$A$ nilpotent bir matris ($A^3 = O$). Nilpotent matrisin her yüksek kuvveti de sıfırdır.</div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════ -->
 <!-- SORU 3 -->
-<!-- ═══════════════════════════════════════════════════════ -->
 <div class="q-box" data-label="Soru 3">
-  <p>Aşağıdaki matrislerle <strong>komüt eden</strong> (AB = BA) tüm 2×2 matrisleri bulun.</p>
+  <p>Aşağıdaki matrislerle <strong>komüt eden</strong> ($AB = BA$) tüm $2 \times 2$ matrisleri bulun.</p>
   <div class="mw">
-    <span class="ml">E₁ =</span>
-    <div class="mb"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+    <span class="ml">$E_1$ =</span>
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
     <span style="margin:0 .8rem;"></span>
-    <span class="ml">E₂ =</span>
-    <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+    <span class="ml">$E_2$ =</span>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">Çözüm 3</span>
-    <span class="tag">Çözüm</span>
-  </div>
-
+  <div class="card-header"><span class="card-title">Çözüm 3</span><span class="tag">Çözüm</span></div>
   <div class="step">
-    <div class="step-label">Genel 2×2 matris</div>
+    <div class="step-label">Genel $2 \times 2$ matris</div>
     <div class="mw">
       <span class="ml">A =</span>
-      <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table></div>
+      <div class="mb"><table>
+        <tr><td>a</td><td>b</td></tr>
+        <tr><td>c</td><td>d</td></tr>
+      </table></div>
     </div>
-    AE₁ = E₁A ve AE₂ = E₂A koşullarını sağlayan a, b, c, d'yi bulacağız.
+    $AE_1 = E_1 A$ ve $AE_2 = E_2 A$ koşullarını sağlayan $a, b, c, d$'yi bulacağız.
   </div>
-
   <div class="step">
-    <div class="step-label">Koşul 1: AE₁ = E₁A</div>
+    <div class="step-label">Koşul 1: $AE_1 = E_1 A$</div>
     <div class="mw">
-      <span class="ml">AE₁ =</span>
+      <span class="ml">$AE_1$ =</span>
       <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table></div>
-      <div class="mb"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <div class="mb"><table><tr><td class="diag">1</td><td class="zero-cell">0</td></tr><tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr></table></div>
       <span class="ml">=</span>
-      <div class="mb"><table><tr><td>a</td><td>0</td></tr><tr><td>c</td><td>0</td></tr></table></div>
+      <div class="mb"><table><tr><td>a</td><td class="zero-cell">0</td></tr><tr><td>c</td><td class="zero-cell">0</td></tr></table></div>
     </div>
     <div class="mw">
-      <span class="ml">E₁A =</span>
-      <div class="mb"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <span class="ml">$E_1 A$ =</span>
+      <div class="mb"><table><tr><td class="diag">1</td><td class="zero-cell">0</td></tr><tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr></table></div>
       <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table></div>
       <span class="ml">=</span>
-      <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <div class="mb"><table><tr><td>a</td><td>b</td></tr><tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr></table></div>
     </div>
-    Eşitlersek: b = 0 ve c = 0.
+    Eşitlersek: $b = 0$ ve $c = 0$.
   </div>
-
   <div class="step">
-    <div class="step-label">Koşul 2: AE₂ = E₂A (b=0, c=0 ile)</div>
+    <div class="step-label">Koşul 2: $AE_2 = E_2 A$ &nbsp;($b=0,\; c=0$ ile)</div>
     <div class="mw">
-      <span class="ml">AE₂ =</span>
-      <div class="mb"><table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>d</td></tr></table></div>
-      <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <span class="ml">$AE_2$ =</span>
+      <div class="mb"><table><tr><td>a</td><td class="zero-cell">0</td></tr><tr><td class="zero-cell">0</td><td>d</td></tr></table></div>
+      <div class="mb"><table><tr><td class="zero-cell">0</td><td>1</td></tr><tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr></table></div>
       <span class="ml">=</span>
-      <div class="mb"><table><tr><td>0</td><td>a</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <div class="mb"><table><tr><td class="zero-cell">0</td><td>a</td></tr><tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr></table></div>
     </div>
     <div class="mw">
-      <span class="ml">E₂A =</span>
-      <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
-      <div class="mb"><table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>d</td></tr></table></div>
+      <span class="ml">$E_2 A$ =</span>
+      <div class="mb"><table><tr><td class="zero-cell">0</td><td>1</td></tr><tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr></table></div>
+      <div class="mb"><table><tr><td>a</td><td class="zero-cell">0</td></tr><tr><td class="zero-cell">0</td><td>d</td></tr></table></div>
       <span class="ml">=</span>
-      <div class="mb"><table><tr><td>0</td><td>d</td></tr><tr><td>0</td><td>0</td></tr></table></div>
+      <div class="mb"><table><tr><td class="zero-cell">0</td><td>d</td></tr><tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr></table></div>
     </div>
-    Eşitlersek: a = d.
+    Eşitlersek: $a = d$.
   </div>
-
   <div class="result-box">
     <div class="mw">
       <span class="ml">A =</span>
       <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
-        <table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>a</td></tr></table>
+        <table><tr><td class="diag">a</td><td class="zero-cell">0</td></tr><tr><td class="zero-cell">0</td><td class="diag">a</td></tr></table>
       </div>
-      <span class="ml">= a · I₂</span>
+      <span class="ml">$= a \cdot I_2$</span>
     </div>
-    <p style="font-weight:400;margin-top:.4rem;">Hem E₁ hem E₂ ile komüt eden matrisler sadece <strong>skaler katları birim matrisin</strong>: A = aI. Yani a herhangi bir skaler, b = c = 0, d = a.</p>
+    <p style="font-weight:400;margin-top:.4rem;">Hem $E_1$ hem $E_2$ ile komüt eden matrisler sadece <strong>skaler katları birim matrisin</strong>: $A = aI$.</p>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════ -->
 <!-- SORU 4 -->
-<!-- ═══════════════════════════════════════════════════════ -->
 <div class="q-box" data-label="Soru 4">
-  <p>Aşağıdaki matrisler için mümkünse AB, BA, AC, CA, BC, CB, ABC, AC<sup>T</sup>, B<sup>T</sup>A<sup>T</sup> hesaplayın.</p>
-  <div class="mw" style="gap:.8rem;">
+  <p>Mümkünse $AB,\; BA,\; AC,\; CA,\; BC,\; CB,\; ABC,\; AC^T,\; B^T A^T$ hesaplayın.</p>
+  <div class="mw" style="gap:.8rem; flex-wrap:wrap;">
     <div>
       <span class="ml">A =</span>
-      <div class="mb"><table><tr><td>−1</td><td>1</td></tr><tr><td>0</td><td>−1</td></tr></table></div>
+      <div class="mb"><table>
+        <tr><td>−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td>−1</td></tr>
+      </table></div>
       <span class="ms">2×2</span>
     </div>
     <div>
       <span class="ml">B =</span>
-      <div class="mb"><table><tr><td>−1</td><td>1</td><td>0</td></tr><tr><td>−2</td><td>−3</td><td>2</td></tr></table></div>
+      <div class="mb"><table>
+        <tr><td>−1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td>−2</td><td>−3</td><td>2</td></tr>
+      </table></div>
       <span class="ms">2×3</span>
     </div>
     <div>
       <span class="ml">C =</span>
-      <div class="mb"><table><tr><td>0</td><td>1</td></tr><tr><td>−1</td><td>2</td></tr><tr><td>1</td><td>−2</td></tr></table></div>
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td>−1</td><td>2</td></tr>
+        <tr><td>1</td><td>−2</td></tr>
+      </table></div>
       <span class="ms">3×2</span>
     </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">Çözüm 4 — Boyut Kontrolü</span>
-    <span class="tag">Çözüm</span>
-  </div>
+  <div class="card-header"><span class="card-title">Boyut Kontrolü</span><span class="tag">Çözüm</span></div>
   <div class="step">
-    <div class="step-label">Önce boyut uyumunu kontrol et</div>
-    A: 2×2, &nbsp; B: 2×3, &nbsp; C: 3×2<br><br>
-    AB: 2×<strong>2</strong> · <strong>2</strong>×3 → ✅ 2×3<br>
-    BA: 2×<strong>3</strong> · <strong>2</strong>×2 → ❌ 3≠2 <strong>tanımsız</strong><br>
-    AC: 2×<strong>2</strong> · <strong>3</strong>×2 → ❌ 2≠3 <strong>tanımsız</strong><br>
-    CA: 3×<strong>2</strong> · <strong>2</strong>×2 → ✅ 3×2<br>
-    BC: 2×<strong>3</strong> · <strong>3</strong>×2 → ✅ 2×2<br>
-    CB: 3×<strong>2</strong> · <strong>2</strong>×3 → ✅ 3×3<br>
-    ABC: (AB)C = 2×3 · 3×2 → ✅ 2×2<br>
-    AC<sup>T</sup>: A: 2×2, C<sup>T</sup>: 2×3 → ✅ 2×3<br>
-    B<sup>T</sup>A<sup>T</sup>: B<sup>T</sup>: 3×2, A<sup>T</sup>: 2×2 → ✅ 3×2
+    $A$: $2\times 2$, $B$: $2\times 3$, $C$: $3\times 2$<br><br>
+    $AB$: $2\times\mathbf{2}\cdot\mathbf{2}\times 3$ → ✅ $2\times 3$ &nbsp;&nbsp;
+    $BA$: $2\times\mathbf{3}\cdot\mathbf{2}\times 2$ → ❌ tanımsız<br>
+    $AC$: $2\times\mathbf{2}\cdot\mathbf{3}\times 2$ → ❌ tanımsız &nbsp;&nbsp;
+    $CA$: $3\times\mathbf{2}\cdot\mathbf{2}\times 2$ → ✅ $3\times 2$<br>
+    $BC$: $2\times\mathbf{3}\cdot\mathbf{3}\times 2$ → ✅ $2\times 2$ &nbsp;&nbsp;
+    $CB$: $3\times\mathbf{2}\cdot\mathbf{2}\times 3$ → ✅ $3\times 3$<br>
+    $ABC$: $(AB)C=2\times 3\cdot 3\times 2$ → ✅ $2\times 2$ &nbsp;&nbsp;
+    $AC^T$: $C^T$: $2\times 3$ → ✅ $2\times 3$ &nbsp;&nbsp;
+    $B^TA^T$: $B^T$: $3\times 2$, $A^T$: $2\times 2$ → ✅ $3\times 2$
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">AB</span>
-    <span class="tag">2×3</span>
-  </div>
+  <div class="card-header"><span class="card-title">$AB$</span><span class="tag">$2\times 3$</span></div>
   <div class="step">
-    (1,1): (−1)(−1)+1(−2) = 1−2 = −1<br>
-    (1,2): (−1)(1)+1(−3) = −1−3 = −4<br>
-    (1,3): (−1)(0)+1(2) = 2<br>
-    (2,1): 0(−1)+(−1)(−2) = 2<br>
-    (2,2): 0(1)+(−1)(−3) = 3<br>
-    (2,3): 0(0)+(−1)(2) = −2
+    $(1,1){:}\;(-1)(-1)+1(-2)=-1$ &nbsp; $(1,2){:}\;(-1)(1)+1(-3)=-4$ &nbsp; $(1,3){:}\;(-1)(0)+1(2)=2$<br>
+    $(2,1){:}\;0(-1)+(-1)(-2)=2$ &nbsp; $(2,2){:}\;0(1)+(-1)(-3)=3$ &nbsp; $(2,3){:}\;0(0)+(-1)(2)=-2$
   </div>
-  <div class="mw">
-    <span class="ml">AB =</span>
-    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−1</td><td>−4</td><td>2</td></tr><tr><td>2</td><td>3</td><td>−2</td></tr></table></div>
+  <div class="mw"><span class="ml">$AB$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+      <table><tr><td>−1</td><td>−4</td><td>2</td></tr><tr><td>2</td><td>3</td><td>−2</td></tr></table>
+    </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">BA</span>
-    <span class="tag" style="background:var(--tag-warn);color:var(--tag-warn-text);">Tanımsız</span>
-  </div>
-  <p>B: 2×<strong>3</strong>, A: <strong>2</strong>×2. Sütun sayısı 3 ≠ satır sayısı 2. Çarpılamaz.</p>
+  <div class="card-header"><span class="card-title">$BA$ / $AC$</span><span class="tag" style="background:var(--tag-warn);color:var(--tag-warn-text);">Tanımsız</span></div>
+  <p>$BA$: $B{:}\;2\times\mathbf{3}$, $A{:}\;\mathbf{2}\times 2$ → sütun $3\neq$ satır $2$. &nbsp;&nbsp; $AC$: $A{:}\;2\times\mathbf{2}$, $C{:}\;\mathbf{3}\times 2$ → sütun $2\neq$ satır $3$.</p>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">AC</span>
-    <span class="tag" style="background:var(--tag-warn);color:var(--tag-warn-text);">Tanımsız</span>
-  </div>
-  <p>A: 2×<strong>2</strong>, C: <strong>3</strong>×2. Sütun sayısı 2 ≠ satır sayısı 3. Çarpılamaz.</p>
-</div>
-
-<div class="card">
-  <div class="card-header">
-    <span class="card-title">CA</span>
-    <span class="tag">3×2</span>
-  </div>
+  <div class="card-header"><span class="card-title">$CA$</span><span class="tag">$3\times 2$</span></div>
   <div class="step">
-    (1,1): 0(−1)+1(0) = 0, &nbsp; (1,2): 0(1)+1(−1) = −1<br>
-    (2,1): (−1)(−1)+2(0) = 1, &nbsp; (2,2): (−1)(1)+2(−1) = −3<br>
-    (3,1): 1(−1)+(−2)(0) = −1, &nbsp; (3,2): 1(1)+(−2)(−1) = 3
+    $(1,1){:}\;0(-1)+1(0)=0$ &nbsp; $(1,2){:}\;0(1)+1(-1)=-1$<br>
+    $(2,1){:}\;(-1)(-1)+2(0)=1$ &nbsp; $(2,2){:}\;(-1)(1)+2(-1)=-3$<br>
+    $(3,1){:}\;1(-1)+(-2)(0)=-1$ &nbsp; $(3,2){:}\;1(1)+(-2)(-1)=3$
   </div>
-  <div class="mw">
-    <span class="ml">CA =</span>
-    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>0</td><td>−1</td></tr><tr><td>1</td><td>−3</td></tr><tr><td>−1</td><td>3</td></tr></table></div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-header">
-    <span class="card-title">BC</span>
-    <span class="tag">2×2</span>
-  </div>
-  <div class="step">
-    (1,1): (−1)(0)+1(−1)+0(1) = −1<br>
-    (1,2): (−1)(1)+1(2)+0(−2) = 1<br>
-    (2,1): (−2)(0)+(−3)(−1)+2(1) = 5<br>
-    (2,2): (−2)(1)+(−3)(2)+2(−2) = −12
-  </div>
-  <div class="mw">
-    <span class="ml">BC =</span>
-    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−1</td><td>1</td></tr><tr><td>5</td><td>−12</td></tr></table></div>
+  <div class="mw"><span class="ml">$CA$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+      <table><tr><td>0</td><td>−1</td></tr><tr><td>1</td><td>−3</td></tr><tr><td>−1</td><td>3</td></tr></table>
+    </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">CB</span>
-    <span class="tag">3×3</span>
-  </div>
+  <div class="card-header"><span class="card-title">$BC$</span><span class="tag">$2\times 2$</span></div>
   <div class="step">
-    (1,1): 0(−1)+1(−2)=−2, (1,2): 0(1)+1(−3)=−3, (1,3): 0(0)+1(2)=2<br>
-    (2,1): (−1)(−1)+2(−2)=−3, (2,2): (−1)(1)+2(−3)=−7, (2,3): (−1)(0)+2(2)=4<br>
-    (3,1): 1(−1)+(−2)(−2)=3, (3,2): 1(1)+(−2)(−3)=7, (3,3): 1(0)+(−2)(2)=−4
+    $(1,1){:}\;(-1)(0)+1(-1)+0(1)=-1$ &nbsp; $(1,2){:}\;(-1)(1)+1(2)+0(-2)=1$<br>
+    $(2,1){:}\;(-2)(0)+(-3)(-1)+2(1)=5$ &nbsp; $(2,2){:}\;(-2)(1)+(-3)(2)+2(-2)=-12$
   </div>
-  <div class="mw">
-    <span class="ml">CB =</span>
-    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−2</td><td>−3</td><td>2</td></tr><tr><td>−3</td><td>−7</td><td>4</td></tr><tr><td>3</td><td>7</td><td>−4</td></tr></table></div>
+  <div class="mw"><span class="ml">$BC$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+      <table><tr><td>−1</td><td>1</td></tr><tr><td>5</td><td>−12</td></tr></table>
+    </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">ABC = (AB)·C</span>
-    <span class="tag">2×2</span>
-  </div>
+  <div class="card-header"><span class="card-title">$CB$</span><span class="tag">$3\times 3$</span></div>
   <div class="step">
-    AB yukarıda bulundu. (AB)·C hesaplıyoruz:<br><br>
-    (1,1): (−1)(0)+(−4)(−1)+2(1) = 0+4+2 = 6<br>
-    (1,2): (−1)(1)+(−4)(2)+2(−2) = −1−8−4 = −13<br>
-    (2,1): 2(0)+3(−1)+(−2)(1) = −3−2 = −5<br>
-    (2,2): 2(1)+3(2)+(−2)(−2) = 2+6+4 = 12
+    $(1,1){:}\;0(-1)+1(-2)=-2$ &nbsp; $(1,2){:}\;0(1)+1(-3)=-3$ &nbsp; $(1,3){:}\;0(0)+1(2)=2$<br>
+    $(2,1){:}\;(-1)(-1)+2(-2)=-3$ &nbsp; $(2,2){:}\;(-1)(1)+2(-3)=-7$ &nbsp; $(2,3){:}\;(-1)(0)+2(2)=4$<br>
+    $(3,1){:}\;1(-1)+(-2)(-2)=3$ &nbsp; $(3,2){:}\;1(1)+(-2)(-3)=7$ &nbsp; $(3,3){:}\;1(0)+(-2)(2)=-4$
   </div>
-  <div class="mw">
-    <span class="ml">ABC =</span>
-    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>6</td><td>−13</td></tr><tr><td>−5</td><td>12</td></tr></table></div>
+  <div class="mw"><span class="ml">$CB$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+      <table><tr><td>−2</td><td>−3</td><td>2</td></tr><tr><td>−3</td><td>−7</td><td>4</td></tr><tr><td>3</td><td>7</td><td>−4</td></tr></table>
+    </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">AC<sup>T</sup></span>
-    <span class="tag">2×3</span>
-  </div>
+  <div class="card-header"><span class="card-title">$ABC = (AB)\cdot C$</span><span class="tag">$2\times 2$</span></div>
   <div class="step">
-    <div class="step-label">C<sup>T</sup> hesapla</div>
+    $(1,1){:}\;(-1)(0)+(-4)(-1)+2(1)=6$ &nbsp; $(1,2){:}\;(-1)(1)+(-4)(2)+2(-2)=-13$<br>
+    $(2,1){:}\;2(0)+3(-1)+(-2)(1)=-5$ &nbsp; $(2,2){:}\;2(1)+3(2)+(-2)(-2)=12$
+  </div>
+  <div class="mw"><span class="ml">$ABC$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+      <table><tr><td>6</td><td>−13</td></tr><tr><td>−5</td><td>12</td></tr></table>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="card-title">$AC^T$</span><span class="tag">$2\times 3$</span></div>
+  <div class="step">
+    <div class="step-label">$C^T$ hesapla</div>
     <div class="mw">
-      <span class="ml">C<sup>T</sup> =</span>
-      <div class="mb"><table><tr><td>0</td><td>−1</td><td>1</td></tr><tr><td>1</td><td>2</td><td>−2</td></tr></table></div>
+      <span class="ml">$C^T$ =</span>
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td>−1</td><td>1</td></tr>
+        <tr><td>1</td><td>2</td><td>−2</td></tr>
+      </table></div>
       <span class="ms">2×3</span>
     </div>
-    <br>
-    (1,1): (−1)(0)+1(1) = 1, &nbsp; (1,2): (−1)(−1)+1(2) = 3, &nbsp; (1,3): (−1)(1)+1(−2) = −3<br>
-    (2,1): 0(0)+(−1)(1) = −1, &nbsp; (2,2): 0(−1)+(−1)(2) = −2, &nbsp; (2,3): 0(1)+(−1)(−2) = 2
+    $(1,1){:}\;(-1)(0)+1(1)=1$ &nbsp; $(1,2){:}\;(-1)(-1)+1(2)=3$ &nbsp; $(1,3){:}\;(-1)(1)+1(-2)=-3$<br>
+    $(2,1){:}\;0(0)+(-1)(1)=-1$ &nbsp; $(2,2){:}\;0(-1)+(-1)(2)=-2$ &nbsp; $(2,3){:}\;0(1)+(-1)(-2)=2$
   </div>
-  <div class="mw">
-    <span class="ml">AC<sup>T</sup> =</span>
-    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>1</td><td>3</td><td>−3</td></tr><tr><td>−1</td><td>−2</td><td>2</td></tr></table></div>
+  <div class="mw"><span class="ml">$AC^T$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+      <table><tr><td>1</td><td>3</td><td>−3</td></tr><tr><td>−1</td><td>−2</td><td>2</td></tr></table>
+    </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="card-title">B<sup>T</sup>A<sup>T</sup> = (AB)<sup>T</sup></span>
-    <span class="tag">3×2</span>
-  </div>
+  <div class="card-header"><span class="card-title">$B^T A^T = (AB)^T$</span><span class="tag">$3\times 2$</span></div>
   <div class="step">
-    <div class="step-label">Kısa yol: (AB)<sup>T</sup> özelliğini kullan</div>
-    B<sup>T</sup>A<sup>T</sup> = (AB)<sup>T</sup>. AB'yi zaten bulduk, transpozunu alalım.
+    <div class="step-label">Kısa yol: $(AB)^T$ özelliğini kullan</div>
+    $B^T A^T = (AB)^T$. $AB$'yi zaten bulduk, transpozunu alalım.
   </div>
   <div class="mw">
-    <span class="ml">AB =</span>
-    <div class="mb"><table><tr><td>−1</td><td>−4</td><td>2</td></tr><tr><td>2</td><td>3</td><td>−2</td></tr></table></div>
-    <span class="ml" style="margin:0 .5rem;">→</span>
-    <span class="ml">B<sup>T</sup>A<sup>T</sup> = (AB)<sup>T</sup> =</span>
-    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table><tr><td>−1</td><td>2</td></tr><tr><td>−4</td><td>3</td></tr><tr><td>2</td><td>−2</td></tr></table></div>
+    <span class="ml">$AB$ =</span>
+    <div class="mb"><table>
+      <tr><td>−1</td><td>−4</td><td>2</td></tr>
+      <tr><td>2</td><td>3</td><td>−2</td></tr>
+    </table></div>
+    <span class="ml">→</span>
+    <span class="ml">$(AB)^T$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+      <table><tr><td>−1</td><td>2</td></tr><tr><td>−4</td><td>3</td></tr><tr><td>2</td><td>−2</td></tr></table>
+    </div>
   </div>
   <div class="note">Transpoz özelliği sayesinde tekrar çarpmaya gerek kalmadı!</div>
 </div>

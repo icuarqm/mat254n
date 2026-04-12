@@ -19,9 +19,9 @@
 <div class="section-title"><span>1️⃣</span> Köşegen Matris (Diagonal)</div>
 
 <div class="def-box" data-label="Tanım — Köşegen Matris">
-  <p>Kare matris A'da köşegen dışı tüm girişler sıfır ise A'ya <strong>köşegen matris</strong> denir.</p>
-  <div class="formula">A<sub>ij</sub> = 0 &nbsp; tüm i ≠ j için</div>
-  <p style="margin-top:.4rem;">Gösterim: <strong>diag(d₁, d₂, …, dₙ)</strong></p>
+  <p>Kare matris $A$'da köşegen dışı tüm girişler sıfır ise $A$'ya <strong>köşegen matris</strong> denir.</p>
+  <div class="formula">$$A_{ij} = 0 \quad \forall\, i \neq j$$</div>
+  <p style="margin-top:.4rem;">Gösterim: $\operatorname{diag}(d_1, d_2, \ldots, d_n)$</p>
 </div>
 
 <div class="card ex">
@@ -36,7 +36,7 @@
       <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
       <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">2</td></tr>
     </table></div>
-    <span class="ml">= diag(−1, 0, 1, 2)</span>
+    <span class="ml">$= \operatorname{diag}(-1,\; 0,\; 1,\; 2)$</span>
   </div>
 </div>
 
@@ -45,7 +45,7 @@
 
 <div class="def-box" data-label="Tanım — Skaler Matris">
   <p>Köşegen matrisin tüm köşegen girişleri <strong>aynı</strong> ise buna <strong>skaler matris</strong> denir.</p>
-  <div class="formula">D = diag(d, d, …, d) = d · I</div>
+  <div class="formula">$$D = \operatorname{diag}(d, d, \ldots, d) = d \cdot I$$</div>
 </div>
 
 <div class="card note-card">
@@ -53,22 +53,22 @@
     <span class="card-title">Örnekler</span>
     <span class="tag note-t">Not</span>
   </div>
-  <p><strong>Birim matris I</strong> = diag(1,1,…,1) → skaler matris (d=1).</p>
-  <p><strong>Sıfır matris O</strong> = diag(0,0,…,0) → skaler matris (d=0).</p>
-  <div class="note">Her skaler matris d·I formundadır. Ödev 3'te bulduğumuz "herkesle komüt eden matris" buydu!</div>
+  <p><strong>Birim matris $I$</strong> $= \operatorname{diag}(1,1,\ldots,1)$ → skaler matris ($d=1$).</p>
+  <p><strong>Sıfır matris $O$</strong> $= \operatorname{diag}(0,0,\ldots,0)$ → skaler matris ($d=0$).</p>
+  <div class="note">Her skaler matris $d \cdot I$ formundadır. Ödev 3'te bulduğumuz "herkesle komüt eden matris" buydu!</div>
 </div>
 
 <!-- ═══════════════ 3) ÜÇGEN MATRİSLER ═══════════════ -->
 <div class="section-title"><span>3️⃣</span> Üçgen Matrisler (Triangular)</div>
 
 <div class="def-box" data-label="Tanım — Üst Üçgen">
-  <p>Kare matris A'da köşegenin <strong>altındaki</strong> tüm girişler sıfır ise A <strong>üst üçgen matris</strong>tir.</p>
-  <div class="formula">A<sub>ij</sub> = 0 &nbsp; tüm i > j için</div>
+  <p>Kare matris $A$'da köşegenin <strong>altındaki</strong> tüm girişler sıfır ise $A$ <strong>üst üçgen matris</strong>tir.</p>
+  <div class="formula">$$A_{ij} = 0 \quad \forall\, i > j$$</div>
 </div>
 
 <div class="def-box" data-label="Tanım — Alt Üçgen">
-  <p>Kare matris A'da köşegenin <strong>üstündeki</strong> tüm girişler sıfır ise A <strong>alt üçgen matris</strong>tir.</p>
-  <div class="formula">A<sub>ij</sub> = 0 &nbsp; tüm j > i için</div>
+  <p>Kare matris $A$'da köşegenin <strong>üstündeki</strong> tüm girişler sıfır ise $A$ <strong>alt üçgen matris</strong>tir.</p>
+  <div class="formula">$$A_{ij} = 0 \quad \forall\, j > i$$</div>
 </div>
 
 <div class="card ex">
@@ -79,18 +79,22 @@
   <div class="examples-grid">
     <div class="ex-item">
       <div class="label yes">Üst Üçgen</div>
-      <div class="mb" style="border-color:#2e7d32;"><table>
-        <tr><td>2</td><td>−1</td><td>1</td></tr>
-        <tr><td class="zero-cell">0</td><td>−1</td><td>0</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>3</td></tr>
-      </table></div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="diag">2</td><td>−1</td><td>1</td></tr>
+          <tr><td class="zero-cell">0</td><td class="diag">−1</td><td>0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">3</td></tr>
+        </table></div>
+      </div>
     </div>
     <div class="ex-item">
       <div class="label yes">Alt Üçgen</div>
-      <div class="mb" style="border-color:#2e7d32;"><table>
-        <tr><td>4</td><td class="zero-cell">0</td></tr>
-        <tr><td>1</td><td>−1</td></tr>
-      </table></div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="diag">4</td><td class="zero-cell">0</td></tr>
+          <tr><td>1</td><td class="diag">−1</td></tr>
+        </table></div>
+      </div>
     </div>
   </div>
 </div>
@@ -101,24 +105,22 @@
     <span class="tag prop">Özellik</span>
   </div>
   <p><strong>Köşegen matris</strong> hem üst hem alt üçgendir (ikisinin kesişimi).</p>
-  <p style="margin-top:.4rem;">
-    Üst üçgen matrislerin kümesi <strong>kapalıdır</strong>: toplama, skaler çarpma ve matris çarpımı altında. Aynı özellik alt üçgen matrisler için de geçerlidir. Yani iki üst üçgen matrisin toplamı veya çarpımı yine üst üçgen bir matristir.
-  </p>
+  <p style="margin-top:.4rem;">Üst üçgen matrislerin kümesi <strong>kapalıdır</strong>: toplama, skaler çarpma ve matris çarpımı altında. Aynı özellik alt üçgen matrisler için de geçerlidir. Yani iki üst üçgen matrisin toplamı veya çarpımı yine üst üçgen bir matristir.</p>
 </div>
 
 <!-- ═══════════════ 4) SİMETRİK & TERS SİMETRİK ═══════════════ -->
 <div class="section-title"><span>4️⃣</span> Simetrik & Ters-Simetrik Matrisler</div>
 
 <div class="def-box" data-label="Tanım — Simetrik">
-  <p><strong>A<sup>T</sup> = A</strong> ise A'ya <strong>simetrik matris</strong> denir.</p>
-  <div class="formula">A<sub>ij</sub> = A<sub>ji</sub> &nbsp; tüm i, j için</div>
+  <p>$A^T = A$ ise $A$'ya <strong>simetrik matris</strong> denir.</p>
+  <div class="formula">$$A_{ij} = A_{ji} \quad \forall\, i, j$$</div>
   <div class="note">Ana köşegen etrafında ayna görüntüsü. Kare matris olmak zorunda.</div>
 </div>
 
 <div class="def-box" data-label="Tanım — Ters-Simetrik (Skew)">
-  <p><strong>A<sup>T</sup> = −A</strong> ise A'ya <strong>ters-simetrik (skew-symmetric)</strong> denir.</p>
-  <div class="formula">A<sub>ij</sub> = −A<sub>ji</sub> &nbsp; tüm i, j için</div>
-  <div class="note">Köşegen girişleri zorunlu olarak 0 (çünkü A<sub>ii</sub> = −A<sub>ii</sub> → A<sub>ii</sub> = 0).</div>
+  <p>$A^T = -A$ ise $A$'ya <strong>ters-simetrik (skew-symmetric)</strong> denir.</p>
+  <div class="formula">$$A_{ij} = -A_{ji} \quad \forall\, i, j$$</div>
+  <div class="note">Köşegen girişleri zorunlu olarak 0 (çünkü $A_{ii} = -A_{ii} \Rightarrow A_{ii} = 0$).</div>
 </div>
 
 <div class="card ex">
@@ -129,38 +131,46 @@
   <div class="examples-grid">
     <div class="ex-item">
       <div class="label yes">Simetrik ✓</div>
-      <div class="mb" style="border-color:#2e7d32;"><table>
-        <tr><td>1</td><td>2</td><td>3</td></tr>
-        <tr><td>2</td><td>4</td><td>5</td></tr>
-        <tr><td>3</td><td>5</td><td>6</td></tr>
-      </table></div>
-      <div style="font-size:.8rem;color:var(--muted);">A₁₂=A₂₁=2, A₁₃=A₃₁=3, …</div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="diag">1</td><td>2</td><td>3</td></tr>
+          <tr><td>2</td><td class="diag">4</td><td>5</td></tr>
+          <tr><td>3</td><td>5</td><td class="diag">6</td></tr>
+        </table></div>
+      </div>
+      <div style="font-size:.8rem;color:var(--muted);">$A_{12}=A_{21}=2,\; A_{13}=A_{31}=3, \ldots$</div>
     </div>
     <div class="ex-item">
       <div class="label yes">Ters-Simetrik ✓</div>
-      <div class="mb" style="border-color:#2e7d32;"><table>
-        <tr><td>0</td><td>1</td></tr>
-        <tr><td>−1</td><td>0</td></tr>
-      </table></div>
-      <div style="font-size:.8rem;color:var(--muted);">A₁₂=1, A₂₁=−1, köşegen=0</div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="zero-cell">0</td><td>1</td></tr>
+          <tr><td>−1</td><td class="zero-cell">0</td></tr>
+        </table></div>
+      </div>
+      <div style="font-size:.8rem;color:var(--muted);">$A_{12}=1,\; A_{21}=-1$, köşegen $=0$</div>
     </div>
     <div class="ex-item">
       <div class="label no">Hiçbiri ✗</div>
-      <div class="mb" style="border-color:#c62828;"><table>
-        <tr><td>−1</td><td>1</td><td>0</td></tr>
-        <tr><td>−1</td><td>2</td><td>−4</td></tr>
-        <tr><td>0</td><td>4</td><td>−3</td></tr>
-      </table></div>
-      <div style="font-size:.8rem;color:var(--muted);">A₁₂=1 ≠ A₂₁=−1, A₁₂≠−A₂₁</div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="diag">−1</td><td>1</td><td class="zero-cell">0</td></tr>
+          <tr><td>−1</td><td class="diag">2</td><td>−4</td></tr>
+          <tr><td class="zero-cell">0</td><td>4</td><td class="diag">−3</td></tr>
+        </table></div>
+      </div>
+      <div style="font-size:.8rem;color:var(--muted);">$A_{12}=1 \neq A_{21}=-1$, $A_{12}\neq -A_{21}$</div>
     </div>
     <div class="ex-item">
       <div class="label no">Hiçbiri ✗</div>
-      <div class="mb" style="border-color:#c62828;"><table>
-        <tr><td>1</td><td>2</td><td>3</td></tr>
-        <tr><td>4</td><td>5</td><td>6</td></tr>
-        <tr><td>7</td><td>8</td><td>5</td></tr>
-      </table></div>
-      <div style="font-size:.8rem;color:var(--muted);">A₁₂=2 ≠ A₂₁=4</div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="diag">1</td><td>2</td><td>3</td></tr>
+          <tr><td>4</td><td class="diag">5</td><td>6</td></tr>
+          <tr><td>7</td><td>8</td><td class="diag">5</td></tr>
+        </table></div>
+      </div>
+      <div style="font-size:.8rem;color:var(--muted);">$A_{12}=2 \neq A_{21}=4$</div>
     </div>
   </div>
 </div>
@@ -169,7 +179,7 @@
 <div class="section-title"><span>5️⃣</span> Echelon (Basamak) Matrisleri</div>
 
 <div class="def-box" data-label="Tanım — Öncü Giriş (Leading Entry)">
-  <p>Bir satırdaki <strong>ilk sıfırdan farklı</strong> giriş o satırın <strong>öncü girişi (leading entry)</strong> dir. Tüm girişler sıfırsa o satırın öncü girişi yoktur.</p>
+  <p>Bir satırdaki <strong>ilk sıfırdan farklı</strong> giriş o satırın <strong>öncü girişi (leading entry)</strong>dir. Tüm girişler sıfırsa o satırın öncü girişi yoktur.</p>
 </div>
 
 <div class="card ex">
@@ -185,18 +195,18 @@
       <tr><td class="lead">1</td><td class="zero-cell">0</td><td>2</td><td>3</td></tr>
     </table></div>
   </div>
-  <div class="note">Kırmızı ile işaretli hücreler öncü girişler. 3. satırın öncü girişi yok (tamamen sıfır).</div>
+  <div class="note">Kırmızı ile işaretli girişler öncü girişler. 3. satırın öncü girişi yok (tamamen sıfır).</div>
 </div>
 
 <div class="def-box" data-label="Tanım — Echelon Matris">
   <p>Bir matris <strong>echelon (basamak) formu</strong>ndadır eğer:</p>
-  <p style="margin-top:.3rem;"><strong>1)</strong> Her satırın öncü girişi, bir üst satırınkinden <strong>daha sağda</strong>: j₁ < j₂ < ⋯ < jᵣ</p>
+  <p style="margin-top:.3rem;"><strong>1)</strong> Her satırın öncü girişi, bir üst satırınkinden <strong>daha sağda</strong>: $j_1 < j_2 < \cdots < j_r$</p>
   <p><strong>2)</strong> Tamamen sıfır olan satırlar (varsa) en <strong>altta</strong></p>
 </div>
 
 <div class="def-box" data-label="Tanım — Satır-İndirgenmiş Echelon (RREF)">
   <p>Bir echelon matris ayrıca şunları sağlıyorsa <strong>satır-indirgenmiş echelon (RREF)</strong> formudur:</p>
-  <p style="margin-top:.3rem;"><strong>i)</strong> Her öncü giriş = <strong>1</strong></p>
+  <p style="margin-top:.3rem;"><strong>i)</strong> Her öncü giriş $= 1$</p>
   <p><strong>ii)</strong> Her öncü giriş, kendi sütunundaki <strong>tek sıfırdan farklı</strong> eleman (üstü de altı da 0)</p>
 </div>
 
@@ -208,39 +218,47 @@
   <div class="examples-grid">
     <div class="ex-item">
       <div class="label" style="color:#e65100;">Echelon ama RREF değil</div>
-      <div class="mb"><table>
-        <tr><td class="lead">4</td><td>1</td><td>2</td><td>3</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">2</td><td>1</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td></tr>
-      </table></div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="lead">4</td><td>1</td><td>2</td><td>3</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">2</td><td>1</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td></tr>
+        </table></div>
+      </div>
       <div style="font-size:.78rem;color:var(--muted);">Öncüler 1 değil, sütunlarda başka sıfır-dışı var</div>
     </div>
     <div class="ex-item">
       <div class="label no">Echelon DEĞİL</div>
-      <div class="mb" style="border-color:#c62828;"><table>
-        <tr><td class="lead">1</td><td>3</td><td>4</td></tr>
-        <tr><td class="zero-cell">0</td><td class="lead">2</td><td>5</td></tr>
-        <tr><td class="zero-cell">0</td><td class="lead">1</td><td>2</td></tr>
-      </table></div>
-      <div style="font-size:.78rem;color:var(--muted);">2. ve 3. satır öncüleri aynı sütunda (j₂ = j₃ = 2)</div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="lead">1</td><td>3</td><td>4</td></tr>
+          <tr><td class="zero-cell">0</td><td class="lead">2</td><td>5</td></tr>
+          <tr><td class="zero-cell">0</td><td class="lead">1</td><td>2</td></tr>
+        </table></div>
+      </div>
+      <div style="font-size:.78rem;color:var(--muted);">2. ve 3. satır öncüleri aynı sütunda ($j_2 = j_3 = 2$)</div>
     </div>
     <div class="ex-item">
       <div class="label" style="color:#e65100;">Echelon ama RREF değil</div>
-      <div class="mb"><table>
-        <tr><td class="lead">1</td><td>2</td><td>3</td><td>4</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td><td>2</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td></tr>
-      </table></div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="lead">1</td><td>2</td><td>3</td><td>4</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td><td>2</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td></tr>
+        </table></div>
+      </div>
       <div style="font-size:.78rem;color:var(--muted);">Öncüler=1 ✓ ama 3. sütunda 3 girişi de var (tek değil)</div>
     </div>
     <div class="ex-item">
       <div class="label rref">RREF ✓</div>
-      <div class="mb" style="border-color:#1565c0;"><table>
-        <tr><td class="zero-cell">0</td><td class="lead">1</td><td>−1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td><td class="zero-cell">0</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">1</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
-      </table></div>
+      <div class="mw" style="justify-content:center;">
+        <div class="mb"><table>
+          <tr><td class="zero-cell">0</td><td class="diag">1</td><td>−1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        </table></div>
+      </div>
       <div style="font-size:.78rem;color:var(--muted);">Öncüler=1 ✓ her öncü sütununda tek ✓ sıfır satır altta ✓</div>
     </div>
   </div>
@@ -253,15 +271,15 @@
   <p>
     <strong>Skaler matris</strong> ⊂ <strong>Köşegen matris</strong> ⊂ <strong>Hem üst hem alt üçgen</strong>
     <br><br>
-    <strong>Köşegen:</strong> Köşegen dışı her yer 0. Gösterim: diag(d₁,…,dₙ).
+    <strong>Köşegen:</strong> Köşegen dışı her yer 0. Gösterim: $\operatorname{diag}(d_1, \ldots, d_n)$.
     <br>
-    <strong>Skaler:</strong> Köşegen + tüm köşegen değerleri aynı → d·I.
+    <strong>Skaler:</strong> Köşegen + tüm köşegen değerleri aynı → $d \cdot I$.
     <br>
-    <strong>Üst üçgen:</strong> Köşegenin altı 0. Alt üçgen: köşegenin üstü 0.
+    <strong>Üst üçgen:</strong> $A_{ij}=0$ için $i > j$. Alt üçgen: $A_{ij}=0$ için $j > i$.
     <br>
-    <strong>Simetrik:</strong> A<sup>T</sup>=A (ayna). Ters-simetrik: A<sup>T</sup>=−A (köşegen zorunlu 0).
+    <strong>Simetrik:</strong> $A^T = A$ (ayna). Ters-simetrik: $A^T = -A$ (köşegen zorunlu 0).
     <br><br>
-    <strong>Echelon:</strong> Öncü girişler sola sağa merdiven gibi iner, sıfır satırlar altta.
+    <strong>Echelon:</strong> Öncü girişler soldan sağa merdiven gibi iner, sıfır satırlar altta.
     <br>
     <strong>RREF:</strong> Echelon + öncüler 1 + her öncü sütununda tek sıfır-dışı eleman.
     <br>

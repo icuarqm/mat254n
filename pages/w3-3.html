@@ -19,15 +19,15 @@
 <div class="section-title"><span>📐</span> Tanımlar</div>
 
 <div class="def-box" data-label="Tanım — Sol & Sağ Ters">
-  <p>A bir matris olsun.</p>
-  <p style="margin-top:.4rem;"><strong>Sol ters:</strong> Eğer bir A′ matrisi varsa ve <span class="formula" style="margin:0;">A′A = I</span> ise, A'nın <strong>sol tersi</strong> vardır denir.</p>
-  <p style="margin-top:.4rem;"><strong>Sağ ters:</strong> Eğer bir A′ matrisi varsa ve <span class="formula" style="margin:0;">AA′ = I</span> ise, A'nın <strong>sağ tersi</strong> vardır denir.</p>
+  <p>$A$ bir matris olsun.</p>
+  <p style="margin-top:.4rem;"><strong>Sol ters:</strong> Eğer bir $A'$ matrisi varsa ve $A'A = I$ ise, $A$'nın <strong>sol tersi</strong> vardır denir.</p>
+  <p style="margin-top:.4rem;"><strong>Sağ ters:</strong> Eğer bir $A'$ matrisi varsa ve $AA' = I$ ise, $A$'nın <strong>sağ tersi</strong> vardır denir.</p>
 </div>
 
 <div class="def-box" data-label="Tanım — Tersinir Matris">
-  <p>Bir matris A'ya <strong>tersinir (invertible)</strong> denir, eğer bir A′ matrisi varsa ve:</p>
-  <div class="formula">AA′ = A′A = I</div>
-  <p style="margin-top:.4rem;">Eğer A tersinir <strong>değilse</strong>, A'ya <strong>tekil (singular)</strong> matris denir.</p>
+  <p>Bir matris $A$'ya <strong>tersinir (invertible)</strong> denir, eğer bir $A'$ matrisi varsa ve:</p>
+  <div class="formula">$$AA' = A'A = I$$</div>
+  <p style="margin-top:.4rem;">Eğer $A$ tersinir <strong>değilse</strong>, $A$'ya <strong>tekil (singular)</strong> matris denir.</p>
 </div>
 
 <!-- ═══════════════ NOTLAR ═══════════════ -->
@@ -40,7 +40,7 @@
   </div>
   <div class="prop-list">
     <div class="prop-item"><span class="prop-label">i)</span> Tersinir matris <strong>kare</strong> olmak zorundadır.</div>
-    <div class="prop-item"><span class="prop-label">ii)</span> A tersinir ise, A′'ye A'nın <strong>tersi</strong> denir ve <span class="formula" style="margin:0;font-size:.85rem;">A⁻¹</span> ile gösterilir.</div>
+    <div class="prop-item"><span class="prop-label">ii)</span> $A$ tersinir ise, $A'$'ye $A$'nın <strong>tersi</strong> denir ve $A^{-1}$ ile gösterilir.</div>
     <div class="prop-item"><span class="prop-label">iii)</span> Tersinir bir matrisin tersi <strong>tektir</strong> (unique).</div>
   </div>
 </div>
@@ -49,39 +49,35 @@
 <div class="section-title"><span>⚡</span> Çarpımın Tersi</div>
 
 <div class="def-box" data-label="Özellik">
-  <p>A₁, A₂, …, Aₙ tersinir matrisler ise, çarpımları A₁A₂···Aₙ de tersinir olup tersi:</p>
-  <div class="formula">(A₁ A₂ ··· Aₙ)⁻¹ = Aₙ⁻¹ Aₙ₋₁⁻¹ ··· A₁⁻¹</div>
+  <p>$A_1, A_2, \ldots, A_n$ tersinir matrisler ise, çarpımları $A_1 A_2 \cdots A_n$ de tersinir olup tersi:</p>
+  <div class="formula">$$(A_1 A_2 \cdots A_n)^{-1} = A_n^{-1} A_{n-1}^{-1} \cdots A_1^{-1}$$</div>
   <div class="note">Sıra tersine dönüyor! Transpoz kuralıyla aynı mantık (çorap-ayakkabı).</div>
 </div>
 
-<!-- ═══════════════ İSPAT ═══════════════ -->
-
 <div class="card proof">
   <div class="card-header">
-    <span class="card-title">İspat — n = 2 durumu</span>
+    <span class="card-title">İspat — $n = 2$ durumu</span>
     <span class="tag proof-t">İspat</span>
   </div>
   <div class="step blue">
     <div class="step-label blue">Varsayım</div>
-    A₁ ve A₂ tersinir, tersleri A₁⁻¹ ve A₂⁻¹. <br>
-    <strong>İddia:</strong> (A₁A₂)⁻¹ = A₂⁻¹A₁⁻¹
+    $A_1$ ve $A_2$ tersinir, tersleri $A_1^{-1}$ ve $A_2^{-1}$.<br>
+    <strong>İddia:</strong> $(A_1 A_2)^{-1} = A_2^{-1} A_1^{-1}$
   </div>
   <div class="step blue">
-    <div class="step-label blue">Sağdan kontrol: (A₁A₂)(A₂⁻¹A₁⁻¹) = ?</div>
-    <div class="formula">(A₁A₂)(A₂⁻¹A₁⁻¹) = A₁(A₂A₂⁻¹)A₁⁻¹ = A₁ · I · A₁⁻¹ = A₁A₁⁻¹ = I</div>
+    <div class="step-label blue">Sağdan kontrol: $(A_1 A_2)(A_2^{-1} A_1^{-1}) = ?$</div>
+    <div class="formula">$$(A_1 A_2)(A_2^{-1} A_1^{-1}) = A_1(A_2 A_2^{-1})A_1^{-1} = A_1 \cdot I \cdot A_1^{-1} = A_1 A_1^{-1} = I$$</div>
   </div>
   <div class="step blue">
-    <div class="step-label blue">Soldan kontrol: (A₂⁻¹A₁⁻¹)(A₁A₂) = ?</div>
-    <div class="formula">(A₂⁻¹A₁⁻¹)(A₁A₂) = A₂⁻¹(A₁⁻¹A₁)A₂ = A₂⁻¹ · I · A₂ = A₂⁻¹A₂ = I</div>
+    <div class="step-label blue">Soldan kontrol: $(A_2^{-1} A_1^{-1})(A_1 A_2) = ?$</div>
+    <div class="formula">$$(A_2^{-1} A_1^{-1})(A_1 A_2) = A_2^{-1}(A_1^{-1} A_1)A_2 = A_2^{-1} \cdot I \cdot A_2 = A_2^{-1} A_2 = I$$</div>
   </div>
-  <div class="qed-box">Her iki taraf da I verdi → (A₁A₂)⁻¹ = A₂⁻¹A₁⁻¹. ∎</div>
-  <div class="note">Genel durum (n matris) tümevarım (induction) ile gösterilir.</div>
+  <div class="qed-box">Her iki taraf da $I$ verdi $\;\Rightarrow\; (A_1 A_2)^{-1} = A_2^{-1} A_1^{-1}$. ∎</div>
+  <div class="note">Genel durum ($n$ matris) tümevarım (induction) ile gösterilir.</div>
 </div>
 
-<!-- ═══════════════ EXERCISE: İNDÜKSİYON İSPATI ═══════════════ -->
-
 <div class="q-box" data-label="Alıştırma — İndüksiyon">
-  <p>Genel durumu (n matris) <strong>tümevarımla</strong> ispatlayın.</p>
+  <p>Genel durumu ($n$ matris) <strong>tümevarımla</strong> ispatlayın.</p>
 </div>
 
 <div class="card hw">
@@ -90,25 +86,25 @@
     <span class="tag hw-t">İspat</span>
   </div>
   <div class="step purple">
-    <div class="step-label purple">Taban adımı (n = 1)</div>
-    Tek matris A₁ tersinir ise (A₁)⁻¹ = A₁⁻¹. Açıkça doğru.
+    <div class="step-label purple">Taban adımı ($n = 1$)</div>
+    Tek matris $A_1$ tersinir ise $(A_1)^{-1} = A_1^{-1}$. Açıkça doğru.
   </div>
   <div class="step purple">
-    <div class="step-label purple">Taban adımı (n = 2)</div>
-    Yukarıda gösterildi: (A₁A₂)⁻¹ = A₂⁻¹A₁⁻¹. ✓
+    <div class="step-label purple">Taban adımı ($n = 2$)</div>
+    Yukarıda gösterildi: $(A_1 A_2)^{-1} = A_2^{-1} A_1^{-1}$. ✓
   </div>
   <div class="step purple">
     <div class="step-label purple">İndüksiyon hipotezi</div>
-    n = k için doğru kabul et: (A₁A₂···Aₖ)⁻¹ = Aₖ⁻¹···A₂⁻¹A₁⁻¹.
+    $n = k$ için doğru kabul et: $(A_1 A_2 \cdots A_k)^{-1} = A_k^{-1} \cdots A_2^{-1} A_1^{-1}$.
   </div>
   <div class="step purple">
-    <div class="step-label purple">İndüksiyon adımı (n = k+1)</div>
-    <p>B = A₁A₂···Aₖ olarak tanımla. O zaman:</p>
-    <div class="formula">A₁A₂···AₖAₖ₊₁ = B · Aₖ₊₁</div>
-    <p style="margin-top:.3rem;">B tersinir (hipotez gereği), Aₖ₊₁ tersinir (varsayım). İki tersinir matrisin çarpımı tersinir (n=2 durumu) ve:</p>
-    <div class="formula">(B · Aₖ₊₁)⁻¹ = Aₖ₊₁⁻¹ · B⁻¹ = Aₖ₊₁⁻¹ · Aₖ⁻¹ ··· A₂⁻¹A₁⁻¹</div>
+    <div class="step-label purple">İndüksiyon adımı ($n = k+1$)</div>
+    <p>$B = A_1 A_2 \cdots A_k$ olarak tanımla. O zaman:</p>
+    <div class="formula">$$A_1 A_2 \cdots A_k A_{k+1} = B \cdot A_{k+1}$$</div>
+    <p style="margin-top:.3rem;">$B$ tersinir (hipotez gereği), $A_{k+1}$ tersinir (varsayım). İki tersinir matrisin çarpımı tersinir ($n=2$ durumu) ve:</p>
+    <div class="formula">$$(B \cdot A_{k+1})^{-1} = A_{k+1}^{-1} \cdot B^{-1} = A_{k+1}^{-1} \cdot A_k^{-1} \cdots A_2^{-1} A_1^{-1}$$</div>
   </div>
-  <div class="qed-box">Tümevarım tamamlandı. Tüm n ≥ 1 için (A₁···Aₙ)⁻¹ = Aₙ⁻¹···A₁⁻¹. ∎</div>
+  <div class="qed-box">Tümevarım tamamlandı. Tüm $n \geq 1$ için $(A_1 \cdots A_n)^{-1} = A_n^{-1} \cdots A_1^{-1}$. ∎</div>
 </div>
 
 <!-- ═══════════════ ÖNERİ ═══════════════ -->
@@ -123,20 +119,20 @@
     <span class="card-title">Elementer Matrisin Tersi</span>
     <span class="tag prop">Not</span>
   </div>
-  <p>E, ε işlemiyle elde edildiyse E⁻¹ ters işlemle elde edilir:</p>
+  <p>$E$, $\varepsilon$ işlemiyle elde edildiyse $E^{-1}$ ters işlemle elde edilir:</p>
   <table class="inv-table">
-    <tr><th>E elde eden işlem</th><th>E⁻¹ elde eden işlem</th></tr>
+    <tr><th>$E$ elde eden işlem</th><th>$E^{-1}$ elde eden işlem</th></tr>
     <tr>
-      <td><span class="formula" style="font-size:.82rem;margin:0;padding:.2rem .5rem;">rᵢ → rᵢ + c·rⱼ</span></td>
-      <td><span class="formula" style="font-size:.82rem;margin:0;padding:.2rem .5rem;">rᵢ → rᵢ − c·rⱼ</span></td>
+      <td>$r_i \to r_i + c \cdot r_j$</td>
+      <td>$r_i \to r_i - c \cdot r_j$</td>
     </tr>
     <tr>
-      <td><span class="formula" style="font-size:.82rem;margin:0;padding:.2rem .5rem;">rᵢ ↔ rⱼ</span></td>
-      <td><span class="formula" style="font-size:.82rem;margin:0;padding:.2rem .5rem;">rᵢ ↔ rⱼ</span></td>
+      <td>$r_i \leftrightarrow r_j$</td>
+      <td>$r_i \leftrightarrow r_j$</td>
     </tr>
     <tr>
-      <td><span class="formula" style="font-size:.82rem;margin:0;padding:.2rem .5rem;">rᵢ → c·rᵢ</span></td>
-      <td><span class="formula" style="font-size:.82rem;margin:0;padding:.2rem .5rem;">rᵢ → c⁻¹·rᵢ</span></td>
+      <td>$r_i \to c \cdot r_i$</td>
+      <td>$r_i \to c^{-1} \cdot r_i$</td>
     </tr>
   </table>
   <div class="note">Elementer matrisin tersi yine aynı tipte bir elementer matristir.</div>
@@ -146,7 +142,7 @@
 <div class="section-title"><span>🏛️</span> Tersinirlik Teoremi</div>
 
 <div class="def-box" data-label="Teorem — Denkdeğer Koşullar">
-  <p>A bir <strong>kare matris</strong> olsun. Aşağıdaki ifadeler <strong>birbirine denktir</strong> (hepsi aynı anda doğru veya aynı anda yanlış):</p>
+  <p>$A$ bir <strong>kare matris</strong> olsun. Aşağıdaki ifadeler <strong>birbirine denktir</strong> (hepsi aynı anda doğru veya aynı anda yanlış):</p>
 </div>
 
 <div class="card prop">
@@ -155,12 +151,12 @@
     <span class="tag prop">Teorem</span>
   </div>
   <div class="prop-list">
-    <div class="prop-item"><span class="prop-label">i)</span> A, elementer matrislerin bir <strong>çarpımıdır</strong>.</div>
-    <div class="prop-item"><span class="prop-label">ii)</span> A <strong>tersinirdir</strong> (invertible).</div>
-    <div class="prop-item"><span class="prop-label">iii)</span> A, en az bir sıfır satırı olan bir matrise <strong>satır denk değildir</strong>.</div>
-    <div class="prop-item" style="border:2px solid var(--c-red);"><span class="prop-label" style="color:var(--c-red);">★ iv)</span> A, birim matris I'ye <strong>satır denktir</strong>. &nbsp; <span style="font-size:.85rem; color:var(--c-red); font-weight:600;">(En kullanışlı!)</span></div>
+    <div class="prop-item"><span class="prop-label">i)</span> $A$, elementer matrislerin bir <strong>çarpımıdır</strong>.</div>
+    <div class="prop-item"><span class="prop-label">ii)</span> $A$ <strong>tersinirdir</strong> (invertible).</div>
+    <div class="prop-item"><span class="prop-label">iii)</span> $A$, en az bir sıfır satırı olan bir matrise <strong>satır denk değildir</strong>.</div>
+    <div class="prop-item" style="border:2px solid var(--c-red);"><span class="prop-label" style="color:var(--c-red);">★ iv)</span> $A$, birim matris $I$'ye <strong>satır denktir</strong>. &nbsp; <span style="font-size:.85rem; color:var(--c-red); font-weight:600;">(En kullanışlı!)</span></div>
   </div>
-  <div class="note">iv en önemli kriter: A ∼ I ise A tersinir; A'yı RREF'e indirgeyince I çıkıyorsa tersinirdir.</div>
+  <div class="note">iv en önemli kriter: $A \sim I$ ise $A$ tersinir; $A$'yı RREF'e indirgeyince $I$ çıkıyorsa tersinirdir.</div>
 </div>
 
 <!-- ═══════════════ ALGORİTMA ═══════════════ -->
@@ -168,45 +164,41 @@
 
 <div class="card prop">
   <div class="card-header">
-    <span class="card-title">Algoritma: [A : I] Yöntemi</span>
+    <span class="card-title">Algoritma: $[A \mid I]$ Yöntemi</span>
     <span class="tag prop">Yöntem</span>
   </div>
-  <p>[A : I] augmented matrisini oluştur, ERO uygula:</p>
+  <p>$[A \mid I]$ augmented matrisini oluştur, ERO uygula:</p>
 
   <div class="false-box" style="display:block; margin:.8rem 0; padding:.8rem 1.2rem; border-radius:8px;">
     <p><strong>Durum 1:</strong> Sol tarafta en az bir sıfır satır çıkarsa:</p>
-    <div class="mw" style="justify-content:center; margin:.5rem 0;">
-      <div class="formula">[A : I] → [sıfır satırlı matris : ∗]</div>
-    </div>
-    <p>→ A <strong>tekildir</strong> (singular, tersinir değil).</p>
+    <div class="formula">$$[A \mid I] \;\to\; [\text{sıfır satırlı matris} \mid *]$$</div>
+    <p>→ $A$ <strong>tekildir</strong> (singular, tersinir değil).</p>
   </div>
 
   <div class="result-box" style="display:block; margin:.8rem 0; padding:.8rem 1.2rem;">
-    <p><strong>Durum 2:</strong> Sol taraf I'ye dönüşürse:</p>
-    <div class="mw" style="justify-content:center; margin:.5rem 0;">
-      <div class="formula">[A : I] → [I : B]</div>
-    </div>
-    <p>→ A <strong>tersinirdir</strong> ve <strong>B = A⁻¹</strong>.</p>
+    <p><strong>Durum 2:</strong> Sol taraf $I$'ye dönüşürse:</p>
+    <div class="formula">$$[A \mid I] \;\to\; [I \mid B]$$</div>
+    <p>→ $A$ <strong>tersinirdir</strong> ve $B = A^{-1}$.</p>
   </div>
 </div>
 
 <!-- ═══════════════ 2. YÖNTEM ═══════════════ -->
-<div class="section-title"><span>🔧</span> Ters Matris Bulma — 2. Yöntem (P Matrisi)</div>
+<div class="section-title"><span>🔧</span> Ters Matris Bulma — 2. Yöntem ($P$ Matrisi)</div>
 
 <div class="def-box" data-label="Sonuç (Corollary)">
-  <p>İki n×m matris A ve B'nin <strong>satır denk</strong> olması için gerekli ve yeterli koşul: tersinir bir P matrisi bulunması öyle ki:</p>
-  <div class="formula">B = PA</div>
+  <p>İki $n \times m$ matris $A$ ve $B$'nin <strong>satır denk</strong> olması için gerekli ve yeterli koşul: tersinir bir $P$ matrisi bulunması öyle ki:</p>
+  <div class="formula">$$B = PA$$</div>
 </div>
 
 <div class="card prop">
   <div class="card-header">
-    <span class="card-title">2. Yöntem: P Matrisi</span>
+    <span class="card-title">2. Yöntem: $P$ Matrisi</span>
     <span class="tag prop">Yöntem</span>
   </div>
-  <p>A tersinir ise A ∼ I, yani PA = I olan tersinir bir P vardır. Bu durumda:</p>
-  <div class="formula">PA = I &nbsp;⟹&nbsp; A⁻¹ = P</div>
-  <p style="margin-top:.4rem;">P = Eₙ···E₁ (uyguladığın tüm ERO'ların elementer matris çarpımı).</p>
-  <div class="note">Bu aslında 1. yöntemle aynı şey: [A:I] → [I:P] yaparken sağ taraftaki P otomatik olarak A⁻¹.</div>
+  <p>$A$ tersinir ise $A \sim I$, yani $PA = I$ olan tersinir bir $P$ vardır. Bu durumda:</p>
+  <div class="formula">$$PA = I \;\Longrightarrow\; A^{-1} = P$$</div>
+  <p style="margin-top:.4rem;">$P = E_n \cdots E_1$ (uyguladığın tüm ERO'ların elementer matris çarpımı).</p>
+  <div class="note">Bu aslında 1. yöntemle aynı şey: $[A \mid I] \to [I \mid P]$ yaparken sağ taraftaki $P$ otomatik olarak $A^{-1}$.</div>
 </div>
 
 <!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
@@ -218,8 +210,12 @@
     <span class="tag prop">Özellik</span>
   </div>
   <div class="prop-list">
-    <div class="prop-item"><span class="prop-label">i)</span> Çift ters = kendisi: <div class="formula">(A⁻¹)⁻¹ = A</div></div>
-    <div class="prop-item"><span class="prop-label">ii)</span> Transpoz ve ters yer değiştirebilir: <div class="formula">(Aᵀ)⁻¹ = (A⁻¹)ᵀ</div></div>
+    <div class="prop-item"><span class="prop-label">i)</span> Çift ters = kendisi:
+      <div class="formula">$$(A^{-1})^{-1} = A$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Transpoz ve ters yer değiştirebilir:
+      <div class="formula">$$(A^T)^{-1} = (A^{-1})^T$$</div>
+    </div>
   </div>
 </div>
 
@@ -227,7 +223,7 @@
 <div class="section-title"><span>✅</span> Alıştırma Çözümü</div>
 
 <div class="q-box" data-label="Alıştırma">
-  <p>A <strong>tersinir</strong> ve <strong>simetrik</strong> ise A⁻¹ de <strong>simetriktir</strong>. Bunu gösterin.</p>
+  <p>$A$ <strong>tersinir</strong> ve <strong>simetrik</strong> ise $A^{-1}$ de <strong>simetriktir</strong>. Bunu gösterin.</p>
 </div>
 
 <div class="card hw">
@@ -237,43 +233,43 @@
   </div>
   <div class="step purple">
     <div class="step-label purple">Varsayım</div>
-    A tersinir ve simetrik, yani Aᵀ = A.
+    $A$ tersinir ve simetrik, yani $A^T = A$.
   </div>
   <div class="step purple">
     <div class="step-label purple">Hedef</div>
-    (A⁻¹)ᵀ = A⁻¹ olduğunu göstermek (A⁻¹ simetrik).
+    $(A^{-1})^T = A^{-1}$ olduğunu göstermek ($A^{-1}$ simetrik).
   </div>
   <div class="step purple">
     <div class="step-label purple">İspat</div>
     <p>Özellik ii)'den biliyoruz ki:</p>
-    <div class="formula">(A⁻¹)ᵀ = (Aᵀ)⁻¹</div>
-    <p style="margin-top:.3rem;">Aᵀ = A (simetrik) olduğundan:</p>
-    <div class="formula">(Aᵀ)⁻¹ = A⁻¹</div>
+    <div class="formula">$$(A^{-1})^T = (A^T)^{-1}$$</div>
+    <p style="margin-top:.3rem;">$A^T = A$ (simetrik) olduğundan:</p>
+    <div class="formula">$$(A^T)^{-1} = A^{-1}$$</div>
     <p style="margin-top:.3rem;">Birleştirince:</p>
-    <div class="formula">(A⁻¹)ᵀ = (Aᵀ)⁻¹ = A⁻¹</div>
+    <div class="formula">$$(A^{-1})^T = (A^T)^{-1} = A^{-1}$$</div>
   </div>
-  <div class="qed-box">(A⁻¹)ᵀ = A⁻¹ → A⁻¹ simetriktir. ∎</div>
+  <div class="qed-box">$(A^{-1})^T = A^{-1}$ → $A^{-1}$ simetriktir. ∎</div>
 </div>
 
 <!-- ÖZET -->
 <div class="summary-box">
   <h3>Hızlı Özet</h3>
   <p>
-    <strong>Tersinir (invertible):</strong> AA⁻¹ = A⁻¹A = I. Yoksa tekil (singular).
+    <strong>Tersinir (invertible):</strong> $AA^{-1} = A^{-1}A = I$. Yoksa tekil (singular).
     <br><br>
-    <strong>Notlar:</strong> Tersinir matris kare olmalı. Tersi tektir. A⁻¹ ile gösterilir.
+    <strong>Notlar:</strong> Tersinir matris kare olmalı. Tersi tektir. $A^{-1}$ ile gösterilir.
     <br><br>
-    <strong>Çarpımın tersi:</strong> (A₁···Aₙ)⁻¹ = Aₙ⁻¹···A₁⁻¹ — sıra tersine döner.
+    <strong>Çarpımın tersi:</strong> $(A_1 \cdots A_n)^{-1} = A_n^{-1} \cdots A_1^{-1}$ — sıra tersine döner.
     <br><br>
     <strong>Elementer matrisler</strong> her zaman tersinir. Tersi aynı tipte elementer matris.
     <br><br>
     <strong>Tersinirlik testi (4 denkdeğer koşul):</strong>
     <br>
-    i) A = elementer matrislerin çarpımı &nbsp;⟺&nbsp; ii) A tersinir &nbsp;⟺&nbsp; iii) A'da sıfır satır yok &nbsp;⟺&nbsp; ★ iv) A ∼ I
+    i) $A$ = elementer matrislerin çarpımı $\;\Leftrightarrow\;$ ii) $A$ tersinir $\;\Leftrightarrow\;$ iii) $A$'da sıfır satır yok $\;\Leftrightarrow\;$ ★ iv) $A \sim I$
     <br><br>
-    <strong>Ters bulma:</strong> [A:I] → ERO → [I:A⁻¹]. Sol tarafta sıfır satır çıkarsa A tekil.
+    <strong>Ters bulma:</strong> $[A \mid I] \to \text{ERO} \to [I \mid A^{-1}]$. Sol tarafta sıfır satır çıkarsa $A$ tekil.
     <br><br>
-    <strong>Özellikler:</strong> (A⁻¹)⁻¹ = A, &nbsp; (Aᵀ)⁻¹ = (A⁻¹)ᵀ, &nbsp; A simetrik ve tersinir ⟹ A⁻¹ simetrik.
+    <strong>Özellikler:</strong> $(A^{-1})^{-1} = A$, &ensp; $(A^T)^{-1} = (A^{-1})^T$, &ensp; $A$ simetrik ve tersinir $\Rightarrow$ $A^{-1}$ simetrik.
   </p>
 </div>
 

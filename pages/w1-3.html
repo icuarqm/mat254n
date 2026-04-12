@@ -19,50 +19,39 @@
 <div class="section-title"><span>δ</span> Kronecker Delta</div>
 
 <div class="def-box" data-label="Tanım — Kronecker Delta">
-  <p>Kronecker delta fonksiyonu <strong>δ</strong> şöyle tanımlanır:</p>
-  <div style="margin:0.8rem 0;">
-    <div class="piecewise">
-      <span>δ(i,j) = δ<sub>ij</sub> = </span>
-      <span class="piecewise-brace">{</span>
-      <div class="piecewise-cases">
-        <span>1 &nbsp; eğer i = j</span>
-        <span>0 &nbsp; eğer i ≠ j</span>
-      </div>
-    </div>
+  <p>Kronecker delta fonksiyonu $\delta$ şöyle tanımlanır:</p>
+  <div class="formula">
+    $$\delta(i,j) = \delta_{ij} = \begin{cases} 1 & \text{eğer } i = j \\ 0 & \text{eğer } i \neq j \end{cases}$$
   </div>
   <div class="note">Köşegen üstündeysen 1, değilsen 0. Bu kadar basit.</div>
 </div>
 
 <div class="card example">
   <div class="card-header">
-    <span class="card-title">Örnek: n = m = 2</span>
+    <span class="card-title">Örnek: $n = m = 2$</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <p style="font-size:0.92rem; margin-bottom:0.5rem;">δ(1,1) = 1, &nbsp; δ(1,2) = 0, &nbsp; δ(2,1) = 0, &nbsp; δ(2,2) = 1</p>
-  <div class="matrix-wrapper">
-    <span class="matrix-label">→</span>
-    <div class="matrix-box">
-      <table>
-        <tr><td class="diag">1</td><td>0</td></tr>
-        <tr><td>0</td><td class="diag">1</td></tr>
-      </table>
-    </div>
+  <p style="font-size:0.92rem; margin-bottom:0.5rem;">$\delta_{11} = 1,\;\; \delta_{12} = 0,\;\; \delta_{21} = 0,\;\; \delta_{22} = 1$</p>
+  <div class="mw">
+    <span class="ml">→</span>
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td></tr>
+    </table></div>
   </div>
 </div>
 
 <div class="card example">
   <div class="card-header">
-    <span class="card-title">Örnek: n = 2, m = 3</span>
+    <span class="card-title">Örnek: $n = 2,\; m = 3$</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <div class="matrix-wrapper">
-    <div class="matrix-box">
-      <table>
-        <tr><td class="diag">1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td class="diag">1</td><td>0</td></tr>
-      </table>
-    </div>
-    <span class="matrix-size">2×3</span>
+  <div class="mw">
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <span class="ms">2×3</span>
   </div>
   <div class="note">Kare olmasa bile Kronecker delta tanımlı — köşegen 1, geri kalan 0.</div>
 </div>
@@ -71,8 +60,8 @@
 <div class="section-title"><span>🔲</span> Birim Matris (Identity Matrix)</div>
 
 <div class="def-box" data-label="Tanım — Birim Matris">
-  <p><strong>n = m</strong> olduğunda (kare matris), girişleri Kronecker delta olan matrise <strong>birim matris</strong> denir.</p>
-  <div class="formula">I<sub>n</sub> → (I<sub>n</sub>)<sub>ij</sub> = δ<sub>ij</sub></div>
+  <p>$n = m$ olduğunda (kare matris), girişleri Kronecker delta olan matrise <strong>birim matris</strong> denir.</p>
+  <div class="formula">$$I_n \;\longrightarrow\; (I_n)_{ij} = \delta_{ij}$$</div>
   <p style="margin-top:0.4rem;">Köşegen üstünde 1, geri her yerde 0.</p>
 </div>
 
@@ -81,28 +70,27 @@
     <span class="card-title">Genel Gösterim</span>
     <span class="tag nota">Gösterim</span>
   </div>
-  <div class="matrix-wrapper">
-    <span class="matrix-label">I<sub>n</sub> =</span>
-    <div class="matrix-box">
-      <table>
-        <tr><td class="diag">1</td><td>0</td><td>⋯</td><td>0</td></tr>
-        <tr><td>0</td><td class="diag">1</td><td>⋯</td><td>0</td></tr>
-        <tr><td>⋮</td><td>⋮</td><td>⋱</td><td>⋮</td></tr>
-        <tr><td>0</td><td>0</td><td>⋯</td><td class="diag">1</td></tr>
-      </table>
-    </div>
-    <span class="matrix-size">n×n</span>
+  <div class="mw">
+    <span class="ml">$I_n$ =</span>
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">⋯</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">⋯</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">⋮</td><td class="zero-cell">⋮</td><td>⋱</td><td class="zero-cell">⋮</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">⋯</td><td class="diag">1</td></tr>
+    </table></div>
+    <span class="ms">n×n</span>
   </div>
-  <div class="note">I<sub>n</sub> = n. dereceden birim matris. Çarpmanın etkisiz elemanıdır: A · I = I · A = A.</div>
+  <div class="note">$I_n$ = $n$. dereceden birim matris. Çarpmanın etkisiz elemanı: $A \cdot I = I \cdot A = A$.</div>
 </div>
 
 <!-- ═══════════════ MATRİS EŞİTLİĞİ ═══════════════ -->
 <div class="section-title"><span>⚖️</span> Matris Eşitliği</div>
 
 <div class="def-box" data-label="Tanım — Eşit Matrisler">
-  <p><strong>A = B</strong> ancak ve ancak iki koşul sağlanırsa:</p>
-  <p style="margin-top:0.5rem;"><strong>i)</strong> Boyutları aynı olmalı → ikisi de n×m</p>
-  <p><strong>ii)</strong> Her bir giriş eşit olmalı → ∀ i ∈ {1,…,n}, ∀ j ∈ {1,…,m}: &nbsp; A<sub>ij</sub> = B<sub>ij</sub></p>
+  <p>$A = B$ ancak ve ancak iki koşul sağlanırsa:</p>
+  <p style="margin-top:0.5rem;"><strong>i)</strong> Boyutları aynı olmalı → ikisi de $n \times m$</p>
+  <p><strong>ii)</strong> Her bir giriş eşit olmalı:</p>
+  <div class="formula">$$\forall\, i \in \{1,\ldots,n\},\;\; \forall\, j \in \{1,\ldots,m\} : \quad A_{ij} = B_{ij}$$</div>
 </div>
 
 <div class="card def">
@@ -110,16 +98,16 @@
     <span class="card-title">Dikkat!</span>
     <span class="tag def">Uyarı</span>
   </div>
-  <p>İki koşul da gerekli. Mesela aynı sayıları barındıran bir 2×3 matris ile bir 3×2 matris <strong>eşit değildir</strong> — boyutlar farklı. Boyutlar aynı olsa bile tek bir giriş bile farklıysa yine eşit değil.</p>
+  <p>İki koşul da gerekli. Mesela aynı sayıları barındıran bir $2 \times 3$ matris ile bir $3 \times 2$ matris <strong>eşit değildir</strong> — boyutlar farklı. Boyutlar aynı olsa bile tek bir giriş bile farklıysa yine eşit değil.</p>
 </div>
 
 <!-- ═══════════════ TRANSPOZ ═══════════════ -->
 <div class="section-title"><span>🔄</span> Transpoz (Transpose)</div>
 
 <div class="def-box" data-label="Tanım — Transpoz">
-  <p>A bir n×m matris olsun. A'nın <strong>transpozu</strong> A<sup>T</sup> şöyle tanımlanır:</p>
-  <div class="formula">(A<sup>T</sup>)<sub>ij</sub> = A<sub>ji</sub></div>
-  <p style="margin-top:0.4rem;">Satırlar sütun olur, sütunlar satır olur. Boyut n×m → m×n'e döner.</p>
+  <p>$A$ bir $n \times m$ matris olsun. $A$'nın <strong>transpozu</strong> $A^T$ şöyle tanımlanır:</p>
+  <div class="formula">$$(A^T)_{ij} = A_{ji}$$</div>
+  <p style="margin-top:0.4rem;">Satırlar sütun olur, sütunlar satır olur. Boyut $n \times m \;\to\; m \times n$'e döner.</p>
 </div>
 
 <div class="card notation">
@@ -129,25 +117,21 @@
   </div>
   <div class="arrow-demo">
     <div>
-      <div style="text-align:center; font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">A (n×m)</div>
-      <div class="matrix-box">
-        <table>
-          <tr><td>A₁₁</td><td>⋯</td><td>A₁ₘ</td></tr>
-          <tr><td>⋮</td><td>⋱</td><td>⋮</td></tr>
-          <tr><td>Aₙ₁</td><td>⋯</td><td>Aₙₘ</td></tr>
-        </table>
-      </div>
+      <div style="text-align:center; font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">$A \;\;(n \times m)$</div>
+      <div class="mb"><table>
+        <tr><td>$A_{11}$</td><td>⋯</td><td>$A_{1m}$</td></tr>
+        <tr><td>⋮</td><td>⋱</td><td>⋮</td></tr>
+        <tr><td>$A_{n1}$</td><td>⋯</td><td>$A_{nm}$</td></tr>
+      </table></div>
     </div>
     <span class="arrow-label">→</span>
     <div>
-      <div style="text-align:center; font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">A<sup>T</sup> (m×n)</div>
-      <div class="matrix-box">
-        <table>
-          <tr><td>A₁₁</td><td>⋯</td><td>Aₙ₁</td></tr>
-          <tr><td>⋮</td><td>⋱</td><td>⋮</td></tr>
-          <tr><td>A₁ₘ</td><td>⋯</td><td>Aₙₘ</td></tr>
-        </table>
-      </div>
+      <div style="text-align:center; font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">$A^T \;\;(m \times n)$</div>
+      <div class="mb"><table>
+        <tr><td>$A_{11}$</td><td>⋯</td><td>$A_{n1}$</td></tr>
+        <tr><td>⋮</td><td>⋱</td><td>⋮</td></tr>
+        <tr><td>$A_{1m}$</td><td>⋯</td><td>$A_{nm}$</td></tr>
+      </table></div>
     </div>
   </div>
   <div class="note">1. satır → 1. sütun olur, 2. satır → 2. sütun olur, …</div>
@@ -160,40 +144,36 @@
   </div>
   <div class="arrow-demo">
     <div>
-      <div style="text-align:center; font-size:0.85rem; font-weight:600; color:var(--accent2); margin-bottom:0.3rem;">A <span class="matrix-size">3×2</span></div>
-      <div class="matrix-box">
-        <table>
-          <tr><td>2</td><td>−1</td></tr>
-          <tr><td>0</td><td>1</td></tr>
-          <tr><td>1</td><td>0</td></tr>
-        </table>
-      </div>
+      <div style="text-align:center; font-size:0.85rem; font-weight:600; color:var(--accent2); margin-bottom:0.3rem;">A <span class="ms">3×2</span></div>
+      <div class="mb"><table>
+        <tr><td>2</td><td>−1</td></tr>
+        <tr><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td></tr>
+      </table></div>
     </div>
     <span class="arrow-label">→</span>
     <div>
-      <div style="text-align:center; font-size:0.85rem; font-weight:600; color:var(--accent2); margin-bottom:0.3rem;">A<sup>T</sup> <span class="matrix-size">2×3</span></div>
-      <div class="matrix-box">
-        <table>
-          <tr><td>2</td><td>0</td><td>1</td></tr>
-          <tr><td>−1</td><td>1</td><td>0</td></tr>
-        </table>
-      </div>
+      <div style="text-align:center; font-size:0.85rem; font-weight:600; color:var(--accent2); margin-bottom:0.3rem;">$A^T$ <span class="ms">2×3</span></div>
+      <div class="mb"><table>
+        <tr><td>2</td><td>0</td><td>1</td></tr>
+        <tr><td>−1</td><td>1</td><td>0</td></tr>
+      </table></div>
     </div>
   </div>
-  <div class="note">A'nın 1. satırı [2, −1] → A<sup>T</sup>'nin 1. sütunu [2, −1]. Boyut 3×2 → 2×3.</div>
+  <div class="note">$A$'nın 1. satırı $[2,\; -1]$ → $A^T$'nin 1. sütunu $[2,\; -1]$. Boyut $3 \times 2 \to 2 \times 3$.</div>
 </div>
 
 <!-- ÖZET -->
 <div class="summary-box">
   <h3>Hızlı Özet</h3>
   <p>
-    <strong>Kronecker delta δ<sub>ij</sub></strong> → i=j ise 1, değilse 0. Matris versiyonu birim matris.
+    <strong>Kronecker delta $\delta_{ij}$</strong> → $i = j$ ise 1, değilse 0. Matris versiyonu birim matris.
     <br>
-    <strong>Birim matris I<sub>n</sub></strong> → n×n, köşegen 1 geri kalan 0. Çarpmanın nötr elemanı.
+    <strong>Birim matris $I_n$</strong> → $n \times n$, köşegen 1 geri kalan 0. Çarpmanın nötr elemanı.
     <br>
-    <strong>A = B</strong> → aynı boyut + tüm girişler aynı. İkisi de lazım.
+    <strong>$A = B$</strong> → aynı boyut + tüm girişler aynı. İkisi de lazım.
     <br>
-    <strong>Transpoz A<sup>T</sup></strong> → satır↔sütun yer değiştirir. (A<sup>T</sup>)<sub>ij</sub> = A<sub>ji</sub>. Boyut n×m → m×n.
+    <strong>Transpoz $A^T$</strong> → satır↔sütun yer değiştirir. $(A^T)_{ij} = A_{ji}$. Boyut $n \times m \to m \times n$.
   </p>
 </div>
 

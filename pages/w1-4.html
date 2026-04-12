@@ -19,8 +19,8 @@
 <div class="section-title"><span>➕</span> 1) Matris Toplama</div>
 
 <div class="def-box" data-label="Tanım — Matris Toplama">
-  <p>A ve B ikisi de <strong>n×m</strong> matris olsun. Toplamları A+B, her girişin ayrı ayrı toplanmasıyla tanımlanır:</p>
-  <div class="formula">(A + B)<sub>ij</sub> = A<sub>ij</sub> + B<sub>ij</sub></div>
+  <p>$A$ ve $B$ ikisi de $n \times m$ matris olsun. Toplamları $A+B$, her girişin ayrı ayrı toplanmasıyla tanımlanır:</p>
+  <div class="formula">$$(A + B)_{ij} = A_{ij} + B_{ij}$$</div>
   <div class="note">Boyutlar aynı olmalı! Farklı boyutlu matrisler toplanamaz.</div>
 </div>
 
@@ -29,18 +29,21 @@
     <span class="card-title">Örnek</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <div class="matrix-wrapper">
-    <div class="matrix-box">
-      <table><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table>
-    </div>
+  <div class="mw">
+    <div class="mb"><table>
+      <tr><td>1</td><td>2</td><td>3</td></tr>
+      <tr><td>4</td><td>5</td><td>6</td></tr>
+    </table></div>
     <span class="ml">+</span>
-    <div class="matrix-box">
-      <table><tr><td>−1</td><td>1</td><td>−1</td></tr><tr><td>1</td><td>−1</td><td>1</td></tr></table>
-    </div>
+    <div class="mb"><table>
+      <tr><td>−1</td><td>1</td><td>−1</td></tr>
+      <tr><td>1</td><td>−1</td><td>1</td></tr>
+    </table></div>
     <span class="ml">=</span>
-    <div class="matrix-box" style="border-left-color:var(--accent);border-right-color:var(--accent);">
-      <table><tr><td>0</td><td>3</td><td>2</td></tr><tr><td>5</td><td>4</td><td>7</td></tr></table>
-    </div>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table>
+      <tr><td>0</td><td>3</td><td>2</td></tr>
+      <tr><td>5</td><td>4</td><td>7</td></tr>
+    </table></div>
     <span class="ms">2×3</span>
   </div>
 </div>
@@ -50,21 +53,27 @@
     <span class="card-title">Toplama Özellikleri</span>
     <span class="tag prop">Özellik</span>
   </div>
-  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">∀ A, B, C ∈ F<sup>n×m</sup></p>
+  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">$\forall\, A, B, C \in F^{n \times m}$</p>
   <div class="prop-list">
-    <div class="prop-item"><span class="prop-label">i)</span> Birleşme: <div class="formula">A + (B + C) = (A + B) + C</div></div>
-    <div class="prop-item"><span class="prop-label">ii)</span> Sıfır matris O (tüm girişleri 0): <div class="formula">A + O = O + A = A</div></div>
-    <div class="prop-item"><span class="prop-label">iii)</span> Değişme: <div class="formula">A + B = B + A</div></div>
+    <div class="prop-item"><span class="prop-label">i)</span> Birleşme:
+      <div class="formula">$$A + (B + C) = (A + B) + C$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Sıfır matris $O$ (tüm girişleri 0):
+      <div class="formula">$$A + O = O + A = A$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">iii)</span> Değişme:
+      <div class="formula">$$A + B = B + A$$</div>
+    </div>
   </div>
-  <div class="note">O = sıfır matris, matris toplamanın birim elemanı (nötr eleman).</div>
+  <div class="note">$O$ = sıfır matris, matris toplamanın birim elemanı (nötr eleman).</div>
 </div>
 
 <!-- ═══════════════ 2) SKALER ÇARPMA ═══════════════ -->
 <div class="section-title"><span>✖️</span> 2) Skalerle Çarpma</div>
 
 <div class="def-box" data-label="Tanım — Skaler Çarpma">
-  <p>c bir skaler, A bir n×m matris olsun. c·A her girişin c ile çarpılmasıyla tanımlanır:</p>
-  <div class="formula">(c · A)<sub>ij</sub> = c · A<sub>ij</sub></div>
+  <p>$c$ bir skaler, $A$ bir $n \times m$ matris olsun. $c \cdot A$ her girişin $c$ ile çarpılmasıyla tanımlanır:</p>
+  <div class="formula">$$(c \cdot A)_{ij} = c \cdot A_{ij}$$</div>
 </div>
 
 <div class="card example">
@@ -72,15 +81,19 @@
     <span class="card-title">Örnek</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <div class="matrix-wrapper">
+  <div class="mw">
     <span class="ml">2 ·</span>
-    <div class="matrix-box">
-      <table><tr><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td></tr></table>
-    </div>
+    <div class="mb"><table>
+      <tr><td>1</td><td>2</td></tr>
+      <tr><td>3</td><td>4</td></tr>
+      <tr><td>5</td><td>6</td></tr>
+    </table></div>
     <span class="ml">=</span>
-    <div class="matrix-box" style="border-left-color:var(--accent);border-right-color:var(--accent);">
-      <table><tr><td>2</td><td>4</td></tr><tr><td>6</td><td>8</td></tr><tr><td>10</td><td>12</td></tr></table>
-    </div>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table>
+      <tr><td>2</td><td>4</td></tr>
+      <tr><td>6</td><td>8</td></tr>
+      <tr><td>10</td><td>12</td></tr>
+    </table></div>
     <span class="ms">3×2</span>
   </div>
 </div>
@@ -90,15 +103,23 @@
     <span class="card-title">Skaler Çarpma Özellikleri</span>
     <span class="tag prop">Özellik</span>
   </div>
-  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">∀ c, c₁, c₂ ∈ F, &nbsp; ∀ A, A₁, A₂ ∈ F<sup>n×m</sup></p>
+  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">$\forall\, c, c_1, c_2 \in F, \quad \forall\, A, A_1, A_2 \in F^{n \times m}$</p>
   <div class="prop-list">
-    <div class="prop-item"><span class="prop-label">i)</span> Dağılma (matrise): <div class="formula">c · (A₁ + A₂) = c·A₁ + c·A₂</div></div>
-    <div class="prop-item"><span class="prop-label">ii)</span> Dağılma (skalere): <div class="formula">(c₁ + c₂) · A = c₁·A + c₂·A</div></div>
-    <div class="prop-item"><span class="prop-label">iii)</span> Birleşme: <div class="formula">(c₁ · c₂) · A = c₁ · (c₂ · A)</div></div>
-    <div class="prop-item"><span class="prop-label">iv)</span> Birim & Ters: <div class="formula">1 · A = A &nbsp;&nbsp;&nbsp; (−1) · A = −A</div></div>
+    <div class="prop-item"><span class="prop-label">i)</span> Dağılma (matrise):
+      <div class="formula">$$c \cdot (A_1 + A_2) = c \cdot A_1 + c \cdot A_2$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Dağılma (skalere):
+      <div class="formula">$$(c_1 + c_2) \cdot A = c_1 \cdot A + c_2 \cdot A$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">iii)</span> Birleşme:
+      <div class="formula">$$(c_1 \cdot c_2) \cdot A = c_1 \cdot (c_2 \cdot A)$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">iv)</span> Birim & Ters:
+      <div class="formula">$$1 \cdot A = A \qquad (-1) \cdot A = -A$$</div>
+    </div>
   </div>
   <div class="highlight-box">
-    <strong>Sonuç:</strong> A − A = A + (−A) = O &nbsp; ve &nbsp; <strong>A − B = A + (−B)</strong> olarak tanımlanır.
+    <strong>Sonuç:</strong> $A - A = A + (-A) = O$ &nbsp; ve &nbsp; $A - B = A + (-B)$ olarak tanımlanır.
   </div>
 </div>
 
@@ -106,9 +127,11 @@
 <div class="section-title"><span>🔗</span> 3) Matris Çarpımı</div>
 
 <div class="def-box" data-label="Tanım — Matris Çarpımı">
-  <p>A bir <strong>n×m</strong>, B bir <strong>m×r</strong> matris olsun. A·B çarpımı <strong>n×r</strong> boyutunda bir matristir:</p>
-  <div class="formula" style="font-size:.88rem;">(A·B)<sub>ij</sub> = Σ<sub>k=1</sub><sup>m</sup> A<sub>ik</sub> · B<sub>kj</sub> = A<sub>i1</sub>B<sub>1j</sub> + A<sub>i2</sub>B<sub>2j</sub> + ⋯ + A<sub>im</sub>B<sub>mj</sub></div>
-  <div class="note">A'nın i. satırı ile B'nin j. sütununu eleman eleman çarp, topla → sonuç matrisin (i,j) girişi.</div>
+  <p>$A$ bir $n \times m$, $B$ bir $m \times r$ matris olsun. $A \cdot B$ çarpımı $n \times r$ boyutunda bir matristir:</p>
+  <div class="formula">
+    $$(A \cdot B)_{ij} = \sum_{k=1}^{m} A_{ik} \cdot B_{kj} = A_{i1}B_{1j} + A_{i2}B_{2j} + \cdots + A_{im}B_{mj}$$
+  </div>
+  <div class="note">$A$'nın $i$. satırı ile $B$'nin $j$. sütununu eleman eleman çarp, topla → sonuç matrisin $(i,j)$ girişi.</div>
 </div>
 
 <div class="card warn">
@@ -116,10 +139,10 @@
     <span class="card-title">Boyut Kuralı — Kritik!</span>
     <span class="tag warn">Dikkat</span>
   </div>
-  <div class="formula">A<sub>n×m</sub> · B<sub>p×r</sub></div>
-  <p style="margin-top:.5rem;"><strong>p = m</strong> ise → çarpım tanımlı, sonuç <strong>n×r</strong></p>
-  <p><strong>p ≠ m</strong> ise → çarpım <strong>tanımsız!</strong></p>
-  <div class="note">A'nın sütun sayısı = B'nin satır sayısı olmalı. Yoksa çarpım yapılamaz.</div>
+  <div class="formula">$$A_{n \times m} \cdot B_{p \times r}$$</div>
+  <p style="margin-top:.5rem;">$p = m$ ise → çarpım tanımlı, sonuç $n \times r$</p>
+  <p>$p \neq m$ ise → çarpım <strong>tanımsız!</strong></p>
+  <div class="note">$A$'nın sütun sayısı = $B$'nin satır sayısı olmalı. Yoksa çarpım yapılamaz.</div>
 </div>
 
 <div class="card example">
@@ -127,33 +150,33 @@
     <span class="card-title">Örnek</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <div class="matrix-wrapper">
+  <div class="mw">
     <span class="ml">A =</span>
-    <div class="matrix-box">
-      <table><tr><td>1</td><td>−2</td><td>3</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>4</td><td>1</td><td>5</td></tr></table>
-    </div>
+    <div class="mb"><table>
+      <tr><td>1</td><td>−2</td><td>3</td></tr>
+      <tr><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td>4</td><td>1</td><td>5</td></tr>
+    </table></div>
     <span class="ms">3×3</span>
     <span style="margin:0 .5rem;"></span>
     <span class="ml">B =</span>
-    <div class="matrix-box">
-      <table><tr><td>x</td><td>y</td></tr><tr><td>z</td><td>t</td></tr><tr><td>u</td><td>v</td></tr></table>
-    </div>
+    <div class="mb"><table>
+      <tr><td>x</td><td>y</td></tr>
+      <tr><td>z</td><td>t</td></tr>
+      <tr><td>u</td><td>v</td></tr>
+    </table></div>
     <span class="ms">3×2</span>
   </div>
-  <div style="margin-top:.8rem;">
-    <div class="matrix-wrapper">
-      <span class="ml">A·B =</span>
-      <div class="matrix-box" style="border-left-color:var(--accent);border-right-color:var(--accent);">
-        <table>
-          <tr><td>x−2z+3u</td><td>y−2t+3v</td></tr>
-          <tr><td>x+z+u</td><td>y+t+v</td></tr>
-          <tr><td>4x+z+5u</td><td>4y+t+5v</td></tr>
-        </table>
-      </div>
-      <span class="ms">3×2</span>
-    </div>
+  <div class="mw" style="margin-top:.8rem;">
+    <span class="ml">A·B =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table>
+      <tr><td>x−2z+3u</td><td>y−2t+3v</td></tr>
+      <tr><td>x+z+u</td><td>y+t+v</td></tr>
+      <tr><td>4x+z+5u</td><td>4y+t+5v</td></tr>
+    </table></div>
+    <span class="ms">3×2</span>
   </div>
-  <div class="note">B·A tanımsız! (B: 3×2, A: 3×3 → 2 ≠ 3)</div>
+  <div class="note">$B \cdot A$ tanımsız! ($B$: $3 \times 2$, $A$: $3 \times 3$ → $2 \neq 3$)</div>
 </div>
 
 <!-- Matris Çarpımı Özellikleri -->
@@ -162,12 +185,20 @@
     <span class="card-title">Matris Çarpımı Özellikleri</span>
     <span class="tag prop">Özellik</span>
   </div>
-  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">Uygun boyutlu A, B, C matrisleri ve c skaleri için:</p>
+  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">Uygun boyutlu $A, B, C$ matrisleri ve $c$ skaleri için:</p>
   <div class="prop-list">
-    <div class="prop-item"><span class="prop-label">i)</span> Birleşme: <div class="formula">(A·B)·C = A·(B·C)</div></div>
-    <div class="prop-item"><span class="prop-label">ii)</span> Dağılma: <div class="formula">A·(B + C) = A·B + A·C</div></div>
-    <div class="prop-item"><span class="prop-label">iii)</span> Birim matris: <div class="formula">I·A = A &nbsp;&nbsp;&nbsp; A·I = A</div></div>
-    <div class="prop-item"><span class="prop-label">iv)</span> Skaler uyum: <div class="formula">c·(A·B) = (c·A)·B = A·(c·B)</div></div>
+    <div class="prop-item"><span class="prop-label">i)</span> Birleşme:
+      <div class="formula">$$(A \cdot B) \cdot C = A \cdot (B \cdot C)$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Dağılma:
+      <div class="formula">$$A \cdot (B + C) = A \cdot B + A \cdot C$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">iii)</span> Birim matris:
+      <div class="formula">$$I \cdot A = A \qquad A \cdot I = A$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">iv)</span> Skaler uyum:
+      <div class="formula">$$c \cdot (A \cdot B) = (c \cdot A) \cdot B = A \cdot (c \cdot B)$$</div>
+    </div>
   </div>
 </div>
 
@@ -177,24 +208,36 @@
     <span class="card-title">Matris Çarpımı Değişmeli DEĞİLDİR!</span>
     <span class="tag warn">Kritik</span>
   </div>
-  <div class="formula" style="font-size:1.1rem;">A · B ≠ B · A &nbsp; (genel olarak)</div>
-  <div style="margin-top:.8rem;">
-    <p style="font-weight:600;margin-bottom:.4rem;">Karşı örnek:</p>
-    <div class="matrix-wrapper">
-      <span class="ml">A =</span>
-      <div class="matrix-box"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
-      <span style="margin:0 .5rem;"></span>
-      <span class="ml">B =</span>
-      <div class="matrix-box"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
-    </div>
-    <div class="matrix-wrapper" style="margin-top:.5rem;">
-      <span class="ml">A·B =</span>
-      <div class="matrix-box"><table><tr><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td></tr></table></div>
-      <span class="ml" style="margin:0 .8rem;">ama</span>
-      <span class="ml">B·A =</span>
-      <div class="matrix-box"><table><tr><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
-    </div>
-    <div class="formula" style="background:var(--tag-warn);border-color:#e57373;margin-top:.5rem;">AB = O &nbsp; ama &nbsp; BA ≠ O &nbsp; → &nbsp; AB ≠ BA</div>
+  <div class="formula">$$A \cdot B \neq B \cdot A \quad \text{(genel olarak)}$$</div>
+  <p style="font-weight:600; margin: .8rem 0 .4rem;">Karşı örnek:</p>
+  <div class="mw">
+    <span class="ml">A =</span>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <span style="margin:0 .5rem;"></span>
+    <span class="ml">B =</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+  </div>
+  <div class="mw" style="margin-top:.5rem;">
+    <span class="ml">A·B =</span>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <span class="ml" style="margin:0 .8rem;">ama</span>
+    <span class="ml">B·A =</span>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+  </div>
+  <div class="formula" style="background:var(--tag-warn);border-color:#e57373;margin-top:.5rem;">
+    $$AB = O \quad \text{ama} \quad BA \neq O \quad \Rightarrow \quad AB \neq BA$$
   </div>
 </div>
 
@@ -204,8 +247,8 @@
     <span class="card-title">Matris Kuvveti</span>
     <span class="tag op">Gösterim</span>
   </div>
-  <p>A <strong>kare matris</strong> ise kuvvetleri tanımlıdır:</p>
-  <div class="formula">A² = A·A &nbsp;&nbsp;&nbsp; A³ = A·A² = A²·A &nbsp;&nbsp;&nbsp; ⋯</div>
+  <p>$A$ <strong>kare matris</strong> ise kuvvetleri tanımlıdır:</p>
+  <div class="formula">$$A^2 = A \cdot A \qquad A^3 = A \cdot A^2 = A^2 \cdot A \qquad \cdots$$</div>
   <div class="note">Sadece kare matrislerde kuvvet tanımlıdır (boyut uyumu gerektiğinden).</div>
 </div>
 
@@ -213,13 +256,13 @@
 <div class="summary-box">
   <h3>Hızlı Özet</h3>
   <p>
-    <strong>Toplama:</strong> Aynı boyutlu matrislerde giriş giriş topla. Değişmeli ve birleşmeli. Nötr eleman = O (sıfır matris).
+    <strong>Toplama:</strong> Aynı boyutlu matrislerde giriş giriş topla. Değişmeli ve birleşmeli. Nötr eleman = $O$ (sıfır matris).
     <br>
-    <strong>Skaler çarpma:</strong> Her girişi c ile çarp. Dağılma, birleşme, birim (1·A=A) özellikleri var. (−1)·A = −A.
+    <strong>Skaler çarpma:</strong> Her girişi $c$ ile çarp. Dağılma, birleşme, birim ($1 \cdot A = A$) özellikleri var. $(-1) \cdot A = -A$.
     <br>
-    <strong>Matris çarpımı:</strong> A'nın satırı × B'nin sütunu → toplam. A<sub>n×m</sub> · B<sub>m×r</sub> = C<sub>n×r</sub>. A'nın sütun sayısı = B'nin satır sayısı şart!
+    <strong>Matris çarpımı:</strong> $A$'nın satırı $\times$ $B$'nin sütunu → toplam. $A_{n \times m} \cdot B_{m \times r} = C_{n \times r}$. $A$'nın sütun sayısı = $B$'nin satır sayısı şart!
     <br>
-    <strong>⚠️ Değişmeli DEĞİL:</strong> AB ≠ BA genel olarak. Bu lineer cebirin en temel farkı!
+    <strong>⚠️ Değişmeli DEĞİL:</strong> $AB \neq BA$ genel olarak. Bu lineer cebirin en temel farkı!
   </p>
 </div>
 

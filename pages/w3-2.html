@@ -19,7 +19,7 @@
 <div class="section-title"><span>🔲</span> Elementer Matris (Elementary Matrix)</div>
 
 <div class="def-box" data-label="Tanım — Elementer Matris">
-  <p><strong>Birim matris I</strong>'ye <em>tek bir elementer satır işlemi</em> uygulanarak elde edilen matrise <strong>elementer matris</strong> denir.</p>
+  <p><strong>Birim matris $I$</strong>'ye <em>tek bir elementer satır işlemi</em> uygulanarak elde edilen matrise <strong>elementer matris</strong> denir.</p>
 </div>
 
 <div class="card example">
@@ -29,70 +29,66 @@
   </div>
 
   <div class="examples-grid">
-    <!-- Örnek 1: Tip 2 -->
     <div class="ex-item">
       <div class="mw" style="justify-content:center;">
         <div class="mb"><table>
-          <tr><td>0</td><td>1</td><td>0</td></tr>
-          <tr><td>1</td><td>0</td><td>0</td></tr>
-          <tr><td>0</td><td>0</td><td>1</td></tr>
+          <tr><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+          <tr><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
         </table></div>
       </div>
-      <div class="op-label" style="margin-top:.3rem;">r₁ ↔ r₂</div>
+      <div class="op-label" style="margin-top:.3rem;">$r_1 \leftrightarrow r_2$</div>
       <div class="note" style="text-align:center; color:var(--c-green);">✓ Elementer</div>
     </div>
 
-    <!-- Örnek 2: Tip 1 -->
     <div class="ex-item">
       <div class="mw" style="justify-content:center;">
         <div class="mb"><table>
-          <tr><td>1</td><td>−2</td><td>0</td></tr>
-          <tr><td>0</td><td>1</td><td>0</td></tr>
-          <tr><td>0</td><td>0</td><td>1</td></tr>
+          <tr><td class="diag">1</td><td>−2</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
         </table></div>
       </div>
-      <div class="op-label" style="margin-top:.3rem;">r₁ → r₁ − 2r₂</div>
+      <div class="op-label" style="margin-top:.3rem;">$r_1 \to r_1 - 2r_2$</div>
       <div class="note" style="text-align:center; color:var(--c-green);">✓ Elementer</div>
     </div>
 
-    <!-- Örnek 3: İki işlem — elementer DEĞİL -->
     <div class="ex-item">
       <div class="mw" style="justify-content:center;">
         <div class="mb"><table>
-          <tr><td>2</td><td>0</td><td>0</td></tr>
-          <tr><td>0</td><td>1</td><td>0</td></tr>
-          <tr><td>0</td><td>0</td><td>−1</td></tr>
+          <tr><td class="diag">2</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>−1</td></tr>
         </table></div>
       </div>
-      <div class="op-label" style="margin-top:.3rem;">r₁ → 2r₁, r₃ → −r₃</div>
+      <div class="op-label" style="margin-top:.3rem;">$r_1 \to 2r_1, \; r_3 \to -r_3$</div>
       <div class="note" style="text-align:center; color:var(--c-red);">✗ Elementer değil (2 işlem!)</div>
     </div>
 
-    <!-- Örnek 4: I kendisi -->
     <div class="ex-item">
       <div class="mw" style="justify-content:center;">
         <div class="mb"><table>
-          <tr><td>1</td><td>0</td><td>0</td></tr>
-          <tr><td>0</td><td>1</td><td>0</td></tr>
-          <tr><td>0</td><td>0</td><td>1</td></tr>
+          <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
         </table></div>
       </div>
-      <div class="op-label" style="margin-top:.3rem;">r₁ → 1·r₁ (hiçbir şey yapmıyor)</div>
-      <div class="note" style="text-align:center; color:var(--c-green);">✓ Elementer (r₁ → 1·r₁)</div>
+      <div class="op-label" style="margin-top:.3rem;">$r_1 \to 1 \cdot r_1$ (hiçbir şey yapmıyor)</div>
+      <div class="note" style="text-align:center; color:var(--c-green);">✓ Elementer ($r_1 \to 1 \cdot r_1$)</div>
     </div>
   </div>
 
-  <div class="note">Elementer matris = I + tam olarak 1 ERO. İki veya daha fazla işlem aynı anda uygulanırsa elementer <strong>değildir</strong>.</div>
+  <div class="note">Elementer matris = $I$ + tam olarak 1 ERO. İki veya daha fazla işlem aynı anda uygulanırsa elementer <strong>değildir</strong>.</div>
 </div>
 
 <!-- ═══════════════ ÖZELLİK ═══════════════ -->
 <div class="section-title"><span>⚡</span> Temel Özellik</div>
 
 <div class="def-box" data-label="Özellik">
-  <p>Herhangi bir A matrisi ve ε elementer satır işlemi için:</p>
-  <div class="formula">ε(A) = ε(I) · A</div>
-  <p style="margin-top:.4rem;">Yani: A'ya bir ERO uygulamak, A'yı <strong>soldan ilgili elementer matris ile çarpmaya</strong> eşdeğerdir.</p>
-  <p style="margin-top:.3rem; font-size:.9rem; color:var(--muted);">ε(I) → elementer matris</p>
+  <p>Herhangi bir $A$ matrisi ve $\varepsilon$ elementer satır işlemi için:</p>
+  <div class="formula">$$\varepsilon(A) = \varepsilon(I) \cdot A$$</div>
+  <p style="margin-top:.4rem;">Yani: $A$'ya bir ERO uygulamak, $A$'yı <strong>soldan ilgili elementer matris ile çarpmaya</strong> eşdeğerdir.</p>
+  <p style="margin-top:.3rem; font-size:.9rem; color:var(--muted);">$\varepsilon(I)$ → elementer matris</p>
 </div>
 
 <div class="card warn">
@@ -111,14 +107,14 @@
     <span class="card-title">Kısa Gösterim</span>
     <span class="tag nota">Gösterim</span>
   </div>
-  <p>Kısalık için <strong>Eₜ</strong> yazarız; bu ε<sub>t</sub>(I) demek, yani t. işlemin uygulandığı elementer matris.</p>
+  <p>Kısalık için $E_t$ yazarız; bu $\varepsilon_t(I)$ demek, yani $t$. işlemin uygulandığı elementer matris.</p>
 </div>
 
 <div class="def-box" data-label="Teorem">
-  <p>B matrisi, A'ya sırasıyla ε₁, ε₂, …, εₜ elementer satır işlemleri uygulanarak elde ediliyorsa:</p>
-  <div class="formula">B = P · A</div>
+  <p>$B$ matrisi, $A$'ya sırasıyla $\varepsilon_1, \varepsilon_2, \ldots, \varepsilon_t$ elementer satır işlemleri uygulanarak elde ediliyorsa:</p>
+  <div class="formula">$$B = P \cdot A$$</div>
   <p style="margin-top:.4rem;">burada</p>
-  <div class="formula">P = Eₜ · Eₜ₋₁ · … · E₂ · E₁</div>
+  <div class="formula">$$P = E_t \cdot E_{t-1} \cdots E_2 \cdot E_1$$</div>
   <div class="note" style="margin-top:.4rem;">⚠️ Sıralama önemli: son uygulanan işlem en solda. İlk uygulanan en sağda.</div>
 </div>
 
@@ -126,8 +122,8 @@
 <div class="section-title"><span>📐</span> Augmented (Genişletilmiş) Matris</div>
 
 <div class="def-box" data-label="Tanım — Augmented Matris">
-  <p>A (n×m) ve B (n×t) matrisleri olsun. B'yi A'nın yanına yazarak elde edilen matrise <strong>augmented (genişletilmiş / parçalı) matris</strong> denir.</p>
-  <div class="formula">[A : B] &nbsp;&nbsp; boyutu: n×(m+t)</div>
+  <p>$A$ ($n \times m$) ve $B$ ($n \times t$) matrisleri olsun. $B$'yi $A$'nın yanına yazarak elde edilen matrise <strong>augmented (genişletilmiş / parçalı) matris</strong> denir.</p>
+  <div class="formula">$$[A \mid B] \qquad \text{boyutu: } n \times (m+t)$$</div>
 </div>
 
 <div class="card prop">
@@ -138,22 +134,22 @@
   <p>Yukarıdaki teorem şu anlama gelir:</p>
   <div class="mw" style="justify-content:center; margin:.8rem 0;">
     <div class="mb" style="padding:.7rem 1rem;"><table>
-      <tr><td style="font-weight:700;">A</td><td style="padding:0 .5rem;">:</td><td style="font-weight:700;">I</td></tr>
+      <tr><td style="font-weight:700;">$A$</td><td style="padding:0 .5rem;">$\mid$</td><td style="font-weight:700;">$I$</td></tr>
     </table></div>
     <div style="display:flex;flex-direction:column;align-items:center;margin:0 .5rem;">
-      <div class="op-label">ERO'lar<br>ε₁, …, εₜ</div>
+      <div class="op-label">ERO'lar<br>$\varepsilon_1, \ldots, \varepsilon_t$</div>
       <span class="arrow">→</span>
     </div>
     <div class="mb" style="padding:.7rem 1rem;"><table>
-      <tr><td style="font-weight:700;">B</td><td style="padding:0 .5rem;">:</td><td style="font-weight:700;">P</td></tr>
+      <tr><td style="font-weight:700;">$B$</td><td style="padding:0 .5rem;">$\mid$</td><td style="font-weight:700;">$P$</td></tr>
     </table></div>
   </div>
-  <p>A'nın yanına I koy, aynı ERO'ları uygula. Sol taraf B olurken, sağ taraf otomatik olarak <strong>P = Eₜ···E₁</strong> matrisini verir.</p>
-  <div class="formula">B = P · A</div>
+  <p>$A$'nın yanına $I$ koy, aynı ERO'ları uygula. Sol taraf $B$ olurken, sağ taraf otomatik olarak $P = E_t \cdots E_1$ matrisini verir.</p>
+  <div class="formula">$$B = P \cdot A$$</div>
 </div>
 
 <!-- ═══════════════ ÖRNEK ═══════════════ -->
-<div class="section-title"><span>✏️</span> Örnek: Echelon Form R ve P Matrisi Bulma</div>
+<div class="section-title"><span>✏️</span> Örnek: Echelon Form $R$ ve $P$ Matrisi Bulma</div>
 
 <div class="q-box" data-label="Soru">
   <div class="mw">
@@ -164,21 +160,21 @@
       <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td></tr>
     </table></div>
   </div>
-  <p>A'nın echelon formu R'yi ve R = P·A koşulunu sağlayan P matrisini bulun.</p>
+  <p>$A$'nın echelon formu $R$'yi ve $R = P \cdot A$ koşulunu sağlayan $P$ matrisini bulun.</p>
 </div>
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Çözüm — [A : I₃] oluştur ve ERO uygula</span>
+    <span class="card-title">Çözüm — $[A \mid I_3]$ oluştur ve ERO uygula</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">Başlangıç: [A : I₃]</div>
+    <div class="step-label">Başlangıç: $[A \mid I_3]$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>2</td><td>3</td><td>−1</td><td>0</td><td>6</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>0</td></tr>
-        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>0</td><td>1</td></tr>
+        <tr><td>2</td><td>3</td><td>−1</td><td>0</td><td>6</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
     </div>
   </div>
@@ -186,16 +182,16 @@
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Adım 1 — r₁ ↔ r₂</span>
+    <span class="card-title">Adım 1 — $r_1 \leftrightarrow r_2$</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₁ ↔ r₂</div>
+    <div class="step-label">$r_1 \leftrightarrow r_2$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>2</td><td>3</td><td>−1</td><td>0</td><td>6</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>0</td><td>1</td></tr>
+        <tr class="highlight-row"><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td>2</td><td>3</td><td>−1</td><td>0</td><td>6</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
@@ -203,19 +199,19 @@
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Adım 2 — r₂ → r₂ − 2r₁</span>
+    <span class="card-title">Adım 2 — $r_2 \to r_2 - 2r_1$</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → r₂ − 2r₁</div>
+    <div class="step-label">$r_2 \to r_2 - 2r_1$</div>
     <p style="font-size:.88rem; color:var(--muted); margin-bottom:.3rem;">
-      r₂: (2,3,−1,0,6 | 1,0,0) − 2·(1,−3,1,1,8 | 0,1,0) = (0,9,−3,−2,−10 | 1,−2,0)
+      $(2,3,-1,0,6 \mid 1,0,0) - 2 \cdot (1,-3,1,1,8 \mid 0,1,0) = (0,9,-3,-2,-10 \mid 1,-2,0)$
     </p>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>9</td><td>−3</td><td>−2</td><td>−10</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>−2</td><td>0</td></tr>
-        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td>0</td><td>9</td><td>−3</td><td>−2</td><td>−10</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td>1</td><td>−2</td><td class="zero-cell">0</td></tr>
+        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
@@ -223,19 +219,19 @@
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Adım 3 — r₂ → r₂ − 4r₃</span>
+    <span class="card-title">Adım 3 — $r_2 \to r_2 - 4r_3$</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → r₂ − 4r₃</div>
+    <div class="step-label">$r_2 \to r_2 - 4r_3$</div>
     <p style="font-size:.88rem; color:var(--muted); margin-bottom:.3rem;">
-      r₂: (0,9,−3,−2,−10 | 1,−2,0) − 4·(0,2,0,0,1 | 0,0,1) = (0,1,−3,−2,−14 | 1,−2,−4)
+      $(0,9,-3,-2,-10 \mid 1,-2,0) - 4 \cdot (0,2,0,0,1 \mid 0,0,1) = (0,1,-3,-2,-14 \mid 1,-2,-4)$
     </p>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td>−3</td><td>−2</td><td>−14</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>−2</td><td>−4</td></tr>
-        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td>0</td><td>1</td><td>−3</td><td>−2</td><td>−14</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td>1</td><td>−2</td><td>−4</td></tr>
+        <tr><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
@@ -243,23 +239,23 @@
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Adım 4 — r₃ → r₃ − 2r₂</span>
+    <span class="card-title">Adım 4 — $r_3 \to r_3 - 2r_2$</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₃ → r₃ − 2r₂</div>
+    <div class="step-label">$r_3 \to r_3 - 2r_2$</div>
     <p style="font-size:.88rem; color:var(--muted); margin-bottom:.3rem;">
-      r₃: (0,2,0,0,1 | 0,0,1) − 2·(0,1,−3,−2,−14 | 1,−2,−4) = (0,0,6,4,29 | −2,4,9)
+      $(0,2,0,0,1 \mid 0,0,1) - 2 \cdot (0,1,-3,-2,-14 \mid 1,-2,-4) = (0,0,6,4,29 \mid -2,4,9)$
     </p>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>−3</td><td>−2</td><td>−14</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>−2</td><td>−4</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>6</td><td>4</td><td>29</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−2</td><td>4</td><td>9</td></tr>
+        <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td>0</td><td>1</td><td>−3</td><td>−2</td><td>−14</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td>1</td><td>−2</td><td>−4</td></tr>
+        <tr class="highlight-row"><td>0</td><td>0</td><td>6</td><td>4</td><td>29</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td>−2</td><td>4</td><td>9</td></tr>
       </table></div>
     </div>
   </div>
-  <div class="note">Echelon forma ulaştık. Sol taraf R, sağ taraf P.</div>
+  <div class="note">Echelon forma ulaştık. Sol taraf $R$, sağ taraf $P$.</div>
 </div>
 
 <div class="card prop">
@@ -270,32 +266,32 @@
   <div class="mw">
     <span class="ml">R =</span>
     <div class="mb"><table>
-      <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td></tr>
-      <tr><td>0</td><td>1</td><td>−3</td><td>−2</td><td>−14</td></tr>
-      <tr><td>0</td><td>0</td><td>6</td><td>4</td><td>29</td></tr>
+      <tr><td class="lead">1</td><td>−3</td><td>1</td><td>1</td><td>8</td></tr>
+      <tr><td class="zero-cell">0</td><td class="lead">1</td><td>−3</td><td>−2</td><td>−14</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="lead">6</td><td>4</td><td>29</td></tr>
     </table></div>
   </div>
-  <div class="mw">
+  <div class="mw" style="margin-top:.5rem;">
     <span class="ml">P =</span>
     <div class="mb"><table>
-      <tr><td>0</td><td>1</td><td>0</td></tr>
+      <tr><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
       <tr><td>1</td><td>−2</td><td>−4</td></tr>
       <tr><td>−2</td><td>4</td><td>9</td></tr>
     </table></div>
   </div>
-  <div class="result-box">R = P · A</div>
+  <div class="result-box">$$R = P \cdot A$$</div>
 </div>
 
-<!-- ═══════════════ EXERCİSE: P·A = R doğrulama ═══════════════ -->
-<div class="section-title"><span>✅</span> Alıştırma Çözümü: P·A = R Doğrulaması</div>
+<!-- ═══════════════ DOĞRULAMA ═══════════════ -->
+<div class="section-title"><span>✅</span> Alıştırma Çözümü: $P \cdot A = R$ Doğrulaması</div>
 
 <div class="q-box" data-label="Alıştırma">
-  <p>P · A = R olduğunu doğrulayın.</p>
+  <p>$P \cdot A = R$ olduğunu doğrulayın.</p>
 </div>
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Çözüm — P·A hesabı</span>
+    <span class="card-title">Çözüm — $P \cdot A$ hesabı</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
@@ -303,11 +299,11 @@
     <div class="mw">
       <span class="ml">P =</span>
       <div class="mb"><table>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
         <tr><td>1</td><td>−2</td><td>−4</td></tr>
         <tr><td>−2</td><td>4</td><td>9</td></tr>
       </table></div>
-      <span class="ml" style="margin:0 .3rem;">,&nbsp; A =</span>
+      <span class="ml" style="margin:0 .3rem;">,&ensp; A =</span>
       <div class="mb"><table>
         <tr><td>2</td><td>3</td><td>−1</td><td>0</td><td>6</td></tr>
         <tr><td>1</td><td>−3</td><td>1</td><td>1</td><td>8</td></tr>
@@ -317,43 +313,41 @@
   </div>
 
   <div class="step">
-    <div class="step-label">1. satır: P₁ · A = (0,1,0) · A</div>
-    <p>= 0·(2,3,−1,0,6) + 1·(1,−3,1,1,8) + 0·(0,2,0,0,1)</p>
-    <div class="formula">= (1, −3, 1, 1, 8) ✓</div>
+    <div class="step-label">1. satır: $(0,1,0) \cdot A$</div>
+    <p>$= 0 \cdot (2,3,-1,0,6) + 1 \cdot (1,-3,1,1,8) + 0 \cdot (0,2,0,0,1)$</p>
+    <div class="formula">$$= (1,\; -3,\; 1,\; 1,\; 8) \checkmark$$</div>
   </div>
 
   <div class="step">
-    <div class="step-label">2. satır: P₂ · A = (1,−2,−4) · A</div>
-    <p>= 1·(2,3,−1,0,6) − 2·(1,−3,1,1,8) − 4·(0,2,0,0,1)</p>
-    <p>= (2,3,−1,0,6) + (−2,6,−2,−2,−16) + (0,−8,0,0,−4)</p>
-    <div class="formula">= (0, 1, −3, −2, −14) ✓</div>
+    <div class="step-label">2. satır: $(1,-2,-4) \cdot A$</div>
+    <p>$= 1 \cdot (2,3,-1,0,6) - 2 \cdot (1,-3,1,1,8) - 4 \cdot (0,2,0,0,1)$</p>
+    <p>$= (2,3,-1,0,6) + (-2,6,-2,-2,-16) + (0,-8,0,0,-4)$</p>
+    <div class="formula">$$= (0,\; 1,\; -3,\; -2,\; -14) \checkmark$$</div>
   </div>
 
   <div class="step">
-    <div class="step-label">3. satır: P₃ · A = (−2,4,9) · A</div>
-    <p>= −2·(2,3,−1,0,6) + 4·(1,−3,1,1,8) + 9·(0,2,0,0,1)</p>
-    <p>= (−4,−6,2,0,−12) + (4,−12,4,4,32) + (0,18,0,0,9)</p>
-    <div class="formula">= (0, 0, 6, 4, 29) ✓</div>
+    <div class="step-label">3. satır: $(-2,4,9) \cdot A$</div>
+    <p>$= -2 \cdot (2,3,-1,0,6) + 4 \cdot (1,-3,1,1,8) + 9 \cdot (0,2,0,0,1)$</p>
+    <p>$= (-4,-6,2,0,-12) + (4,-12,4,4,32) + (0,18,0,0,9)$</p>
+    <div class="formula">$$= (0,\; 0,\; 6,\; 4,\; 29) \checkmark$$</div>
   </div>
 
-  <div class="result-box">
-    P · A = R doğrulandı. ✓
-  </div>
+  <div class="result-box">$P \cdot A = R$ doğrulandı. ✓</div>
 </div>
 
 <!-- ÖZET -->
 <div class="summary-box">
   <h3>Hızlı Özet</h3>
   <p>
-    <strong>Elementer matris:</strong> I'ye tek bir ERO uygulayarak elde edilen matris. Birden fazla işlem → elementer değil.
+    <strong>Elementer matris:</strong> $I$'ye tek bir ERO uygulayarak elde edilen matris. Birden fazla işlem → elementer değil.
     <br><br>
-    <strong>Temel özellik:</strong> ε(A) = ε(I)·A — satır işlemi uygulamak = soldan elementer matrisle çarpmak.
+    <strong>Temel özellik:</strong> $\varepsilon(A) = \varepsilon(I) \cdot A$ — satır işlemi uygulamak = soldan elementer matrisle çarpmak.
     <br><br>
-    <strong>Teorem:</strong> A'ya ε₁,…,εₜ işlemleri uygulanarak B elde edilirse B = P·A, burada P = Eₜ···E₁.
+    <strong>Teorem:</strong> $A$'ya $\varepsilon_1, \ldots, \varepsilon_t$ işlemleri uygulanarak $B$ elde edilirse $B = P \cdot A$, burada $P = E_t \cdots E_1$.
     <br><br>
-    <strong>Augmented matris [A:I]:</strong> A'nın yanına I koyup ERO uygula. Sol taraf → B (echelon form), sağ taraf → P matrisi. Böylece B = P·A otomatik elde edilir.
+    <strong>Augmented matris $[A \mid I]$:</strong> $A$'nın yanına $I$ koyup ERO uygula. Sol taraf → $B$ (echelon form), sağ taraf → $P$ matrisi. Böylece $B = P \cdot A$ otomatik elde edilir.
     <br><br>
-    <strong>P'nin anlamı:</strong> P, tüm uyguladığın ERO'ların çarpımı. P matrisi elinizde olunca satır işlemlerini tekrar yapmana gerek yok — doğrudan P·A hesapla.
+    <strong>$P$'nin anlamı:</strong> $P$, tüm uyguladığın ERO'ların çarpımı. $P$ matrisi elinizde olunca satır işlemlerini tekrar yapmana gerek yok — doğrudan $P \cdot A$ hesapla.
   </p>
 </div>
 

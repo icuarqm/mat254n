@@ -23,20 +23,27 @@
     <span class="card-title">4 Temel Özellik</span>
     <span class="tag prop">Özellik</span>
   </div>
-  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">Uygun boyutlu A, B matrisleri ve c skaleri için:</p>
+  <p style="font-size:.9rem;color:var(--muted);margin-bottom:.3rem;">Uygun boyutlu $A, B$ matrisleri ve $c$ skaleri için:</p>
   <div class="prop-list">
-    <div class="prop-item"><span class="prop-label">i)</span> Toplamda transpoz: <div class="formula">(A + B)<sup>T</sup> = A<sup>T</sup> + B<sup>T</sup></div></div>
-    <div class="prop-item"><span class="prop-label">ii)</span> Skalerde transpoz: <div class="formula">(cA)<sup>T</sup> = c · A<sup>T</sup></div></div>
-    <div class="prop-item"><span class="prop-label">iii)</span> Çarpımda transpoz: <div class="formula">(AB)<sup>T</sup> = B<sup>T</sup> · A<sup>T</sup></div>
+    <div class="prop-item"><span class="prop-label">i)</span> Toplamda transpoz:
+      <div class="formula">$$(A + B)^T = A^T + B^T$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Skalerde transpoz:
+      <div class="formula">$$(cA)^T = c \cdot A^T$$</div>
+    </div>
+    <div class="prop-item"><span class="prop-label">iii)</span> Çarpımda transpoz:
+      <div class="formula">$$(AB)^T = B^T \cdot A^T$$</div>
       <div class="note" style="margin-top:.2rem;">⚠️ Sıra tersine dönüyor! (çorap-ayakkabı kuralı)</div>
     </div>
-    <div class="prop-item"><span class="prop-label">iv)</span> Çift transpoz: <div class="formula">(A<sup>T</sup>)<sup>T</sup> = A</div></div>
+    <div class="prop-item"><span class="prop-label">iv)</span> Çift transpoz:
+      <div class="formula">$$(A^T)^T = A$$</div>
+    </div>
   </div>
 </div>
 
 <div class="card warn">
   <div class="card-header">
-    <span class="card-title">Dikkat: (AB)ᵀ = BᵀAᵀ</span>
+    <span class="card-title">Dikkat: $(AB)^T = B^T A^T$</span>
     <span class="tag warn">Kritik</span>
   </div>
   <p>Çarpımın transpozu alınca sıra <strong>tersine döner</strong>. Bu en sık yapılan hatalardan biri. Mantığı: önce ayakkabıyı giyersin sonra çorabı, çıkarırken önce ayakkabıyı sonra çorabı çıkarırsın — aynı mantık.</p>
@@ -45,166 +52,134 @@
 <!-- ═══════════════ PRATİK 1 ═══════════════ -->
 <div class="section-title"><span>✏️</span> Pratik 1: İfade Sadeleştirme</div>
 
-<!-- Soru a -->
 <div class="q-box" data-label="Soru 1a">
-  <div class="formula">A[(2A − 5B) − 3A] + A(A − B)</div>
+  <div class="formula">$$A[(2A - 5B) - 3A] + A(A - B)$$</div>
   <p style="margin-top:.3rem;">Sadeleştirin.</p>
 </div>
 <div class="card sol">
-  <div class="card-header">
-    <span class="card-title">Çözüm 1a</span>
-    <span class="tag sol">Çözüm</span>
-  </div>
-  <div class="step">
-    Köşeli parantez içi: 2A − 5B − 3A = <strong>−A − 5B</strong>
-  </div>
-  <div class="step">
-    A(−A − 5B) + A(A − B) = −A² − 5AB + A² − AB
-  </div>
-  <div class="step">
-    −A² + A² iptal → −5AB − AB
-  </div>
-  <div class="result-box">= −6AB</div>
+  <div class="card-header"><span class="card-title">Çözüm 1a</span><span class="tag sol">Çözüm</span></div>
+  <div class="step">Köşeli parantez içi: $2A - 5B - 3A = -A - 5B$</div>
+  <div class="step">$$A(-A - 5B) + A(A - B) = -A^2 - 5AB + A^2 - AB$$</div>
+  <div class="step">$-A^2 + A^2$ iptal $\;\Rightarrow\; -5AB - AB$</div>
+  <div class="result-box">$$= -6AB$$</div>
 </div>
 
-<!-- Soru b -->
 <div class="q-box" data-label="Soru 1b">
-  <div class="formula">(A + B)² − (A − B)²</div>
+  <div class="formula">$$(A + B)^2 - (A - B)^2$$</div>
 </div>
 <div class="card sol">
-  <div class="card-header">
-    <span class="card-title">Çözüm 1b</span>
-    <span class="tag sol">Çözüm</span>
-  </div>
-  <div class="step">
-    (A+B)² = (A+B)(A+B) = A² + AB + BA + B²
-  </div>
-  <div class="step">
-    (A−B)² = (A−B)(A−B) = A² − AB − BA + B²
-  </div>
-  <div class="step">
-    Fark: A² + AB + BA + B² − A² + AB + BA − B²
-  </div>
-  <div class="result-box">= 2(AB + BA)</div>
-  <div class="note">⚠️ 4AB değil! Çünkü AB ≠ BA, ikisi ayrı terimler.</div>
+  <div class="card-header"><span class="card-title">Çözüm 1b</span><span class="tag sol">Çözüm</span></div>
+  <div class="step">$$(A+B)^2 = A^2 + AB + BA + B^2$$</div>
+  <div class="step">$$(A-B)^2 = A^2 - AB - BA + B^2$$</div>
+  <div class="step">Fark: $A^2 + AB + BA + B^2 - A^2 + AB + BA - B^2$</div>
+  <div class="result-box">$$= 2(AB + BA)$$</div>
+  <div class="note">⚠️ $4AB$ değil! Çünkü $AB \neq BA$, ikisi ayrı terimler.</div>
 </div>
 
-<!-- Soru c -->
 <div class="q-box" data-label="Soru 1c">
-  <div class="formula">(A + B)² − A² − 2AB − B²</div>
+  <div class="formula">$$(A + B)^2 - A^2 - 2AB - B^2$$</div>
 </div>
 <div class="card sol">
-  <div class="card-header">
-    <span class="card-title">Çözüm 1c</span>
-    <span class="tag sol">Çözüm</span>
-  </div>
-  <div class="step">
-    (A+B)² = A² + AB + BA + B²
-  </div>
-  <div class="step">
-    A² + AB + BA + B² − A² − 2AB − B² = AB + BA − 2AB
-  </div>
-  <div class="result-box">= BA − AB</div>
-  <div class="note">Sayılarda bu 0 olurdu ama matrislerde BA − AB ≠ 0 (genel olarak).</div>
+  <div class="card-header"><span class="card-title">Çözüm 1c</span><span class="tag sol">Çözüm</span></div>
+  <div class="step">$$(A+B)^2 = A^2 + AB + BA + B^2$$</div>
+  <div class="step">$$A^2 + AB + BA + B^2 - A^2 - 2AB - B^2 = AB + BA - 2AB$$</div>
+  <div class="result-box">$$= BA - AB$$</div>
+  <div class="note">Sayılarda bu 0 olurdu ama matrislerde $BA - AB \neq 0$ (genel olarak).</div>
 </div>
 
 <!-- ═══════════════ PRATİK 2 ═══════════════ -->
 <div class="section-title"><span>✅</span> Pratik 2: Doğru / Yanlış</div>
 
-<!-- 2a -->
 <div class="q-box" data-label="Soru 2a">
-  <p>A² = I &nbsp;⟹&nbsp; A = I veya A = −I ?</p>
+  <p>$A^2 = I \;\Longrightarrow\; A = I$ veya $A = -I$ ?</p>
 </div>
 <div class="card tf">
-  <div class="card-header">
-    <span class="card-title">Çözüm 2a</span>
-    <span class="tag tf">D/Y</span>
-  </div>
+  <div class="card-header"><span class="card-title">Çözüm 2a</span><span class="tag tf">D/Y</span></div>
   <div class="false-box">YANLIŞ</div>
   <p style="margin-top:.5rem;">Karşı örnek:</p>
-  <div class="matrix-wrapper">
+  <div class="mw">
     <span class="ml">A =</span>
-    <div class="matrix-box"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>−1</td></tr></table></div>
-    <span style="margin:0 .3rem;">→</span>
-    <span class="ml">A² =</span>
-    <div class="matrix-box"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>1</td></tr></table></div>
-    <span class="ml">= I</span>
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td>−1</td></tr>
+    </table></div>
+    <span class="ml">→</span>
+    <span class="ml">$A^2$ =</span>
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td></tr>
+    </table></div>
+    <span class="ml">= $I$</span>
   </div>
-  <div class="note">A² = I ama A ≠ I ve A ≠ −I. Sayılarda a²=1 ise a=±1, ama matrislerde başka çözümler de var.</div>
+  <div class="note">$A^2 = I$ ama $A \neq I$ ve $A \neq -I$. Sayılarda $a^2=1$ ise $a=\pm 1$, ama matrislerde başka çözümler de var.</div>
 </div>
 
-<!-- 2b -->
 <div class="q-box" data-label="Soru 2b">
-  <p>(A + B)(A − B) = A² − B² ?</p>
+  <p>$(A + B)(A - B) = A^2 - B^2$ ?</p>
 </div>
 <div class="card tf">
-  <div class="card-header">
-    <span class="card-title">Çözüm 2b</span>
-    <span class="tag tf">D/Y</span>
-  </div>
+  <div class="card-header"><span class="card-title">Çözüm 2b</span><span class="tag tf">D/Y</span></div>
   <div class="false-box">YANLIŞ (genel olarak)</div>
-  <div class="step">
-    (A+B)(A−B) = A² − AB + BA − B²
-  </div>
-  <p style="margin-top:.3rem;">Bunun A²−B²'ye eşit olması için AB = BA gerekir. Ama çarpım genel olarak değişmeli değil.</p>
+  <div class="step">$$(A+B)(A-B) = A^2 - AB + BA - B^2$$</div>
+  <p style="margin-top:.3rem;">Bunun $A^2 - B^2$'ye eşit olması için $AB = BA$ gerekir. Ama çarpım genel olarak değişmeli değil.</p>
 </div>
 
-<!-- 2c -->
 <div class="q-box" data-label="Soru 2c">
-  <p>B = A² − 5A + I &nbsp;⟹&nbsp; AB = BA ?</p>
+  <p>$B = A^2 - 5A + I \;\Longrightarrow\; AB = BA$ ?</p>
 </div>
 <div class="card tf">
-  <div class="card-header">
-    <span class="card-title">Çözüm 2c</span>
-    <span class="tag tf">D/Y</span>
-  </div>
+  <div class="card-header"><span class="card-title">Çözüm 2c</span><span class="tag tf">D/Y</span></div>
   <div class="true-box">DOĞRU</div>
-  <div class="step">
-    AB = A(A² − 5A + I) = A³ − 5A² + A
-  </div>
-  <div class="step">
-    BA = (A² − 5A + I)A = A³ − 5A² + A
-  </div>
-  <div class="note">B, A'nın bir polinomu olduğu için AB = BA. A'nın kuvvetleri kendi arasında her zaman değişmelidir (A·A² = A²·A).</div>
+  <div class="step">$$AB = A(A^2 - 5A + I) = A^3 - 5A^2 + A$$</div>
+  <div class="step">$$BA = (A^2 - 5A + I)A = A^3 - 5A^2 + A$$</div>
+  <div class="note">$B$, $A$'nın bir polinomu olduğu için $AB = BA$. $A$'nın kuvvetleri kendi arasında her zaman değişmelidir.</div>
 </div>
 
 <!-- ═══════════════ PRATİK 3 ═══════════════ -->
 <div class="section-title"><span>🔍</span> Pratik 3: Matris Bulma</div>
 
 <div class="q-box" data-label="Soru 3">
-  <p>A² − I = O koşulunu sağlayan tüm</p>
-  <div class="matrix-wrapper">
+  <p>$A^2 - I = O$ koşulunu sağlayan tüm</p>
+  <div class="mw">
     <span class="ml">A =</span>
-    <div class="matrix-box"><table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>b</td></tr></table></div>
+    <div class="mb"><table>
+      <tr><td>a</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td>b</td></tr>
+    </table></div>
   </div>
   <p>formundaki matrisleri bulun.</p>
 </div>
 <div class="card sol">
-  <div class="card-header">
-    <span class="card-title">Çözüm 3</span>
-    <span class="tag sol">Çözüm</span>
-  </div>
+  <div class="card-header"><span class="card-title">Çözüm 3</span><span class="tag sol">Çözüm</span></div>
+  <div class="step">$A^2 - I = O \;\Longrightarrow\; A^2 = I$</div>
   <div class="step">
-    A² − I = O &nbsp;⟹&nbsp; A² = I
-  </div>
-  <div class="step">
-    <div class="matrix-wrapper">
-      <div class="matrix-box"><table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>b</td></tr></table></div>
+    <div class="mw">
+      <div class="mb"><table>
+        <tr><td>a</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>b</td></tr>
+      </table></div>
       <span class="ml">·</span>
-      <div class="matrix-box"><table><tr><td>a</td><td>0</td></tr><tr><td>0</td><td>b</td></tr></table></div>
+      <div class="mb"><table>
+        <tr><td>a</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>b</td></tr>
+      </table></div>
       <span class="ml">=</span>
-      <div class="matrix-box"><table><tr><td>a²</td><td>0</td></tr><tr><td>0</td><td>b²</td></tr></table></div>
+      <div class="mb"><table>
+        <tr><td>$a^2$</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>$b^2$</td></tr>
+      </table></div>
       <span class="ml">=</span>
-      <div class="matrix-box"><table><tr><td>1</td><td>0</td></tr><tr><td>0</td><td>1</td></tr></table></div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td></tr>
+      </table></div>
     </div>
   </div>
-  <div class="step">
-    a² = 1 → a = ±1 &nbsp;&nbsp;&nbsp; b² = 1 → b = ±1
-  </div>
+  <div class="step">$a^2 = 1 \;\Rightarrow\; a = \pm 1 \qquad b^2 = 1 \;\Rightarrow\; b = \pm 1$</div>
   <div class="result-box" style="font-size:.95rem;">
-    A = diag(a, b) &nbsp; öyle ki &nbsp; a = ±1 ve b = ±1
+    $A = \operatorname{diag}(a,\, b)$ öyle ki $a = \pm 1$ ve $b = \pm 1$
     <br>
-    <span style="font-weight:400;font-size:.88rem;">4 olası matris: diag(1,1), diag(1,−1), diag(−1,1), diag(−1,−1)</span>
+    <span style="font-weight:400;font-size:.88rem;">4 olası matris: $\operatorname{diag}(1,1),\; \operatorname{diag}(1,-1),\; \operatorname{diag}(-1,1),\; \operatorname{diag}(-1,-1)$</span>
   </div>
 </div>
 
@@ -212,13 +187,13 @@
 <div class="summary-box">
   <h3>Bu Bölümün Dersleri</h3>
   <p>
-    <strong>Transpoz:</strong> Toplamada ve skalerde düz geçer, çarpımda sıra tersine döner: (AB)ᵀ = BᵀAᵀ. Çift transpoz = kendisi.
+    <strong>Transpoz:</strong> Toplamada ve skalerde düz geçer, çarpımda sıra tersine döner: $(AB)^T = B^T A^T$. Çift transpoz = kendisi.
     <br>
-    <strong>Matris cebri ≠ sayı cebri:</strong> (A+B)² ≠ A²+2AB+B² çünkü AB ≠ BA. Her "bildiğin" formülü matrise uygularken dikkat et.
+    <strong>Matris cebri $\neq$ sayı cebri:</strong> $(A+B)^2 \neq A^2 + 2AB + B^2$ çünkü $AB \neq BA$.
     <br>
-    <strong>İpucu:</strong> B, A'nın polinomu ise (B = A²−5A+I gibi) AB = BA her zaman doğrudur. A kendi kuvvetleriyle değişmelidir.
+    <strong>İpucu:</strong> $B$, $A$'nın polinomu ise ($B = A^2 - 5A + I$ gibi) $AB = BA$ her zaman doğrudur.
     <br>
-    <strong>Karşı örnek bulmak</strong> için köşegen matrisler veya basit 2×2 matrisler dene — en hızlı yol.
+    <strong>Karşı örnek bulmak</strong> için köşegen matrisler veya basit $2 \times 2$ matrisler dene — en hızlı yol.
   </p>
 </div>
 

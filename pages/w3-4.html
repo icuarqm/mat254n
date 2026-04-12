@@ -27,7 +27,7 @@
       <tr><td>1</td><td>−1</td><td>4</td><td>5</td></tr>
     </table></div>
   </div>
-  <p>E₁, …, Eₖ elementer matrislerini ve R (row-reduced echelon) matrisini bulun öyle ki R = Eₖ···E₁·A.</p>
+  <p>$E_1, \ldots, E_k$ elementer matrislerini ve $R$ (row-reduced echelon) matrisini bulun öyle ki $R = E_k \cdots E_1 \cdot A$.</p>
 </div>
 
 <div class="card sol">
@@ -37,7 +37,7 @@
   </div>
 
   <div class="step">
-    <div class="step-label">① r₂ → r₂ + r₁, &nbsp; ② r₃ → r₃ + r₁</div>
+    <div class="step-label">① $r_2 \to r_2 + r_1$, &ensp; ② $r_3 \to r_3 + r_1$</div>
     <div class="mw">
       <div class="mb"><table>
         <tr><td>−1</td><td>1</td><td>2</td><td>−1</td></tr>
@@ -45,116 +45,116 @@
         <tr><td>1</td><td>−1</td><td>4</td><td>5</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₂ → r₂ + r₁<br>r₃ → r₃ + r₁</div>
+        <div class="op-label">$r_2 \to r_2 + r_1$<br>$r_3 \to r_3 + r_1$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
         <tr><td>−1</td><td>1</td><td>2</td><td>−1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>3</td><td>2</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>6</td><td>4</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>3</td><td>2</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>6</td><td>4</td></tr>
       </table></div>
     </div>
   </div>
 
   <div class="step">
-    <div class="step-label">③ r₃ → r₃ − 2r₂</div>
+    <div class="step-label">③ $r_3 \to r_3 - 2r_2$</div>
     <div class="mw">
       <div class="mb"><table>
         <tr><td>−1</td><td>1</td><td>2</td><td>−1</td></tr>
-        <tr><td>0</td><td>0</td><td>3</td><td>2</td></tr>
-        <tr><td>0</td><td>0</td><td>6</td><td>4</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>3</td><td>2</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>6</td><td>4</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₃ → r₃ − 2r₂</div>
+        <div class="op-label">$r_3 \to r_3 - 2r_2$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
         <tr><td>−1</td><td>1</td><td>2</td><td>−1</td></tr>
-        <tr><td>0</td><td>0</td><td>3</td><td>2</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>3</td><td>2</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
     </div>
     <div class="note">Echelon formda. Şimdi RREF'e getiriyoruz.</div>
   </div>
 
   <div class="step">
-    <div class="step-label">④ r₁ → −r₁, &nbsp; ⑤ r₂ → ⅓r₂</div>
+    <div class="step-label">④ $r_1 \to -r_1$, &ensp; ⑤ $r_2 \to \tfrac{1}{3}r_2$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>−1</td><td>−2</td><td>1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>1</td><td>⅔</td></tr>
-        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr class="highlight-row"><td class="diag">1</td><td>−1</td><td>−2</td><td>1</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td>$\tfrac{2}{3}$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
     </div>
   </div>
 
   <div class="step">
-    <div class="step-label">⑥ r₁ → r₁ + 2r₂</div>
+    <div class="step-label">⑥ $r_1 \to r_1 + 2r_2$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>−2</td><td>1</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td><td>⅔</td></tr>
-        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td class="diag">1</td><td>−1</td><td>−2</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td>$\tfrac{2}{3}$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₁ → r₁ + 2r₂</div>
+        <div class="op-label">$r_1 \to r_1 + 2r_2$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>−1</td><td>0</td><td>7/3</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td><td>⅔</td></tr>
-        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr class="highlight-row"><td class="diag">1</td><td>−1</td><td class="zero-cell">0</td><td>$\tfrac{7}{3}$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td>$\tfrac{2}{3}$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
       <span class="ml">= R</span>
     </div>
   </div>
 
-  <div class="result-box">R = RREF(A), row-reduced echelon matris.</div>
+  <div class="result-box">$R = \operatorname{RREF}(A)$, row-reduced echelon matris.</div>
 
   <div class="step" style="margin-top:1rem;">
     <div class="step-label">Elementer matrisler</div>
     <div class="mw">
-      <span class="ml">E₁ =</span>
+      <span class="ml">$E_1$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>1</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.8rem;">E₂ =</span>
+      <span class="ml" style="margin-left:.8rem;">$E_2$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.8rem;">E₃ =</span>
+      <span class="ml" style="margin-left:.8rem;">$E_3$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>−2</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>−2</td><td class="diag">1</td></tr>
       </table></div>
     </div>
     <div class="mw" style="margin-top:.5rem;">
-      <span class="ml">E₄ =</span>
+      <span class="ml">$E_4$ =</span>
       <div class="mb"><table>
-        <tr><td>−1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>−1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.8rem;">E₅ =</span>
+      <span class="ml" style="margin-left:.8rem;">$E_5$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>⅓</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>$\tfrac{1}{3}$</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.8rem;">E₆ =</span>
+      <span class="ml" style="margin-left:.8rem;">$E_6$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>2</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td>2</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
     </div>
   </div>
-  <div class="result-box">R = E₆ E₅ E₄ E₃ E₂ E₁ · A</div>
+  <div class="result-box">$$R = E_6 E_5 E_4 E_3 E_2 E_1 \cdot A$$</div>
 </div>
 
 <!-- ═══════════════ SORU 2 ═══════════════ -->
@@ -164,12 +164,12 @@
   <div class="mw">
     <span class="ml">A =</span>
     <div class="mb"><table>
-      <tr><td>1</td><td>−1</td><td>0</td></tr>
+      <tr><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
       <tr><td>2</td><td>−1</td><td>−1</td></tr>
       <tr><td>−1</td><td>1</td><td>1</td></tr>
     </table></div>
   </div>
-  <p>Mümkünse A'yı <strong>elementer matrislerin çarpımı</strong> olarak yazın.</p>
+  <p>Mümkünse $A$'yı <strong>elementer matrislerin çarpımı</strong> olarak yazın.</p>
 </div>
 
 <div class="card sol">
@@ -179,10 +179,10 @@
   </div>
 
   <div class="step">
-    <div class="step-label">① r₂ → r₂ − 2r₁, &nbsp; ② r₃ → r₃ + r₁</div>
+    <div class="step-label">① $r_2 \to r_2 - 2r_1$, &ensp; ② $r_3 \to r_3 + r_1$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>0</td></tr>
+        <tr><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
         <tr><td>2</td><td>−1</td><td>−1</td></tr>
         <tr><td>−1</td><td>1</td><td>1</td></tr>
       </table></div>
@@ -190,123 +190,121 @@
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td>−1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td>−1</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
 
   <div class="step">
-    <div class="step-label">③ r₂ → r₂ + r₃</div>
+    <div class="step-label">③ $r_2 \to r_2 + r_3$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>−1</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
 
   <div class="step">
-    <div class="step-label">④ r₁ → r₁ + r₂</div>
+    <div class="step-label">④ $r_1 \to r_1 + r_2$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr class="highlight-row"><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml">= I₃</span>
+      <span class="ml">$= I_3$</span>
     </div>
   </div>
 
-  <div class="note">A ∼ I → A tersinir → elementer matrislerin çarpımı olarak yazılabilir (teorem gereği).</div>
+  <div class="note">$A \sim I$ → $A$ tersinir → elementer matrislerin çarpımı olarak yazılabilir (teorem gereği).</div>
 
   <div class="step" style="margin-top:.8rem;">
     <div class="step-label">Elementer matrisler</div>
     <div class="mw">
-      <span class="ml">E₁ =</span>
+      <span class="ml">$E_1$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>−2</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>−2</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.6rem;">E₂ =</span>
+      <span class="ml" style="margin-left:.6rem;">$E_2$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.6rem;">E₃ =</span>
+      <span class="ml" style="margin-left:.6rem;">$E_3$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>1</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.6rem;">E₄ =</span>
+      <span class="ml" style="margin-left:.6rem;">$E_4$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
     </div>
   </div>
 
   <div class="step" style="margin-top:.5rem;">
-    <div class="step-label">E₄E₃E₂E₁ · A = I &nbsp;⟹&nbsp; A = E₁⁻¹E₂⁻¹E₃⁻¹E₄⁻¹</div>
+    <div class="step-label">$E_4 E_3 E_2 E_1 \cdot A = I \;\Longrightarrow\; A = E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}$</div>
     <div class="mw">
-      <span class="ml">E₁⁻¹ =</span>
+      <span class="ml">$E_1^{-1}$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>2</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>2</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.6rem;">E₂⁻¹ =</span>
+      <span class="ml" style="margin-left:.6rem;">$E_2^{-1}$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>−1</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td>−1</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.6rem;">E₃⁻¹ =</span>
+      <span class="ml" style="margin-left:.6rem;">$E_3^{-1}$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>−1</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.6rem;">E₄⁻¹ =</span>
+      <span class="ml" style="margin-left:.6rem;">$E_4^{-1}$ =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td class="diag">1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
       </table></div>
     </div>
   </div>
 
-  <div class="result-box">A = E₁⁻¹ E₂⁻¹ E₃⁻¹ E₄⁻¹ (elementer matrislerin çarpımı)</div>
+  <div class="result-box">$A = E_1^{-1} E_2^{-1} E_3^{-1} E_4^{-1}$ (elementer matrislerin çarpımı)</div>
 </div>
 
 <!-- ═══════════════ SORU 3 ═══════════════ -->
 <div class="section-title"><span>✏️</span> Soru 3: Tersinirlik Testi & Ters Bulma</div>
 
-<!-- 3a -->
 <div class="q-box" data-label="Soru 3a">
-  <p>Aşağıdaki matris tersinir mi? Tersinirse tersini bulun.</p>
   <div class="mw">
     <span class="ml">A =</span>
     <div class="mb"><table>
@@ -314,6 +312,7 @@
       <tr><td>1</td><td>1</td></tr>
     </table></div>
   </div>
+  <p>Tersinir mi? Tersinirse tersini bulun.</p>
 </div>
 
 <div class="card sol">
@@ -322,53 +321,24 @@
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → r₂ − r₁</div>
+    <div class="step-label">$r_2 \to r_2 - r_1$</div>
     <div class="mw">
       <div class="mb"><table>
         <tr><td>1</td><td>1</td></tr>
         <tr><td>1</td><td>1</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₂ → r₂ − r₁</div>
+        <div class="op-label">$r_2 \to r_2 - r_1$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
         <tr><td>1</td><td>1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
     </div>
   </div>
-  <div class="step">
-    <div class="step-label">① r₂ → ½r₂, &nbsp; ② r₁ → r₁ + r₂</div>
-    <div class="mw">
-      <div class="mb"><table>
-        <tr><td>1</td><td>−1</td></tr>
-        <tr><td>0</td><td>2</td></tr>
-      </table></div>
-      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₂ → ½r₂</div>
-        <span class="arrow">→</span>
-      </div>
-      <div class="mb"><table>
-        <tr><td>1</td><td>−1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td></tr>
-      </table></div>
-      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₁ → r₁ + r₂</div>
-        <span class="arrow">→</span>
-      </div>
-      <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td></tr>
-      </table></div>
-      <span class="ml">= I</span>
-    </div>
-  </div>
-  <div class="false-box">Sıfır satır çıktı → A tekildir (tersinir değil).</div>
+  <div class="false-box">Sıfır satır çıktı → $A$ tekildir (tersinir değil).</div>
 </div>
-
-<!-- 3a - düzeltme: aslında ilk matris [[1,1],[1,1]] sıfır satır veriyor -->
-<!-- Şimdi doğru 3a: [[1,-1],[1,1]] -->
 
 <div class="q-box" data-label="Soru 3a (düzelt.)">
   <div class="mw">
@@ -383,61 +353,60 @@
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Çözüm 3a</span>
+    <span class="card-title">Çözüm 3a (düzelt.)</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">[A : I] oluştur, ERO uygula</div>
+    <div class="step-label">$[A \mid I]$ oluştur, ERO uygula</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td></tr>
-        <tr><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₂ → r₂ − r₁</div>
+        <div class="op-label">$r_2 \to r_2 - r_1$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → ½r₂, sonra r₁ → r₁ + r₂</div>
+    <div class="step-label">$r_2 \to \tfrac{1}{2}r_2$, sonra $r_1 \to r_1 + r_2$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td></tr>
-        <tr><td>0</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>1</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₂ → ½r₂</div>
+        <div class="op-label">$r_2 \to \tfrac{1}{2}r_2$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−½</td><td>½</td></tr>
+        <tr><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$-\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₁ → r₁ + r₂</div>
+        <div class="op-label">$r_1 \to r_1 + r_2$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">½</td><td>½</td></tr>
-        <tr><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−½</td><td>½</td></tr>
+        <tr class="highlight-row"><td class="diag">1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$-\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td></tr>
       </table></div>
     </div>
   </div>
   <div class="result-box" style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
-    <span>A tersinir. &nbsp; A⁻¹ =</span>
+    <span>$A$ tersinir. &ensp; $A^{-1}$ =</span>
     <div class="mb"><table>
-      <tr><td>½</td><td>½</td></tr>
-      <tr><td>−½</td><td>½</td></tr>
+      <tr><td>$\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td></tr>
+      <tr><td>$-\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td></tr>
     </table></div>
   </div>
 </div>
 
-<!-- 3b -->
 <div class="q-box" data-label="Soru 3b">
   <div class="mw">
     <span class="ml">A =</span>
@@ -456,7 +425,7 @@
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → r₂ − 2r₁, &nbsp; r₃ → r₃ − r₁</div>
+    <div class="step-label">$r_2 \to r_2 - 2r_1$, &ensp; $r_3 \to r_3 - r_1$</div>
     <div class="mw">
       <div class="mb"><table>
         <tr><td>1</td><td>−1</td><td>1</td></tr>
@@ -468,105 +437,104 @@
       </div>
       <div class="mb"><table>
         <tr><td>1</td><td>−1</td><td>1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td>−1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>−1</td><td>1</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td>−1</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>−1</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
   <div class="step">
-    <div class="step-label">r₃ → r₃ + r₂</div>
+    <div class="step-label">$r_3 \to r_3 + r_2$</div>
     <div class="mw">
       <div class="mb"><table>
         <tr><td>1</td><td>−1</td><td>1</td></tr>
-        <tr><td>0</td><td>1</td><td>−1</td></tr>
-        <tr><td>0</td><td>−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td>−1</td><td>1</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
-        <div class="op-label">r₃ → r₃ + r₂</div>
+        <div class="op-label">$r_3 \to r_3 + r_2$</div>
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
         <tr><td>1</td><td>−1</td><td>1</td></tr>
-        <tr><td>0</td><td>1</td><td>−1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>−1</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
     </div>
   </div>
-  <div class="false-box">Sıfır satır çıktı → A tekildir (tersinir değil).</div>
+  <div class="false-box">Sıfır satır çıktı → $A$ tekildir (tersinir değil).</div>
 </div>
 
-<!-- 3c / Soru 3 asıl ters bulma -->
 <div class="q-box" data-label="Soru 3c">
   <div class="mw">
     <span class="ml">A =</span>
     <div class="mb"><table>
       <tr><td>1</td><td>−1</td><td>2</td></tr>
-      <tr><td>1</td><td>1</td><td>0</td></tr>
+      <tr><td>1</td><td>1</td><td class="zero-cell">0</td></tr>
       <tr><td>1</td><td>−1</td><td>1</td></tr>
     </table></div>
   </div>
-  <p>A⁻¹'i bulun.</p>
+  <p>$A^{-1}$'i bulun.</p>
 </div>
 
 <div class="card sol">
   <div class="card-header">
-    <span class="card-title">Çözüm 3c — [A : I₃] ile ters bulma</span>
+    <span class="card-title">Çözüm 3c — $[A \mid I_3]$ ile ters bulma</span>
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → r₂ − r₁, &nbsp; r₃ → r₃ − r₁</div>
+    <div class="step-label">$r_2 \to r_2 - r_1$, &ensp; $r_3 \to r_3 - r_1$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>0</td></tr>
-        <tr><td>1</td><td>1</td><td>0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>1</td><td>0</td></tr>
-        <tr><td>1</td><td>−1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>−1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
       <div style="display:flex;flex-direction:column;align-items:center;margin:0 .3rem;">
         <span class="arrow">→</span>
       </div>
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>2</td><td>−2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>1</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>2</td><td>−2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td class="zero-cell">0</td><td>1</td></tr>
       </table></div>
     </div>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → ½r₂, &nbsp; r₃ → −r₃</div>
+    <div class="step-label">$r_2 \to \tfrac{1}{2}r_2$, &ensp; $r_3 \to -r_3$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−½</td><td>½</td><td>0</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>−1</td></tr>
+        <tr><td>1</td><td>−1</td><td>2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$-\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td><td class="zero-cell">0</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td><td>−1</td></tr>
       </table></div>
     </div>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → r₂ + r₃, &nbsp; r₁ → r₁ − 2r₃ (yukarı eliminasyon)</div>
+    <div class="step-label">$r_2 \to r_2 + r_3$, &ensp; $r_1 \to r_1 - 2r_3$ (yukarı eliminasyon)</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>−1</td><td>0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td>0</td><td>2</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td>0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">½</td><td>½</td><td>−1</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>−1</td></tr>
+        <tr class="highlight-row"><td>1</td><td>−1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td><td class="zero-cell">0</td><td>2</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td><td>−1</td></tr>
       </table></div>
     </div>
   </div>
   <div class="step">
-    <div class="step-label">r₁ → r₁ + r₂</div>
+    <div class="step-label">$r_1 \to r_1 + r_2$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr class="highlight-row"><td>1</td><td>0</td><td>0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−½</td><td>½</td><td>1</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">½</td><td>½</td><td>−1</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>0</td><td>−1</td></tr>
+        <tr class="highlight-row"><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$-\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td class="zero-cell">0</td><td>−1</td></tr>
       </table></div>
     </div>
   </div>
   <div class="result-box" style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
-    <span>A⁻¹ =</span>
+    <span>$A^{-1}$ =</span>
     <div class="mb"><table>
-      <tr><td>−½</td><td>½</td><td>1</td></tr>
-      <tr><td>½</td><td>½</td><td>−1</td></tr>
-      <tr><td>1</td><td>0</td><td>−1</td></tr>
+      <tr><td>$-\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td><td>1</td></tr>
+      <tr><td>$\tfrac{1}{2}$</td><td>$\tfrac{1}{2}$</td><td>−1</td></tr>
+      <tr><td>1</td><td class="zero-cell">0</td><td>−1</td></tr>
     </table></div>
   </div>
 </div>
@@ -578,13 +546,13 @@
   <div class="mw">
     <span class="ml">A =</span>
     <div class="mb"><table>
-      <tr><td>1</td><td>−1</td><td>k</td><td>2</td></tr>
-      <tr><td>2</td><td>−1</td><td>2k−1</td><td>5</td></tr>
+      <tr><td>1</td><td>−1</td><td>$k$</td><td>2</td></tr>
+      <tr><td>2</td><td>−1</td><td>$2k-1$</td><td>5</td></tr>
       <tr><td>−1</td><td>1</td><td>1</td><td>−3</td></tr>
-      <tr><td>1</td><td>−1</td><td>k</td><td>4</td></tr>
+      <tr><td>1</td><td>−1</td><td>$k$</td><td>4</td></tr>
     </table></div>
   </div>
-  <p>A tersinir olması için k ne olmalıdır?</p>
+  <p>$A$ tersinir olması için $k$ ne olmalıdır?</p>
 </div>
 
 <div class="card sol">
@@ -593,23 +561,23 @@
     <span class="tag sol">Çözüm</span>
   </div>
   <div class="step">
-    <div class="step-label">r₂ → r₂ − 2r₁, &nbsp; r₃ → r₃ + r₁, &nbsp; r₄ → r₄ − r₁</div>
+    <div class="step-label">$r_2 \to r_2 - 2r_1$, &ensp; $r_3 \to r_3 + r_1$, &ensp; $r_4 \to r_4 - r_1$</div>
     <div class="mw">
       <div class="mb"><table>
-        <tr><td>1</td><td>−1</td><td>k</td><td>2</td></tr>
-        <tr class="highlight-row"><td>0</td><td>1</td><td>−1</td><td>1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>k+1</td><td>−1</td></tr>
-        <tr class="highlight-row"><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+        <tr><td>1</td><td>−1</td><td>$k$</td><td>2</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td>−1</td><td>1</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td>$k+1$</td><td>−1</td></tr>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td>2</td></tr>
       </table></div>
     </div>
   </div>
   <div class="step">
     <div class="step-label">Analiz</div>
     <p>Echelon forma ulaştık. Sıfır satır olmaması için tüm pivotlar sıfırdan farklı olmalı.</p>
-    <p style="margin-top:.3rem;">3. satırdaki pivot: <strong>k + 1</strong></p>
-    <p style="margin-top:.3rem;">k + 1 = 0 ise (yani k = −1 ise), 3. satır sıfır satır olur → A tekil.</p>
+    <p style="margin-top:.3rem;">3. satırdaki pivot: $k + 1$</p>
+    <p style="margin-top:.3rem;">$k + 1 = 0$ ise (yani $k = -1$ ise), 3. satır sıfır satır olur → $A$ tekil.</p>
   </div>
-  <div class="result-box">A tersinir &nbsp;⟺&nbsp; k ≠ −1</div>
+  <div class="result-box">$$A \text{ tersinir} \;\Longleftrightarrow\; k \neq -1$$</div>
 </div>
 
 <!-- ═══════════════ SORU 5 ═══════════════ -->
@@ -617,14 +585,14 @@
 
 <div class="q-box" data-label="Soru 5">
   <p>Aşağıdaki ifadeleri <strong>ispatlayın</strong> veya <strong>karşı örnek</strong> verin:</p>
-  <p style="margin-top:.3rem;"><strong>a)</strong> AB = O ise A = O veya B = O.</p>
-  <p><strong>b)</strong> AB = AC ise B = C.</p>
-  <p><strong>c)</strong> AB = A ise B = I.</p>
+  <p style="margin-top:.3rem;"><strong>a)</strong> $AB = O$ ise $A = O$ veya $B = O$.</p>
+  <p><strong>b)</strong> $AB = AC$ ise $B = C$.</p>
+  <p><strong>c)</strong> $AB = A$ ise $B = I$.</p>
 </div>
 
 <div class="card tf">
   <div class="card-header">
-    <span class="card-title">Çözüm 5a — AB = O ⟹ A = O veya B = O?</span>
+    <span class="card-title">Çözüm 5a — $AB = O \;\Rightarrow\; A = O$ veya $B = O$?</span>
     <span class="tag tf">D/Y</span>
   </div>
   <div class="false-box">YANLIŞ (genel olarak)</div>
@@ -633,16 +601,16 @@
 
 <div class="card tf">
   <div class="card-header">
-    <span class="card-title">Çözüm 5b — AB = AC ⟹ B = C?</span>
+    <span class="card-title">Çözüm 5b — $AB = AC \;\Rightarrow\; B = C$?</span>
     <span class="tag tf">D/Y</span>
   </div>
   <div class="false-box">YANLIŞ (genel olarak)</div>
-  <div class="note" style="margin-top:.5rem;">Karşı örnek: önceki ders notlarına bakınız. A tekil olduğunda iki taraftan A⁻¹ ile çarpamazsın.</div>
+  <div class="note" style="margin-top:.5rem;">Karşı örnek: önceki ders notlarına bakınız. $A$ tekil olduğunda iki taraftan $A^{-1}$ ile çapamazsın.</div>
 </div>
 
 <div class="card tf">
   <div class="card-header">
-    <span class="card-title">Çözüm 5c — AB = A ⟹ B = I?</span>
+    <span class="card-title">Çözüm 5c — $AB = A \;\Rightarrow\; B = I$?</span>
     <span class="tag tf">D/Y</span>
   </div>
   <div class="false-box">YANLIŞ (genel olarak)</div>
@@ -651,85 +619,85 @@
     <div class="mw">
       <span class="ml">A =</span>
       <div class="mb"><table>
-        <tr><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>0</td></tr>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
       <span class="ml" style="margin-left:.5rem;">= B</span>
     </div>
-    <p style="margin-top:.3rem;">AB = A² = A ama B ≠ I.</p>
+    <p style="margin-top:.3rem;">$AB = A^2 = A$ ama $B \neq I$.</p>
   </div>
-  <div class="note">A tekil olduğundan soldan A⁻¹ ile çarpma mümkün değil.</div>
+  <div class="note">$A$ tekil olduğundan soldan $A^{-1}$ ile çarpma mümkün değil.</div>
 </div>
 
 <!-- ═══════════════ SORU 6 ═══════════════ -->
-<div class="section-title"><span>✅</span> Soru 6: A Tersinir İken İspat</div>
+<div class="section-title"><span>✅</span> Soru 6: $A$ Tersinir İken İspat</div>
 
 <div class="q-box" data-label="Soru 6">
-  <p><strong>A tersinir</strong> olduğunda Soru 5'teki ifadeleri ispatlayın:</p>
-  <p style="margin-top:.3rem;"><strong>a)</strong> AB = O ⟹ B = O</p>
-  <p><strong>b)</strong> AB = AC ⟹ B = C</p>
-  <p><strong>c)</strong> AB = A ⟹ B = I</p>
+  <p><strong>$A$ tersinir</strong> olduğunda Soru 5'teki ifadeleri ispatlayın:</p>
+  <p style="margin-top:.3rem;"><strong>a)</strong> $AB = O \;\Rightarrow\; B = O$</p>
+  <p><strong>b)</strong> $AB = AC \;\Rightarrow\; B = C$</p>
+  <p><strong>c)</strong> $AB = A \;\Rightarrow\; B = I$</p>
 </div>
 
 <div class="card proof">
   <div class="card-header">
-    <span class="card-title">Çözüm 6a — AB = O, A tersinir ⟹ B = O</span>
+    <span class="card-title">Çözüm 6a — $AB = O$, $A$ tersinir $\Rightarrow$ $B = O$</span>
     <span class="tag proof-t">İspat</span>
   </div>
   <div class="step blue">
-    <div class="formula">AB = O</div>
-    <p>İki tarafı soldan A⁻¹ ile çarp:</p>
-    <div class="formula">A⁻¹(AB) = A⁻¹ · O</div>
-    <div class="formula">(A⁻¹A)B = O</div>
-    <div class="formula">I · B = O</div>
-    <div class="formula">B = O</div>
+    <div class="formula">$$AB = O$$</div>
+    <p>İki tarafı soldan $A^{-1}$ ile çarp:</p>
+    <div class="formula">$$A^{-1}(AB) = A^{-1} \cdot O$$</div>
+    <div class="formula">$$(A^{-1}A)B = O$$</div>
+    <div class="formula">$$I \cdot B = O$$</div>
+    <div class="formula">$$B = O$$</div>
   </div>
-  <div class="qed-box">A tersinir ve AB = O ⟹ B = O. ∎</div>
+  <div class="qed-box">$A$ tersinir ve $AB = O \;\Rightarrow\; B = O$. ∎</div>
 </div>
 
 <div class="card proof">
   <div class="card-header">
-    <span class="card-title">Çözüm 6b — AB = AC, A tersinir ⟹ B = C</span>
+    <span class="card-title">Çözüm 6b — $AB = AC$, $A$ tersinir $\Rightarrow$ $B = C$</span>
     <span class="tag proof-t">İspat</span>
   </div>
   <div class="step blue">
-    <div class="formula">AB = AC</div>
-    <p>İki tarafı soldan A⁻¹ ile çarp:</p>
-    <div class="formula">A⁻¹(AB) = A⁻¹(AC)</div>
-    <div class="formula">(A⁻¹A)B = (A⁻¹A)C</div>
-    <div class="formula">B = C</div>
+    <div class="formula">$$AB = AC$$</div>
+    <p>İki tarafı soldan $A^{-1}$ ile çarp:</p>
+    <div class="formula">$$A^{-1}(AB) = A^{-1}(AC)$$</div>
+    <div class="formula">$$(A^{-1}A)B = (A^{-1}A)C$$</div>
+    <div class="formula">$$B = C$$</div>
   </div>
-  <div class="qed-box">A tersinir ve AB = AC ⟹ B = C. ∎</div>
+  <div class="qed-box">$A$ tersinir ve $AB = AC \;\Rightarrow\; B = C$. ∎</div>
 </div>
 
 <div class="card proof">
   <div class="card-header">
-    <span class="card-title">Çözüm 6c — AB = A, A tersinir ⟹ B = I</span>
+    <span class="card-title">Çözüm 6c — $AB = A$, $A$ tersinir $\Rightarrow$ $B = I$</span>
     <span class="tag proof-t">İspat</span>
   </div>
   <div class="step blue">
-    <div class="formula">AB = A</div>
-    <p>İki tarafı soldan A⁻¹ ile çarp:</p>
-    <div class="formula">A⁻¹(AB) = A⁻¹A</div>
-    <div class="formula">(A⁻¹A)B = I</div>
-    <div class="formula">B = I</div>
+    <div class="formula">$$AB = A$$</div>
+    <p>İki tarafı soldan $A^{-1}$ ile çarp:</p>
+    <div class="formula">$$A^{-1}(AB) = A^{-1}A$$</div>
+    <div class="formula">$$(A^{-1}A)B = I$$</div>
+    <div class="formula">$$B = I$$</div>
   </div>
-  <div class="qed-box">A tersinir ve AB = A ⟹ B = I. ∎</div>
+  <div class="qed-box">$A$ tersinir ve $AB = A \;\Rightarrow\; B = I$. ∎</div>
 </div>
 
 <!-- ÖZET -->
 <div class="summary-box">
   <h3>Bu Bölümün Dersleri</h3>
   <p>
-    <strong>RREF + elementer matrisler:</strong> R = Eₖ···E₁·A. Her ERO adımı bir Eᵢ matrisi.
+    <strong>RREF + elementer matrisler:</strong> $R = E_k \cdots E_1 \cdot A$. Her ERO adımı bir $E_i$ matrisi.
     <br><br>
-    <strong>Elementer çarpım olarak yazma:</strong> A ∼ I ise E···E₁·A = I → A = E₁⁻¹···Eₖ⁻¹ (elementer matrislerin çarpımı).
+    <strong>Elementer çarpım olarak yazma:</strong> $A \sim I$ ise $E_k \cdots E_1 \cdot A = I$ → $A = E_1^{-1} \cdots E_k^{-1}$ (elementer matrislerin çarpımı).
     <br><br>
-    <strong>Tersinirlik testi:</strong> [A:I] → ERO. Sıfır satır → tekil. I çıkarsa → tersinir, sağ taraf = A⁻¹.
+    <strong>Tersinirlik testi:</strong> $[A \mid I]$ → ERO. Sıfır satır → tekil. $I$ çıkarsa → tersinir, sağ taraf $= A^{-1}$.
     <br><br>
     <strong>Parametreli matris:</strong> Echelon formda pivotların sıfır olduğu durumları bul → o parametrede tekil.
     <br><br>
-    <strong>Kritik fark:</strong> AB = O, AB = AC, AB = A gibi ifadeler genel olarak "sadeleştirilemez" — A'nın tersinir olması şart. Tersinir değilse karşı örnekler mevcut.
+    <strong>Kritik fark:</strong> $AB = O$, $AB = AC$, $AB = A$ gibi ifadeler genel olarak "sadeleştirilemez" — $A$'nın tersinir olması şart. Tersinir değilse karşı örnekler mevcut.
   </p>
 </div>
 
