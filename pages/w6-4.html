@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Pratik: Vektör Uzayları ve Alt Uzaylar</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pratik: Vektör Uzayları ve Alt Uzaylar</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 6 - Bölüm 4)</div>
+</div>
+
+<!-- ═══════════════ SORU 1 ═══════════════ -->
+<div class="section-title"><span>📝</span> Pratik Sorular</div>
+
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Soru 1 — Vektör Uzayı mı?</span>
+    <span class="tag example">Pratik</span>
+  </div>
+  <p>Aşağıdaki işlemlerle $\mathbb{R}^2$, $\mathbb{R}$ üzerinde bir vektör uzayı mıdır?</p>
+  <div class="formula">$$(x_1,y_1) \oplus (x_2,y_2) = (x_1 x_2,\; y_1 y_2)$$</div>
+  <div class="formula">$$c \odot (x,y) = (c,\; xy)$$</div>
+
+  <p style="margin-top:.8rem;"><strong>Çözüm:</strong></p>
+  <div class="prop-list">
+    <div class="prop-item">
+      <span class="prop-label">(V1)</span>
+      <div>
+        <div class="formula">$$\text{S.T.} = (x_1,y_1) \oplus (x_2 x_3,\, y_2 y_3) = (x_1 x_2 x_3,\; y_1 y_2 y_3)$$</div>
+        <div class="formula">$$\text{S.S.} = (x_1 x_2,\, y_1 y_2) \oplus (x_3,y_3) = (x_1 x_2 x_3,\; y_1 y_2 y_3) \;\checkmark$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V2)</span>
+      <div>
+        $(x,y) \oplus (a,b) = (x,y) \Rightarrow (xa, yb) = (x,y) \Rightarrow a=1,\; b=1$
+        <br>$(1,1) \in \mathbb{R}^2$ olduğundan $\mathbf{0}_V = (1,1)$ $\checkmark$
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V3)</span>
+      <div>
+        $(x,y) \oplus (a,b) = (1,1) \Rightarrow (xa, yb) = (1,1) \Rightarrow a = \tfrac{1}{x},\; b = \tfrac{1}{y}$
+        <br>Fakat $(x,y) = (0,0)$ iken böyle bir $(a,b)$ mevcut değildir.
+        <br>$\Rightarrow$ $(0,0)$'ın toplamaya göre tersi yoktur. <strong>(V3) sağlanmaz ✗</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:.8rem;">
+    Yukarıdaki işlemlerle $\mathbb{R}^2$ bir <strong>vektör uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 2 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Soru 2 — Vektör Uzayı mı?</span>
+    <span class="tag example">Pratik</span>
+  </div>
+  <p>Aşağıdaki işlemlerle $\mathbb{R}^2$, $\mathbb{R}$ üzerinde bir vektör uzayı mıdır?</p>
+  <div class="formula">$$(x_1,y_1) \oplus (x_2,y_2) = (x_1+x_2,\; y_1+y_2)$$</div>
+  <div class="formula">$$c \odot (x_1,x_2) = (cx_1,\; 0)$$</div>
+
+  <p style="margin-top:.8rem;"><strong>Çözüm:</strong> (V1)–(V4) olağan toplama aksiyomlarından sağlanır — egzersiz.</p>
+
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">(V5)</span>
+      <div>
+        <div class="formula">$$\text{S.T.} = c \odot (x_1+x_2,\; y_1+y_2) = (c(x_1+x_2),\; 0) = (cx_1+cx_2,\; 0)$$</div>
+        <div class="formula">$$\text{S.S.} = (cx_1,0) \oplus (cx_2,0) = (cx_1+cx_2,\; 0) \;\checkmark$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V6)</span>
+      <div>
+        <div class="formula">$$(c_1+c_2) \odot (x,y) = ((c_1+c_2)x,\; 0) = (c_1 x + c_2 x,\; 0)$$</div>
+        <div class="formula">$$= (c_1 x, 0) \oplus (c_2 x, 0) = c_1 \odot (x,y) \oplus c_2 \odot (x,y) \;\checkmark$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V7)</span>
+      Egzersiz.
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V8)</span>
+      <div>
+        <div class="formula">$$1 \odot (x,y) = (x,\; 0) \neq (x,y) \quad \text{eğer } y \neq 0$$</div>
+        <strong>(V8) tüm $(x,y) \in \mathbb{R}^2$ için sağlanmaz ✗</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:.8rem;">
+    Yukarıdaki işlemlerle $\mathbb{R}^2$ bir <strong>vektör uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 3 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Soru 3 — $\mathbb{R}^+$ Vektör Uzayı mı?</span>
+    <span class="tag example">Pratik</span>
+  </div>
+  <p>Aşağıdaki işlemlerle $\mathbb{R}^+$ ($>0$ gerçel sayılar), $\mathbb{R}$ üzerinde bir vektör uzayı mıdır?</p>
+  <div class="formula">$$p \oplus q = p \cdot q, \qquad c \odot p = p^c$$</div>
+
+  <p style="margin-top:.8rem;"><strong>Çözüm:</strong> Her $p,q,r \in \mathbb{R}^+$ ve $c, c_1, c_2 \in \mathbb{R}$ için:</p>
+
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">(V1)</span>
+      <div>
+        <div class="formula">$$p \oplus (q \oplus r) = p \cdot (q \cdot r) = (p \cdot q) \cdot r = (p \oplus q) \oplus r \;\checkmark$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V2)</span>
+      <div>
+        $p \oplus e = p \Rightarrow p \cdot e = p \Rightarrow e = 1 \in \mathbb{R}^+$ $\checkmark$&ensp; ($\mathbf{0}_V = 1$)
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V3)</span>
+      <div>
+        $p \oplus p' = 1 \Rightarrow p \cdot p' = 1 \Rightarrow p' = \tfrac{1}{p} \in \mathbb{R}^+$ ($p \in \mathbb{R}^+$ olduğundan) $\checkmark$
+        <br>Yani $-p = \tfrac{1}{p}$.
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V4)</span>
+      <div>
+        $p \oplus q = p \cdot q = q \cdot p = q \oplus p$ $\checkmark$
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V5)</span>
+      <div>
+        <div class="formula">$$c \odot (p \oplus q) = c \odot (pq) = (pq)^c = p^c q^c = p^c \oplus q^c = (c \odot p) \oplus (c \odot q) \;\checkmark$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V6)</span>
+      <div>
+        <div class="formula">$$(c_1 + c_2) \odot p = p^{c_1+c_2} = p^{c_1} \cdot p^{c_2} = p^{c_1} \oplus p^{c_2} = (c_1 \odot p) \oplus (c_2 \odot p) \;\checkmark$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V7)</span>
+      <div>
+        <div class="formula">$$(c_1 \cdot c_2) \odot p = p^{c_1 c_2}, \qquad c_1 \odot (c_2 \odot p) = c_1 \odot (p^{c_2}) = (p^{c_2})^{c_1} = p^{c_1 c_2} \;\checkmark$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V8)</span>
+      <div>
+        $1 \odot p = p^1 = p$ $\checkmark$
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:.8rem;">
+    Tüm aksiyomlar sağlanır: $\mathbb{R}^+$, yukarıdaki işlemlerle $\mathbb{R}$ üzerinde bir <strong>vektör uzayıdır</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 4 ═══════════════ -->
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Soru 4 — Sıfır ve Tersin Tekliği</span>
+    <span class="tag prop">İspat</span>
+  </div>
+  <p>Bir vektör uzayında toplama birim elemanının (sıfır vektörünün) ve her elemanın toplamaya göre tersinin tek olduğunu gösterin.</p>
+
+  <p style="margin-top:.8rem;"><strong>Sıfır vektörünün tekliği:</strong></p>
+  <p>$e_1$ ve $e_2$'nin iki farklı birim eleman olduğunu varsayalım.</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $e_1$ birim olduğundan: $e_1 \oplus e_2 = e_2$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $e_2$ birim olduğundan: $e_1 \oplus e_2 = e_1$
+    </div>
+  </div>
+  <p style="margin-top:.4rem;">$\Rightarrow e_1 = e_2$ — çelişki. Birim eleman tektir.</p>
+
+  <p style="margin-top:.8rem;"><strong>Tersin tekliği:</strong></p>
+  <p>$v \in V$ için $v'$ ve $v''$'nin iki farklı ters olduğunu varsayalım ($v \oplus v' = \mathbf{0}$ ve $v \oplus v'' = \mathbf{0}$):</p>
+  <div class="formula">$$v' = v' \oplus \mathbf{0} = v' \oplus (v \oplus v'') = (v' \oplus v) \oplus v'' = \mathbf{0} \oplus v'' = v''$$</div>
+  <p>$\Rightarrow v' = v''$ — çelişki. Ters tektir.</p>
+</div>
+
+<!-- ═══════════════ SORU 5 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Soru 5 — $W = \{(a,b,c) : a,b,c \in \mathbb{Z}\}$, $\mathbb{R}^3$'ün Alt Uzayı mı?</span>
+    <span class="tag example">Alt Uzay</span>
+  </div>
+  <p><strong>Çözüm:</strong> $W \subseteq \mathbb{R}^3$ ve $(0,0,0) \in W \Rightarrow W \neq \emptyset$.</p>
+  <p style="margin-top:.5rem;">Fakat $\tfrac{1}{2} \in \mathbb{R}$ ve $(1,1,1) \in W$ için:</p>
+  <div class="formula">$$\tfrac{1}{2} \cdot (1,1,1) = \left(\tfrac{1}{2},\; \tfrac{1}{2},\; \tfrac{1}{2}\right) \notin W$$</div>
+  <div class="note-box" style="margin-top:.6rem;">
+    Skaler çarpmaya göre kapalı değildir $\Rightarrow$ $W$, $\mathbb{R}^3$'ün <strong>alt uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 6 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Soru 6 — $W = \{(x,y) \in \mathbb{R}^2 : xy = 0\}$, $\mathbb{R}^2$'nin Alt Uzayı mı?</span>
+    <span class="tag example">Alt Uzay</span>
+  </div>
+  <p><strong>Çözüm:</strong> $W \subseteq \mathbb{R}^2$ ve $(0,0) \in W \Rightarrow W \neq \emptyset$.</p>
+  <p style="margin-top:.5rem;">Fakat $(0,1) \in W$ ve $(1,0) \in W$ için:</p>
+  <div class="formula">$$(1,0) + (0,1) = (1,1) \notin W \quad (\text{çünkü } 1 \cdot 1 = 1 \neq 0)$$</div>
+  <div class="note-box" style="margin-top:.6rem;">
+    Toplamaya göre kapalı değildir $\Rightarrow$ $W$, $\mathbb{R}^2$'nin <strong>alt uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 7 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Soru 7 — $W = \{(x,y,z,t) \in \mathbb{R}^4 : x+y = z+t\}$, $\mathbb{R}^4$'ün Alt Uzayı mı?</span>
+    <span class="tag example">Alt Uzay</span>
+  </div>
+  <p><strong>Çözüm:</strong> $W \subseteq \mathbb{R}^4$ ve $(0,0,0,0) \in W \Rightarrow W \neq \emptyset$.</p>
+
+  <div class="prop-list" style="margin-top:.6rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        <strong>Toplamaya göre kapalı:</strong>
+        <br>$(x_1,y_1,z_1,t_1),\,(x_2,y_2,z_2,t_2) \in W$:
+        <div class="formula" style="margin:.3rem 0;">$$x_1+y_1 = z_1+t_1 \;\overset{(1)}{}\quad \text{ve} \quad x_2+y_2 = z_2+t_2 \;\overset{(2)}{}$$</div>
+        $(1)+(2)$:
+        <div class="formula">$$(x_1+x_2)+(y_1+y_2) = (z_1+z_2)+(t_1+t_2)$$</div>
+        $\Rightarrow (x_1+x_2,\,y_1+y_2,\,z_1+z_2,\,t_1+t_2) \in W$ $\checkmark$
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>
+        <strong>Skaler çarpmaya göre kapalı:</strong>
+        <br>$c \in \mathbb{R}$ ve $(x,y,z,t) \in W \Rightarrow x+y = z+t$
+        <div class="formula">$$c \cdot (x,y,z,t) = (cx, cy, cz, ct), \qquad cx+cy = c(x+y) = c(z+t) = cz+ct \;\checkmark$$</div>
+        $\Rightarrow (cx,cy,cz,ct) \in W$ $\checkmark$
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:.6rem;">
+    $W$, $\mathbb{R}^4$'ün bir <strong>alt uzayıdır</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 8 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Soru 8 — Gerçel $n \times n$ Matrislerin Alt Uzayları</span>
+    <span class="tag example">Alt Uzay</span>
+  </div>
+  <p>Aşağıdakilerden hangileri gerçel $n \times n$ matrislerin vektör uzayının alt uzaylarıdır?</p>
+
+  <div class="prop-list" style="margin-top:.6rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div><strong>Üst üçgen matrisler</strong> — Toplama ve skaler çarpmaya göre kapalı. <strong>Alt uzay ✓</strong></div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div><strong>Köşegen matrisler</strong> — Toplama ve skaler çarpmaya göre kapalı. <strong>Alt uzay ✓</strong></div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c)</span>
+      <div><strong>Tersinir (invertible) matrisler</strong> — Sıfır matrisi tersinir değildir; toplama göre de kapalı değildir (ör. $A + (-A) = 0$). <strong>Alt uzay değil ✗</strong></div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">d)</span>
+      <div><strong>Simetrik matrisler</strong> — $(A+B)^T = A^T+B^T = A+B$ ve $(cA)^T = cA^T = cA$. <strong>Alt uzay ✓</strong></div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">e)</span>
+      <div><strong>Skew-simetrik matrisler</strong> — $(A+B)^T = -A-B = -(A+B)$ ve $(cA)^T = -cA$. <strong>Alt uzay ✓</strong></div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">f)</span>
+      <div><strong>Tekil (singular) matrisler</strong> — Toplama göre kapalı değildir (iki tekil matrisin toplamı tekil olmayabilir). <strong>Alt uzay değil ✗</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Soru 1:</strong> $(x_1x_2, y_1y_2)$ ve $(c,xy)$ — <em>$(0,0)$'ın tersi yok</em> → vektör uzayı değil.
+    <br><br>
+    <strong>Soru 2:</strong> Standart toplama, $c\odot(x,y)=(cx,0)$ — <em>$1\odot(x,y)\neq(x,y)$ (V8 bozulur)</em> → vektör uzayı değil.
+    <br><br>
+    <strong>Soru 3:</strong> $\mathbb{R}^+$ ile $p\oplus q=pq$, $c\odot p=p^c$ — tüm aksiyomlar sağlanır → <strong>vektör uzayıdır</strong> ($\mathbf{0}_V=1$, $-p=\tfrac{1}{p}$).
+    <br><br>
+    <strong>Soru 4:</strong> Sıfır vektörü ve ters tektir (ikili varsayım çelişkiye yol açar).
+    <br><br>
+    <strong>Soru 5–6:</strong> Tamsayılar ($\mathbb{Z}$ katsayılı) — c.u.s.m. değil; $xy=0$ koşulu — c.u.a. değil → alt uzay değil.
+    <br><br>
+    <strong>Soru 7:</strong> $x+y=z+t$ — c.u.a. ve c.u.s.m. sağlanır → alt uzay.
+    <br><br>
+    <strong>Soru 8:</strong> Üst üçgen ✓ · Köşegen ✓ · Tersinir ✗ · Simetrik ✓ · Skew-simetrik ✓ · Tekil ✗.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

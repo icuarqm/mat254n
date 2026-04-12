@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Egzersizler: Vektör Uzayları ve Alt Uzaylar</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Egzersizler: Vektör Uzayları ve Alt Uzaylar</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 6 - Bölüm 5)</div>
+</div>
+
+<div class="section-title"><span>📝</span> Egzersizler</div>
+
+<!-- ═══════════════ EGZERSİZ 1 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Egzersiz 1 — $2 \times 2$ Matrisler Vektör Uzayı mı?</span>
+    <span class="tag example">Egzersiz</span>
+  </div>
+  <p>Aşağıdaki işlemlerle $2\times2$ gerçel matrisler bir gerçel vektör uzayı mıdır?</p>
+
+  <div class="mw" style="margin:.6rem 0; justify-content:center; gap:1rem; flex-wrap:wrap;">
+    <table class="mb"><tr><td>$a$</td><td>$b$</td></tr><tr><td>$c$</td><td>$d$</td></tr></table>
+    <span style="font-size:1.1rem;">$+$</span>
+    <table class="mb"><tr><td>$a'$</td><td>$b'$</td></tr><tr><td>$c'$</td><td>$d'$</td></tr></table>
+    <span style="font-size:1.1rem;">$=$</span>
+    <table class="mb"><tr><td>$a{+}a'$</td><td>$b{+}b'$</td></tr><tr><td>$c{+}c'$</td><td>$d{+}d'$</td></tr></table>
+  </div>
+
+  <div class="mw" style="margin:.3rem 0; justify-content:center; gap:1rem; flex-wrap:wrap;">
+    <span>$c \cdot$</span>
+    <table class="mb"><tr><td>$x$</td><td>$y$</td></tr><tr><td>$z$</td><td>$t$</td></tr></table>
+    <span style="font-size:1.1rem;">$=$</span>
+    <table class="mb"><tr><td>$cx$</td><td>$y$</td></tr><tr><td>$z$</td><td>$ct$</td></tr></table>
+  </div>
+
+  <p style="margin-top:.8rem;"><strong>Çözüm:</strong> Toplama olağandır; aksiyomlar (V1)–(V4) sağlanır. Skaler çarpma yalnızca köşegen girdileri $c$ ile çarpar; köşegen dışı girdiler değişmez.</p>
+
+  <p style="margin-top:.5rem;"><strong>(V6) sağlanıyor mu?</strong></p>
+  <div class="mw" style="margin:.4rem 0; flex-wrap:wrap; gap:.5rem;">
+    <span>$(c_1+c_2) \cdot A \;=$</span>
+    <table class="mb"><tr><td>$(c_1{+}c_2)x$</td><td>$y$</td></tr><tr><td>$z$</td><td>$(c_1{+}c_2)t$</td></tr></table>
+  </div>
+  <div class="mw" style="margin:.2rem 0; flex-wrap:wrap; gap:.5rem;">
+    <span>$c_1 \cdot A + c_2 \cdot A \;=$</span>
+    <table class="mb"><tr><td>$c_1 x$</td><td>$y$</td></tr><tr><td>$z$</td><td>$c_1 t$</td></tr></table>
+    <span>$+$</span>
+    <table class="mb"><tr><td>$c_2 x$</td><td>$y$</td></tr><tr><td>$z$</td><td>$c_2 t$</td></tr></table>
+    <span>$=$</span>
+    <table class="mb"><tr><td>$(c_1{+}c_2)x$</td><td>$2y$</td></tr><tr><td>$2z$</td><td>$(c_1{+}c_2)t$</td></tr></table>
+  </div>
+  <p style="margin-top:.4rem;">$y \neq 0$ veya $z \neq 0$ olduğunda iki taraf eşit değildir $\Rightarrow$ <strong>(V6) sağlanmaz ✗</strong></p>
+
+  <div class="note-box" style="margin-top:.6rem;">
+    Yukarıdaki işlemlerle $2\times2$ matrisler bir <strong>vektör uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 2 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Egzersiz 2 — $\mathbb{Q}(\sqrt{2})$ Vektör Uzayı mı?</span>
+    <span class="tag example">Egzersiz</span>
+  </div>
+  <p>$\mathbb{Q}(\sqrt{2}) = \{a + b\sqrt{2} : a, b \in \mathbb{Q}\}$ kümesi, olağan toplama ve çarpmayla $\mathbb{Q}$ üzerinde bir vektör uzayı mıdır?</p>
+
+  <p style="margin-top:.8rem;"><strong>Çözüm:</strong></p>
+  <div class="prop-list">
+    <div class="prop-item">
+      <span class="prop-label">⊕</span>
+      $(a+b\sqrt{2}) + (a'+b'\sqrt{2}) = (a+a') + (b+b')\sqrt{2} \in \mathbb{Q}(\sqrt{2})$ $\checkmark$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">⊙</span>
+      $c \cdot (a+b\sqrt{2}) = ca + cb\sqrt{2} \in \mathbb{Q}(\sqrt{2})$ ($c \in \mathbb{Q}$ için) $\checkmark$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">$\mathbf{0}$</span>
+      $0 = 0 + 0\cdot\sqrt{2} \in \mathbb{Q}(\sqrt{2})$ $\checkmark$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">$-v$</span>
+      $-(a+b\sqrt{2}) = (-a) + (-b)\sqrt{2} \in \mathbb{Q}(\sqrt{2})$ $\checkmark$
+    </div>
+  </div>
+  <p style="margin-top:.5rem;">Kalan aksiyomlar $\mathbb{Q}$'nun cisim özelliklerinden otomatik sağlanır.</p>
+
+  <div class="note-box" style="margin-top:.6rem;">
+    $\mathbb{Q}(\sqrt{2})$, $\mathbb{Q}$ üzerinde bir <strong>vektör uzayıdır</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 3 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Egzersiz 3 — $W_1, W_2 \subseteq \mathbb{R}^4$ Alt Uzay mı?</span>
+    <span class="tag example">Egzersiz</span>
+  </div>
+  <p>Aşağıdaki kümelerin $\mathbb{R}^4$'ün alt uzayları olup olmadığını araştırın:</p>
+  <div class="formula">$$W_1 = \{(x, 0, y, 0) : x, y \in \mathbb{R}\}, \qquad W_2 = \{(x, x, y, 0) : x, y \in \mathbb{R}\}$$</div>
+
+  <p style="margin-top:.8rem;"><strong>$W_1$ için:</strong> $(0,0,0,0) \in W_1 \Rightarrow W_1 \neq \emptyset$.</p>
+  <div class="prop-list" style="margin-top:.3rem;">
+    <div class="prop-item">
+      <span class="prop-label">c.u.a.</span>
+      $(x_1,0,y_1,0)+(x_2,0,y_2,0) = (x_1+x_2, 0, y_1+y_2, 0) \in W_1$ $\checkmark$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c.u.s.m.</span>
+      $c\cdot(x,0,y,0) = (cx, 0, cy, 0) \in W_1$ $\checkmark$
+    </div>
+  </div>
+  <p style="margin:.4rem 0 .8rem;">$\Rightarrow W_1$, $\mathbb{R}^4$'ün bir <strong>alt uzayıdır</strong>.</p>
+
+  <p><strong>$W_2$ için:</strong> $(0,0,0,0) \in W_2 \Rightarrow W_2 \neq \emptyset$.</p>
+  <div class="prop-list" style="margin-top:.3rem;">
+    <div class="prop-item">
+      <span class="prop-label">c.u.a.</span>
+      $(x_1,x_1,y_1,0)+(x_2,x_2,y_2,0) = (x_1+x_2, x_1+x_2, y_1+y_2, 0) \in W_2$ $\checkmark$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c.u.s.m.</span>
+      $c\cdot(x,x,y,0) = (cx, cx, cy, 0) \in W_2$ $\checkmark$
+    </div>
+  </div>
+  <p style="margin-top:.4rem;">$\Rightarrow W_2$, $\mathbb{R}^4$'ün bir <strong>alt uzayıdır</strong>.</p>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 4 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Egzersiz 4 — Çift ve Tek Fonksiyonlar Alt Uzay mı?</span>
+    <span class="tag example">Egzersiz</span>
+  </div>
+  <p>$W_1 = \{f : \mathbb{R} \to \mathbb{R} : f \text{ çift (even)}\}$ ve $W_2 = \{f : \mathbb{R} \to \mathbb{R} : f \text{ tek (odd)}\}$ kümelerinin fonksiyon uzayının alt uzayları olduğunu gösterin.</p>
+
+  <p style="margin-top:.8rem;"><strong>$W_1$ (çift fonksiyonlar) için:</strong></p>
+  <div class="prop-list" style="margin-top:.3rem;">
+    <div class="prop-item">
+      <span class="prop-label">$\mathbf{0}$</span>
+      Sıfır fonksiyonu: $0(-x)=0=0(x)$ $\checkmark$ → $\mathbf{0} \in W_1$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c.u.a.</span>
+      $f,g$ çift: $(f+g)(-x) = f(-x)+g(-x) = f(x)+g(x) = (f+g)(x)$ $\checkmark$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c.u.s.m.</span>
+      $(cf)(-x) = c\cdot f(-x) = c\cdot f(x) = (cf)(x)$ $\checkmark$
+    </div>
+  </div>
+  <p style="margin:.4rem 0 .8rem;">$\Rightarrow W_1$ bir <strong>alt uzaydır</strong>.</p>
+
+  <p><strong>$W_2$ (tek fonksiyonlar) için:</strong></p>
+  <div class="prop-list" style="margin-top:.3rem;">
+    <div class="prop-item">
+      <span class="prop-label">$\mathbf{0}$</span>
+      Sıfır fonksiyonu: $0(-x)=0=-0(x)$ $\checkmark$ → $\mathbf{0} \in W_2$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c.u.a.</span>
+      $f,g$ tek: $(f+g)(-x) = f(-x)+g(-x) = -f(x)-g(x) = -(f+g)(x)$ $\checkmark$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c.u.s.m.</span>
+      $(cf)(-x) = c\cdot f(-x) = c\cdot(-f(x)) = -(cf)(x)$ $\checkmark$
+    </div>
+  </div>
+  <p style="margin-top:.4rem;">$\Rightarrow W_2$ bir <strong>alt uzaydır</strong>.</p>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 5 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Egzersiz 5 — $W = \{(x,y) \in \mathbb{R}^2 : x^4 = y^4\}$ Alt Uzay mı?</span>
+    <span class="tag example">Egzersiz</span>
+  </div>
+  <p><strong>Çözüm:</strong> $x^4 = y^4 \Rightarrow |x|^4 = |y|^4 \Rightarrow |x| = |y|$ yani $x = y$ veya $x = -y$.</p>
+  <p style="margin-top:.4rem;">Dolayısıyla $W = \{(x,y): x=y\} \cup \{(x,y): x=-y\}$ — iki doğrunun birleşimi.</p>
+  <p style="margin-top:.4rem;">$(0,0) \in W \Rightarrow W \neq \emptyset$. Fakat $(1,1) \in W$ ($x=y$) ve $(1,-1) \in W$ ($x=-y$) için:</p>
+  <div class="formula">$$(1,1)+(1,-1) = (2,0) \notin W \quad (\text{çünkü } 2^4 = 16 \neq 0 = 0^4)$$</div>
+  <div class="note-box" style="margin-top:.6rem;">
+    Toplamaya göre kapalı değildir $\Rightarrow$ $W$, $\mathbb{R}^2$'nin <strong>alt uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 6 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Egzersiz 6 — $W = \{p(x) \in P_3(x) : p(1) = 2\}$ Alt Uzay mı?</span>
+    <span class="tag example">Egzersiz</span>
+  </div>
+  <p><strong>Çözüm:</strong> Sıfır polinomu için $\mathbf{0}(1) = 0 \neq 2$ olduğundan $\mathbf{0} \notin W$.</p>
+  <div class="note-box" style="margin-top:.6rem;">
+    Sıfır vektörünü içermediğinden $W$, $P_3(x)$'in <strong>alt uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 7 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Egzersiz 7 — $\mathbb{R}^3$ Vektör Uzayı mı?</span>
+    <span class="tag example">Egzersiz</span>
+  </div>
+  <p>Aşağıdaki işlemlerle $\mathbb{R}^3$, $\mathbb{R}$ üzerinde bir vektör uzayı mıdır?</p>
+  <div class="formula">$$(x_1,y_1,z_1) \oplus (x_2,y_2,z_2) = (x_1+x_2,\; y_1+y_2,\; z_1+z_2)$$</div>
+  <div class="formula">$$c \odot (x,y,z) = (x^c,\; y^c,\; z^c)$$</div>
+
+  <p style="margin-top:.8rem;"><strong>Çözüm:</strong></p>
+  <p>(V8): $1 \odot (x,y,z) = (x^1, y^1, z^1) = (x,y,z)$ $\checkmark$</p>
+  <p style="margin-top:.4rem;"><strong>(V5) sağlanıyor mu?</strong></p>
+  <div class="formula">$$c \odot ((x_1,y_1,z_1) \oplus (x_2,y_2,z_2)) = c \odot (x_1+x_2, y_1+y_2, z_1+z_2) = \bigl((x_1+x_2)^c,\; (y_1+y_2)^c,\; (z_1+z_2)^c\bigr)$$</div>
+  <div class="formula">$$(c \odot (x_1,y_1,z_1)) \oplus (c \odot (x_2,y_2,z_2)) = (x_1^c, y_1^c, z_1^c) \oplus (x_2^c, y_2^c, z_2^c) = (x_1^c + x_2^c,\; y_1^c + y_2^c,\; z_1^c + z_2^c)$$</div>
+  <p style="margin-top:.4rem;">Genel olarak $(x_1+x_2)^c \neq x_1^c + x_2^c$ (ör. $x_1=x_2=1$, $c=2$: $(1+1)^2=4 \neq 1+1=2$). <strong>(V5) sağlanmaz ✗</strong></p>
+
+  <div class="note-box" style="margin-top:.6rem;">
+    (V5) aksiyomu bozulduğundan yukarıdaki işlemlerle $\mathbb{R}^3$ bir <strong>vektör uzayı değildir</strong>.
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Egzersiz 1:</strong> $c\cdot\begin{bmatrix}x&y\\z&t\end{bmatrix}=\begin{bmatrix}cx&y\\z&ct\end{bmatrix}$ — (V6) bozulur ($y$ girdisi iki katına çıkar) → vektör uzayı değil.
+    <br><br>
+    <strong>Egzersiz 2:</strong> $\mathbb{Q}(\sqrt{2})$ — olağan toplama ve $\mathbb{Q}$-skaler çarpmayla → <strong>vektör uzayı</strong>.
+    <br><br>
+    <strong>Egzersiz 3:</strong> $W_1=(x,0,y,0)$ ve $W_2=(x,x,y,0)$ — ikisi de c.u.a. ve c.u.s.m. → <strong>alt uzay</strong>.
+    <br><br>
+    <strong>Egzersiz 4:</strong> Çift ve tek fonksiyonlar — her ikisi de c.u.a. ve c.u.s.m. → <strong>alt uzay</strong>.
+    <br><br>
+    <strong>Egzersiz 5:</strong> $x^4=y^4$ ($|x|=|y|$, iki doğru) — $(1,1)+(1,-1)=(2,0)\notin W$ → alt uzay değil.
+    <br><br>
+    <strong>Egzersiz 6:</strong> $p(1)=2$ — sıfır polinomu $W$'de değil → alt uzay değil.
+    <br><br>
+    <strong>Egzersiz 7:</strong> $c\odot(x,y,z)=(x^c,y^c,z^c)$ — (V5) bozulur → vektör uzayı değil.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

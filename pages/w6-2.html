@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Vektör Uzayı Örnekleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Vektör Uzayı Örnekleri</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 6 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════ ÖRNEK 1 ═══════════════ -->
+<div class="section-title"><span>📌</span> Doğal Örnekler</div>
+
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">1) Sıfır Uzayı (Zero Space)</span>
+    <span class="tag example">Örnek</span>
+  </div>
+  <p>Bir vektör uzayının en basit örneği <strong>trivial (önemsiz) uzay</strong>dır:</p>
+  <div class="formula">$$V = \{\mathbf{0}\}$$</div>
+  <p>Bu uzaya <strong>sıfır vektör uzayı</strong> (zero vector space) denir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 2 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">2) $m \times n$ Matrislerin Vektör Uzayı</span>
+    <span class="tag example">Örnek</span>
+  </div>
+  <p>Herhangi bir $F$ cismi için $F^{m \times n}$ kümesi (yani $F$ üzerindeki tüm $m \times n$ matrisler), <strong>olağan matris toplama ve skaler çarpma</strong> işlemleriyle $F$ üzerinde bir vektör uzayı oluşturur.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 3 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">3) $n$-Demet Uzayı ($n$-tuple Space)</span>
+    <span class="tag example">Örnek</span>
+  </div>
+  <p>Herhangi bir $F$ cismi için $x_i \in F$ olmak üzere $(x_1, x_2, \ldots, x_n)$ biçimindeki sonlu dizilere <strong>$n$-demet</strong> ($n$-tuple) denir. Küme</p>
+  <div class="formula">$$F^n = \{(x_1, \ldots, x_n) : x_1, \ldots, x_n \in F\}$$</div>
+  <p>aşağıda tanımlanan işlemlerle $F$ üzerinde bir vektör uzayıdır:</p>
+  <div class="formula">$$(x_1, x_2, \ldots, x_n) \oplus (y_1, y_2, \ldots, y_n) = (x_1 + y_1,\; x_2 + y_2,\; \ldots,\; x_n + y_n)$$</div>
+  <div class="formula">$$c \odot (x_1, x_2, \ldots, x_n) = (cx_1,\; cx_2,\; \ldots,\; cx_n)$$</div>
+
+  <div class="note-box" style="margin-top:.8rem;">
+    <strong>Egzersiz:</strong> Aksiyomları (V1)–(V8) kontrol et.
+  </div>
+
+  <p style="margin-top:.8rem;">$F = \mathbb{R}$ ise $F^n \cong \mathbb{R}^n$. Örneğin:</p>
+  <div class="formula">$$\mathbb{R}^2 = \{(x, y) : x, y \in \mathbb{R}\}$$</div>
+  <div class="formula">$$\mathbb{R}^3 = \{(x, y, z) : x, y, z \in \mathbb{R}\}$$</div>
+</div>
+
+<!-- ═══════════════ ÖRNEK 4 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">4) Kendi Üzerinde Vektör Uzayı Olarak Cisim</span>
+    <span class="tag example">Örnek</span>
+  </div>
+  <p>$V = F$ alalım. Bu durumda cisim aksiyomları, vektör uzayı aksiyomlarına indirgendiğinden $F$, <strong>kendi üzerinde bir vektör uzayıdır</strong>.</p>
+  <p style="margin-top:.5rem;">Yukarıdaki 3. örnekte $n = 1$ alındığında da bu örnek elde edilir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 5 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">5) Fonksiyon Uzayı</span>
+    <span class="tag example">Örnek</span>
+  </div>
+  <p>$\mathcal{F}[a,b]$, $[a,b]$ aralığında tanımlı tüm gerçel değerli fonksiyonların kümesi olsun. $f, g \in \mathcal{F}[a,b]$ ve $c \in \mathbb{R}$ için tanımlanan işlemlerle</p>
+  <div class="formula">$$(f + g)(x) = f(x) + g(x)$$</div>
+  <div class="formula">$$(cf)(x) = c\, f(x)$$</div>
+  <p>$\mathcal{F}[a,b]$ bir <strong>gerçel vektör uzayıdır</strong>.</p>
+
+  <div class="note-box" style="margin-top:.8rem;">
+    <strong>Egzersiz:</strong> Aksiyomları (V1)–(V8) kontrol et.
+  </div>
+</div>
+
+<!-- ═══════════════ ÖRNEK 6 ═══════════════ -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">6) $F$ Üzerinde Polinomların Uzayı</span>
+    <span class="tag example">Örnek</span>
+  </div>
+
+  <p>$a_i \in F$ olmak üzere</p>
+  <div class="formula">$$p(x) = a_0 + a_1 x + \cdots + a_n x^n$$</div>
+  <p>biçimindeki ifadeye $F$ üzerinde <strong>polinom</strong> denir.</p>
+
+  <div class="prop-list" style="margin-top:.6rem;">
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $p(x) = a_0 + a_1 x + \cdots + a_n x^n$ ve $q(x) = b_0 + b_1 x + \cdots + b_m x^m$ polinomları ancak ve ancak $n = m$ ve $a_i = b_i$ ($i = 0, 1, \ldots, n$) ise <strong>eşittir</strong>.
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $a_n \neq 0$ ise $p(x)$'in derecesi $n$'dir; $\partial p = n$ yazılır.
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $F$ üzerindeki tüm polinomların kümesi $F[x]$ ile gösterilir.
+    </div>
+  </div>
+
+  <p style="margin-top:.8rem;">$F[x]$, aşağıdaki işlemlerle $F$ üzerinde bir vektör uzayıdır:</p>
+  <div class="formula">
+    $$p + q = (a_0 + a_1 x + \cdots + a_n x^n) + (b_0 + b_1 x + \cdots + b_m x^m)$$
+    $$= (a_0 + b_0) + (a_1 + b_1)x + \cdots$$
+  </div>
+  <div class="formula">
+    $$c \cdot p = c(a_0 + a_1 x + \cdots + a_n x^n) = ca_0 + (ca_1)x + \cdots + (ca_n)x^n$$
+  </div>
+
+  <div class="note-box" style="margin-top:.8rem;">
+    <strong>Not:</strong> $x \in [a,b]$ ve $F = \mathbb{R}$ ise $\mathbb{R}[x] \subseteq \mathcal{F}[a,b]$.
+  </div>
+
+  <p style="margin-top:.8rem;">Ayrıca</p>
+  <div class="formula">$$P_n(x) = \{p(x) \in F[x] : \partial p \leq n\}$$</div>
+  <p>kümesi de, $F[x]$'deki polinom toplama ve skaler çarpmayla $F$ üzerinde bir <strong>vektör uzayıdır</strong>.</p>
+
+  <p style="margin-top:.6rem;"><strong>Örnek ($F = \mathbb{R}$):</strong></p>
+  <div class="formula">$$P_2(x) = \{a_0 + a_1 x + a_2 x^2 : a_0, a_1, a_2 \in \mathbb{R}\}$$</div>
+
+  <div class="note-box" style="margin-top:.8rem;">
+    <strong>Not:</strong> $P_n(x) \subseteq F[x]$ ve ayrıca
+    <div class="formula" style="margin-top:.4rem;">$$P_1(x) \subset P_2(x) \subset \cdots \subset P_n(x) \subset P_{n+1}(x) \subset \cdots$$</div>
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>1. Sıfır uzayı:</strong> $V = \{\mathbf{0}\}$ — trivial vektör uzayı.
+    <br><br>
+    <strong>2. Matris uzayı:</strong> $F^{m \times n}$ — matris toplama ve skaler çarpmayla.
+    <br><br>
+    <strong>3. $n$-demet uzayı:</strong> $F^n$ — bileşen bazlı toplama ve skaler çarpmayla ($\mathbb{R}^n$ özel durumu).
+    <br><br>
+    <strong>4. Cisim kendi üzerinde:</strong> $V = F$ — $n=1$ özel durumu.
+    <br><br>
+    <strong>5. Fonksiyon uzayı:</strong> $\mathcal{F}[a,b]$ — $(f+g)(x) = f(x)+g(x)$, $(cf)(x) = cf(x)$.
+    <br><br>
+    <strong>6. Polinom uzayı:</strong> $F[x]$ ve $P_n(x) = \{p \in F[x] : \partial p \leq n\}$ — $P_1 \subset P_2 \subset \cdots \subset F[x]$.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

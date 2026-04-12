@@ -22,5 +22,10 @@
   {"file": "w5-2.html", "title": "Determinant: Yöntem & Özellikler",                  "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 2)"},
   {"file": "w5-3.html", "title": "Determinant: Pratik & Egzersizler",                 "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 3)"},
   {"file": "w5-4.html", "title": "Determinant Uygulamaları",                          "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 4)"},
-  {"file": "w5-5.html", "title": "Adjoint ve Cramer: Pratik & Egzersizler",           "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 5)"}
+  {"file": "w5-5.html", "title": "Adjoint ve Cramer: Pratik & Egzersizler",           "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 5)"},
+  {"file": "w6-1.html", "title": "Vektör Uzayları",                                   "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 1)"},
+  {"file": "w6-2.html", "title": "Vektör Uzayı Örnekleri",                            "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 2)"},
+  {"file": "w6-3.html", "title": "Alt Uzaylar",                                       "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 3)"},
+  {"file": "w6-4.html", "title": "Pratik: Vektör Uzayları ve Alt Uzaylar",            "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 4)"},
+  {"file": "w6-5.html", "title": "Egzersizler: Vektör Uzayları ve Alt Uzaylar",       "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 5)"}
 ]

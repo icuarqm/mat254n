@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Alt Uzaylar</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Alt Uzaylar</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 6 - Bölüm 3)</div>
+</div>
+
+<!-- ═══════════════ TANIM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Alt Uzay Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Alt Uzay (Subspace)">
+  <p>$V$ bir vektör uzayı ve $W$, $V$'nin boş olmayan bir alt kümesi olsun. $V$'deki işlemlere göre $W$ de bir vektör uzayı oluşturuyorsa $W$'ye $V$'nin bir <strong>alt uzayı</strong> (subspace) denir.</p>
+</div>
+
+<div class="card example" style="margin-top:.8rem;">
+  <div class="card-header">
+    <span class="card-title">Alt Uzay Örneği</span>
+    <span class="tag example">Örnek</span>
+  </div>
+  <p>$P_1(x) \subseteq F[x]$ ve $P_2(x) \subseteq F[x]$, polinom toplama ve skaler çarpmaya göre $F[x]$'in alt uzaylarıdır. Genel olarak $P_n(x)$, $F[x]$'in bir alt uzayıdır.</p>
+</div>
+
+<!-- ═══════════════ KAPALILIK ═══════════════ -->
+<div class="section-title"><span>🔒</span> Kapalılık Koşulları</div>
+
+<div class="def-box" data-label="Tanım — Kapalılık">
+  <p>$F$ cismi üzerindeki $V$ vektör uzayının $W \neq \emptyset$, $W \subseteq V$ alt kümesi için:</p>
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>$W$'deki herhangi iki elemanın toplamı yine $W$'de ise $W$'ye <strong>toplama göre kapalı</strong> (<em>closed under addition, c.u.a.</em>) denir.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>Her $c \in F$ ve her $v \in W$ için $c \odot v \in W$ ise $W$'ye <strong>skaler çarpmaya göre kapalı</strong> (<em>closed under scalar multiplication, c.u.s.m.</em>) denir.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>📐</span> Örnekler</div>
+
+<!-- Örnek i: W — ilk çeyrek -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">i) $W = \{(x_1, x_2) \in \mathbb{R}^2 : x_1 \geq 0,\; x_2 \geq 0\} \subseteq \mathbb{R}^2$</span>
+    <span class="tag example">Örnek</span>
+  </div>
+
+  <p>$(1,1) \in W \Rightarrow W \neq \emptyset$.</p>
+
+  <div class="prop-list" style="margin-top:.6rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>
+        <strong>Toplama göre kapalı mı?</strong>
+        <p style="margin:.3rem 0;">$(x_1, x_2),\,(y_1, y_2) \in W \Rightarrow x_1 \geq 0,\; x_2 \geq 0,\; y_1 \geq 0,\; y_2 \geq 0$</p>
+        <div class="formula">$$(x_1,x_2) + (y_1,y_2) = (\underbrace{x_1+y_1}_{\geq\,0},\;\underbrace{x_2+y_2}_{\geq\,0}) \in W$$</div>
+        <p style="margin:.3rem 0;">$\Rightarrow$ <strong>c.u.a. ✓</strong></p>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>
+        <strong>Skaler çarpmaya göre kapalı mı?</strong>
+        <p style="margin:.3rem 0;">$-1 \in \mathbb{R}$ ve $(1,1) \in W$ için:</p>
+        <div class="formula">$$(-1)\cdot(1,1) = (-1,-1) \notin W$$</div>
+        <p style="margin:.3rem 0;">$\Rightarrow$ <strong>c.u.s.m. değil ✗</strong> — $W$, $\mathbb{R}^2$'nin <strong>alt uzayı değildir</strong>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Örnek ii: U — x₁x₂ ≥ 0 -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">ii) $U = \{(x_1, x_2) \in \mathbb{R}^2 : x_1 x_2 \geq 0\} \subseteq \mathbb{R}^2$</span>
+    <span class="tag example">Örnek</span>
+  </div>
+
+  <p>$(0,0) \in U \Rightarrow U \neq \emptyset$.</p>
+
+  <div class="prop-list" style="margin-top:.6rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>
+        <strong>Toplama göre kapalı mı?</strong>
+        <p style="margin:.3rem 0;">$(1,3) \in U$ ve $(-2,-1) \in U$ (çünkü $1\cdot3=3\geq0$, $(-2)(-1)=2\geq0$), fakat:</p>
+        <div class="formula">$$(1,3) + (-2,-1) = (-1, 2) \notin U \quad (\text{çünkü } (-1)(2) = -2 < 0)$$</div>
+        <p style="margin:.3rem 0;">$\Rightarrow$ <strong>c.u.a. değil ✗</strong> — $U$, $\mathbb{R}^2$'nin <strong>alt uzayı değildir</strong>.</p>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>
+        <strong>Skaler çarpmaya göre kapalı mı?</strong>
+        <p style="margin:.3rem 0;">$c \in \mathbb{R}$ ve $(x_1, x_2) \in U$ (yani $x_1 x_2 \geq 0$) için:</p>
+        <div class="formula">$$c \cdot (x_1, x_2) = (cx_1, cx_2) \in U \quad \text{çünkü}\quad c^2 x_1 x_2 \geq 0$$</div>
+        <p style="margin:.3rem 0;">$\Rightarrow$ <strong>c.u.s.m. ✓</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Örnek iii: L — doğru ax₁+bx₂=0 -->
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">iii) $L = \{(x_1, x_2) \in \mathbb{R}^2 : ax_1 + bx_2 = 0\} \subseteq \mathbb{R}^2$</span>
+    <span class="tag example">Örnek</span>
+  </div>
+
+  <p>$(0,0) \in L \Rightarrow L \neq \emptyset$.</p>
+
+  <div class="prop-list" style="margin-top:.6rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>
+        <strong>Toplama göre kapalı mı?</strong>
+        <p style="margin:.3rem 0;">$(x_1,x_2),\,(y_1,y_2) \in L \Rightarrow ax_1 + bx_2 = 0$ ve $ay_1 + by_2 = 0$</p>
+        <div class="formula">$$(x_1,x_2)+(y_1,y_2) = (x_1+y_1,\;x_2+y_2) \overset{?}{\in} L$$</div>
+        <div class="formula">$$a(x_1+y_1)+b(x_2+y_2) = \underbrace{(ax_1+bx_2)}_{0}+\underbrace{(ay_1+by_2)}_{0} = 0$$</div>
+        <p style="margin:.3rem 0;">$\Rightarrow (x_1+y_1,\;x_2+y_2) \in L$ $\Rightarrow$ <strong>c.u.a. ✓</strong></p>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>
+        <strong>Skaler çarpmaya göre kapalı mı?</strong>
+        <p style="margin:.3rem 0;">$c \in \mathbb{R}$ ve $(x_1,x_2) \in L \Rightarrow ax_1 + bx_2 = 0$</p>
+        <div class="formula">$$c\cdot(x_1,x_2) = (cx_1,cx_2) \overset{?}{\in} L$$</div>
+        <div class="formula">$$a(cx_1)+b(cx_2) = c\underbrace{(ax_1+bx_2)}_{0} = 0$$</div>
+        <p style="margin:.3rem 0;">$\Rightarrow (cx_1,cx_2) \in L$ $\Rightarrow$ <strong>c.u.s.m. ✓</strong></p>
+        <p style="margin:.3rem 0;">$\Rightarrow$ $L$, $\mathbb{R}^2$'nin bir <strong>alt uzayıdır</strong>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
+<div class="section-title"><span>📋</span> Özellikler ve Teorem</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Özellikler</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>$V$, $F$ üzerinde bir vektör uzayı ve $\emptyset \neq W \subseteq V$ toplama ile skaler çarpmaya göre kapalı olsun. O zaman:</p>
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      $\mathbf{0}_V \in W$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      Her $w \in W$ için $-w \in W$
+    </div>
+  </div>
+</div>
+
+<div class="card thm" style="margin-top:.8rem;">
+  <div class="card-header">
+    <span class="card-title">Teorem — Alt Uzay Karakterizasyonu</span>
+    <span class="tag thm">Teorem</span>
+  </div>
+  <p>$V$ bir vektör uzayı ve $W \subseteq V$ olsun. Aşağıdaki koşullar sağlandığında ve yalnızca o zaman $W$, $V$'nin bir alt uzayıdır:</p>
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      $W \neq \emptyset$ ve $W \subseteq V$
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      $W$ toplama göre kapalıdır
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      $W$ skaler çarpmaya göre kapalıdır
+    </div>
+  </div>
+  <p style="margin-top:.8rem;"><strong>Örnek:</strong> Yukarıdaki örneklerde $L$, $\mathbb{R}^2$'nin bir alt uzayıdır; ancak $W$ ve $U$ alt uzay değildir.</p>
+  <div class="note-box" style="margin-top:.6rem;">
+    <strong>Not:</strong> $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ kümeleri $\mathbb{R}$'nin alt uzayları değildir. Neden?
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Alt uzay:</strong> $V$'nin, $V$'deki işlemlere göre vektör uzayı olan boş olmayan alt kümesi $W$.
+    <br><br>
+    <strong>Kapalılık:</strong> c.u.a. ($w_1,w_2\in W \Rightarrow w_1+w_2\in W$) ve c.u.s.m. ($c\in F, w\in W \Rightarrow cw\in W$).
+    <br><br>
+    <strong>Teorem:</strong> $W \neq \emptyset$, c.u.a., c.u.s.m. $\Longleftrightarrow$ $W$ alt uzay. (Ayrıca: $\mathbf{0}_V\in W$ ve $-w\in W$ otomatik sağlanır.)
+    <br><br>
+    <strong>Örnekler ($\mathbb{R}^2$):</strong> $L = \{ax_1+bx_2=0\}$ — alt uzay ✓;&ensp; $W = \{x_1\geq0,x_2\geq0\}$ — değil ✗;&ensp; $U = \{x_1x_2\geq0\}$ — değil ✗.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

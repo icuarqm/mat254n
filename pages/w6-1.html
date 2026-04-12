@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Vektör Uzayları</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Vektör Uzayları</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 6 - Bölüm 1)</div>
+</div>
+
+<!-- ═══════════════ TANIM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Vektör Uzayı Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Vektör Uzayı">
+  <p>$F(+,\cdot)$ cisim ve $V$, boş olmayan bir küme olsun. $V$ üzerinde</p>
+
+  <div style="margin:.6rem 0 .3rem 1rem;">
+    <div class="formula">
+      $$\oplus:\; V \times V \longrightarrow V, \qquad (v,w) \longmapsto v \oplus w$$
+    </div>
+    <p style="margin:.3rem 0 .3rem 0;">işlemi (vektör toplama) ve</p>
+    <div class="formula">
+      $$\odot:\; F \times V \longrightarrow V, \qquad (c,v) \longmapsto c \odot v$$
+    </div>
+    <p style="margin:.3rem 0 0 0;">fonksiyonu (skaler çarpma) tanımlı olsun.</p>
+  </div>
+
+  <p style="margin-top:.6rem;">Aşağıdaki aksiyomların tamamı sağlanıyorsa $V$'ye $F$ üzerinde <strong>vektör uzayı</strong> denir. Her $v, v_1, v_2, v_3 \in V$ ve $c, c_1, c_2 \in F$ için:</p>
+</div>
+
+<!-- ═══════════════ AKSİYOMLAR ═══════════════ -->
+<div class="section-title"><span>📋</span> Aksiyomlar</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Vektör Uzayı Aksiyomları (V1–V8)</span>
+    <span class="tag prop">Aksiyom</span>
+  </div>
+  <div class="prop-list">
+
+    <div class="prop-item">
+      <span class="prop-label">(V1)</span>
+      <div>
+        Toplama birleşmeli:
+        <div class="formula" style="margin-top:.2rem;">$$v_1 \oplus (v_2 \oplus v_3) = (v_1 \oplus v_2) \oplus v_3$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V2)</span>
+      <div>
+        $V$'de bir $\mathbf{0}$ elemanı mevcuttur:
+        <div class="formula" style="margin-top:.2rem;">$$v \oplus \mathbf{0} = \mathbf{0} \oplus v = v$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V3)</span>
+      <div>
+        Her $v \in V$ için $v' \in V$ mevcuttur:
+        <div class="formula" style="margin-top:.2rem;">$$v \oplus v' = v' \oplus v = \mathbf{0}$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V4)</span>
+      <div>
+        Toplama değişmeli:
+        <div class="formula" style="margin-top:.2rem;">$$v_1 \oplus v_2 = v_2 \oplus v_1$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V5)</span>
+      <div>
+        Skaler çarpma vektör toplamaya göre dağılmalı:
+        <div class="formula" style="margin-top:.2rem;">$$c \odot (v_1 \oplus v_2) = (c \odot v_1) \oplus (c \odot v_2)$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V6)</span>
+      <div>
+        Skaler çarpma skaler toplamaya göre dağılmalı:
+        <div class="formula" style="margin-top:.2rem;">$$(c_1 + c_2) \odot v = (c_1 \odot v) \oplus (c_2 \odot v)$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V7)</span>
+      <div>
+        Skaler çarpma birleşmeli:
+        <div class="formula" style="margin-top:.2rem;">$$(c_1 \cdot c_2) \odot v = c_1 \odot (c_2 \odot v)$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">(V8)</span>
+      <div>
+        Birim skaler:
+        <div class="formula" style="margin-top:.2rem;">$$1 \odot v = v, \qquad 1 \in F$$</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ NOTLAR ═══════════════ -->
+<div class="section-title"><span>🔍</span> Notlar ve Gösterimler</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Terminoloji</span>
+    <span class="tag prop">Not</span>
+  </div>
+  <div class="prop-list">
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $V$'nin elemanlarına <strong>vektör</strong> denir.
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $\oplus$ işlemine <strong>vektör toplama</strong>, $\odot$ işlemine <strong>skaler çarpma</strong> denir.
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      (V2)'deki $\mathbf{0}$ elemanına <strong>sıfır vektörü</strong> denir; $\mathbf{0}_V$ ile gösterilir.
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      (V3)'teki $v'$ elemanına $v$'nin <strong>tersi (negatifi)</strong> denir; $-v$ ile gösterilir.
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      $F = \mathbb{R}$ ise $V$'ye <strong>gerçel vektör uzayı</strong>, $F = \mathbb{C}$ ise <strong>karmaşık vektör uzayı</strong> denir.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
+<div class="section-title"><span>📐</span> Temel Özellikler</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Özellikler</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>Her $c \in F$ ve $v \in V$ için:</p>
+  <div class="prop-list" style="margin-top:.5rem;">
+
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        <div class="formula">$$c \odot \mathbf{0}_V = \mathbf{0}_V \qquad \text{ve} \qquad 0 \odot v = \mathbf{0}_V$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>
+        <div class="formula">$$(-1) \odot v = -v$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>
+        <div class="formula">$$c \odot v = \mathbf{0}_V \;\Rightarrow\; c = 0 \;\text{ veya }\; v = \mathbf{0}_V$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">iv)</span>
+      <div>
+        <div class="formula">$$(-c) \odot v = c \odot (-v) = -(c \odot v)$$</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Vektör uzayı:</strong> $F$ cismi üzerinde iki işlem ($\oplus$ ve $\odot$) tanımlı, 8 aksiyomu sağlayan boş olmayan küme $V$.
+    <br><br>
+    <strong>Toplama aksiyomları (V1–V4):</strong> Birleşme · Sıfır eleman · Ters eleman · Değişme.
+    <br><br>
+    <strong>Skaler çarpma aksiyomları (V5–V8):</strong> Vektöre dağılma · Skalere dağılma · Birleşme · Birim skaler.
+    <br><br>
+    <strong>Temel sonuçlar:</strong> $c \odot \mathbf{0}_V = \mathbf{0}_V$;&ensp; $0 \odot v = \mathbf{0}_V$;&ensp; $(-1)\odot v = -v$;&ensp; $c\odot v = \mathbf{0}_V \Rightarrow c=0$ veya $v=\mathbf{0}_V$.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>
