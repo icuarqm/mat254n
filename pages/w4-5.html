@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Egzersizler</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Egzersizler</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 4 - Bölüm 5)</div>
+</div>
+
+<!-- ═══════════════ SORU 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersizler</div>
+
+<div class="q-box" data-label="Egzersiz 1">
+  <p>Aşağıdaki koşulu sağlayan gerçel sayılar $x$, $y$ ve $t$'yi bulunuz:</p>
+  <div class="formula">
+    $$x\begin{pmatrix}1\\1\\3\\1\end{pmatrix} + y\begin{pmatrix}1\\-1\\1\\1\end{pmatrix} + t\begin{pmatrix}1\\1\\3\\-1\end{pmatrix} = \begin{pmatrix}1\\0\\2\\5\end{pmatrix}$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Lineer sisteme dönüştürme</div>
+    <p>Vektör eşitliği bileşen bileşen yazılırsa:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        x + y + t &= 1 \\
+        x - y + t &= 0 \\
+        3x + y + 3t &= 2 \\
+        x + y - t &= 5
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Genişletilmiş matris ve indirgeme</div>
+    <div class="mw" style="flex-wrap:wrap; gap:1rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td></tr>
+        <tr><td>1</td><td>−1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td></tr>
+        <tr><td>3</td><td>1</td><td>3</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">2</td></tr>
+        <tr><td>1</td><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">5</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.2rem;">
+        <div class="op-label">$r_2\to r_2-r_1$</div>
+        <div class="op-label">$r_3\to r_3-3r_1$</div>
+        <div class="op-label">$r_4\to r_4-r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">−2</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td></tr>
+        <tr><td class="zero-cell">0</td><td>−2</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>−2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_3\to r_3-r_2$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">−2</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">4</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">0</td></tr>
+      </table></div>
+    </div>
+    <p class="note" style="margin-top:.4rem;">Satır 3 ile satır 4 yer değiştirildikten sonra $r=3$ pivot, sistem tutarlı.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Geriye dönük yerine koyma</div>
+    <p><strong>Satır 3:</strong> $-2t = 4 \;\Rightarrow\; t = -2$</p>
+    <p style="margin-top:.3rem;"><strong>Satır 2:</strong> $-2y = -1 \;\Rightarrow\; y = \tfrac{1}{2}$</p>
+    <p style="margin-top:.3rem;"><strong>Satır 1:</strong> $x + \tfrac{1}{2} + (-2) = 1 \;\Rightarrow\; x = \tfrac{5}{2}$</p>
+  </div>
+
+  <div class="result-box">
+    $$x = \tfrac{5}{2},\qquad y = \tfrac{1}{2},\qquad t = -2$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 2 ═══════════════ -->
+<div class="q-box" data-label="Egzersiz 2" style="margin-top:1.5rem;">
+  <p>Aşağıdaki $A$ ve $B$ için $AX = B$ matris denklemini çözünüz:</p>
+  <div class="mw" style="gap:1.5rem; align-items:flex-end; flex-wrap:wrap; margin:.4rem 0;">
+    <div style="display:flex; align-items:flex-end; gap:.3rem;">
+      <span class="ml">$A =$</span>
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>−1</td><td>−1</td><td>1</td></tr>
+      </table></div>
+    </div>
+    <div style="display:flex; align-items:flex-end; gap:.3rem;">
+      <span class="ml">$B =$</span>
+      <div class="mb"><table>
+        <tr><td>2</td><td>1</td><td class="zero-cell">0</td><td>−1</td></tr>
+        <tr><td>1</td><td>−1</td><td>−1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td>−2</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">$[A \mid B]$ genişletilmiş matrisini indirgeme</div>
+    <p class="note" style="margin-bottom:.5rem;">$AX = B$'yi her sütun için ayrı ayrı çözmek yerine $[A \mid B]$ tek seferde işlenir.</p>
+    <div class="mw" style="flex-wrap:wrap; gap:1rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">2</td><td>1</td><td>0</td><td>−1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>−1</td><td>−1</td><td>1</td></tr>
+        <tr><td>−1</td><td>−1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">1</td><td>1</td><td>1</td><td>−2</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.2rem;">
+        <div class="op-label">$r_2\to r_2-r_1$</div>
+        <div class="op-label">$r_3\to r_3+r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">2</td><td>1</td><td>0</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem; color:var(--red, #c0392b); font-weight:600;">−1</td><td style="color:var(--red,#c0392b);font-weight:600;">−2</td><td style="color:var(--red,#c0392b);font-weight:600;">−1</td><td style="color:var(--red,#c0392b);font-weight:600;">2</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">2</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">3</td><td>2</td><td>1</td><td>−3</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.5rem;">2. satır sıfır katsayılıdır ancak sağ taraf <strong>sıfır değildir</strong> → $0 = [-1, -2, -1, 2]$ biçiminde tutarsız denklemler ortaya çıkar.</p>
+  </div>
+
+  <div class="card warn" style="margin-top:.8rem;">
+    <div class="card-header">
+      <span class="card-title">Sonuç</span>
+      <span class="tag warn">Sonuç</span>
+    </div>
+    <p>$A$'nın 1. ve 2. satırları özdeş olduğundan $AX = B$'nin her sütununda aynı çelişki oluşur. $AX = B$ denkleminin <strong>çözümü yoktur</strong>.</p>
+    <p class="note" style="margin-top:.4rem;">Genel kural: $Ax = b$'nin çözümü olabilmesi için $b$, $A$'nın satır uzayıyla uyumlu olmalıdır. Burada $A$ tersinir değildir ($\det A = 0$) ve $B$ bu koşulu sağlamamaktadır.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 3 ═══════════════ -->
+<div class="q-box" data-label="Egzersiz 3" style="margin-top:1.5rem;">
+  <p>Aşağıdaki matris için $Ax = 4I_2\,x$ denklemini çözünüz:</p>
+  <div class="mw" style="align-items:flex-end; gap:.3rem; margin:.4rem 0;">
+    <span class="ml">$A =$</span>
+    <div class="mb"><table>
+      <tr><td>4</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td>2</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Denklemi yeniden yazma</div>
+    <p>$Ax = 4I_2\,x \;\Rightarrow\; Ax - 4x = 0 \;\Rightarrow\; (A - 4I_2)\,x = 0$.</p>
+    <div class="mw" style="gap:.8rem; align-items:center; flex-wrap:wrap; margin:.4rem 0;">
+      <span>$A - 4I_2 =$</span>
+      <div class="mb"><table>
+        <tr><td>$4-4$</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td>$2-4$</td></tr>
+      </table></div>
+      <span>$=$</span>
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td>−2</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Homojen sistemi çözme</div>
+    <p>$(A - 4I_2)\,x = 0$ sistemi:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        x_2 &= 0 \\
+        -2x_2 &= 0
+      \end{aligned}$$
+    </div>
+    <p style="margin-top:.3rem;">Her iki denklem de $x_2 = 0$ verir. $x_1$ serbest değişkendir; $x_1 = t$ ($t \in \mathbb{R}$) alalım.</p>
+  </div>
+
+  <div class="result-box" style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
+    <div class="mb"><table>
+      <tr><td>$x_1$</td></tr>
+      <tr><td>$x_2$</td></tr>
+    </table></div>
+    <span>$= \;t$</span>
+    <div class="mb"><table>
+      <tr><td>$1$</td></tr>
+      <tr><td>$0$</td></tr>
+    </table></div>
+    <span>,&emsp;$t \in \mathbb{R}$</span>
+  </div>
+
+  <div class="note" style="margin-top:.6rem;">Nontrivial çözümler mevcuttur: temel çözüm $(1,\;0)^T$. Geometrik yorum: $A$'nın $4$'e karşılık gelen özvektörü $x$-ekseninin yönündedir.</div>
+</div>
+
+<!-- ═══════════════ SORU 4 ═══════════════ -->
+<div class="q-box" data-label="Egzersiz 4" style="margin-top:1.5rem;">
+  <p>Aşağıdaki sistemin nontrivial çözümlere sahip olması için $a$ ne olmalıdır?</p>
+  <div class="formula">
+    $$\begin{aligned}
+      x - ay + 2z - t &= 0 \\
+      -2x + 2ay - 2z + 3t &= 0 \\
+      -x + (a+1)y \phantom{{}+ 2z} + (a+1)t &= 0 \\
+      -3x + 3ay - 2z + (a+4)t &= 0
+    \end{aligned}$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Katsayılar matrisi ve indirgeme</div>
+    <div class="mw" style="flex-wrap:wrap; gap:1rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>$-a$</td><td>2</td><td>−1</td></tr>
+        <tr><td>−2</td><td>$2a$</td><td>−2</td><td>3</td></tr>
+        <tr><td>−1</td><td>$a+1$</td><td class="zero-cell">0</td><td>$a+1$</td></tr>
+        <tr><td>−3</td><td>$3a$</td><td>−2</td><td>$a+4$</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.2rem;">
+        <div class="op-label">$r_2\to r_2+2r_1$</div>
+        <div class="op-label">$r_3\to r_3+r_1$</div>
+        <div class="op-label">$r_4\to r_4+3r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>$-a$</td><td>2</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>2</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>2</td><td>$a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>4</td><td>$a+1$</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_2 \leftrightarrow r_3$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>$-a$</td><td>2</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>2</td><td>$a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">2</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>4</td><td>$a+1$</td></tr>
+      </table></div>
+    </div>
+    <div class="mw" style="gap:1rem; align-items:center; margin-top:.6rem;">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_4\to r_4-2r_3$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>$-a$</td><td>2</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>2</td><td>$a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">2</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td>$a-1$</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Nontrivial çözüm koşulu</div>
+    <p>Homojen sistemin nontrivial çözümleri olması için serbest değişken bulunması, yani $\text{rank}(A) < n = 4$ olması gerekir.</p>
+    <p style="margin-top:.4rem;">Son satır $[0\;0\;0\;(a-1)]$: bu satırın sıfır olması için</p>
+    <div class="formula">$$a - 1 = 0 \;\Rightarrow\; \boxed{a = 1}$$</div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Doğrulama: $a = 1$ için sistem</div>
+    <p>Son satır sıfır olur, $r = 3$ pivot, $n - r = 1$ serbest değişken → nontrivial çözümler var.</p>
+    <p style="margin-top:.3rem;"><strong>Satır 3:</strong> $2z + t = 0 \;\Rightarrow\; t = s$ ($s \in \mathbb{R}$) alalım, $z = -\tfrac{s}{2}$</p>
+    <p style="margin-top:.3rem;"><strong>Satır 2:</strong> $y + 2z + t = 0 \;\Rightarrow\; y - s + s = 0 \;\Rightarrow\; y = 0$</p>
+    <p style="margin-top:.3rem;"><strong>Satır 1:</strong> $x - y + 2z - t = 0 \;\Rightarrow\; x - s - s = 0 \;\Rightarrow\; x = 2s$</p>
+    <div class="result-box" style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; margin-top:.6rem;">
+      <div class="mb"><table>
+        <tr><td>$x$</td></tr>
+        <tr><td>$y$</td></tr>
+        <tr><td>$z$</td></tr>
+        <tr><td>$t$</td></tr>
+      </table></div>
+      <span>$= \;s$</span>
+      <div class="mb"><table>
+        <tr><td>$2$</td></tr>
+        <tr><td>$0$</td></tr>
+        <tr><td>$-\tfrac{1}{2}$</td></tr>
+        <tr><td>$1$</td></tr>
+      </table></div>
+      <span>,&emsp;$s \in \mathbb{R}$</span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

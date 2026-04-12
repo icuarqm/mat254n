@@ -118,16 +118,40 @@
   </div>
 </div>
 
-<div class="card warn">
+<div class="card ex">
   <div class="card-header">
-    <span class="card-title">Uyarı — Aynı anda birden fazla işlem</span>
-    <span class="tag warn">Dikkat</span>
+    <span class="card-title">Örnek d — Aynı Anda İki İşlem</span>
+    <span class="tag ex">Örnek</span>
   </div>
-  <div class="step">
-    <p>Örnek d'de iki işlem aynı anda yapılmış: $r_3 \to -2r_3$ ve $r_4 \to r_4 - r_1$. Bu mümkündür çünkü birbirinden bağımsız satırlar etkileniyor.</p>
-    <p style="margin-top:.4rem;">Ama $r_1 \leftrightarrow r_2$ gibi bir yer değiştirmeyi, aynı satırları kullanan başka bir işlemle aynı anda <strong>YAPMA!</strong> Çünkü hangi satırın eski, hangi satırın yeni olduğu karışır.</p>
+  <div class="mw" style="flex-wrap:wrap; gap:1rem; align-items:center;">
+    <div class="mb"><table>
+      <tr><td>2</td><td>−3</td><td>6</td></tr>
+      <tr><td class="zero-cell">0</td><td>1</td><td>−2</td></tr>
+      <tr><td>−5</td><td>5</td><td>1</td></tr>
+      <tr><td>2</td><td>−5</td><td>1</td></tr>
+    </table></div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div class="op-label">$r_3\to -2r_3$<br>$r_4\to r_4-r_1$</div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="mb"><table>
+      <tr><td>2</td><td>−3</td><td>6</td></tr>
+      <tr><td class="zero-cell">0</td><td>1</td><td>−2</td></tr>
+      <tr class="highlight-row"><td>10</td><td>−10</td><td>−2</td></tr>
+      <tr class="highlight-row"><td class="zero-cell">0</td><td>−2</td><td>−5</td></tr>
+    </table></div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div class="op-label">$r_1\leftrightarrow r_2$</div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="mb"><table>
+      <tr class="highlight-row"><td class="zero-cell">0</td><td>1</td><td>−2</td></tr>
+      <tr class="highlight-row"><td>2</td><td>−3</td><td>6</td></tr>
+      <tr><td>10</td><td>−10</td><td>−2</td></tr>
+      <tr><td class="zero-cell">0</td><td>−2</td><td>−5</td></tr>
+    </table></div>
   </div>
-  <div class="note">Genel kural: aynı anda birden fazla işlem yaparsan, işlemler birbirinden bağımsız satırları etkilemeli.</div>
+  <div class="note" style="margin-top:.6rem;"><strong>İlk iki işlem doğru</strong> — bağımsız satırlar, aynı anda yapılabilir. Ama <strong>$r_1 \leftrightarrow r_2$'yi burada yapma!</strong> Pivot pozisyonuna 0 geliyor.</div>
 </div>
 
 <!-- ═══════════════ TERSLERİ ═══════════════ -->
@@ -167,33 +191,62 @@
 
 <div class="card ex">
   <div class="card-header">
-    <span class="card-title">Örnek</span>
+    <span class="card-title">Örnek — $A \sim B$</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <div class="mw">
-    <span class="ml">A =</span>
+  <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center; margin-bottom:.8rem;">
+    <span class="ml">$A =$</span>
     <div class="mb"><table>
       <tr><td>2</td><td>6</td></tr>
-      <tr><td>0</td><td>−2</td></tr>
+      <tr><td class="zero-cell">0</td><td>−2</td></tr>
       <tr><td>−1</td><td>1</td></tr>
       <tr><td>2</td><td>1</td></tr>
     </table></div>
-    <span style="margin:0 .5rem;color:var(--muted);">ve</span>
-    <span class="ml">B =</span>
+    <span style="color:var(--muted);">ve</span>
+    <span class="ml">$B =$</span>
     <div class="mb"><table>
-      <tr><td>0</td><td>−2</td></tr>
+      <tr><td class="zero-cell">0</td><td>−2</td></tr>
       <tr><td>2</td><td>6</td></tr>
       <tr><td>2</td><td>−2</td></tr>
-      <tr><td>0</td><td>−5</td></tr>
+      <tr><td class="zero-cell">0</td><td>−5</td></tr>
     </table></div>
-    <span style="margin-left:.5rem;">satır denktir.</span>
+    <span>satır denktir ($A \sim B$).</span>
   </div>
-  <div class="step">
-    $A$'dan $B$'ye nasıl?<br>
-    <div class="formula" style="font-size:.82rem;">$r_4 \to r_4 - r_1, \quad r_3 \to -2r_3$</div>
-    (aynı anda, bağımsız satırlar) → ara matris →
-    <div class="formula" style="font-size:.82rem;">$r_1 \leftrightarrow r_2$</div> → $B$
+  <div class="mw" style="flex-wrap:wrap; gap:1rem; align-items:center;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:.2rem;">
+      <span class="ml">$A$</span>
+      <div class="mb"><table>
+        <tr><td>2</td><td>6</td></tr>
+        <tr><td class="zero-cell">0</td><td>−2</td></tr>
+        <tr><td>−1</td><td>1</td></tr>
+        <tr><td>2</td><td>1</td></tr>
+      </table></div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div class="op-label">$r_4\to r_4-r_1$<br>$r_3\to -2r_3$</div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="mb"><table>
+      <tr><td>2</td><td>6</td></tr>
+      <tr><td class="zero-cell">0</td><td>−2</td></tr>
+      <tr class="highlight-row"><td>2</td><td>−2</td></tr>
+      <tr class="highlight-row"><td class="zero-cell">0</td><td>−5</td></tr>
+    </table></div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div class="op-label">$r_1\leftrightarrow r_2$</div>
+      <span class="arrow">→</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:.2rem;">
+      <span class="ml">$B$</span>
+      <div class="mb"><table>
+        <tr class="highlight-row"><td class="zero-cell">0</td><td>−2</td></tr>
+        <tr class="highlight-row"><td>2</td><td>6</td></tr>
+        <tr><td>2</td><td>−2</td></tr>
+        <tr><td class="zero-cell">0</td><td>−5</td></tr>
+      </table></div>
+    </div>
   </div>
+  <div class="note" style="margin-top:.5rem;">$A$'dan $B$'ye 3 ERO ile ulaşılır → $A \sim B$.</div>
 </div>
 
 <div class="card prop">

@@ -39,24 +39,51 @@
     <span class="tag prop">Gösterim</span>
   </div>
   <p>$(\star)$ sistemi matris formunda $Ax = b$ şeklinde yazılır:</p>
-  <div class="formula">
-    $$A = \begin{pmatrix} A_{11} & A_{12} & \cdots & A_{1n} \\ A_{21} & A_{22} & \cdots & A_{2n} \\ \vdots & & \ddots & \vdots \\ A_{m1} & A_{m2} & \cdots & A_{mn} \end{pmatrix}_{m \times n}$$
+  <div class="mw" style="align-items:flex-end; gap:.3rem; margin:.4rem 0;">
+    <span class="ml">$A =$</span>
+    <div class="mb"><table>
+      <tr><td>$A_{11}$</td><td>$A_{12}$</td><td>$\cdots$</td><td>$A_{1n}$</td></tr>
+      <tr><td>$A_{21}$</td><td>$A_{22}$</td><td>$\cdots$</td><td>$A_{2n}$</td></tr>
+      <tr><td>$\vdots$</td><td></td><td>$\ddots$</td><td>$\vdots$</td></tr>
+      <tr><td>$A_{m1}$</td><td>$A_{m2}$</td><td>$\cdots$</td><td>$A_{mn}$</td></tr>
+    </table></div>
+    <span class="ms">$m \times n$</span>
   </div>
   <p style="margin-top:.3rem;">$A$'ya sistemin <strong>katsayılar matrisi</strong> (coefficient matrix) denir.</p>
-  <div class="formula" style="margin-top:.5rem;">
-    $$b = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{pmatrix}_{m \times 1}, \qquad x = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}_{n \times 1}$$
+  <div class="mw" style="gap:1.5rem; align-items:flex-end; margin-top:.5rem; flex-wrap:wrap;">
+    <div style="display:flex; align-items:flex-end; gap:.3rem;">
+      <span class="ml">$b =$</span>
+      <div class="mb"><table>
+        <tr><td>$b_1$</td></tr>
+        <tr><td>$b_2$</td></tr>
+        <tr><td>$\vdots$</td></tr>
+        <tr><td>$b_m$</td></tr>
+      </table></div>
+      <span class="ms">$m \times 1$</span>
+    </div>
+    <div style="display:flex; align-items:flex-end; gap:.3rem;">
+      <span class="ml">$x =$</span>
+      <div class="mb"><table>
+        <tr><td>$x_1$</td></tr>
+        <tr><td>$x_2$</td></tr>
+        <tr><td>$\vdots$</td></tr>
+        <tr><td>$x_n$</td></tr>
+      </table></div>
+      <span class="ms">$n \times 1$</span>
+    </div>
   </div>
 </div>
 
 <div class="def-box" data-label="Tanım — Genişletilmiş Matris (Augmented Matrix)">
   <p>$[A \mid b]$ matrisi, $(\star)$ sisteminin <strong>genişletilmiş matrisidir</strong> (augmented matrix).</p>
-  <div class="formula">
-    $$[A \mid b] = \left(\begin{array}{cccc|c}
-      A_{11} & A_{12} & \cdots & A_{1n} & b_1 \\
-      A_{21} & A_{22} & \cdots & A_{2n} & b_2 \\
-      \vdots &        & \ddots & \vdots  & \vdots \\
-      A_{m1} & A_{m2} & \cdots & A_{mn} & b_m
-    \end{array}\right)$$
+  <div class="mw" style="align-items:flex-end; gap:.3rem; margin:.4rem 0;">
+    <span class="ml">$[A \mid b] =$</span>
+    <div class="mb"><table>
+      <tr><td>$A_{11}$</td><td>$A_{12}$</td><td>$\cdots$</td><td>$A_{1n}$</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$b_1$</td></tr>
+      <tr><td>$A_{21}$</td><td>$A_{22}$</td><td>$\cdots$</td><td>$A_{2n}$</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$b_2$</td></tr>
+      <tr><td>$\vdots$</td><td></td><td>$\ddots$</td><td>$\vdots$</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$\vdots$</td></tr>
+      <tr><td>$A_{m1}$</td><td>$A_{m2}$</td><td>$\cdots$</td><td>$A_{mn}$</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$b_m$</td></tr>
+    </table></div>
   </div>
 </div>
 

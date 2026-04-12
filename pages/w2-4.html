@@ -156,23 +156,32 @@
     <span class="card-title">Çözüm — Ödev 1: Çarpım</span>
     <span class="tag hw-t">İspat</span>
   </div>
+
   <div class="step purple">
     <div class="step-label purple">Genel $(i,j)$ girişi</div>
     <div class="formula">$$(A \cdot B)_{ij} = \sum_{k=1}^{n} A_{ik} \cdot B_{kj}$$</div>
-    <p>$A$ köşegen olduğundan $A_{ik} \neq 0$ ancak $k = i$ ise. Yani toplamda sadece $k = i$ terimi kalır:</p>
+    <p>$A$ köşegen bir matris olduğundan, $A_{ik}$ ancak $k = i$ iken sıfırdan farklı olabilir. Bu nedenle toplamda yalnızca $k = i$ terimi kalır:</p>
     <div class="formula">$$(A \cdot B)_{ij} = A_{ii} \cdot B_{ij}$$</div>
   </div>
+
   <div class="step purple">
     <div class="step-label purple">$i \neq j$ durumu</div>
     <div class="formula">$$(A \cdot B)_{ij} = A_{ii} \cdot B_{ij} = A_{ii} \cdot 0 = 0$$</div>
-    <p>$B$ de köşegen olduğundan $B_{ij} = 0$ ($i \neq j$). Köşegen dışı girişler sıfır.</p>
+    <p>Çünkü $B$ de köşegen matristir ve $i \neq j$ için $B_{ij} = 0$.</p>
   </div>
+
   <div class="step purple">
     <div class="step-label purple">$i = j$ durumu</div>
     <div class="formula">$$(A \cdot B)_{ii} = A_{ii} \cdot B_{ii} = a_i \cdot b_i$$</div>
   </div>
-  <div class="qed-box">$A \cdot B = \operatorname{diag}(a_1 b_1,\; a_2 b_2,\; \ldots,\; a_n b_n)$ → köşegen matris. ∎</div>
-  <div class="note">Bonus: köşegen matrislerin çarpımı <strong>değişmelidir</strong> ($AB = BA$). Çünkü $a_i b_i = b_i a_i$.</div>
+
+  <div class="qed-box">
+    $A \cdot B = \operatorname{diag}(a_1 b_1,\; a_2 b_2,\; \ldots,\; a_n b_n)$ → köşegen matris. ∎
+  </div>
+
+  <div class="note">
+    Bonus: Köşegen matrisler çarpma altında değişmelidir ($AB = BA$), çünkü her köşegen eleman için $a_i b_i = b_i a_i$.
+  </div>
 </div>
 
 <!-- ÖDEV 2 -->

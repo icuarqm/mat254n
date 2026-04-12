@@ -157,8 +157,9 @@
         .week-count {
             font-family: 'JetBrains Mono', monospace;
             font-size: 1.125rem;
-            color: var(--accent);
-            background: var(--accent-dim);
+            color: #8fa6b8;
+            background: rgba(143, 166, 184, 0.09);
+            border: 1px solid rgba(143, 166, 184, 0.18);
             padding: 0.4rem 1rem;
             border-radius: 100px;
             display: inline-block;
@@ -321,6 +322,30 @@
             margin-top: 0.5rem;
         }
 
+        /* ── Week Nav ── */
+        .week-nav {
+            display: flex;
+            gap: 0.45rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .week-nav-btn {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.75rem;
+            border-radius: 100px;
+            border: 1px solid;
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+        .week-nav-btn:hover { transform: translateY(-1px); }
+        .week-nav-btn:active { transform: translateY(0); }
+
         /* ── Empty ── */
         .empty-state {
             text-align: center;
@@ -335,7 +360,7 @@
         /* ── Footer ── */
         .footer {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 3rem 2rem 4rem;
             border-top: 1px solid var(--border);
             max-width: 1000px;
             margin: 0 auto;
@@ -346,6 +371,31 @@
             color: var(--text-muted);
             letter-spacing: 0.1em;
         }
+        .footer-credit {
+            font-family: 'DM Sans', sans-serif !important;
+            font-size: 0.92rem !important;
+            color: #6b6980 !important;
+            letter-spacing: 0 !important;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .footer-credit strong {
+            color: #9a95b0;
+            font-weight: 600;
+        }
+        .footer-source-link {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            color: #5a5870;
+            text-decoration: none;
+            border-bottom: 1px solid #2a2a3a;
+            padding-bottom: 1px;
+            transition: color 0.25s, border-color 0.25s;
+        }
+        .footer-source-link:hover { color: #7a7890; border-color: #4a4860; }
 
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -384,6 +434,7 @@
         <div class="section-header">
             <h2>Haftalık Notlar</h2>
             <div class="week-count" id="weekCount"></div>
+            <div class="week-nav" id="weekNav"></div>
         </div>
         <div id="notesContainer"></div>
         <div class="empty-state" id="emptyState" style="display:none;">
@@ -392,7 +443,10 @@
     </section>
 
     <footer class="footer">
-        <p>MAT254 Lineer Cebir — Ders Notları</p>
+        <p class="footer-credit">
+            Based on <strong>Talha Arıkan</strong>'s MAT254 lecture notes, typeset with <strong>Claude</strong>.
+        </p>
+        <a href="https://github.com/icuarqm/mat254n" target="_blank" rel="noopener" class="footer-source-link">↗ Source</a>
     </footer>
 
 <script>
@@ -465,6 +519,43 @@
 
             container.appendChild(block);
             setTimeout(() => block.classList.add('visible'), 100 + idx * 150);
+        });
+
+        // Week nav buttons
+        const nav = document.getElementById('weekNav');
+        weeks.forEach(w => {
+            const color = weekColors[(w - 1) % weekColors.length];
+            const btn = document.createElement('button');
+            btn.className = 'week-nav-btn';
+            btn.textContent = `W${w}`;
+            btn.style.color = color;
+            btn.style.borderColor = color + '55';
+            btn.addEventListener('mouseenter', () => { btn.style.background = color + '18'; });
+            btn.addEventListener('mouseleave', () => { btn.style.background = 'transparent'; });
+            btn.addEventListener('click', () => {
+                const block = document.querySelector(`.week-block[data-week="${w}"]`);
+                if (!block) return;
+                const y = block.getBoundingClientRect().top + window.scrollY - 24;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+                setTimeout(() => {
+                    block.style.transition = 'box-shadow 0.2s ease';
+                    block.style.boxShadow = `0 0 0 6px ${color}30, 0 0 32px ${color}18`;
+                    block.style.borderRadius = '10px';
+                    block.style.padding = '0.75rem 0.5rem';
+                    block.style.margin = '0 -0.5rem';
+                    setTimeout(() => {
+                        block.style.boxShadow = 'none';
+                        setTimeout(() => {
+                            block.style.boxShadow = '';
+                            block.style.borderRadius = '';
+                            block.style.padding = '';
+                            block.style.margin = '';
+                            block.style.transition = '';
+                        }, 350);
+                    }, 750);
+                }, 420);
+            });
+            nav.appendChild(btn);
         });
 
         // Per-week hover glow + reveal background fallback
