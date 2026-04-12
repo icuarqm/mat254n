@@ -87,8 +87,9 @@
 <div class="def-box" data-label="Özellik">
   <p>Herhangi bir $A$ matrisi ve $\varepsilon$ elementer satır işlemi için:</p>
   <div class="formula">$$\varepsilon(A) = \varepsilon(I) \cdot A$$</div>
-  <p style="margin-top:.4rem;">Yani: $A$'ya bir ERO uygulamak, $A$'yı <strong>soldan ilgili elementer matris ile çarpmaya</strong> eşdeğerdir.</p>
-  <p style="margin-top:.3rem; font-size:.9rem; color:var(--muted);">$\varepsilon(I)$ → elementer matris</p>
+  <p style="margin-top:.5rem;">Yani: $A$'ya bir ERO uygulamak, $A$'yı <strong>soldan ilgili elementer matris ile çarpmaya</strong> eşdeğerdir.</p>
+  <p style="margin-top:.5rem;">Sezgi: $\varepsilon(I)$, işlemi "kodlar" — birim matrise aynı ERO'yu uyguladığında, elde ettiğin matris artık o işlemin somut bir kaydıdır. Herhangi bir $A$'ya soldan çarptığında, bu kayıt $A$'nın satırlarına aynen uygulanır.</p>
+  <p style="margin-top:.3rem; font-size:.9rem; color:var(--muted);">$\varepsilon(I)$ → elementer matris &ensp;·&ensp; kısaca $E$ diye gösterilir</p>
 </div>
 
 <div class="card warn">
@@ -96,7 +97,7 @@
     <span class="card-title">Bu Neden Önemli?</span>
     <span class="tag warn">Kritik</span>
   </div>
-  <p>Bu özellik sayesinde satır işlemlerini <strong>matris çarpımı</strong> olarak ifade edebiliyoruz. Bir dizi ERO uygulamak = bir dizi elementer matrisle soldan çarpmak.</p>
+  <p>Satır işlemleri normalde "yap ve unut" türünden soyut adımlardır — geri dönemezsin, formüle edemezsin. Bu özellik sayesinde her işlem somut bir matrise dönüşür. Artık ERO dizisini tek bir $P = E_t \cdots E_1$ çarpımında toplayabilir, ispatlarda ve türetmelerde <strong>matris diliyle</strong> konuşabilirsin. Tersini almak, determinantını hesaplamak, başka bir matrise uygulamak — hepsi mümkün.</p>
 </div>
 
 <!-- ═══════════════ GÖSTERIM ═══════════════ -->
@@ -107,15 +108,15 @@
     <span class="card-title">Kısa Gösterim</span>
     <span class="tag nota">Gösterim</span>
   </div>
-  <p>Kısalık için $E_t$ yazarız; bu $\varepsilon_t(I)$ demek, yani $t$. işlemin uygulandığı elementer matris.</p>
+  <p>$t$. işlemin elementer matrisi için $E_t = \varepsilon_t(I)$ yazarız. Her $E_i$ tek bir satır işlemini temsil eder.</p>
 </div>
 
 <div class="def-box" data-label="Teorem">
-  <p>$B$ matrisi, $A$'ya sırasıyla $\varepsilon_1, \varepsilon_2, \ldots, \varepsilon_t$ elementer satır işlemleri uygulanarak elde ediliyorsa:</p>
-  <div class="formula">$$B = P \cdot A$$</div>
-  <p style="margin-top:.4rem;">burada</p>
-  <div class="formula">$$P = E_t \cdot E_{t-1} \cdots E_2 \cdot E_1$$</div>
-  <div class="note" style="margin-top:.4rem;">⚠️ Sıralama önemli: son uygulanan işlem en solda. İlk uygulanan en sağda.</div>
+  <p>$A$'ya sırasıyla $\varepsilon_1, \varepsilon_2, \ldots, \varepsilon_t$ uygulanarak $B$ elde ediliyorsa:</p>
+  <div class="formula">$$B = P \cdot A, \qquad P = E_t \cdot E_{t-1} \cdots E_2 \cdot E_1$$</div>
+  <div class="note" style="margin-top:.6rem;">
+    ⚠️ <strong>Sıralama:</strong> Matris çarpımı sağdan sola okunur. $A$'ya önce $E_1$, sonra $E_2$, ..., en son $E_t$ uygulanır — ama matematikte ilk uygulanan en sağa yazılır, tıpkı $f(g(x))$'te $g$'nin önce çalışması gibi. Yani ilk işlem en sağda, son işlem en solda.
+  </div>
 </div>
 
 <!-- ═══════════════ AUGMENTED MATRİS ═══════════════ -->
