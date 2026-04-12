@@ -12,5 +12,8 @@
   {"file": "w3-2.html", "title": "Elementer Matrisler & Augmented Matris",             "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 2)"},
   {"file": "w3-3.html", "title": "Ters Matrisler (Inverse Matrices)",                 "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 3)"},
   {"file": "w3-4.html", "title": "Pratik: Elementer Matrisler & Tersinirlik",         "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 4)"},
-  {"file": "w3-5.html", "title": "Warm-up: Lineer Denklem Sistemleri",                "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 5)"}
+  {"file": "w3-5.html", "title": "Warm-up: Lineer Denklem Sistemleri",                "subtitle": "Lineer Cebir — (Hafta 3 - Bölüm 5)"},
+  {"file": "w4-1.html", "title": "Lineer Denklem Sistemleri",                         "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 1)"},
+  {"file": "w4-2.html", "title": "Gauss ve Gauss-Jordan Eliminasyonu",                 "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 2)"},
+  {"file": "w4-3.html", "title": "Homojen Denklem Sistemleri",                         "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 3)"}
 ]

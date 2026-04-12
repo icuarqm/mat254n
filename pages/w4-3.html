@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Homojen Denklem Sistemleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Homojen Denklem Sistemleri</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 4 - Bölüm 3)</div>
+</div>
+
+<!-- ═══════════════ TANIM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Tanım: Homojen Sistem</div>
+
+<div class="def-box" data-label="Tanım — Homojen Sistem">
+  <p>$Ax = 0$ (yani $b = 0$) biçimindeki bir lineer denklem sistemine <strong>homojen sistem</strong> veya <strong>homojen denklemler sistemi</strong> denir.</p>
+</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Trivial Çözüm & Yapısal Sonuç</span>
+    <span class="tag prop">Not</span>
+  </div>
+  <p>$x = 0$ bir homojen sistemin her zaman çözümüdür ve <strong>trivial çözüm</strong> adını alır.</p>
+  <p style="margin-top:.5rem;">Dolayısıyla bir homojen sistem ya:</p>
+  <div class="prop-list">
+    <div class="prop-item"><span class="prop-label">i)</span> yalnızca trivial çözüme sahiptir,</div>
+    <div class="prop-item"><span class="prop-label">ii)</span> ya da serbest değişkenlere bağlı sonsuz çözüme sahiptir.</div>
+  </div>
+  <p style="margin-top:.5rem;">Sıfırdan farklı ($x \neq 0$) çözümlere <strong>nontrivial çözüm</strong> denir.</p>
+</div>
+
+<div class="def-box" data-label="Tanım — Temel Çözümler (Fundamental Solutions)">
+  <p>Durum ii'de, her serbest değişkeni sırayla $1$'e atayıp diğer tüm serbest değişkenleri $0$ yaparak elde edilen çözümlere <strong>temel çözüm</strong> (fundamental solution) denir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — Homojen Sistem</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>Çözünüz ($n=5$ bilinmeyen):</p>
+  <div class="formula">
+    $$\begin{aligned}
+      x_1 + x_2 - x_3 - x_4 + x_5 &= 0 \\
+      2x_1 + 2x_2 \phantom{{}- x_3} - x_4 + x_5 &= 0 \\
+      x_1 + x_2 + x_3 - 2x_4 + x_5 &= 0 \\
+      -x_1 - x_2 + 3x_3 + 2x_4 - 2x_5 &= 0 \\
+      2x_3 - x_4 \phantom{{} + x_5} &= 0 \\
+      x_1 + x_2 + 5x_3 + 2x_4 - 2x_5 &= 0
+    \end{aligned}$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Katsayılar matrisi $A$ ve echelon forma indirgeme (egzersiz)</div>
+    <p class="note" style="margin-bottom:.5rem;">Homojen sistemde $b=0$ olduğundan $[A \mid 0]$ yerine yalnızca $A$ kullanılır.</p>
+    <div class="mw" style="flex-wrap:wrap; gap:1rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td>−1</td><td>−1</td><td>1</td></tr>
+        <tr><td>2</td><td>2</td><td class="zero-cell">0</td><td>−1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td>−2</td><td>1</td></tr>
+        <tr><td>−1</td><td>−1</td><td>3</td><td>2</td><td>−2</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>2</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>1</td><td>5</td><td>2</td><td>−2</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>−1</td><td>−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">2</td><td>1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−2</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$r = 3$ pivot, $n = 5$ bilinmeyen → $n - r = 2$ serbest değişken.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Geriye dönük yerine koyma</div>
+    <p><strong>Satır 3:</strong> $-2x_4 + x_5 = 0$. Serbest değişken $x_4 = t$ ($t \in \mathbb{R}$) alalım:</p>
+    <div class="formula">$$x_5 = 2t$$</div>
+    <p style="margin-top:.4rem;"><strong>Satır 2:</strong> $2x_3 + x_4 - x_5 = 0 \;\Rightarrow\; 2x_3 + t - 2t = 0$:</p>
+    <div class="formula">$$x_3 = \tfrac{t}{2}$$</div>
+    <p style="margin-top:.4rem;"><strong>Satır 1:</strong> $x_1 + x_2 - x_3 - x_4 + x_5 = 0 \;\Rightarrow\; x_1 + x_2 = x_3 + x_4 - x_5 = -\tfrac{t}{2}$.<br>
+    Serbest değişken $x_2 = k$ ($k \in \mathbb{R}$) alalım:</p>
+    <div class="formula">$$x_1 = -k - \tfrac{t}{2}$$</div>
+  </div>
+
+  <div class="result-box" style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
+    <div class="mb"><table>
+      <tr><td>$x_1$</td></tr>
+      <tr><td>$x_2$</td></tr>
+      <tr><td>$x_3$</td></tr>
+      <tr><td>$x_4$</td></tr>
+      <tr><td>$x_5$</td></tr>
+    </table></div>
+    <span>$=$</span>
+    <div class="mb"><table>
+      <tr><td>$-k - \tfrac{t}{2}$</td></tr>
+      <tr><td>$k$</td></tr>
+      <tr><td>$\tfrac{t}{2}$</td></tr>
+      <tr><td>$t$</td></tr>
+      <tr><td>$2t$</td></tr>
+    </table></div>
+    <span>$= k$</span>
+    <div class="mb"><table>
+      <tr><td>$-1$</td></tr>
+      <tr><td>$1$</td></tr>
+      <tr><td>$0$</td></tr>
+      <tr><td>$0$</td></tr>
+      <tr><td>$0$</td></tr>
+    </table></div>
+    <span>$+ \;t$</span>
+    <div class="mb"><table>
+      <tr><td>$-\tfrac{1}{2}$</td></tr>
+      <tr><td>$0$</td></tr>
+      <tr><td>$\tfrac{1}{2}$</td></tr>
+      <tr><td>$1$</td></tr>
+      <tr><td>$2$</td></tr>
+    </table></div>
+    <span>,&emsp;$k, t \in \mathbb{R}$</span>
+  </div>
+
+  <div class="step" style="margin-top:1rem;">
+    <div class="step-label">Temel çözümler</div>
+    <p>$k=0,\; t=1$: <strong>1. temel çözüm</strong> $= \bigl(-\tfrac{1}{2},\; 0,\; \tfrac{1}{2},\; 1,\; 2\bigr)$</p>
+    <p style="margin-top:.3rem;">$k=1,\; t=0$: <strong>2. temel çözüm</strong> $= (-1,\; 1,\; 0,\; 0,\; 0)$</p>
+  </div>
+</div>
+
+<!-- ═══════════════ TEOREM ═══════════════ -->
+<div class="section-title"><span>📐</span> Teorem & Sonuç</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Kare Matrisler İçin Denklik</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>Kare matris $A$ için aşağıdakiler <strong>birbirine denktir</strong>:</p>
+  <div class="prop-list">
+    <div class="prop-item"><span class="prop-label">i)</span> $A$'nın sol tersi vardır.</div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Homojen sistem $Ax = 0$'ın yalnızca trivial çözümü vardır.</div>
+    <div class="prop-item"><span class="prop-label">iii)</span> $A$ tersinirdir.</div>
+    <div class="prop-item"><span class="prop-label">iv)</span> $A$'nın sağ tersi vardır.</div>
+  </div>
+</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Sonuç (Corollary) — Tersinirlik ve Tekil Çözüm</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>Kare matris $A$ için aşağıdakiler <strong>birbirine denktir</strong>:</p>
+  <div class="prop-list">
+    <div class="prop-item"><span class="prop-label">i)</span> $A$ tersinirdir.</div>
+    <div class="prop-item"><span class="prop-label">ii)</span> Her $Ax = b$ sisteminin tek çözümü vardır.</div>
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Homojen sistem $Ax = 0$:</strong> $b = 0$. Trivial çözüm $x = 0$ her zaman vardır.
+    <br><br>
+    <strong>İki durum:</strong> ya yalnızca trivial, ya da sonsuz çözüm (nontrivial dahil).
+    <br><br>
+    <strong>Temel çözüm:</strong> serbest değişkenlerden birini 1, diğerlerini 0 yaparak elde edilen çözüm. $n-r$ tane temel çözüm vardır.
+    <br><br>
+    <strong>Teorem:</strong> Kare $A$ için $\;$ sol ters $\Leftrightarrow$ $Ax=0$ trivial $\Leftrightarrow$ $A$ tersinir $\Leftrightarrow$ sağ ters.
+    <br><br>
+    <strong>Sonuç:</strong> $A$ tersinir $\Leftrightarrow$ her $Ax=b$ sistemi tek çözüme sahiptir.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>
