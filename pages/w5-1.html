@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Determinant</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Determinant</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 5 - Bölüm 1)</div>
+</div>
+
+<!-- ═══════════════ TANIM: DETERMİNANT ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Determinant Fonksiyonu</div>
+
+<div class="def-box" data-label="Tanım — Determinant">
+  <p>Determinant, kare matrisleri girdi olarak alıp bir skaler çıkaran bir <strong>fonksiyondur</strong>.</p>
+  <div class="formula">
+    $$D:\; M_n = \{\text{kare matrisler, cisim } F \text{ üzerinde}\} \;\longrightarrow\; F, \qquad A \;\longmapsto\; D(A) \in F$$
+  </div>
+</div>
+
+<!-- ═══════════════ TANIM: MİNOR ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Minor</div>
+
+<div class="def-box" data-label="Tanım — Minor">
+  <p>$A$, $n \times n$ kare matris ve $A_{ij}$, $(i,j)$. girdisi olsun. $A_{ij}$'nin <strong>minoru</strong>, $A$'nın $i$. satırı ve $j$. sütunu silinerek elde edilen $(n-1)\times(n-1)$ alt matrisi $m_{ij}$'dir.</p>
+</div>
+
+<div class="card ex">
+  <div class="card-header">
+    <span class="card-title">Örnek — 3×3 Minorlar</span>
+    <span class="tag ex">Örnek</span>
+  </div>
+  <div class="mw" style="align-items:flex-end; gap:.4rem; margin-bottom:1rem;">
+    <span class="ml">$A =$</span>
+    <div class="mb"><table>
+      <tr><td>$A_{11}$</td><td>$A_{12}$</td><td>$A_{13}$</td></tr>
+      <tr><td>$A_{21}$</td><td>$A_{22}$</td><td>$A_{23}$</td></tr>
+      <tr><td>$A_{31}$</td><td>$A_{32}$</td><td>$A_{33}$</td></tr>
+    </table></div>
+    <span style="margin-left:.6rem; color:var(--muted);">için:</span>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:1.2rem;">
+    <div class="mw" style="align-items:flex-end; gap:.4rem;">
+      <span class="ml">$m_{11} =$</span>
+      <div class="mb"><table>
+        <tr><td>$A_{22}$</td><td>$A_{23}$</td></tr>
+        <tr><td>$A_{32}$</td><td>$A_{33}$</td></tr>
+      </table></div>
+    </div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem;">
+      <span class="ml">$m_{12} =$</span>
+      <div class="mb"><table>
+        <tr><td>$A_{21}$</td><td>$A_{23}$</td></tr>
+        <tr><td>$A_{31}$</td><td>$A_{33}$</td></tr>
+      </table></div>
+    </div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem;">
+      <span class="ml">$m_{33} =$</span>
+      <div class="mb"><table>
+        <tr><td>$A_{11}$</td><td>$A_{12}$</td></tr>
+        <tr><td>$A_{21}$</td><td>$A_{22}$</td></tr>
+      </table></div>
+    </div>
+  </div>
+  <div class="note" style="margin-top:.6rem;">$m_{ij}$: $i$. satır ve $j$. sütun silindikten sonra kalan alt matris.</div>
+</div>
+
+<!-- ═══════════════ İNDÜKTİF TANIM ═══════════════ -->
+<div class="section-title"><span>📐</span> İndüktif Determinant Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Determinant Fonksiyonu (İndüktif)">
+  <p>$n \times n$ matrislerde aşağıdaki eşitliklerle indüktif olarak tanımlanan $D_n$ fonksiyonuna <strong>determinant fonksiyonu</strong> denir:</p>
+  <div class="formula">
+    $$D_1\bigl([A_{11}]\bigr) = A_{11}$$
+  </div>
+  <div class="formula" style="margin-top:.5rem;">
+    $$D_n(A) = \sum_{j=1}^{n} (-1)^{1+j}\, A_{1j}\, D_{n-1}(m_{1j}), \qquad n > 1$$
+  </div>
+  <p style="margin-top:.4rem;" class="note">$n \times n$ determinant, $(n-1)\times(n-1)$ determinantlar aracılığıyla ifade edilir.</p>
+</div>
+
+<!-- ═══════════════ GÖSTÉRIMLER ═══════════════ -->
+<div class="section-title"><span>🔍</span> Gösterimler & 2×2 Formül</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Determinant Gösterimleri</span>
+    <span class="tag prop">Gösterim</span>
+  </div>
+  <div class="formula">
+    $$\det(A), \quad |A|, \quad \det\!\begin{pmatrix}\cdots\end{pmatrix}, \quad \begin{vmatrix} \cdots \end{vmatrix}$$
+  </div>
+</div>
+
+<div class="card ex">
+  <div class="card-header">
+    <span class="card-title">Örnek — 2×2 Determinant</span>
+    <span class="tag ex">Örnek</span>
+  </div>
+  <div class="mw" style="align-items:flex-end; gap:.4rem; margin-bottom:.6rem;">
+    <span class="ml">$A =$</span>
+    <div class="mb"><table>
+      <tr><td>$A_{11}$</td><td>$A_{12}$</td></tr>
+      <tr><td>$A_{21}$</td><td>$A_{22}$</td></tr>
+    </table></div>
+  </div>
+  <p>Tanımdan:</p>
+  <div class="formula">
+    $$\det(A) = (-1)^{1+1} A_{11}\,\det[A_{22}] + (-1)^{1+2} A_{12}\,\det[A_{21}]$$
+  </div>
+  <div class="result-box" style="margin-top:.5rem;">
+    $$\det(A) = A_{11}A_{22} - A_{12}A_{21}$$
+  </div>
+</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">3×3 Determinant Açılımı</span>
+    <span class="tag prop">Formül</span>
+  </div>
+  <div class="formula">
+    $$\begin{vmatrix} A_{11} & A_{12} & A_{13} \\ A_{21} & A_{22} & A_{23} \\ A_{31} & A_{32} & A_{33} \end{vmatrix}
+    = A_{11}(A_{22}A_{33} - A_{23}A_{32}) - A_{12}(A_{21}A_{33} - A_{23}A_{31}) + A_{13}(A_{21}A_{32} - A_{22}A_{31})$$
+  </div>
+  <div class="formula" style="margin-top:.3rem;">
+    $$= A_{11}A_{22}A_{33} + A_{12}A_{23}A_{31} + A_{13}A_{21}A_{32}
+      - A_{13}A_{22}A_{31} - A_{11}A_{23}A_{32} - A_{12}A_{21}A_{33}$$
+  </div>
+</div>
+
+<!-- ═══════════════ KOFAKTÖR ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Kofaktör & Kofaktör Açılımı</div>
+
+<div class="def-box" data-label="Tanım — Kofaktör">
+  <p>$A$, $n \times n$ matris olsun. $A_{ij}$ girdisinin <strong>kofaktörü</strong> $a_{ij}$ şöyle tanımlanır:</p>
+  <div class="formula">
+    $$a_{ij} = (-1)^{i+j}\,\det(m_{ij})$$
+  </div>
+</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Kofaktör Açılımı (Cofactor Expansion)</span>
+    <span class="tag prop">Yöntem</span>
+  </div>
+  <p>$A$, $n \times n$ matris olsun. Herhangi bir $i$. satır veya $j$. sütun boyunca açılım:</p>
+  <div class="formula" style="margin-top:.4rem;">
+    $$\det A = \sum_{k=1}^{n} A_{ik}\,a_{ik}
+    = A_{i1}a_{i1} + A_{i2}a_{i2} + \cdots + A_{in}a_{in}
+    \qquad (\text{$i$. satır boyunca})$$
+  </div>
+  <div class="formula" style="margin-top:.4rem;">
+    $$\det A = \sum_{k=1}^{n} A_{kj}\,a_{kj}
+    = A_{1j}a_{1j} + A_{2j}a_{2j} + \cdots + A_{nj}a_{nj}
+    \qquad (\text{$j$. sütun boyunca})$$
+  </div>
+  <div class="note" style="margin-top:.4rem;">Sıfır içeren satır/sütun tercih edilirse hesap kısalır.</div>
+</div>
+
+<!-- ═══════════════ SAYISAL ÖRNEK ═══════════════ -->
+<div class="section-title"><span>✏️</span> Sayısal Örnek</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>$\det A$'yı iki farklı açılımla hesaplayınız:</p>
+  <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.4rem;">
+    <span class="ml">$A =$</span>
+    <div class="mb"><table>
+      <tr><td>4</td><td>−3</td><td class="zero-cell">0</td></tr>
+      <tr><td>2</td><td>−1</td><td>2</td></tr>
+      <tr><td>1</td><td>5</td><td>7</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">1. satır boyunca açılım</div>
+    <div class="formula">
+      $$\det A = 4\cdot(-1)^{1+1}\begin{vmatrix}-1&2\\5&7\end{vmatrix}
+               + (-3)\cdot(-1)^{1+2}\begin{vmatrix}2&2\\1&7\end{vmatrix}
+               + 0\cdot(\cdots)$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$= 4\cdot(-7-10) + 3\cdot(14-2) = 4\cdot(-17) + 3\cdot 12 = -68 + 36 = \mathbf{-32}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.8rem;">
+    <div class="step-label">2. sütun boyunca açılım</div>
+    <div class="formula">
+      $$\det A = (-3)\cdot(-1)^{1+2}\begin{vmatrix}2&2\\1&7\end{vmatrix}
+               + (-1)\cdot(-1)^{2+2}\begin{vmatrix}4&0\\1&7\end{vmatrix}
+               + 5\cdot(-1)^{3+2}\begin{vmatrix}4&0\\2&2\end{vmatrix}$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$= 3\cdot 12 - 28 - 5\cdot 8 = 36 - 28 - 40 = \mathbf{-32}$$
+    </div>
+    <p class="note" style="margin-top:.3rem;">2. sütun tercih edildi ama sıfır yok → fark yaratmadı. Sıfır içeren 1. satır daha pratikti.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ ÖNERME: ÜÇGEN MATRİS ═══════════════ -->
+<div class="section-title"><span>📐</span> Önerme & Sonuç</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Önerme — Üçgen Matrisin Determinantı</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>Bir üçgen matrisin (üst veya alt) determinantı, <strong>köşegen elemanlarının çarpımıdır</strong>.</p>
+  <div class="prop-list">
+    <div class="prop-item"><span class="prop-label">Sonuç:</span> $A$ köşegen matris ise $\;\det A = A_{11}\cdot A_{22}\cdots A_{nn}$.</div>
+    <div class="prop-item"><span class="prop-label">Örnek:</span> $\det I_n = 1$.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ SATIR İŞLEMLERİNİN ETKİSİ ═══════════════ -->
+<div class="section-title"><span>🔗</span> Satır/Sütun İşlemlerinin Determinanta Etkisi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — ERO ve Determinant</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$B$, $A$'ya tek bir satır (sütun) işlemi $E$ uygulanarak elde edilsin. $\det A$ ile $\det B$ arasındaki ilişki:</p>
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      $E$ <strong>Tip 1</strong> ($r_i \to r_i + kr_j$ veya $c_i \to c_i + kc_j$) ise
+      <div class="formula" style="margin-top:.2rem;">$$\det B = \det A$$</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      $E$ <strong>Tip 2</strong> ($r_i \leftrightarrow r_j$ veya $c_i \leftrightarrow c_j$) ise
+      <div class="formula" style="margin-top:.2rem;">$$\det B = -\det A$$</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      $E$ <strong>Tip 3</strong> ($r_i \to kr_i$ veya $c_i \to kc_i$) ise
+      <div class="formula" style="margin-top:.2rem;">$$\det B = k\cdot\det A$$</div>
+    </div>
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Determinant:</strong> kare matrisleri skaler'e götüren fonksiyon.
+    <br><br>
+    <strong>Minor $m_{ij}$:</strong> $i$. satır ve $j$. sütun silinince kalan $(n-1)\times(n-1)$ matris.
+    <br><br>
+    <strong>İndüktif tanım:</strong> $D_1([A_{11}]) = A_{11}$,&ensp; $D_n(A) = \sum_{j=1}^n (-1)^{1+j} A_{1j} D_{n-1}(m_{1j})$.
+    <br><br>
+    <strong>Kofaktör:</strong> $a_{ij} = (-1)^{i+j}\det(m_{ij})$.&ensp; Kofaktör açılımı herhangi bir satır/sütun boyunca yapılabilir.
+    <br><br>
+    <strong>Üçgen matris:</strong> $\det A$ = köşegen çarpımı. $\det I_n = 1$.
+    <br><br>
+    <strong>ERO etkisi:</strong> Tip 1 → değişmez · Tip 2 → işaret değişir · Tip 3 → $k$ katlanır.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

@@ -17,5 +17,10 @@
   {"file": "w4-2.html", "title": "Gauss ve Gauss-Jordan Eliminasyonu",                 "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 2)"},
   {"file": "w4-3.html", "title": "Homojen Denklem Sistemleri",                         "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 3)"},
   {"file": "w4-4.html", "title": "Pratik: Lineer Denklem Sistemleri",                  "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 4)"},
-  {"file": "w4-5.html", "title": "Egzersizler",                                        "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 5)"}
+  {"file": "w4-5.html", "title": "Egzersizler",                                        "subtitle": "Lineer Cebir — (Hafta 4 - Bölüm 5)"},
+  {"file": "w5-1.html", "title": "Determinant",                                        "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 1)"},
+  {"file": "w5-2.html", "title": "Determinant: Yöntem & Özellikler",                  "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 2)"},
+  {"file": "w5-3.html", "title": "Determinant: Pratik & Egzersizler",                 "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 3)"},
+  {"file": "w5-4.html", "title": "Determinant Uygulamaları",                          "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 4)"},
+  {"file": "w5-5.html", "title": "Adjoint ve Cramer: Pratik & Egzersizler",           "subtitle": "Lineer Cebir — (Hafta 5 - Bölüm 5)"}
 ]

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Determinant: Yöntem &amp; Özellikler</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.body.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Determinant: Yöntem &amp; Özellikler</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 5 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════ ÜÇGENe İNDİRGEME YÖNTEMİ ═══════════════ -->
+<div class="section-title"><span>📐</span> Üçgene İndirgeme Yöntemi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Başka Bir Hesap Yöntemi</span>
+    <span class="tag prop">Yöntem</span>
+  </div>
+  <p>Başlangıç matrisimiz $A$'ya satır veya sütun işlemleri uygulayarak üçgen bir matris elde ederiz. Ardından <strong>üçgen matris önermesini</strong> ve satır/sütun işlemlerinin determinanta etkisini kullanarak $\det A$'yı belirleyebiliriz.</p>
+  <div class="note" style="margin-top:.5rem;">Bu yöntem yüksek mertebeli matrisler için etkindir — kofaktör açılımına göre daha az hesaplama gerektirir.</div>
+</div>
+
+<!-- ═══════════════ ÖRNEK i) ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek i) — Sütun İşlemleriyle Üçgene İndirgeme</div>
+
+<div class="q-box" data-label="Örnek i)">
+  <p>$\det A$'yı sütun işlemleriyle hesaplayınız.</p>
+  <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.4rem;">
+    <span class="ml">$A =$</span>
+    <div class="mb"><table>
+      <tr><td>4</td><td>−3</td><td class="zero-cell">0</td></tr>
+      <tr><td>2</td><td>−1</td><td>2</td></tr>
+      <tr><td>1</td><td>5</td><td>7</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Sütun İşlemleri</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p style="margin-bottom:.6rem;">Tip 1 sütun işlemleri determinantı değiştirmez. Sütunları sıfırlayarak üst üçgen forma getiriyoruz:</p>
+
+  <div style="overflow-x:auto; padding-bottom:.4rem;">
+    <div class="mw" style="align-items:flex-end; gap:.3rem; flex-wrap:nowrap; min-width:max-content;">
+
+      <span class="ml">$\det A =$</span>
+      <div class="mb"><table>
+        <tr><td>4</td><td>−3</td><td class="zero-cell">0</td></tr>
+        <tr><td>2</td><td>−1</td><td>2</td></tr>
+        <tr><td>1</td><td>5</td><td>7</td></tr>
+      </table></div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.05rem;margin:0 .15rem;">
+        <span style="font-size:.72rem;color:var(--accent);white-space:nowrap;">$c_1 \to c_1+c_2$</span>
+        <span style="font-size:1rem;">$=$</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td>−3</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>−1</td><td>2</td></tr>
+        <tr><td>6</td><td>5</td><td>7</td></tr>
+      </table></div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.05rem;margin:0 .15rem;">
+        <span style="font-size:.72rem;color:var(--accent);white-space:nowrap;">$c_2 \to c_2+3c_1$</span>
+        <span style="font-size:1rem;">$=$</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>2</td><td>2</td></tr>
+        <tr><td>6</td><td>23</td><td>7</td></tr>
+      </table></div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.05rem;margin:0 .15rem;">
+        <span style="font-size:.72rem;color:var(--accent);white-space:nowrap;">$c_3 \to c_3-c_2$</span>
+        <span style="font-size:1rem;">$=$</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td class="diag">2</td><td class="zero-cell">0</td></tr>
+        <tr><td>6</td><td>23</td><td class="diag">−16</td></tr>
+      </table></div>
+
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.6rem;">
+    $$\det A = 1 \cdot 2 \cdot (-16) = \mathbf{-32}$$
+  </div>
+  <p class="note" style="margin-top:.3rem;">Tüm işlemler Tip 1 (det değişmez). Son matris alt üçgen → köşegen çarpımı.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK ii) ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek ii) — Satır İşlemleriyle Üçgene İndirgeme</div>
+
+<div class="q-box" data-label="Örnek ii)">
+  <p>$\det A$'yı satır işlemleriyle hesaplayınız.</p>
+  <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.4rem;">
+    <span class="ml">$A =$</span>
+    <div class="mb"><table>
+      <tr><td>4</td><td>3</td><td>2</td></tr>
+      <tr><td>3</td><td>−2</td><td>5</td></tr>
+      <tr><td>2</td><td>4</td><td>6</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Satır İşlemleri</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p style="margin-bottom:.7rem;">Her adımda toplam katsayıyı takip ediyoruz:</p>
+
+  <div class="step">
+    <div class="step-label">Adım 1 — $r_3 \to \tfrac{1}{2}r_3$ &nbsp;<span style="font-size:.8rem;color:var(--muted);">(Tip 3: dışarıya 2 çıkar)</span></div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.3rem;">
+      <span style="color:var(--muted);">$= 2\cdot$</span>
+      <div class="mb"><table>
+        <tr><td>4</td><td>3</td><td>2</td></tr>
+        <tr><td>3</td><td>−2</td><td>5</td></tr>
+        <tr><td>1</td><td>2</td><td>3</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Adım 2 — $r_1 \leftrightarrow r_3$ &nbsp;<span style="font-size:.8rem;color:var(--muted);">(Tip 2: işaret değişir)</span></div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.3rem;">
+      <span style="color:var(--muted);">$= (-2)\cdot$</span>
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>3</td></tr>
+        <tr><td>3</td><td>−2</td><td>5</td></tr>
+        <tr><td>4</td><td>3</td><td>2</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Adım 3 — $r_2 \to r_2 - 3r_1$,&ensp;$r_3 \to r_3 - 4r_1$ &nbsp;<span style="font-size:.8rem;color:var(--muted);">(Tip 1: det değişmez)</span></div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.3rem;">
+      <span style="color:var(--muted);">$= (-2)\cdot$</span>
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td>−8</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td>−5</td><td>−10</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Adım 4 — $r_3 \to -\tfrac{1}{5}r_3$ &nbsp;<span style="font-size:.8rem;color:var(--muted);">(Tip 3: dışarıya −5 çıkar)</span></div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.3rem;">
+      <span style="color:var(--muted);">$= (-2)(-5)\cdot$</span>
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td>−8</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>2</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Adım 5 — $r_2 \leftrightarrow r_3$ &nbsp;<span style="font-size:.8rem;color:var(--muted);">(Tip 2: işaret değişir)</span></div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.3rem;">
+      <span style="color:var(--muted);">$= (-10)(-1)\cdot$</span>
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>2</td></tr>
+        <tr><td class="zero-cell">0</td><td>−8</td><td>−4</td></tr>
+      </table></div>
+    </div>
+    <p class="note" style="margin-top:.2rem;">Katsayı şu an: $(-2)(-5)(-1) = -10$</p>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Adım 6 — $r_3 \to r_3 + 8r_2$ &nbsp;<span style="font-size:.8rem;color:var(--muted);">(Tip 1: det değişmez)</span></div>
+    <div class="mw" style="align-items:flex-end; gap:.4rem; margin-top:.3rem;">
+      <span style="color:var(--muted);">$= (-10)\cdot$</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>2</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>2</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">12</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.7rem;">
+    $$\det A = (-10) \cdot (1 \cdot 1 \cdot 12) = \mathbf{-120}$$
+  </div>
+</div>
+
+<!-- ═══════════════ DETERMİNANT ÖZELLİKLERİ ═══════════════ -->
+<div class="section-title"><span>📋</span> Determinantın Özellikleri</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Özellikler 1–5</span>
+    <span class="tag prop">Özellik</span>
+  </div>
+  <div class="prop-list">
+
+    <div class="prop-item">
+      <span class="prop-label">1)</span>
+      <div>
+        <div class="formula">$$\det A^T = \det A$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">2)</span>
+      Eğer $A$'nın bir satırı (sütunu) tamamen sıfırlardan oluşuyorsa:
+      <div class="formula" style="margin-top:.2rem;">$$\det A = 0$$</div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">3)</span>
+      Eğer $A$'nın iki satırı (sütunu) birbirine eşitse:
+      <div class="formula" style="margin-top:.2rem;">$$\det A = 0$$</div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">4)</span>
+      Eğer $A$'nın bir satırı (sütunu) başka bir satırın (sütunun) skaler katıysa:
+      <div class="formula" style="margin-top:.2rem;">$$\det A = 0$$</div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">5)</span>
+      <strong>Doğrusallık:</strong> Determinant fonksiyonu her satır (sütun) boyunca doğrusaldır:
+      <div class="formula" style="margin-top:.3rem;">
+        $$\begin{vmatrix} \vdots \\ cr_i + dr_i' \\ \vdots \end{vmatrix}
+        = c\begin{vmatrix} \vdots \\ r_i \\ \vdots \end{vmatrix}
+        + d\begin{vmatrix} \vdots \\ r_i' \\ \vdots \end{vmatrix}$$
+      </div>
+      <p style="margin-top:.4rem;"><em>Örnek:</em></p>
+      <div class="formula" style="margin-top:.2rem;">
+        $$\begin{vmatrix} 2x+3y & 5x-y \\ -1 & 4 \end{vmatrix}
+        = x\begin{vmatrix} 2 & 5 \\ -1 & 4 \end{vmatrix}
+        + y\begin{vmatrix} 3 & -1 \\ -1 & 4 \end{vmatrix}$$
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card prop" style="margin-top:.8rem;">
+  <div class="card-header">
+    <span class="card-title">Özellikler 6–10</span>
+    <span class="tag prop">Özellik</span>
+  </div>
+  <div class="prop-list">
+
+    <div class="prop-item">
+      <span class="prop-label">6)</span>
+      <div>
+        <div class="formula">$$\det(AB) = \det A \cdot \det B$$</div>
+      </div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">7)</span>
+      $A$ tersinirdir $\iff$
+      <div class="formula" style="margin-top:.2rem;">$$\det A \neq 0$$</div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">8)</span>
+      $A$ tersinir ise:
+      <div class="formula" style="margin-top:.2rem;">$$\det A^{-1} = \frac{1}{\det A}$$</div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">9)</span>
+      $B = P^{-1}AP$ ise (benzer matrisler):
+      <div class="formula" style="margin-top:.2rem;">$$\det B = \det A$$</div>
+    </div>
+
+    <div class="prop-item">
+      <span class="prop-label">10)</span>
+      $A$, $n \times n$ matris ve $c$ skaler ise:
+      <div class="formula" style="margin-top:.2rem;">$$\det(cA) = c^n\,\det A$$</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Üçgene indirgeme:</strong> Satır/sütun işlemleriyle üçgen forma getir, katsayıları takip et, köşegen çarpımıyla bitir.
+    <br><br>
+    <strong>Özellik 1:</strong> $\det A^T = \det A$ — satır ve sütun işlemleri simetriktir.
+    <br><br>
+    <strong>Özellikler 2–4:</strong> Sıfır satır/sütun, eşit satır/sütun veya skaler kat → $\det = 0$.
+    <br><br>
+    <strong>Özellik 5:</strong> Her satır/sütun boyunca doğrusallık.
+    <br><br>
+    <strong>Özellik 6:</strong> $\det(AB) = \det A \cdot \det B$.
+    <br><br>
+    <strong>Özellik 7:</strong> Tersinirlik $\iff$ $\det \neq 0$.
+    <br><br>
+    <strong>Özellikler 8–10:</strong> $\det A^{-1} = 1/\det A$;&ensp; benzer matrisler aynı det'e sahip;&ensp; $\det(cA) = c^n\det A$.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>
