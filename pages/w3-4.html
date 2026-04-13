@@ -570,8 +570,33 @@
     <span class="card-title">Çözüm 5a — $AB = O \;\Rightarrow\; A = O$ veya $B = O$?</span>
     <span class="tag tf">D/Y</span>
   </div>
-  <div class="false-box">YANLIŞ (genel olarak)</div>
-  <div class="note" style="margin-top:.5rem;">Karşı örnek: önceki ders notlarına bakınız. (Sıfır bölen matrisleri mevcut.)</div>
+  <div class="false-box">YANLIŞ — Karşı örnek:</div>
+  <div class="step" style="margin-top:.5rem;">
+    <div class="mw" style="align-items:center; flex-wrap:wrap; gap:.4rem;">
+      <span class="ml">A =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml" style="margin:0 .3rem;">,</span>
+      <span class="ml">B =</span>
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;margin:0 .4rem;">
+        <div class="op-label">$AB$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml">$= O$</span>
+    </div>
+    <p style="margin-top:.4rem;">$AB = O$ ama ne $A$ ne de $B$ sıfır matris.</p>
+  </div>
+  <div class="note">w2-1'de de gördüğümüz gibi matrisler sayılar gibi davranmaz — sıfırdan farklı iki matrisin çarpımı sıfır olabilir. Böyle matrislere <strong>sıfır bölen (zero divisor)</strong> denir.</div>
 </div>
 
 <div class="card tf">
@@ -579,8 +604,43 @@
     <span class="card-title">Çözüm 5b — $AB = AC \;\Rightarrow\; B = C$?</span>
     <span class="tag tf">D/Y</span>
   </div>
-  <div class="false-box">YANLIŞ (genel olarak)</div>
-  <div class="note" style="margin-top:.5rem;">Karşı örnek: önceki ders notlarına bakınız. $A$ tekil olduğunda iki taraftan $A^{-1}$ ile çapamazsın.</div>
+  <div class="false-box">YANLIŞ — Karşı örnek:</div>
+  <div class="step" style="margin-top:.5rem;">
+    <div class="mw" style="align-items:center; flex-wrap:wrap; gap:.4rem;">
+      <span class="ml">A =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml" style="margin:0 .3rem;">,</span>
+      <span class="ml">B =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td></tr>
+      </table></div>
+      <span class="ml" style="margin:0 .1rem;">$= I$,</span>
+      <span class="ml">C =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td class="diag">1</td></tr>
+      </table></div>
+    </div>
+    <div class="mw" style="align-items:center; flex-wrap:wrap; gap:.4rem; margin-top:.5rem;">
+      <span class="ml">$AB$ =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml" style="margin:0 .3rem;">=</span>
+      <span class="ml">$AC$ =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$AB = AC$ ama $B \neq C$ (2. satırları farklı). $A$ tekil olduğundan soldan $A^{-1}$ ile çarpıp sadeleştiremeyiz.</p>
+  </div>
+  <div class="note">w2-1'deki $(A+B)(A-B) \neq A^2-B^2$ örneğinin özü aynı: matris işlemlerinde sayısal sadeleştirme kuralları geçmez, tersinirlik şart.</div>
 </div>
 
 <div class="card tf">
@@ -588,20 +648,55 @@
     <span class="card-title">Çözüm 5c — $AB = A \;\Rightarrow\; B = I$?</span>
     <span class="tag tf">D/Y</span>
   </div>
-  <div class="false-box">YANLIŞ (genel olarak)</div>
+  <div class="false-box">YANLIŞ — Karşı örnek:</div>
   <div class="step" style="margin-top:.5rem;">
-    <div class="step-label">Karşı örnek</div>
-    <div class="mw">
+    <div class="mw" style="align-items:center; flex-wrap:wrap; gap:.4rem;">
       <span class="ml">A =</span>
       <div class="mb"><table>
         <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
         <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
       </table></div>
-      <span class="ml" style="margin-left:.5rem;">= B</span>
+      <span class="ml" style="margin:0 .3rem;">,</span>
+      <span class="ml">B =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
     </div>
-    <p style="margin-top:.3rem;">$AB = A^2 = A$ ama $B \neq I$.</p>
+    <div class="mw" style="align-items:center; flex-wrap:wrap; gap:.4rem; margin-top:.5rem;">
+      <span class="ml">$A \cdot B$ =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml">$\cdot$</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml">$=$</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml">$= A$ ✓</span>
+    </div>
+    <p style="margin-top:.4rem;">$AB = A$ ama $B \neq I$ — çünkü</p>
+    <div class="mw" style="align-items:center; gap:.4rem; margin-top:.3rem;">
+      <span class="ml">$B$ =</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <span class="ml">$\neq$</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td></tr>
+      </table></div>
+      <span class="ml">$= I$</span>
+    </div>
   </div>
-  <div class="note">$A$ tekil olduğundan soldan $A^{-1}$ ile çarpma mümkün değil.</div>
+  <div class="note">$A$ tekil olduğundan soldan $A^{-1}$ ile çarpıp $B = I$ sonucuna ulaşamayız. Soru 6c'de $A$ tersinir olunca bu ispat çalışıyor.</div>
 </div>
 
 <!-- ═══════════════ SORU 6 ═══════════════ -->
