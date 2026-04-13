@@ -165,6 +165,13 @@
     <div class="prop-item"><span class="prop-label">iii)</span> $A$ tersinirdir.</div>
     <div class="prop-item"><span class="prop-label">iv)</span> $A$'nın sağ tersi vardır.</div>
   </div>
+  <p style="margin-top:.6rem;" class="note">Bu teorem <em>homojen sistem</em> ($b=0$) üzerine bir denklik zinciridir: "$A$'nın sol tersi var" demek ile "$Ax=0$'ın trivial dışı çözümü yok" demek ve "$A$ tersinir" demek hepsi birbirine denktir. Kare matristeyiz, bu yüzden sol ters = sağ ters da bu zincirin doğal sonucudur.</p>
+
+  <div class="step" style="margin-top:.8rem;">
+    <div class="step-label">Neden bağlı? — Sezgi</div>
+    <p>$A$, $[A \mid I]$'yi satır işlemleriyle $[I \mid A^{-1}]$'e götürebiliyorsa tersinirdir. Aynı satır işlemleri $[A \mid 0]$'ı $[I \mid 0]$'a götürür → $Ax=0$'ın tek çözümü $x=0$'dır.</p>
+    <p style="margin-top:.4rem;">Tersine, $A$ satır indirgeme sırasında sıfır satırı oluşturuyorsa (tersinir değil) echelon formda bir pivot eksik kalır → serbest değişken doğar → $Ax=0$'ın nontrivial çözümü vardır.</p>
+  </div>
 </div>
 
 <div class="card prop">
@@ -176,6 +183,14 @@
   <div class="prop-list">
     <div class="prop-item"><span class="prop-label">i)</span> $A$ tersinirdir.</div>
     <div class="prop-item"><span class="prop-label">ii)</span> Her $Ax = b$ sisteminin tek çözümü vardır.</div>
+  </div>
+  <p style="margin-top:.6rem;" class="note">Teorem $b=0$ durumunu ele alıyordu ve "$A$ tersinir ↔ $Ax=0$ trivial" diyordu. Bu sonuç ise genel $b$'ye uzanır: $A$ tersinirse $x = A^{-1}b$ her $b$ için tek çözümü verir. $A$ tersinir değilse tek çözüm <em>hiçbir zaman</em> mümkün değildir — ya çözüm yoktur ya sonsuz çözüm vardır.</p>
+
+  <div class="step" style="margin-top:.8rem;">
+    <div class="step-label">Farkı somutlaştırmak</div>
+    <p><strong>Teorem (b = 0):</strong> "$A$ tersinir ise $Ax=0$'ı çöz" → sadece $x=0$ çıkar, başka yol yok.</p>
+    <p style="margin-top:.4rem;"><strong>Sonuç (b herhangi):</strong> "$A$ tersinir ise $Ax=b$'yi çöz" → $x = A^{-1}b$, hangi $b$ seçersen seç tam bir çözüm.</p>
+    <p style="margin-top:.4rem;">Yani teorem homojen durumun özel hâlini açıklarken, sonuç bunu genel sisteme taşır ve tersinirliğin ne anlama geldiğini tam ortaya koyar.</p>
   </div>
 </div>
 
@@ -189,9 +204,9 @@
     <br><br>
     <strong>Temel çözüm:</strong> serbest değişkenlerden birini 1, diğerlerini 0 yaparak elde edilen çözüm. $n-r$ tane temel çözüm vardır.
     <br><br>
-    <strong>Teorem:</strong> Kare $A$ için $\;$ sol ters $\Leftrightarrow$ $Ax=0$ trivial $\Leftrightarrow$ $A$ tersinir $\Leftrightarrow$ sağ ters.
+    <strong>Teorem</strong> (homojen $b=0$): sol ters $\Leftrightarrow$ $Ax=0$ yalnızca trivial $\Leftrightarrow$ $A$ tersinir $\Leftrightarrow$ sağ ters.
     <br><br>
-    <strong>Sonuç:</strong> $A$ tersinir $\Leftrightarrow$ her $Ax=b$ sistemi tek çözüme sahiptir.
+    <strong>Sonuç</strong> (genel $b$ herhangi): $A$ tersinir $\Leftrightarrow$ her $Ax=b$ sistemi tam bir çözüme sahiptir. Tersinir değilse tek çözüm <em>hiçbir zaman</em> olmaz.
   </p>
 </div>
 
