@@ -149,22 +149,39 @@
 
   <div class="step">
     <div class="step-label">Durum analizi</div>
-    <div class="prop-list">
-      <div class="prop-item">
-        <span class="prop-label">i)</span>
-        $a \neq 0$ ve $a \neq -1$: tüm pivotlar sıfırdan farklı &mdash; <strong>tek çözüm</strong>.
-      </div>
-      <div class="prop-item">
-        <span class="prop-label">iii)</span>
-        $a = -1$: son satır $\bigl[0\;0\;0\;0 \;:\; -2\bigr]$ $\;\Rightarrow\; 0 = -2$ &mdash; <strong>çözümsüz</strong>.
-      </div>
-      <div class="prop-item">
-        <span class="prop-label">ii)&thinsp;/&thinsp;iii)</span>
-        $a = 0$: 2. satır $\bigl[0\;0\;0\;0 \;:\; 1-b\bigr]$.
-        <ul style="margin:.3rem 0 0 1rem;">
-          <li>$b \neq 1$: $0 = 1-b$ tutarsız &mdash; <strong>çözümsüz</strong>.</li>
-          <li>$b = 1$: 2. satır sıfır olur, serbest değişken ortaya çıkar &mdash; <strong>sonsuz çözüm</strong>.</li>
-        </ul>
+    <p style="margin-bottom:.5rem;">Echelon formda iki kritik satır var: <strong>2. satır</strong> ($a$ pivot içeriyor) ve <strong>4. satır</strong> ($-1-a$ pivot içeriyor). Bunları ayrı ayrı inceleriz.</p>
+
+    <div class="step" style="margin-top:.6rem;">
+      <div class="step-label">4. satır: $(-1-a)\,t = -2$</div>
+      <p>$a = -1$ ise: $0 \cdot t = -2 \;\Rightarrow\; 0 = -2$ &mdash; tutarsız. <br>$a \neq -1$ ise: $t = \dfrac{-2}{-1-a}$ &mdash; 4. satır bir pivot verir.</p>
+    </div>
+
+    <div class="step" style="margin-top:.6rem;">
+      <div class="step-label">2. satır: $a \cdot x_2 = 1-b$</div>
+      <p>$a \neq 0$ ise: $x_2 = \dfrac{1-b}{a}$ &mdash; 2. satır bir pivot verir, $b$'den bağımsız çözülür.<br>
+      $a = 0$ ise: satır $\bigl[0\;0\;0\;0 \;:\; 1-b\bigr]$ olur:</p>
+      <ul style="margin:.3rem 0 0 1rem;">
+        <li>$b \neq 1$: $0 = 1-b$ tutarsız &mdash; <strong>çözümsüz</strong>.</li>
+        <li>$b = 1$: satır tamamen sıfır, yani bir denklem düşer. 3 denklem, 4 bilinmeyen kalır → 1 serbest değişken &mdash; <strong>sonsuz çözüm</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="step" style="margin-top:.8rem;">
+      <div class="step-label">Sonuç</div>
+      <div class="prop-list">
+        <div class="prop-item">
+          <span class="prop-label">i)</span>
+          $a \neq 0$ ve $a \neq -1$: her iki satırda da pivot var, 4 pivot, 4 bilinmeyen &mdash; <strong>tek çözüm</strong> (her $b$ için).
+        </div>
+        <div class="prop-item">
+          <span class="prop-label">ii)</span>
+          $a = 0$ ve $b = 1$: 2. satır sıfıra düşer, 4. satır ($-1 \cdot t = -2$) pivot verir. 3 pivot, 4 bilinmeyen → 1 serbest değişken &mdash; <strong>sonsuz çözüm</strong>.
+        </div>
+        <div class="prop-item">
+          <span class="prop-label">iii)</span>
+          $a = -1$ (her $b$): 4. satır $0 = -2$ &mdash; <strong>çözümsüz</strong>.<br>
+          $a = 0$, $b \neq 1$: 2. satır $0 = 1-b$ &mdash; <strong>çözümsüz</strong>.
+        </div>
       </div>
     </div>
   </div>
