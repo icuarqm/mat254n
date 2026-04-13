@@ -16,10 +16,10 @@
 </div>
 
 <!-- ═══════════════ TANIM ═══════════════ -->
-<div class="section-title"><span>⚙️</span> Tanım: Lineer Denklem Sistemi</div>
+<div class="section-title"><span>⚙️</span> Lineer Denklem Sistemi</div>
 
 <div class="def-box" data-label="Tanım — Lineer Denklem Sistemi">
-  <p>Aşağıdaki sisteme <strong>$n$ bilinmeyenli $m$ lineer denklem sistemi</strong> denir ve $(\star)$ ile gösterilir:</p>
+  <p>Birden fazla lineer denklem birlikte çözülmek üzere verildiğinde buna <strong>lineer denklem sistemi</strong> denir. $n$ bilinmeyenli $m$ denklemden oluşan genel sistem ($m$ satır, $n$ sütun):</p>
   <div class="formula">
     $$\begin{aligned}
       A_{11}x_1 + A_{12}x_2 + \cdots + A_{1n}x_n &= b_1 \\
@@ -28,40 +28,30 @@
       A_{m1}x_1 + A_{m2}x_2 + \cdots + A_{mn}x_n &= b_m
     \end{aligned} \qquad (\star)$$
   </div>
+  <p style="margin-top:.4rem;">$A_{ij}$: $i$. denklemdeki $j$. bilinmeyenin katsayısı. &ensp; $b_i$: $i$. denklemin sağ tarafı.</p>
 </div>
 
 <!-- ═══════════════ MATRİS FORMU ═══════════════ -->
-<div class="section-title"><span>📐</span> Matris Formu: Ax = b</div>
+<div class="section-title"><span>📐</span> Matris Formu: $Ax = b$</div>
 
 <div class="card prop">
   <div class="card-header">
-    <span class="card-title">$(\star)$'ın Matris Gösterimi</span>
+    <span class="card-title">$(\star)$ sistemini tek satırda yazmak</span>
     <span class="tag prop">Gösterim</span>
   </div>
-  <p>$(\star)$ sistemi matris formunda $Ax = b$ şeklinde yazılır:</p>
-  <div class="mw" style="align-items:flex-end; gap:.3rem; margin:.4rem 0;">
-    <span class="ml">$A =$</span>
-    <div class="mb"><table>
-      <tr><td>$A_{11}$</td><td>$A_{12}$</td><td>$\cdots$</td><td>$A_{1n}$</td></tr>
-      <tr><td>$A_{21}$</td><td>$A_{22}$</td><td>$\cdots$</td><td>$A_{2n}$</td></tr>
-      <tr><td>$\vdots$</td><td></td><td>$\ddots$</td><td>$\vdots$</td></tr>
-      <tr><td>$A_{m1}$</td><td>$A_{m2}$</td><td>$\cdots$</td><td>$A_{mn}$</td></tr>
-    </table></div>
-    <span class="ms">$m \times n$</span>
-  </div>
-  <p style="margin-top:.3rem;">$A$'ya sistemin <strong>katsayılar matrisi</strong> (coefficient matrix) denir.</p>
-  <div class="mw" style="gap:1.5rem; align-items:flex-end; margin-top:.5rem; flex-wrap:wrap;">
-    <div style="display:flex; align-items:flex-end; gap:.3rem;">
-      <span class="ml">$b =$</span>
+  <p>$(\star)$'daki tüm katsayıları bir matrise, bilinmeyenleri ve sağ tarafı birer sütun vektörüne koyarsak sistemi <strong>$Ax = b$</strong> şeklinde yazabiliriz:</p>
+  <div class="mw" style="align-items:flex-end; gap:.6rem; margin:.6rem 0; flex-wrap:wrap;">
+    <div style="display:flex;align-items:flex-end;gap:.3rem;">
+      <span class="ml">$A =$</span>
       <div class="mb"><table>
-        <tr><td>$b_1$</td></tr>
-        <tr><td>$b_2$</td></tr>
-        <tr><td>$\vdots$</td></tr>
-        <tr><td>$b_m$</td></tr>
+        <tr><td>$A_{11}$</td><td>$A_{12}$</td><td>$\cdots$</td><td>$A_{1n}$</td></tr>
+        <tr><td>$A_{21}$</td><td>$A_{22}$</td><td>$\cdots$</td><td>$A_{2n}$</td></tr>
+        <tr><td>$\vdots$</td><td></td><td>$\ddots$</td><td>$\vdots$</td></tr>
+        <tr><td>$A_{m1}$</td><td>$A_{m2}$</td><td>$\cdots$</td><td>$A_{mn}$</td></tr>
       </table></div>
-      <span class="ms">$m \times 1$</span>
+      <span class="ms">$m \times n$<br><em style="font-size:.78rem;">katsayılar matrisi</em></span>
     </div>
-    <div style="display:flex; align-items:flex-end; gap:.3rem;">
+    <div style="display:flex;align-items:flex-end;gap:.3rem;">
       <span class="ml">$x =$</span>
       <div class="mb"><table>
         <tr><td>$x_1$</td></tr>
@@ -69,13 +59,25 @@
         <tr><td>$\vdots$</td></tr>
         <tr><td>$x_n$</td></tr>
       </table></div>
-      <span class="ms">$n \times 1$</span>
+      <span class="ms">$n \times 1$<br><em style="font-size:.78rem;">bilinmeyenler</em></span>
+    </div>
+    <div style="display:flex;align-items:flex-end;gap:.3rem;">
+      <span class="ml">$b =$</span>
+      <div class="mb"><table>
+        <tr><td>$b_1$</td></tr>
+        <tr><td>$b_2$</td></tr>
+        <tr><td>$\vdots$</td></tr>
+        <tr><td>$b_m$</td></tr>
+      </table></div>
+      <span class="ms">$m \times 1$<br><em style="font-size:.78rem;">sağ taraf</em></span>
     </div>
   </div>
+  <p>$A$'ya sistemin <strong>katsayılar matrisi</strong> (coefficient matrix) denir.</p>
 </div>
 
+<!-- ═══════════════ AUGMENTED ═══════════════ -->
 <div class="def-box" data-label="Tanım — Genişletilmiş Matris (Augmented Matrix)">
-  <p>$[A \mid b]$ matrisi, $(\star)$ sisteminin <strong>genişletilmiş matrisidir</strong> (augmented matrix).</p>
+  <p>$A$ ve $b$'yi yan yana yazarak elde edilen $[A \mid b]$ matrisine <strong>genişletilmiş matris</strong> (augmented matrix) denir. Her satır bir denklemi temsil eder, çizginin sağı sağ tarafı gösterir.</p>
   <div class="mw" style="align-items:flex-end; gap:.3rem; margin:.4rem 0;">
     <span class="ml">$[A \mid b] =$</span>
     <div class="mb"><table>
@@ -85,22 +87,15 @@
       <tr><td>$A_{m1}$</td><td>$A_{m2}$</td><td>$\cdots$</td><td>$A_{mn}$</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">$b_m$</td></tr>
     </table></div>
   </div>
+  <div class="note">Sistemle ilgili tüm bilgi $[A \mid b]$'de saklıdır — satır işlemlerini doğrudan bu matris üzerinde yapacağız.</div>
 </div>
 
 <!-- ═══════════════ DENKLİK ═══════════════ -->
 <div class="section-title"><span>🔗</span> Denklik (Equivalent Systems)</div>
 
 <div class="def-box" data-label="Tanım — Denk Sistemler">
-  <p>İki sistem, genişletilmiş matrisleri $[A \mid b]$ ve $[A' \mid b']$ <strong>satır denk</strong> ise <strong>denk (equivalent)</strong> denir.</p>
-</div>
-
-<div class="card prop">
-  <div class="card-header">
-    <span class="card-title">Önerme — Denk Sistemlerin Çözüm Kümeleri</span>
-    <span class="tag prop">Önerme</span>
-  </div>
-  <p>Denk sistemlerin <strong>çözüm kümeleri aynıdır</strong>.</p>
-  <div class="note">Her ERO geri alınabilir olduğundan, satır dönüşümleri sistem çözümlerini değiştirmez.</div>
+  <p>İki sistemin genişletilmiş matrisleri <strong>satır denk</strong> (row equivalent) ise bu iki sisteme <strong>denk (equivalent)</strong> denir. Satır işlemleri geri alınabilir olduğundan denk sistemlerin <strong>çözüm kümeleri aynıdır</strong>.</p>
+  <div class="formula">$[A \mid b] \sim [A' \mid b'] \;\Longrightarrow\; \text{aynı çözüm kümesi}$</div>
 </div>
 
 <div class="card warn">
@@ -108,11 +103,9 @@
     <span class="card-title">Dikkat — Tersi Her Zaman Doğru Değil</span>
     <span class="tag warn">Dikkat</span>
   </div>
-  <p>Aynı çözüm kümesine sahip iki sistem <strong>her zaman denk değildir</strong>.</p>
+  <p>Aynı çözüm kümesine sahip iki sistem <strong>her zaman denk değildir</strong>. Aşağıdaki iki sistem de tutarsızdır (çözüm kümesi boş), ancak genişletilmiş matrisleri satır denk <em>değildir</em>:</p>
 
   <div class="step" style="margin-top:.6rem;">
-    <div class="step-label">Karşı örnek</div>
-    <p style="margin-bottom:.5rem;">Aşağıdaki iki sistem de tutarsızdır (çözüm kümesi boş), fakat genişletilmiş matrisleri satır denk değildir:</p>
     <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-bottom:.6rem;">
       <div>
         <p>$x + y = \phantom{-}2$</p>
@@ -139,20 +132,20 @@
   </div>
 
   <div class="step" style="margin-top:.6rem;">
-    <div class="step-label">Kısmi tersi</div>
-    <p>Çözüm kümesi <strong>boş değilse</strong>, aynı çözüm kümesi $\Rightarrow$ denk sistemler (tersi de doğrudur).</p>
+    <div class="step-label">İstisna</div>
+    <p>Çözüm kümesi <strong>boş değilse</strong> ters yön de doğrudur: aynı çözüm kümesi $\Rightarrow$ denk sistemler.</p>
   </div>
 </div>
 
 <!-- ═══════════════ GÖZLEM ═══════════════ -->
-<div class="section-title"><span>🔍</span> Gözlem: Kolay Çözülen Sistem</div>
+<div class="section-title"><span>🔍</span> Gözlem: Neden Echelon Forma İndiriyoruz?</div>
 
 <div class="card ex">
   <div class="card-header">
-    <span class="card-title">Gözlem — Echelon Formundaki Sistem</span>
+    <span class="card-title">Echelon Formdaki Sistem Doğrudan Çözülür</span>
     <span class="tag ex">Örnek</span>
   </div>
-  <p>Aşağıdaki sistem, zaten kademeli (echelon) formda olduğu için çözmesi kolaydır:</p>
+  <p>Aşağıdaki sistem echelon formda olduğu için $x_3$'ten başlayıp geriye doğru yerine koyarak kolayca çözülür:</p>
   <div class="formula">
     $$\begin{aligned}
       x_1 + 2x_2 &= 3 \\
@@ -160,18 +153,15 @@
       x_3 &= -1
     \end{aligned}$$
   </div>
-  <div class="step">
-    <div class="step-label">Genişletilmiş matris $Ax = b$</div>
-    <div class="mw">
-      <span class="ml">$[A \mid b]$ =</span>
-      <div class="mb"><table>
-        <tr><td class="diag">1</td><td>2</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">3</td></tr>
-        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">2</td></tr>
-        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td></tr>
-      </table></div>
-    </div>
+  <div class="mw">
+    <span class="ml">$[A \mid b]$ =</span>
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td>2</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">3</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">2</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td style="border-left:2px solid var(--accent);padding-left:.6rem;">−1</td></tr>
+    </table></div>
   </div>
-  <div class="note">Matris echelon formda → geriye dönük yerine koymayla ($x_3 = -1$, $x_2 = 3$, $x_1 = -3$) doğrudan çözülür.</div>
+  <div class="note" style="margin-top:.4rem;">$x_3 = -1$ → $x_2 = 2 - x_3 = 3$ → $x_1 = 3 - 2x_2 = -3$. Hedef: her sistemi bu forma getirmek.</div>
 </div>
 
 <!-- ÖZET -->
@@ -180,13 +170,11 @@
   <p>
     <strong>Lineer denklem sistemi $(\star)$:</strong> $m$ denklem, $n$ bilinmeyen.
     <br><br>
-    <strong>Matris formu:</strong> $Ax = b$. $A$: katsayılar matrisi $(m \times n)$, $b$: sabit sütun $(m \times 1)$, $x$: bilinmeyenler $(n \times 1)$.
+    <strong>Matris formu:</strong> $Ax = b$. $A$: katsayılar matrisi $(m \times n)$, $x$: bilinmeyenler $(n \times 1)$, $b$: sağ taraf $(m \times 1)$.
     <br><br>
-    <strong>Genişletilmiş matris:</strong> $[A \mid b]$ — sistemin tüm bilgisini tek matriste toplar.
+    <strong>Genişletilmiş matris:</strong> $[A \mid b]$ — her satır bir denklem, sistemin tüm bilgisi tek matriste.
     <br><br>
-    <strong>Denklik:</strong> $[A \mid b] \sim [A' \mid b']$ ise iki sistem denktir ve çözüm kümeleri aynıdır.
-    <br>
-    Tersi: çözüm kümesi boşsa geçersiz; boş değilse de geçerlidir.
+    <strong>Denklik:</strong> $[A \mid b] \sim [A' \mid b']$ ise çözüm kümeleri aynıdır. Tersi çözüm kümesi boş olmadığında geçerlidir.
     <br><br>
     <span style="color:var(--accent);font-weight:600;">Hedef: Gauss eliminasyonu ile $[A \mid b]$'yi echelon forma indirgemek → kolay çözüm.</span>
   </p>
