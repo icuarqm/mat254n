@@ -142,20 +142,20 @@
 <!-- ═══════════════ BÜYÜK TEOREM ═══════════════ -->
 <div class="section-title"><span>🏛️</span> Tersinirlik (Invertibility) Teoremi</div>
 
-<div class="def-box" data-label="Teorem — Denkdeğer Koşullar">
-  <p>$A$ bir <strong>kare matris</strong> olsun. Aşağıdaki ifadeler <strong>birbirine denktir</strong> (hepsi aynı anda doğru veya aynı anda yanlış):</p>
+<div class="def-box" data-label="Teorem — Denkdeğer (Equivalent) Koşullar">
+  <p>$A$ bir <strong>kare matris</strong> olsun. Aşağıdaki ifadeler <strong>birbirine denkdeğerdir (equivalent)</strong> — hepsi aynı anda doğru veya aynı anda yanlış:</p>
 </div>
 
 <div class="card prop">
   <div class="card-header">
-    <span class="card-title">4 Denkdeğer Koşul</span>
+    <span class="card-title">4 Denkdeğer (Equivalent) Koşul</span>
     <span class="tag prop">Teorem</span>
   </div>
   <div class="prop-list">
     <div class="prop-item"><span class="prop-label">i)</span> $A$, elementer matrislerin bir <strong>çarpımıdır</strong>.</div>
     <div class="prop-item"><span class="prop-label">ii)</span> $A$ <strong>tersinirdir</strong> (invertible).</div>
-    <div class="prop-item"><span class="prop-label">iii)</span> $A$, en az bir sıfır satırı olan bir matrise <strong>satır denk değildir</strong>.</div>
-    <div class="prop-item" style="border:2px solid var(--c-red);"><span class="prop-label" style="color:var(--c-red);">★ iv)</span> $A$, birim matris $I$'ye <strong>satır denktir</strong>. &nbsp; <span style="font-size:.85rem; color:var(--c-red); font-weight:600;">(En kullanışlı!)</span></div>
+    <div class="prop-item"><span class="prop-label">iii)</span> $A$, en az bir sıfır satırı olan bir matrise <strong>satır denk (row equivalent) değildir</strong>.</div>
+    <div class="prop-item" style="border:2px solid var(--c-red);"><span class="prop-label" style="color:var(--c-red);">★ iv)</span> $A$, birim matris $I$'ye <strong>satır denktir (row equivalent)</strong>. &nbsp; <span style="font-size:.85rem; color:var(--c-red); font-weight:600;">(En kullanışlı!)</span></div>
   </div>
   <div class="note">iv en önemli kriter: $A \sim I$ ise $A$ tersinir; $A$'yı RREF'e indirgeyince $I$ çıkıyorsa tersinirdir.</div>
 </div>
@@ -187,8 +187,9 @@
 <div class="section-title"><span>🔧</span> Ters Matris Bulma — 2. Yöntem ($P$ Matrisi)</div>
 
 <div class="def-box" data-label="Sonuç (Corollary)">
-  <p>İki $n \times m$ matris $A$ ve $B$'nin <strong>satır denk</strong> olması için gerekli ve yeterli koşul: tersinir bir $P$ matrisi bulunması öyle ki:</p>
-  <div class="formula">$$B = PA$$</div>
+  <p>İki $n \times m$ matris $A$ ve $B$'nin <strong>satır denk (row equivalent)</strong> olması için gerekli ve yeterli koşul, tersinir bir $P$ matrisi bulunması öyle ki $B = PA$ olsun.</p>
+  <div class="formula">$$A \sim B \;\Longleftrightarrow\; \exists \text{ tersinir } P: \quad B = PA$$</div>
+  <p style="margin-top:.5rem;">Yani satır işlemleri uygulamak = soldan tersinir bir matrisle çarpmak. $P$, uyguladığın tüm ERO'ların elementer matris çarpımıdır: $P = E_n \cdots E_1$.</p>
 </div>
 
 <div class="card prop">
@@ -196,10 +197,62 @@
     <span class="card-title">2. Yöntem: $P$ Matrisi</span>
     <span class="tag prop">Yöntem</span>
   </div>
-  <p>$A$ tersinir ise $A \sim I$, yani $PA = I$ olan tersinir bir $P$ vardır. Bu durumda:</p>
-  <div class="formula">$$PA = I \;\Longrightarrow\; A^{-1} = P$$</div>
-  <p style="margin-top:.4rem;">$P = E_n \cdots E_1$ (uyguladığın tüm ERO'ların elementer matris çarpımı).</p>
-  <div class="note">Bu aslında 1. yöntemle aynı şey: $[A \mid I] \to [I \mid P]$ yaparken sağ taraftaki $P$ otomatik olarak $A^{-1}$.</div>
+  <p>Yukarıdaki sonucu ters bulmak için kullanalım. $B = I$ özel durumunu alırsak:</p>
+  <div class="formula">$$I = PA \;\Longrightarrow\; P = A^{-1}$$</div>
+  <p style="margin-top:.4rem;">Yani $A$'yı $I$'ye götüren ERO'ları takip edip onların elementer matris çarpımı $P$'yi oluşturursak, o $P$ doğrudan $A^{-1}$'dir. 1. yöntemde $[A \mid I] \to [I \mid B]$ yaparken sağ tarafta otomatik biriken matris tam olarak bu $P$'dir — iki yöntem aslında aynı işlemi farklı açıdan anlatır.</p>
+</div>
+
+<div class="card example">
+  <div class="card-header">
+    <span class="card-title">Örnek — $2 \times 2$</span>
+    <span class="tag ex">Örnek</span>
+  </div>
+  <p>$A$ için $[A \mid I]$ oluşturup ERO uygulayalım:</p>
+
+  <div class="mw" style="margin:.8rem 0; align-items:center; flex-wrap:wrap; gap:.5rem;">
+    <div class="mb"><table>
+      <tr><td>2</td><td>1</td><td style="border-left:2px solid var(--accent);">1</td><td>0</td></tr>
+      <tr><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);">0</td><td>1</td></tr>
+    </table></div>
+    <span class="ml" style="font-size:.82rem;">$\xrightarrow{R_1 \leftrightarrow R_2}$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);">0</td><td>1</td></tr>
+      <tr><td>2</td><td>1</td><td style="border-left:2px solid var(--accent);">1</td><td>0</td></tr>
+    </table></div>
+    <span class="ml" style="font-size:.82rem;">$\xrightarrow{R_2 - 2R_1}$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);">0</td><td>1</td></tr>
+      <tr><td>0</td><td>−1</td><td style="border-left:2px solid var(--accent);">1</td><td>−2</td></tr>
+    </table></div>
+  </div>
+
+  <div class="mw" style="margin:.4rem 0 .8rem; align-items:center; flex-wrap:wrap; gap:.5rem;">
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);">0</td><td>1</td></tr>
+      <tr><td>0</td><td>−1</td><td style="border-left:2px solid var(--accent);">1</td><td>−2</td></tr>
+    </table></div>
+    <span class="ml" style="font-size:.82rem;">$\xrightarrow{-R_2}$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);">0</td><td>1</td></tr>
+      <tr><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);">−1</td><td>2</td></tr>
+    </table></div>
+    <span class="ml" style="font-size:.82rem;">$\xrightarrow{R_1 - R_2}$</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table>
+      <tr><td>1</td><td>0</td><td style="border-left:2px solid var(--accent);">1</td><td>−1</td></tr>
+      <tr><td>0</td><td>1</td><td style="border-left:2px solid var(--accent);">−1</td><td>2</td></tr>
+    </table></div>
+  </div>
+
+  <p>Sol taraf $I$ oldu → sağ taraf $A^{-1}$:</p>
+  <div class="mw" style="margin:.5rem 0;">
+    <span class="ml">$A^{-1}$ =</span>
+    <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);"><table>
+      <tr><td>1</td><td>−1</td></tr>
+      <tr><td>−1</td><td>2</td></tr>
+    </table></div>
+  </div>
+
+  <div class="note">Kontrol: $AA^{-1} = \begin{pmatrix}2&1\\1&1\end{pmatrix}\begin{pmatrix}1&-1\\-1&2\end{pmatrix} = \begin{pmatrix}1&0\\0&1\end{pmatrix} = I$ ✓</div>
 </div>
 
 <!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
