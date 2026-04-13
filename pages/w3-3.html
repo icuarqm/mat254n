@@ -20,13 +20,14 @@
 
 <div class="def-box" data-label="Tanım — Sol & Sağ Ters">
   <p>$A$ bir matris olsun.</p>
-  <p style="margin-top:.4rem;"><strong>Sol ters:</strong> Eğer bir $A'$ matrisi varsa ve $A'A = I$ ise, $A$'nın <strong>sol tersi</strong> vardır denir.</p>
-  <p style="margin-top:.4rem;"><strong>Sağ ters:</strong> Eğer bir $A'$ matrisi varsa ve $AA' = I$ ise, $A$'nın <strong>sağ tersi</strong> vardır denir.</p>
+  <p style="margin-top:.4rem;"><strong>Sol ters (Left Inverse):</strong> Eğer bir $A'$ matrisi varsa ve $A'A = I$ ise, $A$'nın <strong>sol tersi</strong> vardır denir.</p>
+  <p style="margin-top:.4rem;"><strong>Sağ ters (Right Inverse):</strong> Eğer bir $A'$ matrisi varsa ve $AA' = I$ ise, $A$'nın <strong>sağ tersi</strong> vardır denir.</p>
 </div>
 
 <div class="def-box" data-label="Tanım — Tersinir Matris">
   <p>Bir matris $A$'ya <strong>tersinir (invertible)</strong> denir, eğer bir $A'$ matrisi varsa ve:</p>
   <div class="formula">$$AA' = A'A = I$$</div>
+  <p style="margin-top:.4rem;">Yani $A$'nın hem sol tersi hem de sağ tersi var olmalı <em>ve</em> ikisi aynı matris olmalı. Sadece sol ya da sadece sağ ters yetmez.</p>
   <p style="margin-top:.4rem;">Eğer $A$ tersinir <strong>değilse</strong>, $A$'ya <strong>tekil (singular)</strong> matris denir.</p>
 </div>
 
@@ -39,9 +40,9 @@
     <span class="tag prop">Not</span>
   </div>
   <div class="prop-list">
-    <div class="prop-item"><span class="prop-label">i)</span> Tersinir matris <strong>kare</strong> olmak zorundadır.</div>
-    <div class="prop-item"><span class="prop-label">ii)</span> $A$ tersinir ise, $A'$'ye $A$'nın <strong>tersi</strong> denir ve $A^{-1}$ ile gösterilir.</div>
-    <div class="prop-item"><span class="prop-label">iii)</span> Tersinir bir matrisin tersi <strong>tektir</strong> (unique).</div>
+    <div class="prop-item"><span class="prop-label">i)</span> Tersinir matris <strong>kare</strong> olmak zorundadır — $AA' = I$ ve $A'A = I$'nin boyutları eşleşebilmesi için satır ve sütun sayısı eşit olmalı.</div>
+    <div class="prop-item"><span class="prop-label">ii)</span> $A$ tersinir ise sol ve sağ tersi aynı matristir; bu matrise $A$'nın <strong>tersi</strong> denir ve $A^{-1}$ ile gösterilir.</div>
+    <div class="prop-item"><span class="prop-label">iii)</span> Tersinir bir matrisin tersi <strong>tektir</strong> (unique) — $B$ ve $C$ ikisi de ters olsaydı $B = B(AC) = (BA)C = C$ olurdu.</div>
   </div>
 </div>
 
