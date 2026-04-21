@@ -11,17 +11,17 @@ if (!_isIndex) {
 
   /* ── Dark Mode ── */
   function applyDarkMode() {
-    if (localStorage.getItem('dm') === '1') document.body.classList.add('dark');
+    if (localStorage.getItem('dm') === '1') document.documentElement.classList.add('dark');
   }
   function toggleDarkMode() {
-    const isDark = document.body.classList.toggle('dark');
+    const isDark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('dm', isDark ? '1' : '0');
     syncDarkIcon();
   }
   function syncDarkIcon() {
     const icon = document.querySelector('.dm-icon');
     if (!icon) return;
-    icon.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    icon.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
   }
   applyDarkMode();
 
