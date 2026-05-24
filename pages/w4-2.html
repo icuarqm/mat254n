@@ -61,7 +61,16 @@
 <div class="section-title"><span>📋</span> Echelon Formun Yapısı</div>
 
 <div class="def-box" data-label="Echelon Formundaki Sistem (1)">
-  <p>$[A' \mid b']$ echelon formunda olsun, $r$ = pivot satır sayısı, $j_1 &lt; j_2 &lt; \cdots &lt; j_r$ pivot sütunları. İlgili sistem $(1)$:</p>
+  <p>$[A' \mid b']$ matrisi echelon formunda olsun. Yapıyı analiz etmek için üç sembol kullanırız:</p>
+
+  <div style="display:grid; gap:.35rem; margin:.55rem 0 .7rem 1.2rem;">
+    <div>·&nbsp;&nbsp;$r$ — <strong>pivot satır sayısı</strong> (sıfırdan farklı satır sayısı)</div>
+    <div>·&nbsp;&nbsp;$j_1 &lt; j_2 &lt; \cdots &lt; j_r$ — pivotların bulunduğu <strong>sütun indisleri</strong></div>
+    <div>·&nbsp;&nbsp;$n$ — bilinmeyen ($x_1, \ldots, x_n$) sayısı</div>
+  </div>
+
+  <p>Bu notasyonla, denklem sistemi $(1)$ <strong>üç katmandan</strong> oluşur:</p>
+
   <div class="formula">
     $$\begin{aligned}
       A'_{1j_1} x_{j_1} + \cdots &= b'_1 \\
@@ -73,32 +82,47 @@
       0 &= 0
     \end{aligned} \qquad (1)$$
   </div>
-  <div class="note">Pivot satırlardan sonraki satırlar ya $0 = b'_{r+1}$ ya da $0 = 0$ biçimindedir.</div>
+
+  <div style="display:grid; gap:.5rem; margin-top:.7rem;">
+    <div><strong>① İlk $r$ satır</strong> — <em>pivot denklemleri</em>. Her satırın sol tarafında en az bir pivot terim bulunur; sistemin asıl bilgisini bunlar taşır.</div>
+    <div><strong>② $(r+1)$. satır</strong> — $0 = b'_{r+1}$ biçiminde <em>kontrol satırı</em>. Sağ tarafın değeri sistemin tutarlı olup olmadığını belirler.</div>
+    <div><strong>③ Geri kalan satırlar</strong> — $0 = 0$ tipi <em>trivial satırlar</em>. Her zaman doğru olduklarından çözüme katkıları yoktur.</div>
+  </div>
 </div>
 
 <!-- ═══════════════ 3 DURUM ═══════════════ -->
-<div class="section-title"><span>🔀</span> Çözüm Analizi: 3 Durum</div>
+<div class="section-title"><span>🔀</span> Çözüm Analizi: 3 Olası Sonuç</div>
+
+<p style="margin:-.3rem 0 .9rem 0; color:var(--muted); font-style:italic;">② satırın sonucuna ve $r$ ile $n$ arasındaki ilişkiye göre sistem üç farklı şekilde davranır:</p>
 
 <div class="card warn">
   <div class="card-header">
-    <span class="card-title">Durum a — Tutarsız Sistem (Inconsistent)</span>
-    <span class="tag warn">Durum a</span>
+    <span class="card-title">Durum 1 — Çözüm Yok (Tutarsız)</span>
+    <span class="tag warn">Tutarsız</span>
   </div>
-  <p>$b'_{r+1} \neq 0$ ise $(1)$'deki $0 = b'_{r+1}$ denkleminin çözümü yoktur.</p>
-  <div class="false-box">Sistem tutarsızdır (inconsistent) — $[A \mid b]$'nin augmented olduğu orijinal sistemin çözümü yoktur.</div>
+  <p><strong>Koşul:</strong> ② satırda $b'_{r+1} \neq 0$.</p>
+  <p style="margin-top:.4rem;"><strong>Niçin:</strong> $0 = b'_{r+1}$ denklemi <strong>çelişkiye</strong> dönüşür — örneğin "$0 = 5$" gibi. Hiçbir $(x_1, \ldots, x_n)$ değeri bu denklemi sağlayamaz.</p>
+  <div class="false-box">Sistem <strong>tutarsızdır</strong> (inconsistent) — orijinal $[A \mid b]$ sisteminin çözüm kümesi boştur.</div>
 </div>
 
 <div class="card prop">
   <div class="card-header">
-    <span class="card-title">Durum b — Tutarlı Sistem (Consistent)</span>
-    <span class="tag prop">Durum b</span>
+    <span class="card-title">Durum 2 — Tek Çözüm</span>
+    <span class="tag prop">Tek Çözüm</span>
   </div>
-  <p>$b'_{r+1} = 0$ ise sistem tutarlıdır. $x_{j_1}, x_{j_2}, \ldots, x_{j_r}$ <strong>pivot değişkenler</strong>, geri kalanlar <strong>serbest değişkenler</strong> (free variables) olarak geriye dönük yerine koyma ile çözülür.</p>
-  <div style="margin-top:.7rem;">
-    <p><strong>i)</strong> $\{x_{j_1}, \ldots, x_{j_r}\} = \{x_1, \ldots, x_n\}$ ise serbest değişken yok → <strong>tek çözüm</strong>.</p>
-    <p style="margin-top:.4rem;"><strong>ii)</strong> En az bir serbest değişken varsa ($r &lt; n$) → <strong>birden fazla çözüm</strong>. Alan sonsuz ise sonsuz çözüm.</p>
+  <p><strong>Koşul:</strong> $b'_{r+1} = 0$ (sistem tutarlı) ve <strong>$r = n$</strong>.</p>
+  <p style="margin-top:.4rem;"><strong>Niçin:</strong> Pivot sayısı bilinmeyen sayısına eşit olduğundan her $x_i$ bir pivot değişkenidir, serbest değişken kalmaz. Geriye dönük yerine koyma her bilinmeyeni <strong>tek bir sayı</strong> olarak belirler.</p>
+  <div class="result-box">Çözüm tek ve sayısaldır: bir tek $(x_1, \ldots, x_n)$ vektörü sistemi sağlar.</div>
+</div>
+
+<div class="card op">
+  <div class="card-header">
+    <span class="card-title">Durum 3 — Sonsuz (Birden Fazla) Çözüm</span>
+    <span class="tag op">Birden Fazla</span>
   </div>
-  <div class="note" style="margin-top:.6rem;">Durum ii'de serbest değişken sayısı $= n - r$. Çözümler bu serbest değişkenlere bağlıdır.</div>
+  <p><strong>Koşul:</strong> $b'_{r+1} = 0$ ve <strong>$r &lt; n$</strong>.</p>
+  <p style="margin-top:.4rem;"><strong>Niçin:</strong> Pivota sahip $r$ bilinmeyene <strong>pivot değişken</strong> ($x_{j_1}, \ldots, x_{j_r}$), kalan $n - r$ bilinmeyene <strong>serbest değişken</strong> (free variable) denir. Serbest değişkenlere istenen değer atanır; pivot değişkenler bunlara bağlı parametrik ifadelerle yazılır.</p>
+  <div class="note" style="margin-top:.4rem;"><strong>Serbest değişken sayısı $= n - r$.</strong> Cisim $F$ sonsuz ise ($\mathbb{R}, \mathbb{Q}, \mathbb{C}$ gibi) çözüm kümesi de sonsuzdur; sonlu cisimde sonlu ama birden fazla çözüm olur.</div>
 </div>
 
 <!-- ═══════════════ ÖRNEKLER ═══════════════ -->
