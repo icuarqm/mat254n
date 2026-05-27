@@ -369,6 +369,10 @@ body {
   background: #fef3c0;
   box-shadow: 0 0 0 1.5px var(--accent);
 }
+.formula.big {
+  padding: 0.8rem 1rem;
+}
+.formula.big .katex { font-size: 1.35em; }
 
 .note {
   font-size: 0.9rem;
