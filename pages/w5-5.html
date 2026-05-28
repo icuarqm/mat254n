@@ -62,7 +62,7 @@
   </div>
 
   <div class="result-box" style="margin-top:.3rem;">
-    <p style="margin-bottom:.4rem;">$\operatorname{Adj} A = C^T$, dolayısıyla:</p>
+    <p style="margin-bottom:.4rem;">$\det A = 1$ olduğu için ters matris doğrudan adjoint matrise eşittir:</p>
     <div class="mw" style="align-items:flex-end; gap:.4rem;">
       <span class="ml">$A^{-1} = \operatorname{Adj} A =$</span>
       <div class="mb"><table>
@@ -71,8 +71,18 @@
         <tr><td>$\sin x$</td><td class="zero-cell">$0$</td><td>$\cos x$</td></tr>
       </table></div>
     </div>
-    <p class="note" style="margin-top:.4rem;">Bu $A^T$'ye eşittir — döndürme matrisleri ortogonadir: $A^{-1} = A^T$.</p>
+    <p class="note" style="margin-top:.4rem;">Çıkan matris aynı zamanda $A^T$'dir. Bu, matrisin döndürme/ortogonal matris olmasından gelir.</p>
   </div>
+</div>
+
+<div class="section-title"><span>📌</span> Dipnot: Neden $A^{-1} = A^T$?</div>
+
+<div class="note-box">
+  <p><strong>Ortogonal matris</strong>, sütunları birbirine dik ve her sütunun uzunluğu $1$ olan matristir. Bu koşul matris diliyle şöyle yazılır:</p>
+  <div class="formula" style="margin-top:.4rem;">$$A^T A = I$$</div>
+  <p style="margin-top:.5rem;">Bu eşitlik aynı zamanda şunu söyler: $A^T$, $A$'nın tersidir. Çünkü bir matrisi başka bir matrisle çarpınca $I$ elde ediyorsak, o matris ters matristir.</p>
+  <div class="formula" style="margin-top:.4rem;">$$A^T A=I \quad \Longrightarrow \quad A^{-1}=A^T$$</div>
+  <p style="margin-top:.5rem;">Bu sorudaki matris, $y$ ekseni etrafında döndürme yapan matris tipindedir. Döndürmeler uzunlukları ve açıları bozmaz; bu yüzden sütun vektörleri hâlâ birim uzunlukta ve birbirine diktir. Yani matris ortogonaldir.</p>
 </div>
 
 <!-- ── SORU 2 ── -->
@@ -99,11 +109,25 @@
 
   <div class="step" style="margin-top:.5rem;">
     <div class="step-label">Durum 2: $\det A = 0$</div>
-    <p style="margin-top:.2rem;">$\det(\operatorname{Adj} A) \neq 0$ olduğunu varsayalım; yani $\operatorname{Adj} A$ tersinirdir.</p>
+    <p style="margin-top:.2rem;">Bu durumda sağ taraf zaten $0$ olur:</p>
     <div class="formula" style="margin-top:.2rem;">
-      $$A \cdot \operatorname{Adj} A = 0 \;\Rightarrow\; A(\operatorname{Adj} A)(\operatorname{Adj} A)^{-1} = 0 \;\Rightarrow\; A = 0$$
+      $$(\det A)^{n-1}=0^{\,n-1}=0$$
     </div>
-    <p style="margin-top:.2rem;">$A = 0$ ise $\operatorname{Adj} A = 0$ olur — bu $\operatorname{Adj} A$'nın tersinir olduğuna aykırıdır. Dolayısıyla $\det(\operatorname{Adj} A) = 0 = 0^{n-1} = (\det A)^{n-1}$. $\checkmark$</p>
+    <p style="margin-top:.4rem;">Yani geriye yalnızca $\det(\operatorname{Adj} A)=0$ olduğunu göstermek kalır.</p>
+    <p style="margin-top:.4rem;">Tersini varsayalım: $\det(\operatorname{Adj} A) \neq 0$ olsun. O zaman $\operatorname{Adj} A$ tersinirdir.</p>
+    <div class="formula" style="margin-top:.2rem;">
+      $$A \cdot \operatorname{Adj} A = \det A \cdot I = 0$$
+    </div>
+    <p style="margin-top:.4rem;">$\operatorname{Adj} A$ tersinir kabul edildiği için sağdan $(\operatorname{Adj} A)^{-1}$ ile çarpabiliriz:</p>
+    <div class="formula" style="margin-top:.2rem;">
+      $$A \cdot \operatorname{Adj} A \cdot (\operatorname{Adj} A)^{-1}=0
+      \quad \Rightarrow \quad A=0$$
+    </div>
+    <p style="margin-top:.4rem;">Fakat $A=0$ olursa $\operatorname{Adj} A$ da sıfır matris olur; sıfır matris tersinir değildir. Bu, baştaki varsayımla çelişir.</p>
+    <p style="margin-top:.4rem;">Demek ki $\det(\operatorname{Adj} A) \neq 0$ olamaz. Dolayısıyla:</p>
+    <div class="formula" style="margin-top:.2rem;">
+      $$\det(\operatorname{Adj} A)=0=(\det A)^{n-1} \qquad \checkmark$$
+    </div>
   </div>
 </div>
 
@@ -211,24 +235,35 @@
     <span class="card-title">Çözüm</span>
     <span class="tag sol">Çözüm</span>
   </div>
-  <p style="margin-bottom:.4rem;">$A^{-1} = \dfrac{1}{\det A}\operatorname{Adj} A$ formülünden:</p>
-  <div class="formula">
-    $$\operatorname{Adj} A = \det A \cdot A^{-1}$$
-  </div>
+  <p style="margin-bottom:.4rem;">Amaç iki tarafı da aynı ifadeye dönüştürmek. Kullanacağımız temel formül:</p>
+  <div class="formula">$$\operatorname{Adj} M = \det M \cdot M^{-1}$$</div>
+
   <div class="step" style="margin-top:.5rem;">
-    <div class="step-label">Sol taraf</div>
+    <div class="step-label">1) Sol tarafı düzenle</div>
+    <p style="margin-top:.2rem;">Formülü $M=A$ için yazalım:</p>
+    <div class="formula" style="margin-top:.2rem;">
+      $$\operatorname{Adj} A = \det A \cdot A^{-1}$$
+    </div>
+    <p style="margin-top:.4rem;">Şimdi iki tarafın tersini alıyoruz:</p>
     <div class="formula" style="margin-top:.2rem;">
       $$(\operatorname{Adj} A)^{-1} = (\det A \cdot A^{-1})^{-1} = \frac{1}{\det A}\cdot A$$
     </div>
   </div>
+
   <div class="step" style="margin-top:.5rem;">
-    <div class="step-label">Sağ taraf</div>
-    <p style="margin-top:.2rem;">$B = A^{-1}$'e $B^{-1} = \dfrac{1}{\det B}\operatorname{Adj} B$ formülü uygulanır; $B^{-1} = A$, $\det B = \dfrac{1}{\det A}$:</p>
+    <div class="step-label">2) Sağ tarafı düzenle</div>
+    <p style="margin-top:.2rem;">Aynı formülü bu kez $M=A^{-1}$ için kullanalım:</p>
     <div class="formula" style="margin-top:.2rem;">
-      $$\operatorname{Adj}(A^{-1}) = \det(A^{-1})\cdot (A^{-1})^{-1} = \frac{1}{\det A}\cdot A$$
+      $$\operatorname{Adj}(A^{-1})=\det(A^{-1})\cdot (A^{-1})^{-1}$$
+    </div>
+    <p style="margin-top:.4rem;">Burada $\det(A^{-1})=\dfrac{1}{\det A}$ ve $(A^{-1})^{-1}=A$ olduğundan:</p>
+    <div class="formula" style="margin-top:.2rem;">
+      $$\operatorname{Adj}(A^{-1})=\frac{1}{\det A}\cdot A$$
     </div>
   </div>
+
   <div class="result-box" style="margin-top:.4rem;">
+    Her iki taraf da aynı ifadeye eşit çıktı:
     $$(\operatorname{Adj} A)^{-1} = \frac{1}{\det A}\cdot A = \operatorname{Adj}(A^{-1}) \qquad \blacksquare$$
   </div>
 </div>

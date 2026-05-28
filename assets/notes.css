@@ -218,7 +218,7 @@ body {
   gap: 0.5rem;
 }
 /* Emoji'lerin tüm cihazlarda düzgün görünmesi için */
-.section-title span {
+.section-title > span {
   font-size: 1.3rem;
   font-style: normal;
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color', sans-serif;
