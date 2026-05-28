@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Baz ve Boyut</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Baz ve Boyut</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 7 - Bölüm 3)</div>
+</div>
+
+<!-- ═══════════════ BAZ TANIMI ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Baz Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Baz (Basis)">
+  <p>$V$ bir vektör uzayı olsun. $V$'nin bir alt kümesi $\beta$, aşağıdaki <strong>iki koşulu</strong> birden sağlıyorsa $V$'nin <strong>bazı</strong> (basis) olarak adlandırılır:</p>
+
+  <div class="prop-list" style="margin-top:.55rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>$\beta$, $V$'yi <strong>üretir</strong> — $V$'nin her elemanı, $\beta$'nın elemanlarının bir lineer kombinasyonu olarak yazılabilir.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>$\beta$, <strong>lineer bağımsızdır</strong>.</div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:.55rem;">Yani baz: hem yeterince geniş ki uzayı kapsar, hem yeterince ince ki gereksiz vektör içermez.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK BAZ TESTİ ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — Baz Testi (ℝ³)</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>$\{(1, 1, -1),\; (1, 2, 3),\; (0, 1, 1)\}$ kümesi $\mathbb{R}^3$ için bir baz mıdır?</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Sistem kurulumu</div>
+    <p>Keyfi $(a, b, c) \in \mathbb{R}^3$ için</p>
+    <div class="formula">
+      $$(a, b, c) = c_1 (1, 1, -1) + c_2 (1, 2, 3) + c_3 (0, 1, 1)$$
+    </div>
+    <p style="margin-top:.4rem;">denklemini açarsak:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        c_1 + c_2 &= a \\
+        c_1 + 2 c_2 + c_3 &= b \\
+        -c_1 + 3 c_2 + c_3 &= c
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Augmented matris &amp; indirgeme (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a$</td></tr>
+        <tr><td>1</td><td>2</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$b$</td></tr>
+        <tr><td>−1</td><td>3</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$c$</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$b - a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−3</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$c + 5a - 4b$</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Üretici mi?</div>
+    <p>$3$ bilinmeyen, $3$ pivot → her $(a, b, c)$ için <strong>tek</strong> $(c_1, c_2, c_3)$ çözümü vardır → küme $\mathbb{R}^3$'ü üretir.</p>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">Bağımsız mı?</div>
+    <p>$(a, b, c) = (0, 0, 0)$ özel durumunda tek çözüm $c_1 = c_2 = c_3 = 0$ olur (sağ taraflar sıfır → trivial çözüm) → küme lineer bağımsızdır.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Küme hem üretici hem bağımsız → $\mathbb{R}^3$'ün bir <strong>bazıdır</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ TEK YAZILIM TEOREMİ ═══════════════ -->
+<div class="section-title"><span>📐</span> Tek Yazılım Teoremi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Baz Açılımının Tekliği</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$\beta = \{v_1, \ldots, v_n\}$, $V$ vektör uzayının bir bazı olsun. O zaman $V$'nin her vektörü, $\beta$'nın elemanlarının lineer kombinasyonu olarak <strong>tek bir şekilde</strong> yazılır.</p>
+  <div class="formula big" style="margin-top:.3rem;">
+    $$\forall v \in V \;\;\exists!\; (c_1, \ldots, c_n) \in F^n : \; v = c_1 v_1 + \cdots + c_n v_n$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Bu $(c_1, \ldots, c_n)$ skalerlerine $v$'nin $\beta$ bazındaki <em>koordinatları</em> denir.</p>
+</div>
+
+<!-- ═══════════════ STANDART BAZLAR ═══════════════ -->
+<div class="section-title"><span>📋</span> Bazı Vektör Uzaylarının Standart Bazları</div>
+
+<!-- 1) Matrisler -->
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">1) $n \times m$ Matris Uzayı &nbsp; $V = F^{n \times m}$</span>
+    <span class="tag prop">Standart Baz</span>
+  </div>
+  <p>$E_{ij}$ matrisi, $(i, j)$ girdisi $1$ ve diğer tüm girdileri $0$ olan matris olsun. Bu $n \cdot m$ tane $E_{ij}$ matrisi $F^{n \times m}$'nin <strong>standart bazını</strong> oluşturur.</p>
+
+  <p style="margin-top:.6rem;"><strong>Örnek — $\mathbb{R}^{2 \times 3}$'ün standart bazı:</strong></p>
+  <div class="mw" style="flex-wrap:wrap; gap:.6rem; margin-top:.4rem;">
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <div class="mb"><table>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
+    </table></div>
+  </div>
+  <p class="note" style="margin-top:.4rem;">Toplam $2 \cdot 3 = 6$ matris.</p>
+</div>
+
+<!-- 2) n-tuple -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">2) $n$-Demet Uzayı &nbsp; $V = F^n$</span>
+    <span class="tag prop">Standart Baz</span>
+  </div>
+  <p>$F^n = \{(x_1, \ldots, x_n) : x_i \in F\}$ uzayında <strong>standart birim vektörler</strong>:</p>
+  <div class="formula">
+    $$\begin{aligned}
+      e_1 &= (1, 0, 0, \ldots, 0) \\
+      e_2 &= (0, 1, 0, \ldots, 0) \\
+      &\;\vdots \\
+      e_k &= (0, \ldots, 0,\, \underset{k.\,\text{konum}}{1},\, 0, \ldots, 0) \\
+      &\;\vdots \\
+      e_n &= (0, 0, \ldots, 0, 1)
+    \end{aligned}$$
+  </div>
+  <p style="margin-top:.55rem;"><strong>Üretici mi?</strong> Her $(x_1, \ldots, x_n)$ için</p>
+  <div class="formula">
+    $$(x_1, \ldots, x_n) = x_1 e_1 + x_2 e_2 + \cdots + x_n e_n.$$
+  </div>
+  <p style="margin-top:.4rem;"><strong>Bağımsız mı?</strong> $c_1 e_1 + \cdots + c_n e_n = (c_1, \ldots, c_n) = \mathbf{0}$ olması $c_1 = \cdots = c_n = 0$'ı zorlar.</p>
+  <p style="margin-top:.55rem;"><strong>Örnek:</strong> $\{(1, 0, 0),\; (0, 1, 0),\; (0, 0, 1)\}$, $\mathbb{R}^3$'ün standart bazıdır.</p>
+</div>
+
+<!-- 3) Polinomlar -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">3) Polinom Uzayı &nbsp; $V = F[x]$ ve $P_n(x)$</span>
+    <span class="tag prop">Standart Baz</span>
+  </div>
+  <p>$F[x] = \{p(x) : p,\; F\text{ üzerinde polinom}\}$ uzayının standart bazı:</p>
+  <div class="formula">
+    $$\{\,1,\; x,\; x^2,\; \ldots,\; x^n,\; \ldots\,\}$$
+  </div>
+  <p style="margin-top:.4rem;">$V = P_n(x)$ (derecesi en fazla $n$) için standart baz:</p>
+  <div class="formula">
+    $$\{\,1,\; x,\; x^2,\; \ldots,\; x^n\,\}$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Bağımsızlık: $c_0 + c_1 x + \cdots + c_n x^n = 0$ (sıfır polinomu) ancak ve ancak tüm $c_i = 0$ olduğunda — farklı dereceli terimler birbirini sadeleştiremez.</p>
+</div>
+
+<!-- ═══════════════ BAZ İNŞASI ═══════════════ -->
+<div class="section-title"><span>🔗</span> Baz İnşası</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Baz Varlığı &amp; İnşası</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$V$, $m$ vektörle gerilen bir vektör uzayı olsun. O zaman:</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        $V$'nin bir bazı vardır ve bu baz, üretici kümeden <strong>kendinden önceki vektörlerin lineer kombinasyonu olan</strong> elemanlar silinerek elde edilebilir. Ayrıca herhangi bir lineer bağımsız küme, $V$ için bir baza <strong>genişletilebilir</strong>.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>Her bazın eleman sayısı en fazla $m$'dir.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>$V$'nin <strong>tüm bazları aynı sayıda</strong> eleman içerir.</div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.55rem;">(iii) sayesinde "bazın eleman sayısı" iyi tanımlı bir değer hâline gelir — bu da boyut kavramının temelidir.</p>
+</div>
+
+<!-- ═══════════════ BOYUT TANIMI ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Boyut Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Boyut (Dimension)">
+  <p>Bir vektör uzayı $V$'nin herhangi bir bazındaki <strong>eleman sayısına</strong> $V$'nin <strong>boyutu</strong> denir; $\dim V$ ile gösterilir.</p>
+  <p class="note" style="margin-top:.4rem;">Önceki teoremin (iii)'sünden $\dim V$ tek anlamlıdır → iyi tanımlıdır.</p>
+
+  <p style="margin-top:.6rem;"><strong>Örnekler:</strong></p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div>·&nbsp;&nbsp;$\dim \mathbb{R}^n = n$</div>
+    <div>·&nbsp;&nbsp;$\dim \mathbb{R}^3 = 3$</div>
+    <div>·&nbsp;&nbsp;$\dim \mathbb{R}^{n \times m} = n \cdot m$</div>
+    <div>·&nbsp;&nbsp;$\dim \mathbb{R}^{2 \times 3} = 6$</div>
+    <div>·&nbsp;&nbsp;$\dim P_n(x) = n + 1$</div>
+    <div>·&nbsp;&nbsp;$\dim P_3(x) = 4$</div>
+  </div>
+</div>
+
+<div class="card note-card" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Not — Sonsuz Boyut</span>
+    <span class="tag warn">Not</span>
+  </div>
+  <p>Bazın kardinalitesi sonsuz ise boyut da sonsuzdur; $\dim V = \infty$ olarak gösterilir.</p>
+  <p style="margin-top:.4rem;"><strong>Örnek:</strong> $\dim \mathbb{R}[x] = \infty$ &nbsp;(tüm polinomların uzayı, $\{1, x, x^2, \ldots\}$ bazı sonsuz elemanlıdır).</p>
+</div>
+
+<!-- ═══════════════ SONUÇLAR ═══════════════ -->
+<div class="section-title"><span>📐</span> Sonuçlar (Corollaries)</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Sonuç 1 — Eleman Sayısı Sınırları</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>$V$, boyutu $n$ olan sonlu boyutlu bir vektör uzayı olsun. O zaman:</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>$n$'den <strong>fazla</strong> elemanlı bir alt küme lineer bağımsız olamaz.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>$n$'den <strong>az</strong> elemanlı bir alt küme $V$'yi üretemez.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Sonuç 2 — Alt Uzayın Boyutu</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>$V$, boyutu $n$ olan sonlu boyutlu bir vektör uzayı ve $W \subseteq V$ bir alt uzay olsun. O zaman:</p>
+  <div class="formula big" style="margin-top:.3rem;">
+    $$\dim W \leq \dim V$$
+  </div>
+  <p style="margin-top:.4rem;">Üstelik $W$'nun her bazı, $V$'nin bir bazına <strong>genişletilebilir</strong>.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Sonuç 3 — $n$ Elemanlı Kümelerde Yeterlilik</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>$V$, boyutu $n$ olan sonlu boyutlu bir vektör uzayı olsun. O zaman:</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>$n$ vektör içeren <strong>her</strong> lineer bağımsız küme bir bazdır.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>$n$ vektör içeren <strong>her</strong> üretici küme bir bazdır.</div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.5rem;">Yani boyut bilindiğinde, iki şarttan <em>biri</em> kontrol edilirse diğeri otomatik gelir — pratik olarak büyük kolaylık.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Baz:</strong> Hem üretir hem lineer bağımsızdır.
+    <br><br>
+    <strong>Tek yazılım:</strong> Her $v \in V$ baz vektörlerinin tek bir lineer kombinasyonudur ($\Rightarrow$ koordinatlar).
+    <br><br>
+    <strong>Standart bazlar:</strong> $F^n$ için $\{e_1, \ldots, e_n\}$; $F^{n \times m}$ için $\{E_{ij}\}$; $P_n(x)$ için $\{1, x, \ldots, x^n\}$.
+    <br><br>
+    <strong>Boyut:</strong> Herhangi bir bazın eleman sayısı — tüm bazlar aynı sayıdadır, dolayısıyla iyi tanımlıdır.
+    <br><br>
+    <strong>Boyut örnekleri:</strong> $\dim \mathbb{R}^n = n$, $\dim \mathbb{R}^{n \times m} = nm$, $\dim P_n(x) = n+1$, $\dim \mathbb{R}[x] = \infty$.
+    <br><br>
+    <strong>Pratik kural:</strong> $\dim V = n$ ise $n$ elemanlı bağımsız ya da üretici küme otomatik bir bazdır — iki şarttan birini kontrol etmek yeter.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

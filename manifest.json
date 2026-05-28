@@ -27,5 +27,10 @@
   {"file": "w6-2.html", "title": "Vektör Uzayı Örnekleri",                            "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 2)", "topics": ["Vektör Uzayı", "Polinom Uzayı", "Fonksiyon Uzayı", "n-Demet"]},
   {"file": "w6-3.html", "title": "Alt Uzaylar",                                       "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 3)", "topics": ["Alt Uzay", "Kapalılık"]},
   {"file": "w6-4.html", "title": "Pratik: Vektör Uzayları ve Alt Uzaylar",            "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 4)", "topics": ["Vektör Uzayı", "Alt Uzay", "Soru Çözümü"]},
-  {"file": "w6-5.html", "title": "Egzersizler: Vektör Uzayları ve Alt Uzaylar",       "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 5)", "topics": ["Vektör Uzayı", "Alt Uzay", "Soru Çözümü"]}
+  {"file": "w6-5.html", "title": "Egzersizler: Vektör Uzayları ve Alt Uzaylar",       "subtitle": "Lineer Cebir — (Hafta 6 - Bölüm 5)", "topics": ["Vektör Uzayı", "Alt Uzay", "Soru Çözümü"]},
+  {"file": "w7-1.html", "title": "Lineer Span",                                       "subtitle": "Lineer Cebir — (Hafta 7 - Bölüm 1)", "topics": ["Lineer Kombinasyon", "Lineer Span", "Üretici Küme"]},
+  {"file": "w7-2.html", "title": "Lineer Bağımlılık ve Bağımsızlık",                  "subtitle": "Lineer Cebir — (Hafta 7 - Bölüm 2)", "topics": ["Lineer Bağımlılık", "Lineer Bağımsızlık"]},
+  {"file": "w7-3.html", "title": "Baz ve Boyut",                                      "subtitle": "Lineer Cebir — (Hafta 7 - Bölüm 3)", "topics": ["Baz", "Boyut", "Standart Baz"]},
+  {"file": "w7-4.html", "title": "Pratik: Baz ve Boyut",                              "subtitle": "Lineer Cebir — (Hafta 7 - Bölüm 4)", "topics": ["Baz", "Boyut", "Soru Çözümü"]},
+  {"file": "w7-5.html", "title": "Egzersizler: Bağımsızlık ve Boyut",                 "subtitle": "Lineer Cebir — (Hafta 7 - Bölüm 5)", "topics": ["Lineer Bağımsızlık", "Boyut", "Soru Çözümü"]}
 ]

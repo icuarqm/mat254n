@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Pratik: Baz ve Boyut</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pratik: Baz ve Boyut</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 7 - Bölüm 4)</div>
+</div>
+
+<!-- ═══════════════ SORU 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 1 — $W = \langle B \rangle$ için Baz Bulma</div>
+
+<div class="q-box" data-label="Soru 1">
+  <p>$B = \{(-1, 2, 1, 3),\; (2, 1, -1, 0),\; (1, 3, 0, 3),\; (3, 4, -1, 3),\; (1, 0, 0, 1)\} \subseteq \mathbb{R}^4$ olsun. $W = \langle B \rangle$ alalım.</p>
+  <p style="margin-top:.4rem;">$\dim W = ?$ Ve $W$ için bir baz bulunuz.</p>
+</div>
+
+<!-- 1. Yöntem -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — 1. Yöntem (Baz, $B$'nin Bir Alt Kümesi)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Vektörleri sütun olarak yaz</div>
+    <p>Her $v_i$ vektörünü bir sütuna koyup $4 \times 5$ matris oluştur, sonra echelon forma indir:</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center; margin-top:.3rem;">
+      <div class="mb"><table>
+        <tr><td>−1</td><td>2</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td>2</td><td>1</td><td>3</td><td>4</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>−1</td><td class="zero-cell">0</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td>3</td><td class="zero-cell">0</td><td>3</td><td>3</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">−1</td><td>2</td><td>1</td><td>3</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">5</td><td>5</td><td>10</td><td>2</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Pivot sütunlardaki vektörleri seç</div>
+    <p>Pivotlar 1., 2. ve 5. sütunlarda → $B$'den karşılık gelen vektörler: $v_1, v_2, v_5$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$W = \langle B \rangle = \operatorname{span}\{(-1, 2, 1, 3),\; (2, 1, -1, 0),\; (1, 0, 0, 1)\}, \qquad \dim W = 3.$$
+  </div>
+</div>
+
+<!-- 2. Yöntem -->
+<div class="card sol" style="margin-top:.6rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm — 2. Yöntem (Kombinasyondan Yeni Baz)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Vektörleri satır olarak yaz</div>
+    <p>Bu kez vektörleri satırlara koyup satır indirgemesi yap; sıfır olmayan satırlar yeni bir baz verir:</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center; margin-top:.3rem;">
+      <div class="mb"><table>
+        <tr><td>−1</td><td>2</td><td>1</td><td>3</td></tr>
+        <tr><td>2</td><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>3</td><td class="zero-cell">0</td><td>3</td></tr>
+        <tr><td>3</td><td>4</td><td>−1</td><td>3</td></tr>
+        <tr><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">−1</td><td>2</td><td>1</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">5</td><td>1</td><td>6</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">3</td><td>8</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$W = \operatorname{span}\{(-1, 2, 1, 3),\; (0, 5, 1, 6),\; (0, 0, 3, 8)\}, \qquad \dim W = 3.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">İki yöntem farklı baz verir ama $\dim W$ aynıdır — boyutun tüm bazlar için aynı olduğunu görüyoruz.</p>
+</div>
+
+<!-- ═══════════════ SORU 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 2 — $\mathbb{R}^3$ için İki Baz</div>
+
+<div class="q-box" data-label="Soru 2">
+  <p>Aşağıdaki kümelerin $\mathbb{R}^3$'ün bazı olduğunu gösteriniz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div>·&nbsp;&nbsp;$S = \{(1, 1, 1),\; (1, -1, 1),\; (2, 0, 1)\}$</div>
+    <div>·&nbsp;&nbsp;$T = \{(1, 1, 1),\; (1, 1, 0),\; (1, 0, 0)\}$</div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <p>$\dim \mathbb{R}^3 = 3$ ve her iki küme de $3$ vektör içerdiğinden, <strong>bağımsızlık ya da üreticilik</strong> şartlarından sadece <em>biri</em>ni göstermek yeterlidir (önceki haftadan sonuç).</p>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">$S$ için bağımsızlık</div>
+    <p>$c_1 (1, 1, 1) + c_2 (1, -1, 1) + c_3 (2, 0, 1) = (0, 0, 0)$:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        c_1 + c_2 + 2 c_3 &= 0 \\
+        c_1 - c_2 \phantom{ + 2 c_3 } &= 0 \\
+        c_1 + c_2 + c_3 &= 0
+      \end{aligned}$$
+    </div>
+    <p style="margin-top:.3rem;">Egzersiz olarak çözüldüğünde tek çözüm $c_1 = c_2 = c_3 = 0$ → $S$ lineer bağımsız → <strong>$S$ bir bazdır.</strong></p>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">$T$ için üreticilik</div>
+    <p>Keyfi $(a, b, c) \in \mathbb{R}^3$ için:</p>
+    <div class="formula">
+      $$(a, b, c) = c_1 (1, 1, 1) + c_2 (1, 1, 0) + c_3 (1, 0, 0) = (c_1 + c_2 + c_3,\; c_1 + c_2,\; c_1)$$
+    </div>
+    <p style="margin-top:.3rem;">Doğrudan okuma ile:</p>
+    <div class="formula">
+      $$c_1 = c, \qquad c_2 = b - c, \qquad c_3 = a - b.$$
+    </div>
+    <p style="margin-top:.3rem;">Her $(a, b, c)$ için çözüm var → $T$ $\mathbb{R}^3$'ü üretir → <strong>$T$ bir bazdır.</strong></p>
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 3 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 3 — Belirli Bir Vektör İçeren Baz</div>
+
+<div class="q-box" data-label="Soru 3">
+  <p>$\mathbb{R}^4$'ün, $(1, 2, -3, 0)$ vektörünü içeren bir bazını bulunuz.</p>
+</div>
+
+<!-- 1. Yol -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — 1. Yol (Standart Bazla Genişletme)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Genişletilmiş kümeyi kur</div>
+    <p>$(1, 2, -3, 0)$ ve $\mathbb{R}^4$'ün standart bazı bir araya getirilirse $\mathbb{R}^4$'ü üreten bir küme elde ederiz:</p>
+    <div class="formula">
+      $$\{(1, 2, -3, 0),\; (1, 0, 0, 0),\; (0, 1, 0, 0),\; (0, 0, 1, 0),\; (0, 0, 0, 1)\}$$
+    </div>
+    <p style="margin-top:.3rem;">Şimdi Soru 1'deki 1. yöntemi uygula — vektörleri sütun olarak yazıp pivot sütunları seç.</p>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Pivot sütunları tespit</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>2</td><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td>−3</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">−2</td><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−3</td><td>−2</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−3</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">Pivotlar 1., 2., 3., 5. sütunlarda → karşılık gelen vektörler:</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\beta = \{(1, 2, -3, 0),\; (1, 0, 0, 0),\; (0, 1, 0, 0),\; (0, 0, 0, 1)\}$$
+  </div>
+</div>
+
+<!-- 2. Yol -->
+<div class="card sol" style="margin-top:.6rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm — 2. Yol (Yapılandırmacı Yöntem)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <p>Boyutu artırarak bağımsız vektörler ekleyelim. Adımda her seferinde, mevcut span'in <em>dışından</em> bir vektör seçiyoruz.</p>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">Adım 1 — $W_1 = \langle (1, 2, -3, 0) \rangle$</div>
+    <p>$W_1 \subsetneq \mathbb{R}^4$. Mesela $w_1 = (0, 0, 0, 1) \notin W_1$ (4. bileşeni nonzero, $W_1$'de değil).</p>
+    <div class="formula">
+      $$W_2 = \langle (1, 2, -3, 0),\; (0, 0, 0, 1) \rangle, \qquad \dim W_2 = 2.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Adım 2 — $W_2 \subsetneq \mathbb{R}^4$</div>
+    <p>$w_2 \in \mathbb{R}^4 \setminus W_2$ seçmek için: $w_2 \neq c_1 (1, 2, -3, 0) + c_2 (0, 0, 0, 1)$ olmalı. Mesela $w_2 = (0, 1, 1, 0)$ uygundur.</p>
+    <div class="formula">
+      $$W_3 = \langle (1, 2, -3, 0),\; (0, 0, 0, 1),\; (0, 1, 1, 0) \rangle, \qquad \dim W_3 = 3.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Adım 3 — $W_3 \subsetneq \mathbb{R}^4$</div>
+    <p>$W_3$'ün genel elemanı $c_1(1, 2, -3, 0) + c_2(0, 0, 0, 1) + c_3(0, 1, 1, 0) = (c_1,\; 2c_1 + c_3,\; -3c_1 + c_3,\; c_2)$. Bu biçimde olmayan bir $w_3$ seç → $w_3 = (1, -1, -1, 0)$ (2. ve 3. bileşenler $c_1$ ve $c_3$ ilişkisine uymaz).</p>
+    <div class="formula">
+      $$W_4 = \langle (1, 2, -3, 0),\; (0, 0, 0, 1),\; (0, 1, 1, 0),\; (1, -1, -1, 0) \rangle.$$
+    </div>
+    <p style="margin-top:.4rem;">$\dim W_4 = 4$ ve $W_4 \subseteq \mathbb{R}^4$ → <strong>$W_4 = \mathbb{R}^4$.</strong></p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\beta = \{(1, 2, -3, 0),\; (0, 0, 0, 1),\; (0, 1, 1, 0),\; (1, -1, -1, 0)\}$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 4 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 4 — Üretici Küme Testi</div>
+
+<div class="q-box" data-label="Soru 4">
+  <p>$\{(2, -1, 1),\; (1, 4, -1),\; (-1, 5, -2),\; (0, 9, -3)\}$ kümesi $\mathbb{R}^3$'ü üretiyor mu?</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Sistem kurulumu</div>
+    <p>Keyfi $(a, b, c) \in \mathbb{R}^3$ için:</p>
+    <div class="formula">
+      $$(a, b, c) = c_1 (2, -1, 1) + c_2 (1, 4, -1) + c_3 (-1, 5, -2) + c_4 (0, 9, -3)$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\begin{aligned}
+        2 c_1 + c_2 - c_3 \phantom{ + 0 c_4 } &= a \\
+        -c_1 + 4 c_2 + 5 c_3 + 9 c_4 &= b \\
+        c_1 - c_2 - 2 c_3 - 3 c_4 &= c
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Augmented matris &amp; indirgeme</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>1</td><td>−1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a$</td></tr>
+        <tr><td>−1</td><td>4</td><td>5</td><td>9</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$b$</td></tr>
+        <tr><td>1</td><td>−1</td><td>−2</td><td>−3</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$c$</td></tr>
+      </table></div>
+      <span class="arrow">→</span>
+      <div class="mb"><table>
+        <tr><td class="diag">2</td><td>1</td><td>−1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">9</td><td>9</td><td>18</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$2b + a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$9c + 3b - 3a$</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Tutarlılık koşulu</div>
+    <p>Son satırın sağ tarafı sıfır olmalı:</p>
+    <div class="formula big">
+      $$9c + 3b - 3a = 0$$
+    </div>
+    <p style="margin-top:.4rem;">Yani sistem ancak bu koşulu sağlayan $(a, b, c)$'ler için çözüme sahip. Keyfi $(a, b, c) \in \mathbb{R}^3$ bu koşulu sağlamak zorunda değil.</p>
+  </div>
+
+  <div class="false-box" style="margin-top:.4rem;">
+    Küme $\mathbb{R}^3$'ü <strong>üretmez</strong>; span'i sadece $-3a + 3b + 9c = 0$ düzlemi üzerindeki vektörlerden ibarettir.
+  </div>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Lineer Bağımlılık ve Bağımsızlık</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Lineer Bağımlılık ve Bağımsızlık</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 7 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════ TANIM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Tanım — Bağımlı &amp; Bağımsız Vektörler</div>
+
+<div class="def-box" data-label="Tanım — Lineer Bağımlılık / Bağımsızlık">
+  <p>$V$, $F$ cismi üzerinde bir vektör uzayı ve $\{v_1, \ldots, v_n\}$ sonlu bir vektör kümesi olsun.</p>
+
+  <p style="margin-top:.7rem;"><strong>Lineer bağımlı (linearly dependent):</strong> $v_1, \ldots, v_n$ vektörlerine lineer bağımlıdır denir, eğer <strong>en az biri sıfırdan farklı</strong> $c_1, \ldots, c_n \in F$ skalerleri için</p>
+  <div class="formula big">
+    $$c_1 v_1 + c_2 v_2 + \cdots + c_n v_n \;=\; \mathbf{0}$$
+  </div>
+  <p>eşitliği sağlanırsa.</p>
+
+  <p style="margin-top:.7rem;"><strong>Lineer bağımsız (linearly independent):</strong> Aksi durumda, yani</p>
+  <div class="formula big">
+    $$c_1 v_1 + c_2 v_2 + \cdots + c_n v_n = \mathbf{0} \;\;\Longrightarrow\;\; c_1 = c_2 = \cdots = c_n = 0$$
+  </div>
+  <p>koşulu sağlanıyorsa, $v_1, \ldots, v_n$ vektörlerine <strong>lineer bağımsızdır</strong> denir.</p>
+
+  <div class="note" style="margin-top:.55rem;">Yani bağımsızlık: <em>sıfır vektörü</em> yalnızca <em>trivial</em> şekilde ($c_i = 0$) elde edilebilir.</div>
+</div>
+
+<!-- ═══════════════ KÜME TANIMI ═══════════════ -->
+<div class="def-box" data-label="Tanım — Bağımlı / Bağımsız Küme" style="margin-top:.5rem;">
+  <p>$V$ vektör uzayının bir alt kümesi $S$ olsun.</p>
+  <p style="margin-top:.4rem;">$S$, eğer <strong>sonlu, boş olmayan</strong> ve lineer bağımlı vektörlerden oluşan bir alt kümeyi içeriyorsa <strong>lineer bağımlı kümedir</strong>.</p>
+  <p style="margin-top:.4rem;">Aksi takdirde $S$, <strong>lineer bağımsız kümedir</strong>.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK i ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek i — $\mathbb{R}^3$'te Üç Vektör</div>
+
+<div class="q-box" data-label="Örnek i">
+  <p>$\mathbb{R}^3$'te</p>
+  <div class="formula">
+    $$v_1 = (1, -3, 2), \quad v_2 = (2, 2, -1), \quad v_3 = (1, 5, -3)$$
+  </div>
+  <p style="margin-top:.4rem;">vektörlerinin lineer bağımlı olduğunu gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Denklem kurulumu</div>
+    <p>$c_1 v_1 + c_2 v_2 + c_3 v_3 = \mathbf{0}$ ifadesini açarsak:</p>
+    <div class="formula">
+      $$c_1 (1, -3, 2) + c_2 (2, 2, -1) + c_3 (1, 5, -3) \;=\; (0, 0, 0)$$
+    </div>
+    <p style="margin-top:.4rem;">Bu, $c_1, c_2, c_3$ bilinmeyenli homojen sistem verir.</p>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Katsayı matrisi &amp; indirgeme (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td>1</td></tr>
+        <tr><td>−3</td><td>2</td><td>5</td></tr>
+        <tr><td>2</td><td>−1</td><td>−3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>2</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">8</td><td>8</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Sonuç</div>
+    <p>$3$ bilinmeyen, sadece $r = 2$ pivot → $n - r = 1$ serbest değişken var. Homojen sistemde serbest değişken olduğu için <strong>trivial olmayan</strong> ($c_i$'lerin hepsi birden sıfır olmayan) çözüm vardır.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Vektörler <strong>lineer bağımlıdır</strong> — bazı $c_1, c_2, c_3$ sıfırdan farklı olacak şekilde $c_1 v_1 + c_2 v_2 + c_3 v_3 = \mathbf{0}$ sağlanır.
+  </div>
+</div>
+
+<!-- ═══════════════ KISA ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>🔍</span> Kısa Örnekler — Küçük Kümeler</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Örnek ii — $\{\mathbf{0}\}$</span>
+    <span class="tag prop">Bağımlı</span>
+  </div>
+  <p>$\{\mathbf{0}\}$ <strong>lineer bağımlıdır</strong>, çünkü</p>
+  <div class="formula">
+    $$1 \cdot \mathbf{0} = \mathbf{0}, \qquad 1 \neq 0.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Üstelik $\mathbf{0}$ vektörünü içeren <em>her</em> küme lineer bağımlı kümedir.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Örnek iii — Tek sıfırdan farklı vektör</span>
+    <span class="tag prop">Bağımsız</span>
+  </div>
+  <p>$S = \{v\}$ ve $v \neq \mathbf{0}$ ise $S$ <strong>lineer bağımsızdır</strong>.</p>
+  <p class="note" style="margin-top:.4rem;">Çünkü $c \cdot v = \mathbf{0}$ ve $v \neq \mathbf{0}$ olması $c = 0$'ı zorlar.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Örnek iv — İki vektör</span>
+    <span class="tag prop">Kriter</span>
+  </div>
+  <p>$S = \{v_1, v_2\}$ olsun. $S$ lineer <strong>bağımsızdır</strong> ancak ve ancak hiçbir $c \in F$ için $v_1 = c \, v_2$ yazılamıyorsa (yani biri diğerinin skaler katı değilse).</p>
+
+  <div style="display:grid; gap:.4rem; margin-top:.55rem;">
+    <div>·&nbsp;&nbsp;$\{(0, 1),\, (1, 1)\}$ &nbsp;→&nbsp; <strong>bağımsız</strong> (biri diğerinin katı değil)</div>
+    <div>·&nbsp;&nbsp;$\{(1, 2),\, (-2, -4)\}$ &nbsp;→&nbsp; <strong>bağımlı</strong> &nbsp;($(-2, -4) = -2 \cdot (1, 2)$)</div>
+  </div>
+</div>
+
+<!-- ═══════════════ TEOREM ═══════════════ -->
+<div class="section-title"><span>📐</span> Teorem — Eleman Sayısı Sınırları</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Bağımsız ↔ Üretici Karşılaştırması</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <div class="prop-list">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>
+        $V$, $m$ vektörle gerilen bir vektör uzayı olsun. $V$'nin lineer bağımsız hiçbir alt kümesi <strong>$m$'den fazla</strong> eleman içeremez.
+        <div class="formula" style="margin-top:.2rem;">
+          $$|S_{\text{üretici}}| = m \;\;\Longrightarrow\;\; |S_{\text{bağımsız}}| \leq m$$
+        </div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>
+        $V$, en az $m$ tane lineer bağımsız vektör içeren bir vektör uzayı olsun. <strong>$m$'den az</strong> elemanlı hiçbir alt küme $V$'yi üretemez.
+        <div class="formula" style="margin-top:.2rem;">
+          $$\exists\, m \text{ bağımsız vektör} \;\;\Longrightarrow\;\; |S_{\text{üretici}}| \geq m$$
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.55rem;">Sezgi: Üretici küme boyutu, bağımsız küme boyutunun <em>üst sınırını</em>; bağımsız küme boyutu da üretici küme boyutunun <em>alt sınırını</em> verir. Bu iki yön bir araya geldiğinde <strong>boyut</strong> kavramı doğar.</p>
+</div>
+
+<!-- ═══════════════ TEOREM ÖRNEKLERİ ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — Teoremin Uygulanışı</div>
+
+<div class="q-box" data-label="Örnek a">
+  <p>$V = P_3(x)$ (en fazla 3. dereceden polinomlar uzayı) ve</p>
+  <div class="formula">
+    $$S = \{\, -2 + 3x - x^3,\;\; x + x^2,\;\; 2x - 3x^2,\;\; -7 + 5x^3,\;\; x^2 - 4x^3 \,\}$$
+  </div>
+  <p style="margin-top:.4rem;">$S$'in lineer bağımlı olduğunu gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$P_3(x)$ uzayı $\{1, x, x^2, x^3\}$ tarafından üretilir; yani</p>
+  <div class="formula">
+    $$V = \langle 1, x, x^2, x^3 \rangle, \qquad |\text{üretici}| = 4.$$
+  </div>
+  <p style="margin-top:.4rem;">Diğer yandan $|S| = 5 > 4$. <strong>Teorem (a)</strong>'ya göre, $4$ vektörle gerilen bir uzayda lineer bağımsız küme en fazla $4$ eleman içerebilir. $S$ ise $5$ elemanlı.</p>
+  <div class="result-box" style="margin-top:.4rem;">
+    $S$ <strong>lineer bağımlıdır</strong>.
+  </div>
+</div>
+
+<div class="q-box" data-label="Örnek b" style="margin-top:.6rem;">
+  <p>$V = \mathbb{R}^3$ ve standart vektörler</p>
+  <div class="formula">
+    $$S = \{(1, 0, 0),\; (0, 1, 0),\; (0, 0, 1)\}$$
+  </div>
+  <p style="margin-top:.4rem;">lineer bağımsızdır. $|A| &lt; 3$ olan hiçbir $A \subseteq V$ alt kümesinin $\mathbb{R}^3$'ü üretemeyeceğini gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm b</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$S$, $\mathbb{R}^3$ içinde $3$ tane lineer bağımsız vektör içerdiğinden, <strong>Teorem (b)</strong>'ye göre $\mathbb{R}^3$'ü üreten her küme en az $3$ elemanlı olmalı.</p>
+  <p style="margin-top:.4rem;">Dolayısıyla $|A| &lt; 3$ olan hiçbir $A \subseteq \mathbb{R}^3$ alt kümesi $\mathbb{R}^3$'ü üretemez.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Bağımlı:</strong> En az biri sıfırdan farklı $c_i$'lerle $\sum c_i v_i = \mathbf{0}$ sağlanır.
+    <br><br>
+    <strong>Bağımsız:</strong> $\sum c_i v_i = \mathbf{0} \Rightarrow$ tüm $c_i = 0$ (yalnızca trivial çözüm).
+    <br><br>
+    <strong>Pratik test:</strong> Vektörleri sütunlara/satırlara koyup homojen sistemin echelon formunu al; serbest değişken varsa bağımlı, yoksa bağımsızdır.
+    <br><br>
+    <strong>Bilinen sonuçlar:</strong> $\{\mathbf{0}\}$ bağımlı; $\{v\}$ ($v \neq \mathbf{0}$) bağımsız; $\{v_1, v_2\}$ bağımsız $\Leftrightarrow$ biri diğerinin skaler katı değil.
+    <br><br>
+    <strong>Teorem:</strong> $V$ $m$ vektörle gerilirse, bağımsız küme en fazla $m$ elemanlı; $V$ $m$ bağımsız vektör içerirse, üretici küme en az $m$ elemanlı olmak zorunda.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

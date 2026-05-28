@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Egzersizler: Bağımsızlık ve Boyut</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Egzersizler: Bağımsızlık ve Boyut</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 7 - Bölüm 5)</div>
+</div>
+
+<!-- ═══════════════ SORU 5 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 5 — Lineer Bağımsızlık Testi</div>
+
+<div class="q-box" data-label="Soru 5">
+  <p>Aşağıdaki kümelerin lineer bağımsız olup olmadığını belirleyiniz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>a)</strong>&nbsp;&nbsp;$\{(1, -1, 2, 3),\; (-1, 4, 1, 1),\; (1, 2, 5, 1)\}$</div>
+    <div><strong>b)</strong>&nbsp;&nbsp;$\{(2, -1, 1, 1),\; (1, -1, 1, -1)\}$</div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Sistem kurulumu</div>
+    <p>$c_1 (1, -1, 2, 3) + c_2 (-1, 4, 1, 1) + c_3 (1, 2, 5, 1) = (0, 0, 0, 0)$:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        c_1 - c_2 + c_3 \phantom{ + 0 } &= 0 \\
+        -c_1 + 4 c_2 + 2 c_3 &= 0 \\
+        2 c_1 + c_2 + 5 c_3 &= 0 \\
+        3 c_1 + c_2 + c_3 \phantom{ + 0 } &= 0
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Katsayı matrisi &amp; indirgeme (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td></tr>
+        <tr><td>−1</td><td>4</td><td>2</td></tr>
+        <tr><td>2</td><td>1</td><td>5</td></tr>
+        <tr><td>3</td><td>1</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">3</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−18</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">3 bilinmeyen, 3 pivot → tek çözüm $c_1 = c_2 = c_3 = 0$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Küme <strong>lineer bağımsızdır</strong>.
+  </div>
+</div>
+
+<div class="card sol" style="margin-top:.6rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm b</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <p>İki vektörden oluşan küme bağımsızdır ancak ve ancak biri diğerinin skaler katı değilse.</p>
+  <p style="margin-top:.4rem;">$(1, -1, 1, -1) = c \cdot (2, -1, 1, 1)$ olsa: 1. bileşenden $c = \tfrac{1}{2}$, 2. bileşenden $c = 1$ → çelişki.</p>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Vektörler birbirinin skaler katı değil → küme <strong>lineer bağımsızdır</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 6 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 6 — Polinom Span'inin Boyutu</div>
+
+<div class="q-box" data-label="Soru 6">
+  <p>$\langle\, x + x^2,\;\; x - x^2 + x^3,\;\; 2 - x - x^3,\;\; x + 1 \,\rangle$ uzayının boyutunu bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Koordinatlama — $\{1, x, x^2, x^3\}$ bazında</div>
+    <p>Her polinomu $(a_0, a_1, a_2, a_3)$ dörtlüsü olarak yaz:</p>
+    <div style="display:grid; gap:.25rem; margin:.4rem 0 0 1rem;">
+      <div>·&nbsp;&nbsp;$x + x^2 \;\longleftrightarrow\; (0, 1, 1, 0)$</div>
+      <div>·&nbsp;&nbsp;$x - x^2 + x^3 \;\longleftrightarrow\; (0, 1, -1, 1)$</div>
+      <div>·&nbsp;&nbsp;$2 - x - x^3 \;\longleftrightarrow\; (2, -1, 0, -1)$</div>
+      <div>·&nbsp;&nbsp;$x + 1 \;\longleftrightarrow\; (1, 1, 0, 0)$</div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Satır indirgemesi (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td>1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>−1</td><td>1</td></tr>
+        <tr><td>2</td><td>−1</td><td class="zero-cell">0</td><td>−1</td></tr>
+        <tr><td>1</td><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">2</td><td>−1</td><td class="zero-cell">0</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Yorumlama</div>
+    <p>4 pivot var → 4 lineer bağımsız polinom var → span $4$ boyutludur. Karşılık gelen polinomlar:</p>
+    <div style="display:grid; gap:.25rem; margin:.4rem 0 0 1rem;">
+      <div>·&nbsp;&nbsp;$(2, -1, 0, -1) \;\longleftrightarrow\; 2 - x - x^3$</div>
+      <div>·&nbsp;&nbsp;$(0, 1, 1, 0) \;\longleftrightarrow\; x + x^2$</div>
+      <div>·&nbsp;&nbsp;$(0, 0, -1, 0) \;\longleftrightarrow\; -x^2$</div>
+      <div>·&nbsp;&nbsp;$(0, 0, 0, 1) \;\longleftrightarrow\; x^3$</div>
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\dim \langle\, x + x^2,\; x - x^2 + x^3,\; 2 - x - x^3,\; x + 1 \,\rangle \;=\; 4, \quad \text{yani span} = P_3(x).$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 7 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 7 — Bağımsız Vektörlerin Kombinasyonu</div>
+
+<div class="q-box" data-label="Soru 7">
+  <p>$v_1, v_2, v_3$ lineer bağımsız vektörler olsun. $\{v_1 + v_2,\;\; v_1 + v_2 - v_3,\;\; v_1 + 2 v_2 + 3 v_3\}$ kümesinin lineer bağımsız olup olmadığını inceleyiniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Eşitliği aç</div>
+    <div class="formula">
+      $$c_1 (v_1 + v_2) + c_2 (v_1 + v_2 - v_3) + c_3 (v_1 + 2 v_2 + 3 v_3) = \mathbf{0}$$
+    </div>
+    <p style="margin-top:.4rem;">$v_1, v_2, v_3$'ün katsayılarını toplayarak:</p>
+    <div class="formula">
+      $$(c_1 + c_2 + c_3)\, v_1 \;+\; (c_1 + c_2 + 2 c_3)\, v_2 \;+\; (-c_2 + 3 c_3)\, v_3 \;=\; \mathbf{0}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Bağımsızlığı kullan</div>
+    <p>$v_1, v_2, v_3$ lineer bağımsız olduğundan her katsayı $0$ olmalı:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        c_1 + c_2 + c_3 \phantom{ + 0 } &= 0 \\
+        c_1 + c_2 + 2 c_3 &= 0 \\
+        \phantom{ c_1 + {} } -c_2 + 3 c_3 &= 0
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Katsayı matrisi &amp; indirgeme</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>2</td></tr>
+        <tr><td class="zero-cell">0</td><td>−1</td><td>3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">−1</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−1</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">3 pivot → tek çözüm $c_1 = c_2 = c_3 = 0$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Küme <strong>lineer bağımsızdır</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 8 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 8 — Çözüm Uzayının Boyutu</div>
+
+<div class="q-box" data-label="Soru 8">
+  <p>$W = \{(a, b, c, d) \in \mathbb{R}^4 \;:\; a - b + c + d = 0,\;\; 2a + 3b - d = 0\}$ kümesi verilsin. $\dim W = ?$</p>
+  <p class="note" style="margin-top:.3rem;">(Egzersiz: $W$'nun bir vektör uzayı (alt uzay) olduğunu gösteriniz.)</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Koşulların katsayı matrisi</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>1</td></tr>
+        <tr><td>2</td><td>3</td><td class="zero-cell">0</td><td>−1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_2 \to r_2 - 2 r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>−1</td><td>1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">5</td><td>−2</td><td>−3</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Parametrik çözüm</div>
+    <p>İndirgenmiş sistem:</p>
+    <div class="formula">
+      $$a - b + c + d = 0, \qquad 5 b - 2 c - 3 d = 0.$$
+    </div>
+    <p style="margin-top:.4rem;">$c$ ve $d$ serbest değişken olsun: $c = t,\; d = k$. O zaman</p>
+    <div class="formula">
+      $$b = \tfrac{2 t + 3 k}{5}, \qquad a = b - c - d = \tfrac{-3 t - 2 k}{5}.$$
+    </div>
+    <p style="margin-top:.4rem;">$(a, b, c, d)$'yi $t$ ve $k$ cinsinden ayır:</p>
+    <div class="formula">
+      $$(a, b, c, d) = t \left(-\tfrac{3}{5},\; \tfrac{2}{5},\; 1,\; 0\right) + k \left(-\tfrac{2}{5},\; \tfrac{3}{5},\; 0,\; 1\right).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Span yapısı</div>
+    <p>Her $W$ elemanı bu iki vektörün lineer kombinasyonu → $W$ bu iki vektörle üretilir. Üstelik bu iki vektör <strong>lineer bağımsızdır</strong> (3. ve 4. bileşenlere bakıldığında $(1, 0)$ ve $(0, 1)$ birbirinin katı değil).</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$W = \left\langle \left(-\tfrac{3}{5},\; \tfrac{2}{5},\; 1,\; 0\right),\; \left(-\tfrac{2}{5},\; \tfrac{3}{5},\; 0,\; 1\right) \right\rangle, \qquad \dim W = 2.$$
+  </div>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>
