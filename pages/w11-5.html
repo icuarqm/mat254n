@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Pratik: Köşegenleştirme ve Cayley–Hamilton</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pratik: Köşegenleştirme ve Cayley–Hamilton</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 11 - Bölüm 5)</div>
+</div>
+
+<!-- ═══════════════ SORU 5 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 5 — İndüksiyon: $B^n = P^{-1} A^n P$</div>
+
+<div class="q-box" data-label="Soru 5">
+  <p>$B = P^{-1} A P$ ise her $n \geq 1$ için $B^n = P^{-1} A^n P$ olduğunu gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — Tümevarımla İspat</span>
+    <span class="tag sol">İspat</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Baz durum ($n = 2$)</div>
+    <div class="formula">
+      $$B^2 = (P^{-1} A P)(P^{-1} A P) = P^{-1} A \underbrace{(P P^{-1})}_{I} A P = P^{-1} A \cdot A \cdot P = P^{-1} A^2 P. \quad \checkmark$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Tümevarım hipotezi</div>
+    <p>$n = k$ için $B^k = P^{-1} A^k P$ doğru olduğunu varsayalım.</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Tümevarım adımı ($n = k + 1$)</div>
+    <div class="formula">
+      $$B^{k+1} = B^k \cdot B = (P^{-1} A^k P)(P^{-1} A P) = P^{-1} A^k \underbrace{(P P^{-1})}_{I} A P = P^{-1} A^k \cdot A \cdot P = P^{-1} A^{k+1} P. \quad \checkmark$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Tümevarımla her $n \geq 1$ için $B^n = P^{-1} A^n P$. $\blacksquare$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Bu özellik <strong>köşegenleştirme</strong>ye dayalı kuvvet hesabının temel taşıdır: $D = P^{-1} A P$ köşegen ise $A^n = P D^n P^{-1}$ ve $D^n$ kolayca hesaplanır.</p>
+</div>
+
+<!-- ═══════════════ SORU 6 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 6 — $A^{2021}$ Köşegenleştirme ile</div>
+
+<div class="q-box" data-label="Soru 6">
+  <p>$A = \begin{bmatrix} 6 & -1 \\ 2 & 3 \end{bmatrix}$ için $A^{2021} = ?$</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Özdeğerler</div>
+    <div class="formula">
+      $$|x I - A| = \begin{vmatrix} x - 6 & 1 \\ -2 & x - 3 \end{vmatrix} = (x - 6)(x - 3) + 2 = x^2 - 9 x + 20 = (x - 4)(x - 5).$$
+    </div>
+    <p style="margin-top:.2rem;">$\lambda_1 = 4,\; \lambda_2 = 5$.</p>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">Özvektörler (egzersiz)</div>
+    <p>$\lambda_1 = 4$ için $\begin{bmatrix} 1 \\ 2 \end{bmatrix}$, &nbsp;$\lambda_2 = 5$ için $\begin{bmatrix} 1 \\ 1 \end{bmatrix}$.</p>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$P$, $D$, $P^{-1}$</div>
+    <div class="formula">
+      $$P = \begin{bmatrix} 1 & 1 \\ 2 & 1 \end{bmatrix}, \qquad D = \begin{bmatrix} 4 & 0 \\ 0 & 5 \end{bmatrix}, \qquad P^{-1} = \begin{bmatrix} -1 & 1 \\ 2 & -1 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Soru 5'ten: $A^{2021} = P D^{2021} P^{-1}$</div>
+    <div class="formula">
+      $$A^{2021} = \begin{bmatrix} 1 & 1 \\ 2 & 1 \end{bmatrix} \begin{bmatrix} 4^{2021} & 0 \\ 0 & 5^{2021} \end{bmatrix} \begin{bmatrix} -1 & 1 \\ 2 & -1 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$A^{2021} = \begin{bmatrix} 2 \cdot 5^{2021} - 4^{2021} & 4^{2021} - 5^{2021} \\ 2 \cdot 5^{2021} - 2 \cdot 4^{2021} & 2 \cdot 4^{2021} - 5^{2021} \end{bmatrix}.$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 7 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 7 — $A^{-1}$ via Cayley–Hamilton</div>
+
+<div class="q-box" data-label="Soru 7">
+  <p>$A = \begin{bmatrix} 4 & 2 & -1 \\ 2 & 1 & -2 \\ 3 & 2 & 0 \end{bmatrix}$ verilsin. $A$ tersinir midir? Tersinirse Cayley–Hamilton ile $A^{-1}$'i bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom (1. satır boyunca açılım)</div>
+    <div class="formula">
+      $$|x I - A| = \begin{vmatrix} x - 4 & -2 & 1 \\ -2 & x - 1 & 2 \\ -3 & -2 & x \end{vmatrix} \;\overset{\text{egzersiz}}{=}\; x^3 - 5 x^2 + 7 x - 3.$$
+    </div>
+    <p style="margin-top:.3rem;">$(-1)^3 \det A = -3 \Rightarrow \det A = 3 \neq 0$ → $A$ <strong>tersinirdir</strong>.</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Cayley–Hamilton ve $A^{-1}$ formülü</div>
+    <div class="formula">
+      $$A^3 - 5 A^2 + 7 A - 3 I = \mathbf{0} \;\;\Longrightarrow\;\; A \cdot (A^2 - 5 A + 7 I) = 3 I.$$
+    </div>
+    <div class="formula big" style="margin-top:.3rem;">
+      $$A^{-1} = \tfrac{1}{3} (A^2 - 5 A + 7 I).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$A^2$ hesabı</div>
+    <div class="formula">
+      $$A^2 = \begin{bmatrix} 17 & 8 & -8 \\ 4 & 1 & -4 \\ 16 & 8 & -7 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$A^2 - 5 A + 7 I$</div>
+    <div class="formula">
+      $$\begin{bmatrix} 17 & 8 & -8 \\ 4 & 1 & -4 \\ 16 & 8 & -7 \end{bmatrix} - \begin{bmatrix} 20 & 10 & -5 \\ 10 & 5 & -10 \\ 15 & 10 & 0 \end{bmatrix} + \begin{bmatrix} 7 & 0 & 0 \\ 0 & 7 & 0 \\ 0 & 0 & 7 \end{bmatrix} = \begin{bmatrix} 4 & -2 & -3 \\ -6 & 3 & 6 \\ 1 & -2 & 0 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$A^{-1} = \tfrac{1}{3} \begin{bmatrix} 4 & -2 & -3 \\ -6 & 3 & 6 \\ 1 & -2 & 0 \end{bmatrix} = \begin{bmatrix} 4/3 & -2/3 & -1 \\ -2 & 1 & 2 \\ 1/3 & -2/3 & 0 \end{bmatrix}.$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 8 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 8 — $A^4$'ü $A^2, A, I_3$ ile Yazma</div>
+
+<div class="q-box" data-label="Soru 8">
+  <p>$A = \begin{bmatrix} 7 & 18 & -18 \\ 3 & 8 & -9 \\ 0 & 0 & -1 \end{bmatrix}$ matrisi için $A^4$'ü, $A^2, A, I_3$ matrislerinin <strong>katsayılı toplamı</strong> olarak yazınız.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom (3. satır boyunca açılım)</div>
+    <div class="formula">
+      $$|x I - A| = (x + 1) \begin{vmatrix} x - 7 & -18 \\ -3 & x - 8 \end{vmatrix} = (x + 1)(x^2 - 15 x + 56 - 54) = (x + 1)(x^2 - 15 x + 2).$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$= x^3 - 14 x^2 - 13 x + 2.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Cayley–Hamilton ile $A^3$ bağıntısı</div>
+    <div class="formula">
+      $$A^3 - 14 A^2 - 13 A + 2 I_3 = \mathbf{0} \;\;\Longrightarrow\;\; A^3 = 14 A^2 + 13 A - 2 I_3.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$A^4 = A \cdot A^3$ açılımı</div>
+    <div class="formula">
+      $$A^4 = A \cdot A^3 = A \bigl(14 A^2 + 13 A - 2 I_3\bigr) = 14 A^3 + 13 A^2 - 2 A.$$
+    </div>
+    <p style="margin-top:.3rem;">$A^3$ yerine bağıntıyı koy:</p>
+    <div class="formula">
+      $$A^4 = 14 (14 A^2 + 13 A - 2 I_3) + 13 A^2 - 2 A = 196 A^2 + 182 A - 28 I_3 + 13 A^2 - 2 A.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$A^4 = 209\, A^2 + 180\, A - 28\, I_3.$$
+  </div>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

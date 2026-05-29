@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Özdeğerler ve Özvektörler</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Özdeğerler ve Özvektörler</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 11 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════ BENZER MATRİSLER ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Benzer Matrisler &amp; Köşegenleştirilebilirlik</div>
+
+<div class="def-box" data-label="Tanım — Benzer Matrisler / Köşegenleştirilebilir">
+  <p>$A$ ve $B$ kare matrislerine <strong>benzer</strong> (similar) denir, eğer öyle bir tersinir $P$ matrisi varsa ki:</p>
+  <div class="formula big">
+    $$P^{-1} A P = B.$$
+  </div>
+  <p style="margin-top:.4rem;">Özel olarak $B$ bir <strong>köşegen matris</strong> ise $A$'ya <strong>köşegenleştirilebilir</strong> (diagonalizable) denir.</p>
+</div>
+
+<!-- ═══════════════ ÖZDEĞER & ÖZVEKTÖR TANIMI ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Özdeğer ve Özvektör Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Özdeğer (Eigenvalue) &amp; Özvektör (Eigenvector)">
+  <p>$A$ kare matris olsun. Bir $\lambda$ skalerine $A$'nın <strong>özdeğeri</strong> (eigenvalue) denir, eğer</p>
+  <div class="formula big">
+    $$A x = \lambda x$$
+  </div>
+  <p style="margin-top:.3rem;">denkleminin <strong>trivial olmayan</strong> (sıfırdan farklı) bir $x$ çözümü varsa.</p>
+
+  <p style="margin-top:.5rem;">Bir $\lambda$ özdeğeri için, $A x = \lambda x$'i sağlayan tüm sıfırdan farklı $x$ vektörlerine $\lambda$'ya karşılık gelen <strong>özvektörler</strong> (eigenvectors) denir.</p>
+</div>
+
+<div class="card note-card" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Not — Köprü Denklem</span>
+    <span class="tag warn">Not</span>
+  </div>
+  <p>$A x = \lambda x$ sistemi şuna denktir:</p>
+  <div class="formula big">
+    $$(\lambda I - A)\, x = \mathbf{0}.$$
+  </div>
+  <p style="margin-top:.3rem;">Bu homojen sistemin <strong>trivial olmayan</strong> çözümü olması için:</p>
+  <div class="formula big">
+    $$\det(\lambda I - A) = 0.$$
+  </div>
+</div>
+
+<!-- ═══════════════ KARAKTERİSTİK POLİNOM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Karakteristik Polinom</div>
+
+<div class="def-box" data-label="Tanım — Karakteristik Polinom / Denklem">
+  <p>$\det(x I - A) = |x I - A|$ polinomuna $A$'nın <strong>karakteristik polinomu</strong> denir; $\Delta_A(x)$ ile gösterilir.</p>
+  <p style="margin-top:.4rem;">$\det(x I - A) = 0$ denklemine de $A$'nın <strong>karakteristik denklemi</strong> denir.</p>
+  <p class="note" style="margin-top:.4rem;">$A$'nın özdeğerleri tam olarak karakteristik polinomun <em>kökleri</em>dir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek 1 — Köşegenleştirilebilir 3×3 Matris</div>
+
+<div class="q-box" data-label="Örnek 1">
+  <p>$A$'nın özdeğerlerini ve özvektörlerini bulunuz:</p>
+  <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.4rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>−11</td><td>−5</td><td>−3</td></tr>
+      <tr><td>12</td><td>7</td><td>2</td></tr>
+      <tr><td>12</td><td>5</td><td>4</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">i) Karakteristik polinom</div>
+    <div class="mw" style="justify-content:center; align-items:center; gap:.4rem; margin-top:.3rem;">
+      <span class="ml">$|x I - A| \;=\;$</span>
+      <div class="mb"><table>
+        <tr><td>$x + 11$</td><td>5</td><td>3</td></tr>
+        <tr><td>−12</td><td>$x - 7$</td><td>−2</td></tr>
+        <tr><td>−12</td><td>−5</td><td>$x - 4$</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">1. satır boyunca kofaktör açılımı ve sadeleştirmeler sonucu:</p>
+    <div class="formula">
+      $$\Delta_A(x) = (x + 11)(x - 2)(x - 9) + (x - 2) \cdot 96 \;\Big|\; = (x - 2)\bigl[(x + 11)(x - 9) + 56\bigr]$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$= (x - 2)(x^2 + 2 x - 3) = (x - 2)(x - 1)(x + 3).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">ii) Özdeğerler</div>
+    <div class="formula big">
+      $$\lambda_1 = 1, \qquad \lambda_2 = 2, \qquad \lambda_3 = -3.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">iii.a) $\lambda_1 = 1$ için özvektör</div>
+    <p>$(I - A) x = \mathbf{0}$:</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>12</td><td>5</td><td>3</td></tr>
+        <tr><td>−12</td><td>−6</td><td>−2</td></tr>
+        <tr><td>−12</td><td>−5</td><td>−3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_2 + r_1,\; r_3 + r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">12</td><td>5</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$x_3 = k$ → $x_2 = k$ (row 2), $x_1 = -\tfrac{2k}{3}$ (row 1). Özvektör:</p>
+    <div class="formula">
+      $$x = k \begin{bmatrix} -2/3 \\ 1 \\ 1 \end{bmatrix} \quad \text{(veya tam sayılı: } \begin{bmatrix} -2 \\ 3 \\ 3 \end{bmatrix}\text{)}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">iii.b) $\lambda_2 = 2$ için özvektör</div>
+    <p>$(2 I - A) x = \mathbf{0}$:</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>13</td><td>5</td><td>3</td></tr>
+        <tr><td>−12</td><td>−5</td><td>−2</td></tr>
+        <tr><td>−12</td><td>−5</td><td>−2</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_1 + r_2,\; r_3 - r_2$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td>−12</td><td>−5</td><td>−2</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$x_1 = k,\; x_3 = -k$ (row 1). Row 2: $-5 x_2 = 10 k \Rightarrow x_2 = -2 k$.</p>
+    <div class="formula">
+      $$x = k \begin{bmatrix} 1 \\ -2 \\ -1 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">iii.c) $\lambda_3 = -3$ için özvektör</div>
+    <p>$(-3 I - A) x = \mathbf{0}$, indirgeme sonrası (egzersiz):</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>8</td><td>5</td><td>3</td></tr>
+        <tr><td>−12</td><td>−10</td><td>−2</td></tr>
+        <tr><td>−12</td><td>−5</td><td>−7</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">−4</td><td class="zero-cell">0</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$x_3 = k,\; x_2 = k$, $-4 x_1 - 4 k = 0 \Rightarrow x_1 = -k$.</p>
+    <div class="formula">
+      $$x = k \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Köşegenleştirme</div>
+    <p>Özvektörleri sütun yapan matris:</p>
+    <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.3rem;">
+      <span class="ml">$P \;=$</span>
+      <div class="mb"><table>
+        <tr><td>$-2/3$</td><td>1</td><td>−1</td></tr>
+        <tr><td>1</td><td>−2</td><td>1</td></tr>
+        <tr><td>1</td><td>−1</td><td>1</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">O zaman $A P = P D$ ve dolayısıyla:</p>
+    <div class="formula big">
+      $$D = P^{-1} A P = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & -3 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $A$ <strong>köşegenleştirilebilirdir</strong>; özdeğerleri $\{1, 2, -3\}$, köşegen matrisi $D$ ile benzerdir.
+  </div>
+</div>
+
+<!-- ═══════════════ TEOREM & SONUÇ ═══════════════ -->
+<div class="section-title"><span>📐</span> Teoremler &amp; Sonuçlar</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Farklı Özdeğerli Özvektörler Bağımsız</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>Farklı özdeğerlerden gelen özvektörler <strong>lineer bağımsızdır</strong>.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Sonuç — Farklı Özdeğer ⇒ Köşegenleştirilebilir</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>$n \times n$ bir kare matrisin tüm özdeğerleri <strong>birbirinden farklı</strong> ise, matris <strong>köşegenleştirilebilirdir</strong>.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek 2 — Köşegenleştirilemez Matris</div>
+
+<div class="q-box" data-label="Örnek 2">
+  <p>$A$'nın özdeğerlerini ve özvektörlerini bulunuz:</p>
+  <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.4rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>5</td><td class="zero-cell">0</td><td>4</td></tr>
+      <tr><td>−6</td><td>1</td><td>−1</td></tr>
+      <tr><td>−6</td><td class="zero-cell">0</td><td>−5</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom (2. sütun boyunca açılım)</div>
+    <p>$|x I - A|$'nın 2. sütununda yalnızca $(x - 1)$ sıfır olmadığından:</p>
+    <div class="formula">
+      $$\Delta_A(x) = (x - 1) \cdot \begin{vmatrix} x - 5 & -4 \\ 6 & x + 5 \end{vmatrix} = (x - 1)\bigl((x - 5)(x + 5) + 24\bigr) = (x - 1)(x^2 - 1) = (x - 1)^2 (x + 1).$$
+    </div>
+    <div class="formula big" style="margin-top:.3rem;">
+      $$\lambda_{1,2} = 1 \;\;(\text{katlılık } 2), \qquad \lambda_3 = -1.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_{1,2} = 1$ için özvektör</div>
+    <p>$(I - A) x = \mathbf{0}$, indirgeme sonrası (egzersiz):</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>−4</td><td class="zero-cell">0</td><td>−4</td></tr>
+        <tr><td>6</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td>6</td><td class="zero-cell">0</td><td>6</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$x_1 = x_3 = 0$, &nbsp;$x_2 = k$ serbest. Özvektör:</p>
+    <div class="formula">
+      $$x = k \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}.$$
+    </div>
+    <p class="note" style="margin-top:.3rem;"><strong>Dikkat:</strong> Özdeğerin katlılığı $2$ ama yalnızca $1$ lineer bağımsız özvektör bulduk.</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_3 = -1$ için özvektör</div>
+    <p>$(-I - A) x = \mathbf{0}$ → (egzersiz) → $x_1 = -\tfrac{2}{3} k,\; x_2 = -\tfrac{3}{2} k,\; x_3 = k$:</p>
+    <div class="formula">
+      $$x = k \begin{bmatrix} -2/3 \\ -3/2 \\ 1 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Toplam yalnızca $2$ lineer bağımsız özvektör → $A$ <strong>köşegenleştirilemez</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
+<div class="section-title"><span>📐</span> Özellikler — Karakteristik Polinomun Yapısı</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Özellikler</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>$A \in \mathbb{R}^{n \times n}$ olsun.</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>$A$ ve $A^T$'nin karakteristik polinomları aynıdır.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>Benzer matrislerin karakteristik polinomları aynıdır.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>
+        Açık form:
+        <div class="formula" style="margin-top:.2rem;">$$\Delta_A(x) = |x I - A| = x^n - \operatorname{tr}(A)\, x^{n-1} + \cdots + (-1)^n \det A.$$</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Sonuç — İz ve Determinant ↔ Özdeğerler</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>$A \in \mathbb{R}^{n \times n}$ ve $\lambda_1, \ldots, \lambda_n$ özdeğerleri (katlılıklarıyla) olsun. O zaman:</p>
+  <div class="formula big">
+    $$\operatorname{tr}(A) = \lambda_1 + \lambda_2 + \cdots + \lambda_n, \qquad \det A = \lambda_1 \cdot \lambda_2 \cdots \lambda_n.$$
+  </div>
+</div>
+
+<!-- ═══════════════ CAYLEY-HAMILTON ═══════════════ -->
+<div class="section-title"><span>📐</span> Cayley–Hamilton Teoremi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem (Cayley–Hamilton)</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$A$, $n \times n$ matris ve karakteristik polinomu</p>
+  <div class="formula">
+    $$\Delta_A(x) = |x I_n - A| = f(x) = x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$$
+  </div>
+  <p style="margin-top:.3rem;">olsun. O zaman matrisin kendisi karakteristik polinomu sağlar:</p>
+  <div class="formula big">
+    $$f(A) = A^n + a_{n-1} A^{n-1} + \cdots + a_1 A + a_0 I = \mathbf{0}.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Yani $A$, kendi karakteristik polinomunun bir <em>köküdür</em>. Bu güçlü teorem $A^n$'ı düşük dereceli güçler cinsinden yazmaya, ters matris hesaplamaya vs. olanak verir.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Özdeğer / Özvektör:</strong> $A x = \lambda x$, &nbsp;$x \neq \mathbf{0}$. Eşdeğer: $(\lambda I - A) x = \mathbf{0}$ trivial olmayan çözüm.
+    <br><br>
+    <strong>Karakteristik polinom:</strong> $\Delta_A(x) = \det(x I - A)$; özdeğerler = kökler.
+    <br><br>
+    <strong>Köşegenleştirme:</strong> $P^{-1} A P = D$ (köşegen). Yeterli ($n$ tane) lineer bağımsız özvektör bulunca uygulanır. Tüm özdeğerler farklıysa garanti olur.
+    <br><br>
+    <strong>Köşegenleşmezlik:</strong> Bir özdeğerin katlılığı, ona ait lineer bağımsız özvektör sayısından <em>fazla</em> ise matris köşegenleştirilemez.
+    <br><br>
+    <strong>Yapı sonuçları:</strong> $\operatorname{tr}(A) = \sum \lambda_i$, $\det A = \prod \lambda_i$. Benzer matrislerin karakteristik polinomu aynıdır; $A$ ve $A^T$'nin de.
+    <br><br>
+    <strong>Cayley–Hamilton:</strong> $A$ kendi karakteristik polinomunu sıfırlar — $f(A) = \mathbf{0}$.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

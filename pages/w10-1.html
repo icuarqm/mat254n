@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Lineer Dönüşümler</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Lineer Dönüşümler</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 10 - Bölüm 1)</div>
+</div>
+
+<!-- ═══════════════ TANIM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Lineer Dönüşüm Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Lineer Dönüşüm (Linear Transformation)">
+  <p>$V$ ve $W$, $F$ cismi üzerinde iki vektör uzayı olsun. $L : V \to W$ fonksiyonu, aşağıdaki <strong>iki koşulu</strong> sağlıyorsa $V$'den $W$'ya bir <strong>lineer dönüşüm</strong> (linear map) olarak adlandırılır:</p>
+
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>
+        <strong>Toplamsallık:</strong>
+        <div class="formula" style="margin-top:.2rem;">$$L(u + v) = L(u) + L(v), \qquad \forall\, u, v \in V$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>
+        <strong>Homojenlik:</strong>
+        <div class="formula" style="margin-top:.2rem;">$$L(c u) = c \cdot L(u), \qquad \forall\, c \in F,\; u \in V$$</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:.55rem;">Özel olarak, $V$'den $V$'ye ($W = V$ durumu) tanımlı bir lineer dönüşüme <strong>lineer operatör</strong> (linear operator) denir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEKLER 1-2-3 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnekler — Hangileri Lineer Dönüşüm?</div>
+
+<!-- 1) -->
+<div class="q-box" data-label="Örnek 1">
+  <p>$L : \mathbb{R}^3 \to \mathbb{R}^2,\; (x_1, x_2, x_3) \mapsto L(x_1, x_2, x_3) = (x_1 + x_2,\; x_2 + x_3)$ lineer dönüşüm müdür?</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm 1</span>
+    <span class="tag sol">Lineer Dönüşüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">a) Toplamsallık</div>
+    <p>$u = (x_1, x_2, x_3),\; v = (y_1, y_2, y_3)$ için:</p>
+    <div class="formula">
+      $$L(u + v) = L(x_1 + y_1,\; x_2 + y_2,\; x_3 + y_3) = (x_1 + y_1 + x_2 + y_2,\; x_2 + y_2 + x_3 + y_3)$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$= (x_1 + x_2,\; x_2 + x_3) + (y_1 + y_2,\; y_2 + y_3) = L(u) + L(v) \quad \checkmark$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">b) Homojenlik</div>
+    <div class="formula">
+      $$L(c u) = L(c x_1,\; c x_2,\; c x_3) = (c x_1 + c x_2,\; c x_2 + c x_3) = c \cdot (x_1 + x_2,\; x_2 + x_3) = c \cdot L(u) \quad \checkmark$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $L$, lineer dönüşümdür.
+  </div>
+</div>
+
+<!-- 2) -->
+<div class="q-box" data-label="Örnek 2" style="margin-top:.6rem;">
+  <p>$L : \mathbb{R}^2 \to \mathbb{R}^2,\; (x_1, x_2) \mapsto L(x_1, x_2) = (x_1 + 1,\; x_2 + 1)$ lineer dönüşüm müdür?</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm 2</span>
+    <span class="tag warn">Lineer dönüşüm değil</span>
+  </div>
+
+  <p>Toplamsallığı test edelim. $u = (x_1, x_2),\; v = (y_1, y_2)$ için:</p>
+  <div class="formula">
+    $$L(u + v) = L(x_1 + y_1,\; x_2 + y_2) = (x_1 + y_1 + 1,\; x_2 + y_2 + 1)$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$L(u) + L(v) = (x_1 + 1,\; x_2 + 1) + (y_1 + 1,\; y_2 + 1) = (x_1 + y_1 + 2,\; x_2 + y_2 + 2)$$
+  </div>
+  <div class="false-box" style="margin-top:.4rem;">
+    İki ifade <strong>farklı</strong> (1 vs 2 ekleniyor) → toplamsallık ihlal edildi. $L$ lineer dönüşüm <strong>değildir</strong>.
+  </div>
+</div>
+
+<!-- 3) -->
+<div class="q-box" data-label="Örnek 3" style="margin-top:.6rem;">
+  <p>$L : \mathbb{R}^2 \to \mathbb{R}^2,\; (x_1, x_2) \mapsto L(x_1, x_2) = (x_1^2,\; x_2)$ lineer dönüşüm müdür?</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm 3</span>
+    <span class="tag warn">Lineer dönüşüm değil</span>
+  </div>
+
+  <p>Homojenliği test edelim. $u = (x_1, x_2)$ için:</p>
+  <div class="formula">
+    $$L(c u) = L(c x_1,\; c x_2) = (c^2 x_1^2,\; c x_2)$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$c \cdot L(u) = c \cdot (x_1^2,\; x_2) = (c x_1^2,\; c x_2)$$
+  </div>
+  <p style="margin-top:.3rem;">Genelde farklı (örn. $c = 2$). Homojenlik ihlal edildi.</p>
+  <div class="false-box" style="margin-top:.4rem;">
+    $L$ lineer dönüşüm <strong>değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ TEOREM ═══════════════ -->
+<div class="section-title"><span>📐</span> Birleşik Karakterizasyon</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Tek Adımlı Test</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$V, W$ vektör uzayları ve $L : V \to W$ bir fonksiyon olsun. $L$ lineer dönüşümdür <strong>ancak ve ancak</strong></p>
+  <div class="formula big">
+    $$L(a u + b v) = a \cdot L(u) + b \cdot L(v)$$
+  </div>
+  <p style="margin-top:.3rem;">her $a, b$ skaleri ve $u, v \in V$ için sağlanırsa.</p>
+  <p class="note" style="margin-top:.4rem;">İki aksiyomu (toplamsallık + homojenlik) tek seferde kontrol etmek için pratik.</p>
+</div>
+
+<!-- Example using theorem -->
+<div class="q-box" data-label="Örnek — Teoremin Uygulaması" style="margin-top:.5rem;">
+  <p>$L : P_1 \to P_2,\; p \mapsto L(p) = t \cdot p(t)$ tanımlanan dönüşüm lineer midir?</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$a, b \in \mathbb{R}$ ve $p_1, p_2 \in P_1$ için:</p>
+  <div class="formula">
+    $$L(a p_1 + b p_2) = t \cdot (a p_1 + b p_2) = a \cdot t p_1 + b \cdot t p_2 = a \cdot L(p_1) + b \cdot L(p_2). \quad \checkmark$$
+  </div>
+  <p style="margin-top:.3rem;">Teorem gereği $L$ lineer dönüşümdür.</p>
+</div>
+
+<!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
+<div class="section-title"><span>📐</span> Temel Özellikler</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Özellikler</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>$L : V \to W$ bir lineer dönüşüm olsun. O zaman:</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>$L(\mathbf{0}_V) = \mathbf{0}_W$ &nbsp;(sıfır vektörü sıfır vektörüne gider).</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>$L(-v) = -L(v)$, &nbsp;her $v \in V$ için.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>
+        Lineer kombinasyonlar için:
+        <div class="formula" style="margin-top:.2rem;">$$L(c_1 v_1 + \cdots + c_n v_n) = c_1 L(v_1) + \cdots + c_n L(v_n).$$</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card note-card" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Not — Geri Dönüş Olarak Karşı-Örnekler</span>
+    <span class="tag warn">Not</span>
+  </div>
+  <p>Yukarıdaki <strong>Örnek 2</strong>'de: $L(0, 0) = (1, 1) \neq (0, 0) \Rightarrow$ (i) ihlal → lineer değil.</p>
+  <p style="margin-top:.3rem;"><strong>Örnek 3</strong>'te: $L(-(1, 1)) = L(-1, -1) = (1, -1)$ ama $-L(1, 1) = -(1, 1) = (-1, -1) \Rightarrow$ (ii) ihlal → lineer değil.</p>
+  <p class="note" style="margin-top:.3rem;">Pratik kural: $L(\mathbf{0}) \neq \mathbf{0}$ ise hemen "lineer değil" demek mümkündür.</p>
+</div>
+
+<!-- ═══════════════ GEOMETRİK ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>📋</span> Geometrik Örnekler</div>
+
+<!-- Projeksiyon -->
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">1) Projeksiyon (Projection)</span>
+    <span class="tag prop">Lineer Dönüşüm</span>
+  </div>
+  <p>$P : \mathbb{R}^3 \to \mathbb{R}^3,\; (x_1, x_2, x_3) \mapsto (x_1, x_2, 0)$ dönüşümü, $x_1 x_2$-düzlemine <strong>projeksiyon</strong> olarak adlandırılır ve bir lineer dönüşümdür.</p>
+  <p class="note" style="margin-top:.4rem;">Bazen yerine $P : \mathbb{R}^3 \to \mathbb{R}^2,\; (x_1, x_2, x_3) \mapsto (x_1, x_2)$ tanımı da kullanılır.</p>
+</div>
+
+<!-- Yansıma -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">2) Yansıma (Reflection)</span>
+    <span class="tag prop">Lineer Operatör</span>
+  </div>
+
+  <p><strong>Düzleme göre yansıma:</strong></p>
+  <div class="formula">
+    $$R : \mathbb{R}^3 \to \mathbb{R}^3, \quad (x_1, x_2, x_3) \mapsto (x_1, x_2, -x_3)$$
+  </div>
+  <p style="margin-top:.3rem;">$x_1 x_2$-düzlemine göre yansımadır; bir lineer operatördür.</p>
+
+  <p style="margin-top:.7rem;"><strong>Eksene göre yansıma:</strong></p>
+  <div class="formula">
+    $$R_1 : \mathbb{R}^3 \to \mathbb{R}^3, \quad (x_1, x_2, x_3) \mapsto (x_1, -x_2, -x_3)$$
+  </div>
+  <p style="margin-top:.3rem;">$x_1$-ekseni etrafında yansımadır; o da bir lineer operatördür.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Lineer dönüşüm:</strong> $L: V \to W$, toplamsallık ($L(u+v) = L(u) + L(v)$) ve homojenlik ($L(cu) = cL(u)$) koşullarını sağlayan fonksiyon.
+    <br><br>
+    <strong>Lineer operatör:</strong> $W = V$ durumundaki lineer dönüşüm.
+    <br><br>
+    <strong>Tek adımlı test:</strong> $L(au + bv) = a L(u) + b L(v)$ iki aksiyomu birleştirir.
+    <br><br>
+    <strong>Temel özellikler:</strong> $L(\mathbf{0}) = \mathbf{0}$, $L(-v) = -L(v)$, lineer kombinasyon korunur.
+    <br><br>
+    <strong>Çabuk eleme:</strong> $L(\mathbf{0}) \neq \mathbf{0}$ ya da $L(-v) \neq -L(v)$ bulursan, $L$ lineer değildir.
+    <br><br>
+    <strong>Geometrik örnekler:</strong> projeksiyon ($x_3 \to 0$), düzleme yansıma ($x_3 \to -x_3$), eksene yansıma ($x_2, x_3 \to -x_2, -x_3$).
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

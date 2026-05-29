@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Pratik: Matrise Bağlı Alt Uzaylar</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pratik: Matrise Bağlı Alt Uzaylar</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 8 - Bölüm 4)</div>
+</div>
+
+<!-- ═══════════════ SORU 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 1 — Satır &amp; Sütun Uzayı Bazları</div>
+
+<div class="q-box" data-label="Soru 1">
+  <p>Aşağıdaki matris için satır ve sütun uzaylarının bazlarını bulunuz:</p>
+  <div class="mw" style="justify-content:center; margin-top:.4rem; align-items:center; gap:.6rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>2</td><td>5</td><td>3</td></tr>
+      <tr><td>−1</td><td>1</td><td>1</td></tr>
+      <tr><td>1</td><td>1</td><td>−1</td></tr>
+      <tr><td>4</td><td>−1</td><td>1</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Satır indirgemesi (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>5</td><td>3</td></tr>
+        <tr><td>−1</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>−1</td></tr>
+        <tr><td>4</td><td>−1</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">2</td><td>5</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">7</td><td>5</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Satır uzayı — sıfır olmayan satırlar</div>
+    <div class="formula">
+      $$\text{Satır uzayı} = \langle (2, 5, 3),\; (0, 7, 5),\; (0, 0, 1) \rangle, \qquad \text{satır rankı} = 3.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Sütun uzayı — pivot sütunların orijinalleri</div>
+    <p>Pivotlar 1., 2., 3. sütunlarda → orijinal $A$'nın aynı sütunlarını al:</p>
+    <div class="formula">
+      $$\text{Sütun uzayı} = \langle (2, -1, 1, 4),\; (5, 1, 1, -1),\; (3, 1, -1, 1) \rangle, \qquad \text{sütun rankı} = 3.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$\operatorname{rank}(A) = 3.$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 2 — Çözüm Uzayı Olarak $W$</div>
+
+<div class="q-box" data-label="Soru 2">
+  <p>$W = \{(a, b, c, d) \in \mathbb{R}^4 \;:\; a - b + c + d = 0,\;\; 2a + 3b - d = 0\}$ kümesinin boyutunu bulunuz.</p>
+  <p class="note" style="margin-top:.3rem;">$W$, koşulların katsayı matrisinin <em>çözüm uzayıdır</em>.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Katsayı matrisi &amp; indirgeme</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td><td>1</td></tr>
+        <tr><td>2</td><td>3</td><td class="zero-cell">0</td><td>−1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_2 \to r_2 - 2 r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>−1</td><td>1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">5</td><td>−2</td><td>−3</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Parametrik çözüm</div>
+    <p>Serbest değişkenler: $c = t,\; d = k$. İndirgenmiş sistemden:</p>
+    <div class="formula">
+      $$5 b - 2 c - 3 d = 0 \;\Rightarrow\; b = \tfrac{2 t + 3 k}{5}, \qquad a = b - c - d = \tfrac{-3 t - 2 k}{5}.$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$(a, b, c, d) = t \left(-\tfrac{3}{5}, \tfrac{2}{5}, 1, 0\right) + k \left(-\tfrac{2}{5}, \tfrac{3}{5}, 0, 1\right).$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$W = \left\langle \left(-\tfrac{3}{5}, \tfrac{2}{5}, 1, 0\right),\; \left(-\tfrac{2}{5}, \tfrac{3}{5}, 0, 1\right) \right\rangle, \qquad \dim W = 2.$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 3 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 3 — Span'i Homojen Sistemin Çözüm Uzayı Olarak Yazma</div>
+
+<div class="q-box" data-label="Soru 3">
+  <p>$\{(1, -1, 2, 4),\; (3, 1, -1, 1),\; (-2, -2, 3, 3)\}$ kümesinin gerdiği uzayı, bir homojen sistemin çözüm uzayı olarak ifade ediniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Üyelik denklemi</div>
+    <p>$W$ bu span olsun. $(a, b, c, d) \in W$ ise:</p>
+    <div class="formula">
+      $$(a, b, c, d) = c_1 (1, -1, 2, 4) + c_2 (3, 1, -1, 1) + c_3 (-2, -2, 3, 3)$$
+    </div>
+    <p style="margin-top:.4rem;">Bileşenlerden:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        c_1 + 3 c_2 - 2 c_3 &= a \\
+        -c_1 + c_2 - 2 c_3 &= b \\
+        2 c_1 - c_2 + 3 c_3 &= c \\
+        4 c_1 + c_2 + 3 c_3 &= d
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Augmented matris &amp; indirgeme (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>3</td><td>−2</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a$</td></tr>
+        <tr><td>−1</td><td>1</td><td>−2</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$b$</td></tr>
+        <tr><td>2</td><td>−1</td><td>3</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$c$</td></tr>
+        <tr><td>4</td><td>1</td><td>3</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$d$</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>3</td><td>−2</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">4</td><td>−4</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$b + a$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$-a + 7b + 4c$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$-5a + 11b + 4d$</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Tutarlılık koşulları</div>
+    <p>Sol tarafı sıfır olan son iki satırın sağ tarafı da sıfır olmalı:</p>
+    <div class="formula big">
+      $$-a + 7 b + 4 c = 0 \qquad \text{ve} \qquad -5 a + 11 b + 4 d = 0$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $W$, aşağıdaki homojen sistemin çözüm uzayıdır:
+    <div class="mw" style="justify-content:center; margin-top:.4rem;">
+      <div class="mb"><table>
+        <tr><td>−1</td><td>7</td><td>4</td><td class="zero-cell">0</td></tr>
+        <tr><td>−5</td><td>11</td><td class="zero-cell">0</td><td>4</td></tr>
+      </table></div>
+      <span class="ml" style="margin-left:.6rem;">$\begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix} = \mathbf{0}$</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersiz 1 — $\operatorname{rank}(A)$</div>
+
+<div class="q-box" data-label="Egzersiz 1">
+  <p>Aşağıdaki matrisin rankını bulunuz:</p>
+  <div class="mw" style="justify-content:center; margin-top:.4rem; align-items:center; gap:.6rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td>−1</td><td>1</td></tr>
+      <tr><td>4</td><td>2</td><td>1</td><td class="zero-cell">0</td></tr>
+      <tr><td>2</td><td class="zero-cell">0</td><td>−3</td><td>−2</td></tr>
+      <tr><td>7</td><td>3</td><td>3</td><td>−1</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Satır indirgemesi</div>
+    <p>$r_2 \to r_2 - 4 r_1$, &nbsp;$r_3 \to r_3 - 2 r_1$, &nbsp;$r_4 \to r_4 - 7 r_1$:</p>
+    <div class="mw" style="justify-content:center; margin-top:.3rem;">
+      <span class="arrow">→</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td>−2</td><td>5</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td>−2</td><td>−1</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td>−4</td><td>10</td><td>−8</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.5rem;">$r_3 \to r_3 - r_2$, &nbsp;$r_4 \to r_4 - 2 r_2$:</p>
+    <div class="mw" style="justify-content:center; margin-top:.3rem;">
+      <span class="arrow">→</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">−2</td><td>5</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−6</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    3 sıfır olmayan satır → $\operatorname{rank}(A) = 3$.
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersiz 2 — Çözüm Uzayı Bazı</div>
+
+<div class="q-box" data-label="Egzersiz 2">
+  <p>Aşağıdaki sistemin çözüm uzayı için bir baz bulunuz:</p>
+  <div class="formula">
+    $$\begin{aligned}
+      2 x - y + 3 z + t &= 0 \\
+      -5 x + y + 4 z - t &= 0 \\
+      -x - y + 10 z + t &= 0
+    \end{aligned}$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Katsayı matrisi &amp; indirgeme</div>
+    <p>Önce $r_1 \leftrightarrow r_3$ ve $r_1 \to -r_1$ ile pivot köşeyi $1$ yap:</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>−1</td><td>3</td><td>1</td></tr>
+        <tr><td>−5</td><td>1</td><td>4</td><td>−1</td></tr>
+        <tr><td>−1</td><td>−1</td><td>10</td><td>1</td></tr>
+      </table></div>
+      <span class="arrow">→</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>−10</td><td>−1</td></tr>
+        <tr><td>−5</td><td>1</td><td>4</td><td>−1</td></tr>
+        <tr><td>2</td><td>−1</td><td>3</td><td>1</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.5rem;">$r_2 \to r_2 + 5 r_1$, &nbsp;$r_3 \to r_3 - 2 r_1$:</p>
+    <div class="mw" style="justify-content:center; margin-top:.3rem;">
+      <span class="arrow">→</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>−10</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">6</td><td>−46</td><td>−6</td></tr>
+        <tr><td class="zero-cell">0</td><td>−3</td><td>23</td><td>3</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.5rem;">$r_3 \to 2 r_3 + r_2$ (üçüncü satır ikincinin $-1/2$ katıdır → sıfırlanır):</p>
+    <div class="mw" style="justify-content:center; margin-top:.3rem;">
+      <span class="arrow">→</span>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>−10</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">6</td><td>−46</td><td>−6</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Parametrik çözüm</div>
+    <p>$2$ pivot, $4$ bilinmeyen → $2$ serbest değişken: $z$ ve $t$.</p>
+    <p style="margin-top:.3rem;">İkinci satırdan: $6 y - 46 z - 6 t = 0 \;\Rightarrow\; y = \tfrac{23 z + 3 t}{3}$.</p>
+    <p style="margin-top:.3rem;">Birinciden: $x + y - 10 z - t = 0 \;\Rightarrow\; x = -y + 10 z + t = \tfrac{7 z}{3}$.</p>
+    <div class="formula" style="margin-top:.4rem;">
+      $$(x, y, z, t) = z \left(\tfrac{7}{3}, \tfrac{23}{3}, 1, 0\right) + t \left(0, 1, 0, 1\right).$$
+    </div>
+    <p class="note" style="margin-top:.3rem;">$z = 3 s$ alıp tam sayılı baz da yazılabilir: $(7, 23, 3, 0)$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$\text{Çözüm uzayı bazı:} \;\; \{\, (7, 23, 3, 0),\;\; (0, 1, 0, 1)\, \}, \qquad \dim = 2.$$
+  </div>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

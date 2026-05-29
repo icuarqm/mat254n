@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Koordinatlar ve Geçiş Matrisi</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Koordinatlar ve Geçiş Matrisi</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 8 - Bölüm 1)</div>
+</div>
+
+<!-- ═══════════════ HATIRLATMA TEOREMİ ═══════════════ -->
+<div class="section-title"><span>📐</span> Hatırlatma: Tek Yazılım</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Baz Karakterizasyonu</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$V$ bir vektör uzayı ve $\beta = \{v_1, \ldots, v_n\}$, $V$'nin bir alt kümesi olsun. $\beta$, $V$ için bir bazdır <strong>ancak ve ancak</strong> her $v \in V$ elemanı</p>
+  <div class="formula big" style="margin-top:.3rem;">
+    $$v = c_1 v_1 + c_2 v_2 + \cdots + c_n v_n$$
+  </div>
+  <p style="margin-top:.4rem;">biçiminde <strong>tek bir şekilde</strong> ($c_i$'ler skaler) yazılabiliyorsa.</p>
+  <p class="note" style="margin-top:.4rem;">Bu teklik, sonraki tanımı mümkün kılar.</p>
+</div>
+
+<!-- ═══════════════ KOORDİNAT MATRİSİ ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Koordinat Matrisi</div>
+
+<div class="def-box" data-label="Tanım — Koordinat Matrisi">
+  <p>$V$, $n$-boyutlu vektör uzayı ve $\beta = \{v_1, \ldots, v_n\}$ bir bazı olsun. $v \in V$ için, $v = c_1 v_1 + c_2 v_2 + \cdots + c_n v_n$ olacak şekildeki $n \times 1$ matris</p>
+  <div class="mw" style="justify-content:center; margin:.4rem 0;">
+    <div class="mb"><table>
+      <tr><td>$c_1$</td></tr>
+      <tr><td>$c_2$</td></tr>
+      <tr><td>$\vdots$</td></tr>
+      <tr><td>$c_n$</td></tr>
+    </table></div>
+  </div>
+  <p>$v$'nin $\beta$ <strong>bazına göre koordinat matrisi</strong> olarak adlandırılır; $[v]_\beta$ ile gösterilir.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — $P_1$'de 3 Farklı Baz</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>$p(x) = 5x - 2 \in P_1$ polinomunun aşağıdaki bazlara göre koordinat matrisini bulunuz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>i)</strong>&nbsp;&nbsp;$S = \{x, 1\}$</div>
+    <div><strong>ii)</strong>&nbsp;&nbsp;$\beta = \{1, x\}$</div>
+    <div><strong>iii)</strong>&nbsp;&nbsp;$T = \{x + 1,\; x - 1\}$</div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">i) $S = \{x, 1\}$ bazı</div>
+    <div class="formula">
+      $$5x - 2 = c_1 x + c_2 \cdot 1 \;\;\Rightarrow\;\; c_1 = 5,\; c_2 = -2$$
+    </div>
+    <div class="mw" style="margin-top:.4rem; align-items:center; gap:.6rem;">
+      <span class="ml">$[p]_S \;=$</span>
+      <div class="mb"><table>
+        <tr><td>5</td></tr>
+        <tr><td>−2</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">ii) $\beta = \{1, x\}$ bazı</div>
+    <div class="formula">
+      $$5x - 2 = c_1 \cdot 1 + c_2 \cdot x \;\;\Rightarrow\;\; c_1 = -2,\; c_2 = 5$$
+    </div>
+    <div class="mw" style="margin-top:.4rem; align-items:center; gap:.6rem;">
+      <span class="ml">$[p]_\beta \;=$</span>
+      <div class="mb"><table>
+        <tr><td>−2</td></tr>
+        <tr><td>5</td></tr>
+      </table></div>
+    </div>
+    <p class="note" style="margin-top:.4rem;">$S$ ile $\beta$ aynı vektörlerden oluşuyor ama <em>sırası</em> farklı → koordinat matrisi de farklı. Bu yüzden bazlarda sıra önemlidir.</p>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">iii) $T = \{x + 1,\; x - 1\}$ bazı</div>
+    <div class="formula">
+      $$5x - 2 = c_1 (x + 1) + c_2 (x - 1) = (c_1 + c_2) x + (c_1 - c_2)$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\begin{aligned} c_1 + c_2 &= 5 \\ c_1 - c_2 &= -2 \end{aligned} \;\;\Rightarrow\;\; c_1 = \tfrac{3}{2},\; c_2 = \tfrac{7}{2}$$
+    </div>
+    <div class="mw" style="margin-top:.4rem; align-items:center; gap:.6rem;">
+      <span class="ml">$[p]_T \;=$</span>
+      <div class="mb"><table>
+        <tr><td>$3/2$</td></tr>
+        <tr><td>$7/2$</td></tr>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SIRALI BAZ ═══════════════ -->
+<div class="section-title"><span>🔍</span> Sıralı Baz &amp; Koordinat Özellikleri</div>
+
+<div class="card note-card">
+  <div class="card-header">
+    <span class="card-title">Not — Sıralı Baz (Ordered Basis)</span>
+    <span class="tag warn">Not</span>
+  </div>
+  <p>Bir $\beta$ bazının vektörlerinin <strong>sırası sabitlenmiş</strong> ise $\beta$'ya <strong>sıralı baz</strong> denir. Koordinat matrisi sırayla yazıldığından, koordinat kavramı yalnızca sıralı bazlar için anlamlıdır.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Koordinat Matrisinin Özellikleri</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>$V$ bir vektör uzayı, $S$ ise $V$'nin bir sıralı bazı olsun. Her $v, w \in V$ ve skaler $c$ için:</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        Eşdeğerlik: $[v]_S = [w]_S \;\Longleftrightarrow\; v = w$.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>
+        Toplamsallık: $[v + w]_S = [v]_S + [w]_S$.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>
+        Skaler katlık: $[c\, v]_S = c \, [v]_S$.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ REMARK ═══════════════ -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Remark — Görselleştirme</span>
+    <span class="tag prop">Not</span>
+  </div>
+  <p>Koordinat matrisi, $n$-boyutlu uzayın vektörlerini $n \times 1$ matrislere (ya da $n$-demetlere) eşleyerek <strong>görselleştirir</strong>:</p>
+  <div class="formula big" style="margin-top:.3rem;">
+    $$v \;\longleftrightarrow\; [v]_\beta = \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} \;\longleftrightarrow\; (c_1, \ldots, c_n)$$
+  </div>
+  <p style="margin-top:.4rem;">Yani soyut bir vektör uzayı, baz seçildikten sonra somut olarak $F^n$ ile aynı şekilde davranır.</p>
+</div>
+
+<!-- ═══════════════ GEÇİŞ MATRİSİ ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Geçiş Matrisi (Transition Matrix)</div>
+
+<div class="def-box" data-label="Soru — Farklı Bazlarda Koordinatlar">
+  <p>$p(x) = 5x - 2$ örneği gösterdi ki <strong>aynı vektör, farklı bazlarda farklı koordinatlara sahiptir</strong>. Doğal soru: <em>bir bazdan diğerine geçerken koordinatlar arasında nasıl bir ilişki vardır?</em></p>
+</div>
+
+<div class="def-box" data-label="Tanım — Geçiş Matrisi" style="margin-top:.5rem;">
+  <p>$\beta = \{v_1, \ldots, v_n\}$ ve $C = \{w_1, \ldots, w_n\}$, $V$ vektör uzayının iki sıralı bazı olsun. O zaman <strong>tek anlamlı bir tersinir matris</strong> $P$ vardır öyle ki her $v \in V$ için</p>
+  <div class="formula big">
+    $$[v]_C \;=\; P \, [v]_\beta \qquad (\star)$$
+  </div>
+  <p style="margin-top:.4rem;">Bu $P$ matrisine $\beta$'dan $C$'ye <strong>geçiş matrisi</strong> (transition matrix / change of coordinate matrix) denir.</p>
+</div>
+
+<!-- ═══════════════ P'NİN İNŞASI ═══════════════ -->
+<div class="section-title"><span>🔗</span> $P$'nin İnşası</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">İnşa — $P$'nin Sütunları</span>
+    <span class="tag prop">Yöntem</span>
+  </div>
+
+  <p>$(\star)$'da $v = v_i$ alalım. $v_i$'nin $\beta$ bazındaki koordinat matrisi, $i$. konumda $1$, diğer konumlarda $0$ olan vektördür:</p>
+  <div class="formula">
+    $$[v_i]_\beta = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix} \;\leftarrow\; i.\text{ konum}$$
+  </div>
+
+  <p style="margin-top:.5rem;">O hâlde</p>
+  <div class="formula big">
+    $$[v_i]_C \;=\; P \cdot [v_i]_\beta \;=\; P\text{'nin } i.\text{ sütunu}.$$
+  </div>
+
+  <p class="note" style="margin-top:.5rem;"><strong>Kural:</strong> $\beta$'dan $C$'ye geçiş matrisinin $i$. sütunu, $v_i$'nin $C$ bazındaki koordinat matrisidir.</p>
+
+  <p style="margin-top:.6rem;">Açık biçimde, $v_i = p_{1i} w_1 + p_{2i} w_2 + \cdots + p_{ni} w_n$ ise:</p>
+  <div class="formula">
+    $$P \;=\; \bigl[\, [v_1]_C \;\big|\; [v_2]_C \;\big|\; \cdots \;\big|\; [v_n]_C \,\bigr] \;=\; \begin{bmatrix} p_{11} & p_{12} & \cdots & p_{1n} \\ p_{21} & p_{22} & \cdots & p_{2n} \\ \vdots & \vdots & & \vdots \\ p_{n1} & p_{n2} & \cdots & p_{nn} \end{bmatrix}$$
+  </div>
+</div>
+
+<!-- ═══════════════ ÖRNEK GEÇİŞ ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — $S$'ten $T$'ye Geçiş</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>$\mathbb{R}^3$'te:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div>·&nbsp;&nbsp;$S = \{(6, 3, 3),\; (4, -1, 3),\; (5, 5, 2)\}$</div>
+    <div>·&nbsp;&nbsp;$T = \{(2, 0, 1),\; (1, 2, 0),\; (1, 1, 1)\}$</div>
+  </div>
+  <p style="margin-top:.4rem;">$S$'ten $T$'ye geçiş matrisini bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <p>$S$'in her elemanını $T$ bazında yazıp koordinatlarını $P$'nin sütunu olarak koyacağız.</p>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">i) $(6, 3, 3) = c_1 (2, 0, 1) + c_2 (1, 2, 0) + c_3 (1, 1, 1)$</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">6</td></tr>
+        <tr><td class="zero-cell">0</td><td>2</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">3</td></tr>
+        <tr><td>1</td><td class="zero-cell">0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;">$c_1 = 2,\;\; c_2 = 1,\;\; c_3 = 1$</div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">ii) $(4, -1, 3) = c_1 (2, 0, 1) + c_2 (1, 2, 0) + c_3 (1, 1, 1)$</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">4</td></tr>
+        <tr><td class="zero-cell">0</td><td>2</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">−1</td></tr>
+        <tr><td>1</td><td class="zero-cell">0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;">$c_1 = 2,\;\; c_2 = -1,\;\; c_3 = 1$</div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">iii) $(5, 5, 2) = c_1 (2, 0, 1) + c_2 (1, 2, 0) + c_3 (1, 1, 1)$</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">5</td></tr>
+        <tr><td class="zero-cell">0</td><td>2</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">5</td></tr>
+        <tr><td>1</td><td class="zero-cell">0</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">2</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;">$c_1 = 1,\;\; c_2 = 2,\;\; c_3 = 1$</div>
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    <div class="mw" style="align-items:center; gap:.6rem; justify-content:center;">
+      <span class="ml">$P \;=$</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table>
+          <tr><td>2</td><td>2</td><td>1</td></tr>
+          <tr><td>1</td><td>−1</td><td>2</td></tr>
+          <tr><td>1</td><td>1</td><td>1</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TERS GEÇİŞ ═══════════════ -->
+<div class="section-title"><span>📐</span> Ters Geçiş &amp; Genel Yöntem</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Önerme — Ters Geçiş Matrisi</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>$P$, $S$'ten $T$'ye; $Q$ ise $T$'den $S$'e geçiş matrisi olsun. Yani:</p>
+  <div class="formula">
+    $$[v]_T = P\,[v]_S, \qquad [v]_S = Q\,[v]_T.$$
+  </div>
+  <p style="margin-top:.4rem;">Birini diğerine yerleştirirsek $[v]_S = Q P\,[v]_S$ ve $[v]_T = P Q\,[v]_T$. Bu her $v$ için doğru olduğundan:</p>
+  <div class="formula big">
+    $$P Q = Q P = I \;\;\Longrightarrow\;\; Q = P^{-1}.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Yani ters yöndeki geçiş matrisi, ileri yöndeki geçiş matrisinin <strong>tersidir</strong>. Sıfırdan tekrar hesaplamaya gerek yok.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Genel Yöntem — Augmented Matrisle $P$</span>
+    <span class="tag prop">Yöntem</span>
+  </div>
+  <p>$\beta = \{v_1, \ldots, v_n\}$ ve $T = \{w_1, \ldots, w_n\}$ verilsin. $\beta$'dan $T$'ye geçiş matrisini bulmak için $w_i$'leri sol bloğa, $v_i$'leri sağ bloğa koy ve satır indirgemesi yap:</p>
+  <div class="formula big">
+    $$\bigl[\,w_1 \;\; w_2 \;\; \cdots \;\; w_n \;\big|\; v_1 \;\; v_2 \;\; \cdots \;\; v_n\,\bigr] \;\xrightarrow{\text{ERO}}\; [\,I \;\big|\; P\,]$$
+  </div>
+  <p style="margin-top:.4rem;">Sağ bloktaki sonuç matrisi tam olarak $\beta$'dan $T$'ye geçiş matrisidir.</p>
+  <p class="note" style="margin-top:.4rem;">Bu yöntem, her $v_i$ için ayrı ayrı sistem çözmek yerine hepsini tek seferde yapar.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Koordinat matrisi $[v]_\beta$:</strong> $v$'yi sıralı $\beta$ bazında yazınca elde edilen $n \times 1$ skaler sütunu.
+    <br><br>
+    <strong>Sıralı baz:</strong> Vektörlerin sırası sabit; koordinatlar ancak bu sayede iyi tanımlıdır.
+    <br><br>
+    <strong>Özellikler:</strong> $[v+w]_S = [v]_S + [w]_S$, &nbsp; $[cv]_S = c\,[v]_S$, &nbsp; $[v]_S = [w]_S \Leftrightarrow v = w$.
+    <br><br>
+    <strong>Geçiş matrisi:</strong> $[v]_C = P\,[v]_\beta$ ilişkisini sağlayan tek tersinir matris.
+    <br><br>
+    <strong>İnşa:</strong> $P$'nin $i$. sütunu = $[v_i]_C$ (yani $\beta$'nın $i$. vektörünün $C$ bazındaki koordinatları).
+    <br><br>
+    <strong>Ters geçiş:</strong> $C$'den $\beta$'ya geçiş matrisi $P^{-1}$'dir.
+    <br><br>
+    <strong>Pratik:</strong> $[\,w_1 \cdots w_n \mid v_1 \cdots v_n\,] \to [\,I \mid P\,]$ ile $P$'yi tek seferde bul.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

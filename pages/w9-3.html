@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Pratik: Norm ve Ortogonallik</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pratik: Norm ve Ortogonallik</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 9 - Bölüm 3)</div>
+</div>
+
+<!-- ═══════════════ SORU 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 1 — İç Çarpım Olduğunu Gösterme</div>
+
+<div class="q-box" data-label="Soru 1">
+  <p>$u = (x_1, x_2),\; v = (y_1, y_2) \in \mathbb{R}^2$ için</p>
+  <div class="formula">
+    $$(u \mid v) = x_1 y_1 + 2 x_1 y_2 + 2 x_2 y_1 + 5 x_2 y_2$$
+  </div>
+  <p style="margin-top:.4rem;">ifadesinin bir iç çarpım olduğunu gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">i) Lineerlik (2. argümanda)</div>
+    <p>$w = (z_1, z_2)$ olsun. $au + bv = (a x_1 + b y_1,\; a x_2 + b y_2)$ için:</p>
+    <div class="formula">
+      $$(w \mid au + bv) = z_1 (a x_1 + b y_1) + 2 z_1 (a x_2 + b y_2) + 2 z_2 (a x_1 + b y_1) + 5 z_2 (a x_2 + b y_2)$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$= a \bigl(z_1 x_1 + 2 z_1 x_2 + 2 z_2 x_1 + 5 z_2 x_2\bigr) + b \bigl(z_1 y_1 + 2 z_1 y_2 + 2 z_2 y_1 + 5 z_2 y_2\bigr)$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$= a (w \mid u) + b (w \mid v) \quad \checkmark$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">ii) Simetri</div>
+    <div class="formula">
+      $$(u \mid v) = x_1 y_1 + 2 x_1 y_2 + 2 x_2 y_1 + 5 x_2 y_2$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$(v \mid u) = y_1 x_1 + 2 y_1 x_2 + 2 y_2 x_1 + 5 y_2 x_2 \;=\; (u \mid v) \quad \checkmark$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">iii) Pozitif tanımlılık</div>
+    <div class="formula">
+      $$(u \mid u) = x_1^2 + 2 x_1 x_2 + 2 x_1 x_2 + 5 x_2^2 = x_1^2 + 4 x_1 x_2 + 5 x_2^2$$
+    </div>
+    <p style="margin-top:.3rem;">Kareye tamamlarsak:</p>
+    <div class="formula">
+      $$= (x_1 + 2 x_2)^2 + x_2^2 \;>\; 0, \qquad u \neq \mathbf{0} \text{ iken.}$$
+    </div>
+    <p class="note" style="margin-top:.3rem;">Eğer $x_2 \neq 0$ ise ikinci terim, $x_2 = 0$ ve $x_1 \neq 0$ ise birinci terim sıfırdan büyük → her durumda pozitif. ✓</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Üç aksiyom da sağlandı → $(u \mid v)$ bir <strong>iç çarpımdır</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 2 — Normalizasyon Birim Vektör Verir</div>
+
+<div class="q-box" data-label="Soru 2">
+  <p>Sıfırdan farklı $v \in V$ için $\dfrac{1}{\|v\|}\, v$'nin bir birim vektör olduğunu gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula big">
+    $$\left\| \frac{1}{\|v\|}\, v \right\| = \sqrt{\left( \frac{v}{\|v\|} \;\Big|\; \frac{v}{\|v\|} \right)} = \frac{1}{\|v\|}\sqrt{(v \mid v)} = \frac{1}{\|v\|}\, \|v\| = 1.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;"><strong>Not:</strong> $\dfrac{v}{\|v\|}$ vektörüne $v$'nin <strong>normalizasyonu</strong> denir.</p>
+</div>
+
+<!-- ═══════════════ SORU 3 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 3 — Çeşitli Uzaylarda Normalizasyon</div>
+
+<div class="q-box" data-label="Soru 3">
+  <p>Aşağıdaki vektörleri normalize ediniz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>a)</strong>&nbsp;&nbsp;$(2, -1, 1, 2) \in \mathbb{R}^4$</div>
+    <div><strong>b)</strong>&nbsp;&nbsp;$\begin{bmatrix} 0 & -1 \\ 1 & \sqrt{3} \end{bmatrix} \in \mathbb{R}^{2 \times 2}$</div>
+    <div><strong>c)</strong>&nbsp;&nbsp;$a x + b \in C[0, 1]$</div>
+  </div>
+</div>
+
+<!-- Çözüm a -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a — $\mathbb{R}^4$'te</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula">
+    $$\|(2, -1, 1, 2)\| = \sqrt{4 + 1 + 1 + 4} = \sqrt{10}$$
+  </div>
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\frac{(2, -1, 1, 2)}{\sqrt{10}} = \left( \tfrac{2}{\sqrt{10}},\; -\tfrac{1}{\sqrt{10}},\; \tfrac{1}{\sqrt{10}},\; \tfrac{2}{\sqrt{10}} \right)$$
+  </div>
+</div>
+
+<!-- Çözüm b -->
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm b — $\mathbb{R}^{2 \times 2}$'de (Frobenius)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula">
+    $$\left\| \begin{bmatrix} 0 & -1 \\ 1 & \sqrt{3} \end{bmatrix} \right\| = \sqrt{0 + 1 + 1 + 3} = \sqrt{5}$$
+  </div>
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\frac{1}{\sqrt{5}} \begin{bmatrix} 0 & -1 \\ 1 & \sqrt{3} \end{bmatrix} = \begin{bmatrix} 0 & -\tfrac{1}{\sqrt{5}} \\ \tfrac{1}{\sqrt{5}} & \tfrac{\sqrt{3}}{\sqrt{5}} \end{bmatrix}$$
+  </div>
+</div>
+
+<!-- Çözüm c -->
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm c — $C[0, 1]$'de (İntegral İç Çarpımı)</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula">
+    $$\|ax + b\| = \sqrt{\int_0^1 (a x + b)^2\, dx} = \sqrt{\tfrac{1}{3} a^2 + a b + b^2}$$
+  </div>
+  <p style="margin-top:.3rem;">Çünkü $\int_0^1 (a x + b)^2 dx = \int_0^1 (a^2 x^2 + 2 a b x + b^2)\, dx = \tfrac{a^2}{3} + a b + b^2$.</p>
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\frac{a x + b}{\sqrt{\tfrac{1}{3} a^2 + a b + b^2}} \;=\; \frac{a}{\sqrt{\tfrac{1}{3} a^2 + a b + b^2}} \, x \;+\; \frac{b}{\sqrt{\tfrac{1}{3} a^2 + a b + b^2}}$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 4 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 4 — Cauchy–Schwarz Uygulaması</div>
+
+<div class="q-box" data-label="Soru 4">
+  <p>$a_i, \theta_i \in \mathbb{R}$ için aşağıdaki eşitsizliği ispatlayınız:</p>
+  <div class="formula big">
+    $$|a_1 \cos \theta_1 + \cdots + a_n \cos \theta_n| \;\leq\; \sqrt{n \, (a_1^2 + \cdots + a_n^2)}$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Vektörleri kur</div>
+    <p>$\mathbb{R}^n$'de iki vektör seç:</p>
+    <div class="formula">
+      $$u = (a_1, \ldots, a_n), \qquad v = (\cos \theta_1, \ldots, \cos \theta_n).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Cauchy–Schwarz uygula</div>
+    <div class="formula">
+      $$|(u \mid v)| = |a_1 \cos \theta_1 + \cdots + a_n \cos \theta_n| \;\leq\; \|u\| \cdot \|v\|.$$
+    </div>
+    <p style="margin-top:.3rem;">Sağ taraf:</p>
+    <div class="formula">
+      $$\|u\| \cdot \|v\| = \sqrt{a_1^2 + \cdots + a_n^2} \cdot \sqrt{\cos^2 \theta_1 + \cdots + \cos^2 \theta_n}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">$\cos^2 \theta_i \leq 1$ ile sınırla</div>
+    <div class="formula">
+      $$\cos^2 \theta_1 + \cdots + \cos^2 \theta_n \;\leq\; \underbrace{1 + 1 + \cdots + 1}_{n \text{ kere}} = n.$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\therefore\; \|u\| \cdot \|v\| \;\leq\; \sqrt{a_1^2 + \cdots + a_n^2} \cdot \sqrt{n} \;=\; \sqrt{n \, (a_1^2 + \cdots + a_n^2)}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    İki adımı birleştirince istenen eşitsizlik elde edilir. $\blacksquare$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 5 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 5 — $\dim S^\perp$</div>
+
+<div class="q-box" data-label="Soru 5">
+  <p>$S = \{(4, -3, 2, -1),\; (8, -7, 5, -3)\} \subseteq \mathbb{R}^4$ olsun. $\dim S^\perp$'i bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Diklik denklemleri</div>
+    <p>$w = (x, y, z, t) \in S^\perp$ olsun:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        (w \mid (4, -3, 2, -1)) &= 4 x - 3 y + 2 z - t = 0 \\
+        (w \mid (8, -7, 5, -3)) &= 8 x - 7 y + 5 z - 3 t = 0
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Katsayı matrisi &amp; indirgeme</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>4</td><td>−3</td><td>2</td><td>−1</td></tr>
+        <tr><td>8</td><td>−7</td><td>5</td><td>−3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_2 \to r_2 - 2 r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">4</td><td>−3</td><td>2</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">−1</td><td>1</td><td>−1</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Parametrik çözüm</div>
+    <p>$z = m,\; t = k$ serbest. 2. satırdan: $-y + z - t = 0 \Rightarrow y = z - t = m - k$.</p>
+    <p style="margin-top:.3rem;">1. satırdan: $4 x = 3 y - 2 z + t = 3 (m - k) - 2 m + k = m - 2 k \Rightarrow x = \tfrac{m - 2 k}{4}$.</p>
+    <div class="formula">
+      $$w = \left( \tfrac{m - 2 k}{4},\; m - k,\; m,\; k \right) = m \left(\tfrac{1}{4}, 1, 1, 0\right) + k \left(-\tfrac{1}{2}, -1, 0, 1\right).$$
+    </div>
+    <p class="note" style="margin-top:.3rem;">Tam sayılı baza geçmek için ölçekleyelim: $m = 4 m'$ ve $k = 2 k'$ alarak vektörleri sırasıyla $4$ ve $2$ ile çarpıyoruz.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$S^\perp = \langle (1, 4, 4, 0),\; (-1, -2, 0, 2) \rangle, \qquad \dim S^\perp = 2.$$
+  </div>
+
+  <p class="note" style="margin-top:.4rem;"><strong>Kontrol:</strong> &nbsp;$(1, 4, 4, 0)$ için $4 - 12 + 8 - 0 = 0$ ✓ &nbsp;ve&nbsp; $8 - 28 + 20 - 0 = 0$ ✓. Aynı şekilde $(-1, -2, 0, 2)$ de iki denklemi sağlar.</p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

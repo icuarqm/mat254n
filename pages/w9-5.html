@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Ortogonal ve Ortonormal Bazlar</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Ortogonal ve Ortonormal Bazlar</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 9 - Bölüm 5)</div>
+</div>
+
+<!-- ═══════════════ TANIMLAR ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Ortogonal &amp; Ortonormal Kümeler / Bazlar</div>
+
+<div class="def-box" data-label="Tanım — Ortogonal Küme &amp; Baz">
+  <p>$V$ bir iç çarpım uzayı, $S$ ise $V$'nin bir alt kümesi olsun.</p>
+  <div class="prop-list" style="margin-top:.5rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        $S$'in <strong>her iki farklı vektörünün</strong> iç çarpımı sıfır ise $S$'e <strong>ortogonal küme</strong> denir:
+        <div class="formula" style="margin-top:.2rem;">$$(\alpha \mid \beta) = 0, \quad \forall\, \alpha \neq \beta \in S.$$</div>
+        $S$ ayrıca bir baz ise $V$ için <strong>ortogonal baz</strong> olarak adlandırılır.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>
+        $S$ <strong>birim vektörlerden</strong> oluşan bir ortogonal küme ise <strong>ortonormal küme</strong> denir. Ortonormal olan bir baza <strong>ortonormal baz</strong> denir.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card note-card" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Not — Normalizasyon</span>
+    <span class="tag warn">Not</span>
+  </div>
+  <p>Sıfırdan farklı vektörlerden oluşan bir ortogonal kümenin her vektörünü <strong>normalize ederek</strong> ortonormal bir küme elde ederiz.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — Ortogonal ve Ortonormal Kümeler</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>Aşağıdaki kümeleri inceleyiniz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div>·&nbsp;&nbsp;$S_1 = \{(1, 1, 1),\; (-2, 1, 1),\; (0, -1, 1)\}$</div>
+    <div>·&nbsp;&nbsp;$S_2 = \{(3, \tfrac{1}{2}, -1),\; (-1, 2, -2)\}$</div>
+    <div>·&nbsp;&nbsp;$S_3 = \{(1/\sqrt{3}, 1/\sqrt{3}, 1/\sqrt{3}),\; (-2/\sqrt{6}, 1/\sqrt{6}, 1/\sqrt{6}),\; (0, -1/\sqrt{2}, 1/\sqrt{2})\}$</div>
+    <div>·&nbsp;&nbsp;$S_4 = \{(1, 0, 0),\; (0, 1, 0),\; (0, 0, 1)\}$</div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Açıklama</span>
+  </div>
+
+  <p><strong>$S_1$:</strong> Çiftler arası iç çarpımlar:</p>
+  <div class="formula">
+    $$\bigl((1,1,1) \mid (-2,1,1)\bigr) = -2 + 1 + 1 = 0, \quad \bigl((1,1,1) \mid (0,-1,1)\bigr) = 0, \quad \bigl((-2,1,1) \mid (0,-1,1)\bigr) = 0.$$
+  </div>
+  <p style="margin-top:.3rem;">$S_1$ <strong>ortogonal kümedir</strong>. $\mathbb{R}^3$ için $3$ tane lineer bağımsız vektör → <strong>ortogonal baz</strong>.</p>
+
+  <p style="margin-top:.55rem;"><strong>$S_2$:</strong> $\bigl((3, \tfrac{1}{2}, -1) \mid (-1, 2, -2)\bigr) = -3 + 1 + 2 = 0$ → <strong>ortogonal kümedir</strong> (ama yalnız $2$ vektörlü, $\mathbb{R}^3$'te baz değildir).</p>
+
+  <p style="margin-top:.55rem;"><strong>$S_3$:</strong> $S_1$'in her vektörünün normalizasyonu (sırasıyla $\sqrt{3}, \sqrt{6}, \sqrt{2}$ ile böl) → <strong>ortonormal baz</strong>.</p>
+
+  <p style="margin-top:.55rem;"><strong>$S_4$:</strong> Standart $\mathbb{R}^3$ bazı; trivial olarak <strong>ortonormal bazdır</strong>.</p>
+</div>
+
+<!-- ═══════════════ TEOREM ═══════════════ -->
+<div class="section-title"><span>📐</span> Teorem — Ortogonallik ⇒ Bağımsızlık</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$S$, bir iç çarpım uzayında sıfırdan farklı vektörlerden oluşan bir <strong>ortogonal küme</strong> ise, $S$ lineer bağımsızdır.</p>
+  <p class="note" style="margin-top:.4rem;">Sezgi: Ortogonallik, her vektörün diğerlerine "yeni bir yön" eklediği anlamına gelir → kombinasyonla birbiri sıfırlayamaz.</p>
+</div>
+
+<!-- ═══════════════ GRAM-SCHMIDT ═══════════════ -->
+<div class="section-title"><span>🔗</span> Gram–Schmidt Ortogonalizasyon</div>
+
+<div class="def-box" data-label="Süreç — Gram–Schmidt">
+  <p>$v_1, v_2, \ldots, v_m$ bir iç çarpım uzayı $V$'nin lineer bağımsız vektörleri olsun. Aşağıdaki tanımlanan $w_i$'lerden oluşan küme <strong>ortogonaldır</strong>:</p>
+
+  <div class="formula big">
+    $$\begin{aligned}
+      w_1 &= v_1 \\[.3em]
+      w_2 &= v_2 - \frac{(v_2 \mid w_1)}{(w_1 \mid w_1)}\, w_1 \\[.3em]
+      w_3 &= v_3 - \frac{(v_3 \mid w_1)}{(w_1 \mid w_1)}\, w_1 - \frac{(v_3 \mid w_2)}{(w_2 \mid w_2)}\, w_2 \\
+          &\;\;\vdots \\[.2em]
+      w_m &= v_m - \frac{(v_m \mid w_1)}{(w_1 \mid w_1)}\, w_1 - \cdots - \frac{(v_m \mid w_{m-1})}{(w_{m-1} \mid w_{m-1})}\, w_{m-1}
+    \end{aligned}$$
+  </div>
+
+  <p style="margin-top:.5rem;">(Üstteki teoremle birlikte: lineer bağımsızdır da.) Bu sürece <strong>Gram–Schmidt ortogonalizasyon süreci</strong> denir.</p>
+  <p style="margin-top:.4rem;">Bir baz verildiğinde Gram–Schmidt ile o uzay için bir <strong>ortogonal baz</strong> elde edilir.</p>
+</div>
+
+<div class="card note-card" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Not — Ortonormale Geçiş</span>
+    <span class="tag warn">Not</span>
+  </div>
+  <p>Gram–Schmidt'ten gelen her $w_i$'yi normalize ederek</p>
+  <div class="formula">
+    $$w_i' = \frac{w_i}{\|w_i\|}$$
+  </div>
+  <p style="margin-top:.3rem;">alırsak $\{w_1', \ldots, w_m'\}$ bir <strong>ortonormal kümedir</strong>.</p>
+</div>
+
+<!-- ═══════════════ GRAM-SCHMIDT ÖRNEK i ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek i — $\mathbb{R}^3$'te Gram–Schmidt</div>
+
+<div class="q-box" data-label="Örnek i">
+  <p>$\{(1, -1, 1),\; (2, 0, -1)\} \subseteq \mathbb{R}^3$ kümesini kullanarak bir <strong>ortogonal küme</strong> bulunuz; sonra <strong>ortonormale</strong> çeviriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">$w_1$</div>
+    <div class="formula">
+      $$w_1 = (1, -1, 1).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$w_2$</div>
+    <p>$(v_2 \mid w_1) = (2, 0, -1) \cdot (1, -1, 1) = 2 + 0 - 1 = 1$.</p>
+    <p style="margin-top:.2rem;">$(w_1 \mid w_1) = 1 + 1 + 1 = 3$.</p>
+    <div class="formula" style="margin-top:.3rem;">
+      $$w_2 = (2, 0, -1) - \tfrac{1}{3}(1, -1, 1) = \bigl(\tfrac{5}{3},\; \tfrac{1}{3},\; -\tfrac{4}{3}\bigr).$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Ortogonal küme: $\{w_1, w_2\} = \{(1, -1, 1),\; (\tfrac{5}{3}, \tfrac{1}{3}, -\tfrac{4}{3})\}$.
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Normalize → Ortonormal küme</div>
+    <p>$\|w_1\| = \sqrt{3}$, &nbsp;$\|w_2\| = \sqrt{\tfrac{25 + 1 + 16}{9}} = \sqrt{\tfrac{42}{9}} = \tfrac{\sqrt{42}}{3}$.</p>
+    <div class="formula" style="margin-top:.3rem;">
+      $$w_1' = \tfrac{1}{\sqrt{3}}(1, -1, 1) = \bigl(\tfrac{1}{\sqrt{3}}, -\tfrac{1}{\sqrt{3}}, \tfrac{1}{\sqrt{3}}\bigr).$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$w_2' = \tfrac{3}{\sqrt{42}}\bigl(\tfrac{5}{3}, \tfrac{1}{3}, -\tfrac{4}{3}\bigr) = \bigl(\tfrac{5}{\sqrt{42}}, \tfrac{1}{\sqrt{42}}, -\tfrac{4}{\sqrt{42}}\bigr).$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Ortonormal küme: $\{w_1', w_2'\}$.
+  </div>
+</div>
+
+<!-- ═══════════════ GRAM-SCHMIDT ÖRNEK ii ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek ii — $C[0, 1]$'de Polinom Bazı</div>
+
+<div class="q-box" data-label="Örnek ii">
+  <p>$\{1,\; x,\; x^2\}$ tarafından gerilen $C[0, 1]$ alt uzayı için (integral iç çarpımıyla) bir ortogonal baz bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">$w_1$</div>
+    <div class="formula">
+      $$w_1 = 1.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$w_2$</div>
+    <p>$(x \mid 1) = \int_0^1 x\, dx = \tfrac{1}{2}$, &nbsp;$(1 \mid 1) = \int_0^1 1\, dx = 1$.</p>
+    <div class="formula" style="margin-top:.3rem;">
+      $$w_2 = x - \tfrac{1/2}{1} \cdot 1 = x - \tfrac{1}{2}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$w_3$</div>
+    <p>İhtiyaç duyulan iç çarpımlar:</p>
+    <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+      <div>·&nbsp;&nbsp;$(x^2 \mid 1) = \int_0^1 x^2\, dx = \tfrac{1}{3}$</div>
+      <div>·&nbsp;&nbsp;$(x^2 \mid x - \tfrac{1}{2}) = \int_0^1 x^2 (x - \tfrac{1}{2})\, dx = \int_0^1 (x^3 - \tfrac{x^2}{2})\, dx = \tfrac{1}{4} - \tfrac{1}{6} = \tfrac{1}{12}$</div>
+      <div>·&nbsp;&nbsp;$\bigl(x - \tfrac{1}{2} \;\big|\; x - \tfrac{1}{2}\bigr) = \int_0^1 (x - \tfrac{1}{2})^2\, dx = \tfrac{1}{3} - \tfrac{1}{2} + \tfrac{1}{4} = \tfrac{1}{12}$</div>
+    </div>
+    <p style="margin-top:.4rem;">Yerine koy:</p>
+    <div class="formula">
+      $$w_3 = x^2 - \tfrac{1/3}{1} \cdot 1 - \tfrac{1/12}{1/12} \cdot (x - \tfrac{1}{2}) = x^2 - \tfrac{1}{3} - (x - \tfrac{1}{2}).$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$w_3 = x^2 - x + \tfrac{1}{6}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Ortogonal baz: $\{w_1, w_2, w_3\} = \bigl\{\, 1,\;\; x - \tfrac{1}{2},\;\; x^2 - x + \tfrac{1}{6} \,\bigr\}$.
+  </div>
+
+  <p class="note" style="margin-top:.4rem;">Bunlar $[0, 1]$ aralığında <em>kaydırılmış Legendre polinomlarıdır</em>; ortonormale çevirmek için her birini kendi normuna bölmek yeterlidir.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Ortogonal küme:</strong> Tüm farklı çiftlerin iç çarpımı $0$.
+    <br><br>
+    <strong>Ortonormal küme:</strong> Ortogonal + her vektör birim norma sahip.
+    <br><br>
+    <strong>Anahtar Teorem:</strong> Sıfırdan farklı vektörlerden oluşan ortogonal küme daima lineer bağımsızdır.
+    <br><br>
+    <strong>Gram–Schmidt:</strong> Bağımsız $\{v_1, \ldots, v_m\}$ kümesini ortogonal $\{w_1, \ldots, w_m\}$'a dönüştürür:
+    <br><span style="margin-left:1.2rem;">$\displaystyle w_k = v_k - \sum_{j=1}^{k-1} \frac{(v_k \mid w_j)}{(w_j \mid w_j)}\, w_j$</span>
+    <br><br>
+    <strong>Pratik:</strong> Her $w_i$'yi $\|w_i\|$'e bölerek ortonormale geç.
+    <br><br>
+    <strong>Uygulanabilir uzaylar:</strong> $\mathbb{R}^n$ (nokta çarpım), $\mathbb{R}^{m \times n}$ (Frobenius), $C[a, b]$ (integral).
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

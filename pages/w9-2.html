@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Norm ve Ortogonallik</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Norm ve Ortogonallik</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 9 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════ TANIMLAR ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Norm, Ortogonallik, Ortogonal Tümleyen</div>
+
+<div class="def-box" data-label="Tanım — Norm (Uzunluk)">
+  <p>$(\cdot \mid \cdot)$, $V$ vektör uzayı üzerinde bir iç çarpım olsun. $v \in V$ için, $v$'nin <strong>normu</strong> (norm / length) $\|v\|$ ile gösterilir ve şöyle tanımlanır:</p>
+  <div class="formula big">
+    $$\|v\| \;=\; \sqrt{(v \mid v)}$$
+  </div>
+  <p style="margin-top:.4rem;">Eğer $\|v\| = 1$ ise $v$'ye <strong>birim vektör</strong> (unit vector / normalized vector) denir.</p>
+</div>
+
+<div class="def-box" data-label="Tanım — Ortogonallik (Diklik)" style="margin-top:.5rem;">
+  <p>$v, w \in V$ vektörlerine <strong>ortogonal</strong> (orthogonal / dik) denir, eğer</p>
+  <div class="formula big">
+    $$(v \mid w) \;=\; 0$$
+  </div>
+</div>
+
+<div class="def-box" data-label="Tanım — Ortogonal Tümleyen ($S^\perp$)" style="margin-top:.5rem;">
+  <p>$S \subseteq V$ herhangi bir alt küme olsun. $S$'in <strong>her</strong> elemanına dik olan vektörlerin kümesine $S$'in <strong>ortogonal tümleyeni</strong> (orthogonal complement) denir; $S^\perp$ ile gösterilir:</p>
+  <div class="formula big">
+    $$S^\perp \;=\; \{\, v \in V \;:\; (v \mid s) = 0 \text{ her } s \in S \,\}$$
+  </div>
+</div>
+
+<!-- ═══════════════ ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnekler</div>
+
+<!-- a) Norm hesabı -->
+<div class="q-box" data-label="Örnek a">
+  <p>$(\sqrt{3},\; 3,\; -2) \in \mathbb{R}^3$ vektörünün normunu hesaplayınız.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula">
+    $$\|(\sqrt{3}, 3, -2)\| = \sqrt{\bigl((\sqrt{3}, 3, -2) \mid (\sqrt{3}, 3, -2)\bigr)} = \sqrt{3 + 9 + 4} = \sqrt{16} = 4.$$
+  </div>
+</div>
+
+<!-- b) Diklik testi -->
+<div class="q-box" data-label="Örnek b" style="margin-top:.6rem;">
+  <p>$(1, -1, 1)$ ile $(1, -1, -2)$ vektörlerinin ortogonal olduğunu gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm b</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula">
+    $$\bigl((1, -1, 1) \mid (1, -1, -2)\bigr) = 1 + 1 - 2 = 0.$$
+  </div>
+  <p style="margin-top:.3rem;">İç çarpım sıfır → vektörler <strong>ortogonaldir</strong>.</p>
+</div>
+
+<!-- c) S^⊥ -->
+<div class="q-box" data-label="Örnek c" style="margin-top:.6rem;">
+  <p>$S = \{(1, -1, 1),\; (1, 1, 0),\; (2, 0, 1)\} \subseteq \mathbb{R}^3$ olsun. $S^\perp$'i bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm c</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Üyelik koşulları</div>
+    <p>$v = (x_1, x_2, x_3) \in S^\perp$ olsun. $S$'in her elemanı ile diklik koşulu:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        (v \mid (1, -1, 1)) &= x_1 - x_2 + x_3 = 0 \\
+        (v \mid (1, 1, 0))  &= x_1 + x_2 \phantom{ + x_3 } = 0 \\
+        (v \mid (2, 0, 1))  &= 2 x_1 + x_3 \phantom{ + x_2 } = 0
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Katsayı matrisi &amp; indirgeme (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td>2</td><td class="zero-cell">0</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">2</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Parametrik çözüm</div>
+    <p>İndirgenmiş sistemin 2. satırı: $2 x_2 - x_3 = 0$. $x_2 = t$ alalım → $x_3 = 2 t$.</p>
+    <p style="margin-top:.3rem;">1. satır: $x_1 - x_2 + x_3 = 0 \Rightarrow x_1 = x_2 - x_3 = t - 2 t = -t$.</p>
+    <div class="formula">
+      $$v = (-t,\; t,\; 2 t) = t \cdot (-1, 1, 2).$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$S^\perp = \langle (-1, 1, 2) \rangle, \qquad \dim S^\perp = 1.$$
+  </div>
+</div>
+
+<!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
+<div class="section-title"><span>📐</span> Norm ve Ortogonalliğin Özellikleri</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Özellikler</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>$(\cdot \mid \cdot)$, $V$ gerçel vektör uzayında iç çarpım olsun. Her $v, w, u \in V$ ve $c \in \mathbb{R}$ için:</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        Negatif olmayan norm: $\|v\| \geq 0$ ve $\|v\| = 0 \;\Longleftrightarrow\; v = \mathbf{0}$.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>
+        Skaler katlık: $\|c v\| = |c| \cdot \|v\|$.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>
+        <strong>Pisagor Teoremi</strong> — $v$ ile $w$ ortogonal ise:
+        <div class="formula" style="margin-top:.2rem;">$$\|v + w\|^2 = \|v\|^2 + \|w\|^2.$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iv)</span>
+      <div>
+        <strong>Cauchy–Schwarz Eşitsizliği:</strong>
+        <div class="formula" style="margin-top:.2rem;">$$|(v \mid w)| \;\leq\; \|v\| \cdot \|w\|.$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">v)</span>
+      <div>
+        <strong>Üçgen Eşitsizliği:</strong>
+        <div class="formula" style="margin-top:.2rem;">$$\|u + w\| \;\leq\; \|u\| + \|w\|.$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">vi)</span>
+      <div>
+        $S \subseteq V$ herhangi bir alt küme ise $S^\perp$, $V$'nin bir <strong>alt uzayıdır</strong>.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">vii)</span>
+      <div>
+        Sıfırdan farklı $v, w \in V$ için (Cauchy–Schwarz'ın sonucu):
+        <div class="formula" style="margin-top:.2rem;">$$-1 \;\leq\; \frac{(v \mid w)}{\|v\| \, \|w\|} \;\leq\; 1.$$</div>
+      </div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.55rem;">(vii) bizi <em>açı</em> tanımına götürür: oran $[-1, 1]$ aralığında olduğundan bir açının kosinüsü olarak yorumlanabilir.</p>
+</div>
+
+<!-- ═══════════════ AÇI ═══════════════ -->
+<div class="section-title"><span>📐</span> Açı Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Açı (Angle)">
+  <p>$V$ gerçel iç çarpım uzayı, $v, w \in V$ sıfırdan farklı vektörler olsun. $v$ ile $w$ arasındaki <strong>açı</strong> $\theta$ şöyle tanımlanır:</p>
+  <div class="formula big">
+    $$\cos \theta \;=\; \frac{(v \mid w)}{\|v\| \, \|w\|}, \qquad 0 \leq \theta \leq \pi.$$
+  </div>
+</div>
+
+<!-- Açı örneği -->
+<div class="q-box" data-label="Örnek — Açı" style="margin-top:.5rem;">
+  <p>$(2, -2, 0, -1)$ ve $(1, -1, -1, 1) \in \mathbb{R}^4$ arasındaki açıyı bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">İç çarpım ve normlar</div>
+    <div class="formula">
+      $$\bigl((2, -2, 0, -1) \mid (1, -1, -1, 1)\bigr) = 2 + 2 + 0 - 1 = 3.$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\|(2, -2, 0, -1)\| = \sqrt{4 + 4 + 0 + 1} = \sqrt{9} = 3.$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\|(1, -1, -1, 1)\| = \sqrt{1 + 1 + 1 + 1} = \sqrt{4} = 2.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Açı</div>
+    <div class="formula big">
+      $$\cos \theta \;=\; \frac{3}{3 \cdot 2} \;=\; \frac{1}{2} \;\;\Longrightarrow\;\; \theta = \frac{\pi}{3}.$$
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MESAFE ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Mesafe Tanımı</div>
+
+<div class="def-box" data-label="Tanım — Mesafe (Distance)">
+  <p>$V$ gerçel iç çarpım uzayı olsun. $v, w \in V$ arasındaki <strong>mesafe</strong> şöyle tanımlanır:</p>
+  <div class="formula big">
+    $$d(v, w) \;=\; \|w - v\| \;=\; \sqrt{(w - v \mid w - v)}.$$
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Norm:</strong> $\|v\| = \sqrt{(v \mid v)}$. &nbsp; $\|v\| = 1$ ise <em>birim vektör</em>.
+    <br><br>
+    <strong>Ortogonallik:</strong> $(v \mid w) = 0 \Leftrightarrow v \perp w$.
+    <br><br>
+    <strong>Ortogonal tümleyen:</strong> $S^\perp = \{v : (v \mid s) = 0,\; \forall s \in S\}$ — $V$'nin alt uzayıdır.
+    <br><br>
+    <strong>Anahtar eşitsizlikler:</strong>
+    <br>· Pisagor: $v \perp w \Rightarrow \|v+w\|^2 = \|v\|^2 + \|w\|^2$
+    <br>· Cauchy–Schwarz: $|(v \mid w)| \leq \|v\| \|w\|$
+    <br>· Üçgen: $\|u + w\| \leq \|u\| + \|w\|$
+    <br><br>
+    <strong>Açı:</strong> $\cos \theta = (v \mid w) / (\|v\| \|w\|)$ — Cauchy–Schwarz sayesinde iyi tanımlı.
+    <br><br>
+    <strong>Mesafe:</strong> $d(v, w) = \|w - v\|$.
+    <br><br>
+    <strong>Pratik:</strong> $S^\perp$'i bulmak için her $s \in S$ ile diklik denklemlerini yaz, katsayı matrisini indirge, parametrik çöz.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Matrise Bağlı Alt Uzaylar</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Matrise Bağlı Alt Uzaylar</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 8 - Bölüm 3)</div>
+</div>
+
+<!-- ═══════════════ 1) SATIR UZAYI ═══════════════ -->
+<div class="section-title"><span>⚙️</span> 1) Satır Uzayı (Row Space)</div>
+
+<div class="def-box" data-label="Tanım — Satır Uzayı &amp; Satır Rankı">
+  <p>$A$, $m \times n$ matris olsun. $A$'nın <strong>satırları</strong> birer $n$-demet olarak düşünülebilir. Bu satır vektörlerinin gerdiği $n$-demet alt uzayına $A$'nın <strong>satır uzayı</strong> (row space) denir.</p>
+  <p style="margin-top:.4rem;">Satır uzayının boyutuna $A$'nın <strong>satır rankı</strong> (row rank) denir.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Notlar</span>
+    <span class="tag prop">Not</span>
+  </div>
+  <div class="prop-list">
+    <div class="prop-item">
+      <span class="prop-label">1)</span>
+      <div>Satır denk iki matris $A$ ve $B$ <strong>aynı satır uzayına</strong> sahiptir (ERO'lar satır uzayını değiştirmez).</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">2)</span>
+      <div>Bir echelon matrisin <strong>sıfır olmayan satırları lineer bağımsızdır</strong> → satır rankı = sıfır olmayan satır sayısı.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Örnek -->
+<div class="section-title" style="margin-top:1.2rem;"><span>✏️</span> Örnek — Satır Uzayı &amp; Satır Rankı</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>$A$'nın satır uzayını ve satır rankını bulunuz:</p>
+  <div class="mw" style="justify-content:center; margin-top:.4rem; align-items:center; gap:.6rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>−1</td><td>2</td><td class="zero-cell">0</td><td>−1</td></tr>
+      <tr><td>2</td><td>−1</td><td>−2</td><td class="zero-cell">0</td><td>1</td></tr>
+      <tr><td>−1</td><td class="zero-cell">0</td><td>4</td><td class="zero-cell">0</td><td>−2</td></tr>
+      <tr><td class="zero-cell">0</td><td>−1</td><td>6</td><td class="zero-cell">0</td><td>−3</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Satır uzayı (başlangıç) &amp; ERO ile indirgeme</div>
+    <div class="formula">
+      $$W = \langle (1, -1, 2, 0, -1),\; (2, -1, -2, 0, 1),\; (-1, 0, 4, 0, -2),\; (0, -1, 6, 0, -3) \rangle \;\subseteq\; \mathbb{R}^5$$
+    </div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center; margin-top:.4rem;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td>2</td><td class="zero-cell">0</td><td>−1</td></tr>
+        <tr><td>2</td><td>−1</td><td>−2</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td>−1</td><td class="zero-cell">0</td><td>4</td><td class="zero-cell">0</td><td>−2</td></tr>
+        <tr><td class="zero-cell">0</td><td>−1</td><td>6</td><td class="zero-cell">0</td><td>−3</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>−1</td><td>2</td><td class="zero-cell">0</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>−6</td><td class="zero-cell">0</td><td>3</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$W = \langle (1, -1, 2, 0, -1),\; (0, 1, -6, 0, 3) \rangle, \qquad \dim W = 2 \;\;\text{(satır rankı)}.$$
+  </div>
+</div>
+
+<!-- ═══════════════ 2) SÜTUN UZAYI ═══════════════ -->
+<div class="section-title"><span>⚙️</span> 2) Sütun Uzayı (Column Space)</div>
+
+<div class="def-box" data-label="Tanım — Sütun Uzayı &amp; Sütun Rankı">
+  <p>$A$, $m \times n$ matris olsun. Satır uzayına benzer şekilde, $A$'nın <strong>sütunlarının</strong> gerdiği alt uzaya $A$'nın <strong>sütun uzayı</strong> (column space) ve bu uzayın boyutuna <strong>sütun rankı</strong> (column rank) denir.</p>
+</div>
+
+<div class="card note-card" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Not — Tutarlılık ↔ Sütun Uzayı</span>
+    <span class="tag warn">Not</span>
+  </div>
+  <p>$A x = b$ sistemi <strong>tutarlıdır</strong> ancak ve ancak $b$, $A$'nın sütun uzayındaysa.</p>
+  <p class="note" style="margin-top:.3rem;">Sezgi: $A x$, $A$'nın sütunlarının $x_i$ skalerleriyle lineer kombinasyonudur. $b$'nin böyle yazılabilmesi tam olarak $b \in \operatorname{Col}(A)$ demektir.</p>
+</div>
+
+<!-- Örnek -->
+<div class="section-title" style="margin-top:1.2rem;"><span>✏️</span> Örnek — Sütun Uzayı &amp; Sütun Rankı</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>$A$'nın sütun uzayını ve sütun rankını bulunuz:</p>
+  <div class="mw" style="justify-content:center; margin-top:.4rem; align-items:center; gap:.6rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>2</td><td class="zero-cell">0</td><td>1</td></tr>
+      <tr><td>−1</td><td>1</td><td>3</td><td class="zero-cell">0</td></tr>
+      <tr><td>1</td><td>−1</td><td>−3</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td>1</td><td>1</td><td class="zero-cell">0</td></tr>
+      <tr><td>1</td><td>1</td><td>−1</td><td>1</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Sütunlar $\mathbb{R}^5$'in elemanları</div>
+    <div class="formula">
+      $$W = \langle (1, -1, 1, 0, 1),\; (2, 1, -1, 1, 1),\; (0, 3, -3, 1, -1),\; (1, 0, 1, 0, 1) \rangle \;\subseteq\; \mathbb{R}^5$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">$A$'yı satır indirgemesi ile echelon forma getir; pivot sütunlar bazını verir</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>2</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td>−1</td><td>1</td><td>3</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>−1</td><td>−3</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td>1</td><td>1</td><td>−1</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>2</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">Pivotlar 1., 2., 4. sütunlarda — yani 3. sütun diğerlerinin lineer kombinasyonudur. Sütun uzayı için $A$'nın <strong>orijinal</strong> 1., 2., 4. sütunlarını al:</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$W = \langle (1, -1, 1, 0, 1),\; (2, 1, -1, 1, 1),\; (1, 0, 1, 0, 1) \rangle, \qquad \dim W = 3 \;\;\text{(sütun rankı)}.$$
+  </div>
+</div>
+
+<!-- ═══════════════ RANK TEOREMİ ═══════════════ -->
+<div class="section-title"><span>📐</span> Rank Teoremi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Satır Rankı = Sütun Rankı</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$A$, $m \times n$ matris olsun. O zaman:</p>
+  <div class="formula big" style="margin-top:.3rem;">
+    $$\operatorname{satır rankı}(A) \;=\; \operatorname{sütun rankı}(A)$$
+  </div>
+</div>
+
+<div class="def-box" data-label="Tanım — Rank" style="margin-top:.5rem;">
+  <p>$A$'nın <strong>rankı</strong>, $A$'nın lineer bağımsız satırlarının (veya sütunlarının) <strong>maksimum sayısıdır</strong>; $\operatorname{rank}(A)$ ile gösterilir.</p>
+</div>
+
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Sonuç</span>
+    <span class="tag prop">Sonuç</span>
+  </div>
+  <p>Herhangi bir matrisin rankı, o matrisin satır (veya sütun) rankına eşittir.</p>
+</div>
+
+<!-- Örnek rank -->
+<div class="q-box" data-label="Örnek — rank(A)" style="margin-top:.6rem;">
+  <p>Aşağıdaki matrisin rankını bulunuz:</p>
+  <div class="mw" style="justify-content:center; margin-top:.4rem; align-items:center; gap:.6rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td>3</td><td>1</td><td>4</td><td>5</td></tr>
+      <tr><td>2</td><td>1</td><td>−1</td><td>1</td><td class="zero-cell">0</td><td>4</td></tr>
+      <tr><td>−1</td><td>4</td><td>8</td><td>4</td><td>12</td><td>15</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Satır indirgemesi (egzersiz)</div>
+    <p>Reduktion sonucu 2 sıfır olmayan satır kalır:</p>
+    <div class="formula">
+      $$\text{Satır uzayı} \;=\; \langle (-1, 1, 3, 1, 4, 5),\; (0, -3, -5, -3, -8, -14) \rangle$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\text{Sütun uzayı} \;=\; \langle (1, 2, -1),\; (1, 1, 4) \rangle$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\text{satır rankı} = 2 = \text{sütun rankı} \;\;\Longrightarrow\;\; \operatorname{rank}(A) = 2.$$
+  </div>
+</div>
+
+<!-- ═══════════════ 3) ÇÖZÜM UZAYI ═══════════════ -->
+<div class="section-title"><span>⚙️</span> 3) Çözüm Uzayı (Solution Space)</div>
+
+<div class="def-box" data-label="Tanım — Çözüm Uzayı &amp; Nullity">
+  <p>$A x = \mathbf{0}$ homojen sisteminin çözüm kümesi $W$ olsun.</p>
+
+  <p style="margin-top:.55rem;"><strong>$W$ bir alt uzaydır:</strong></p>
+  <div class="prop-list" style="margin-top:.3rem;">
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      <div>
+        Toplama altında kapalı: $x_1, x_2 \in W \Rightarrow A x_1 = \mathbf{0},\; A x_2 = \mathbf{0} \Rightarrow A (x_1 + x_2) = \mathbf{0} \Rightarrow x_1 + x_2 \in W$.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">·</span>
+      <div>
+        Skaler çarpma altında kapalı: $c \in F,\; x \in W \Rightarrow A x = \mathbf{0} \Rightarrow A (c x) = c A x = \mathbf{0} \Rightarrow c x \in W$.
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:.55rem;">$W$'ye $A$'nın (ya da $A x = \mathbf{0}$ sisteminin) <strong>çözüm uzayı</strong> denir. Çözüm uzayının boyutuna $A$'nın <strong>nullity</strong>'si denir.</p>
+</div>
+
+<!-- Örnek çözüm uzayı -->
+<div class="section-title" style="margin-top:1.2rem;"><span>✏️</span> Örnek — Çözüm Uzayı</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>$A$'nın çözüm uzayını bulunuz:</p>
+  <div class="mw" style="justify-content:center; margin-top:.4rem; align-items:center; gap:.6rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td>1</td><td>−1</td></tr>
+      <tr><td>2</td><td>2</td><td>−1</td><td>1</td></tr>
+      <tr><td>−1</td><td>−1</td><td>−4</td><td>4</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Satır indirgemesi (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>1</td><td>1</td><td>−1</td></tr>
+        <tr><td>2</td><td>2</td><td>−1</td><td>1</td></tr>
+        <tr><td>−1</td><td>−1</td><td>−4</td><td>4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>1</td><td>1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−1</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">Echelon sistem:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        x_1 + x_2 + x_3 - x_4 &= 0 \\
+        -x_3 + x_4 &= 0
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Serbest değişkenleri seç &amp; parametrize et</div>
+    <p>$x_4 = k$ alalım; o zaman $x_3 = k$. $x_1 + x_2 = 0$ kaldı; $x_2 = t$ ise $x_1 = -t$.</p>
+    <div class="formula">
+      $$(x_1, x_2, x_3, x_4) = (-t,\; t,\; k,\; k) = t \cdot (-1, 1, 0, 0) + k \cdot (0, 0, 1, 1).$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$\text{Çözüm uzayı} \;=\; \langle (-1, 1, 0, 0),\; (0, 0, 1, 1) \rangle, \qquad \text{nullity}(A) = 2.$$
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Satır uzayı:</strong> $A$'nın satırlarının gerdiği alt uzay. Boyut = satır rankı.
+    <br><br>
+    <strong>Sütun uzayı:</strong> $A$'nın sütunlarının gerdiği alt uzay. Boyut = sütun rankı.
+    <br><br>
+    <strong>$Ax = b$ tutarlı $\Leftrightarrow$ $b \in \operatorname{Col}(A)$.</strong>
+    <br><br>
+    <strong>Pratik bulma:</strong>
+    <br>· Satır uzayı bazı: $A$'yı satır indirge → sıfır olmayan satırlar.
+    <br>· Sütun uzayı bazı: $A$'yı satır indirge, <em>pivot sütunlar</em>ı belirle → orijinal $A$'nın bu sütunlarını al.
+    <br><br>
+    <strong>Teorem:</strong> satır rankı = sütun rankı = $\operatorname{rank}(A)$.
+    <br><br>
+    <strong>Çözüm uzayı:</strong> $\{x : A x = \mathbf{0}\}$, bir alt uzay. Boyut = nullity($A$).
+    <br><br>
+    <strong>Pratik bulma:</strong> $A$'yı echelon forma indir → serbest değişkenleri parametre olarak çöz → her parametre bir baz vektörü verir.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Egzersizler: İç Çarpım Uzayları</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Egzersizler: İç Çarpım Uzayları</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 9 - Bölüm 4)</div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersiz 1 — İç Çarpım mı?</div>
+
+<div class="q-box" data-label="Egzersiz 1">
+  <p>$v = (x_1, y_1),\; w = (x_2, y_2) \in \mathbb{R}^2$ için aşağıdakilerin iç çarpım olup olmadığını araştırınız:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>i)</strong>&nbsp;&nbsp;$(v \mid w) = 2 x_1^2 + x_1 y_1 + x_2 y_2$</div>
+    <div><strong>ii)</strong>&nbsp;&nbsp;$(v \mid w) = x_1 y_1 + 2 x_1 y_2 + 2 x_2 y_1 + 4 x_2 y_2$</div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm i</span>
+    <span class="tag warn">İç çarpım değil</span>
+  </div>
+  <p>Eğer iç çarpım olsaydı $(v \mid \mathbf{0}) = 0$ olmalıydı. $v = (1, 0)$ ve $w = (0, 0)$ alalım:</p>
+  <div class="formula">
+    $$(v \mid \mathbf{0}) = 2 \cdot 1^2 + 1 \cdot 0 + 0 \cdot 0 = 2 \neq 0.$$
+  </div>
+  <p style="margin-top:.3rem;">Bir başka deyişle, $2 x_1^2$ terimi $w$'ya hiç bağlı değil → 2. argümanda lineerlik bozuluyor.</p>
+  <div class="false-box" style="margin-top:.4rem;">
+    İç çarpım <strong>değildir</strong>.
+  </div>
+</div>
+
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm ii</span>
+    <span class="tag warn">İç çarpım değil</span>
+  </div>
+
+  <p>Lineerlik ve simetri sağlanıyor (katsayıların simetrisinden — $x_1 y_2$ ile $x_2 y_1$'in katsayısı her ikisinde de $2$). Pozitif tanımlılığı kontrol edelim:</p>
+  <div class="formula">
+    $$(v \mid v) = x_1^2 + 2 x_1 x_2 + 2 x_2 x_1 + 4 x_2^2 = x_1^2 + 4 x_1 x_2 + 4 x_2^2 = (x_1 + 2 x_2)^2.$$
+  </div>
+  <p style="margin-top:.3rem;">Bu $\geq 0$ ama <em>tam olarak</em> $x_1 + 2 x_2 = 0$ olduğunda sıfırdır. Karşı-örnek: $v = (2, -1) \neq \mathbf{0}$ alın:</p>
+  <div class="formula">
+    $$(v \mid v) = (2 + 2 \cdot (-1))^2 = 0.$$
+  </div>
+  <div class="false-box" style="margin-top:.4rem;">
+    $v \neq \mathbf{0}$ olduğu hâlde $(v \mid v) = 0$ → pozitif tanımlılık ihlal. İç çarpım <strong>değildir</strong>.
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersiz 2 — İntegral Eşitsizliği (Cauchy–Schwarz)</div>
+
+<div class="q-box" data-label="Egzersiz 2">
+  <p>Aşağıdaki eşitsizliği ispatlayınız:</p>
+  <div class="formula big">
+    $$\int_0^1 \frac{e^x}{x + 1}\, dx \;\leq\; \frac{e}{2}.$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Cauchy–Schwarz için fonksiyonları seç</div>
+    <p>$C[0, 1]$ uzayında integral iç çarpımıyla $f(x) = e^x$ ve $g(x) = \dfrac{1}{x + 1}$ alalım. O zaman:</p>
+    <div class="formula">
+      $$\int_0^1 \frac{e^x}{x + 1}\, dx \;=\; (f \mid g) \;\leq\; \|f\| \cdot \|g\|.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Normları hesapla</div>
+    <div class="formula">
+      $$\|f\|^2 = \int_0^1 e^{2 x}\, dx = \left[\tfrac{1}{2} e^{2 x}\right]_0^1 = \tfrac{e^2 - 1}{2}.$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\|g\|^2 = \int_0^1 \frac{1}{(x + 1)^2}\, dx = \left[-\tfrac{1}{x + 1}\right]_0^1 = \tfrac{1}{2}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Birleştir</div>
+    <div class="formula">
+      $$\|f\| \cdot \|g\| = \sqrt{\tfrac{e^2 - 1}{2} \cdot \tfrac{1}{2}} = \frac{\sqrt{e^2 - 1}}{2}.$$
+    </div>
+    <p style="margin-top:.3rem;">$\sqrt{e^2 - 1} < \sqrt{e^2} = e$ olduğundan:</p>
+    <div class="formula big">
+      $$\int_0^1 \frac{e^x}{x + 1}\, dx \;\leq\; \frac{\sqrt{e^2 - 1}}{2} \;<\; \frac{e}{2}. \qquad \blacksquare$$
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 3 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersiz 3 — Matrisler Arası Açı (Frobenius)</div>
+
+<div class="q-box" data-label="Egzersiz 3">
+  <p>Aşağıdaki matrisler arasındaki açıyı bulunuz (Frobenius iç çarpımı):</p>
+  <div class="mw" style="justify-content:center; gap:1rem; margin-top:.4rem; align-items:center;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>2</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td>−2</td></tr>
+    </table></div>
+    <span class="ml" style="margin-left:.8rem;">$B \;=$</span>
+    <div class="mb"><table>
+      <tr><td>−1</td><td>1</td></tr>
+      <tr><td>1</td><td>1</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">İç çarpım ve normlar</div>
+    <div class="formula">
+      $$(A \mid B) = 2 \cdot (-1) + 1 \cdot 1 + 0 \cdot 1 + (-2) \cdot 1 = -3.$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\|A\| = \sqrt{4 + 1 + 0 + 4} = \sqrt{9} = 3, \qquad \|B\| = \sqrt{1 + 1 + 1 + 1} = 2.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Açı</div>
+    <div class="formula big">
+      $$\cos \theta = \frac{-3}{3 \cdot 2} = -\frac{1}{2} \;\;\Longrightarrow\;\; \theta = \frac{2 \pi}{3}.$$
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 4 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersiz 4 — $\mathbb{R}^2$'de $S^\perp$ Bazı</div>
+
+<div class="q-box" data-label="Egzersiz 4">
+  <p>$S = \{(1, 1),\; (1, 2)\} \subseteq \mathbb{R}^2$ için $S^\perp$'in bir bazını bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Diklik denklemleri</div>
+    <p>$v = (x, y) \in S^\perp$ olsun:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        (v \mid (1, 1)) &= x + y \phantom{ + 0 y} = 0 \\
+        (v \mid (1, 2)) &= x + 2 y = 0
+      \end{aligned}$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Çöz</div>
+    <p>İkinciden birinciyi çıkar: $y = 0$. Birinciden: $x = 0$. Yani $v = \mathbf{0}$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$S^\perp = \{\mathbf{0}\}, \qquad \dim S^\perp = 0 \;\;(\text{baz: boş küme}).$$
+  </div>
+
+  <p class="note" style="margin-top:.4rem;">Sezgi: $S$'in iki vektörü lineer bağımsız → $\mathbb{R}^2$'yi geriyor → ona dik tek vektör sıfır vektörüdür.</p>
+</div>
+
+<!-- ═══════════════ EGZERSİZ 5 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Egzersiz 5 — Tümleyen İçerme İlişkisi</div>
+
+<div class="q-box" data-label="Egzersiz 5">
+  <p>$S_1, S_2$, bir iç çarpım uzayının alt uzayları olsun ve $S_1 \subseteq S_2$. Aşağıdakini ispatlayınız:</p>
+  <div class="formula big">
+    $$S_1^\perp \;\supseteq\; S_2^\perp.$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm — İspat</span>
+    <span class="tag sol">İspat</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Keyfi eleman seç</div>
+    <p>$v \in S_2^\perp$ olsun. Tanım gereği:</p>
+    <div class="formula">
+      $$(v \mid s) = 0, \qquad \forall\, s \in S_2.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">İçermeyi kullan</div>
+    <p>$S_1 \subseteq S_2$ olduğundan, her $s \in S_1$ aynı zamanda $S_2$'nin de elemanıdır. Dolayısıyla:</p>
+    <div class="formula">
+      $$(v \mid s) = 0, \qquad \forall\, s \in S_1.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Sonuç</div>
+    <p>Yukarıdaki ifade $v \in S_1^\perp$ demektir. Dolayısıyla her $v \in S_2^\perp$ aynı zamanda $S_1^\perp$'in elemanıdır:</p>
+    <div class="formula big">
+      $$S_2^\perp \;\subseteq\; S_1^\perp, \quad \text{yani} \quad S_1^\perp \;\supseteq\; S_2^\perp. \qquad \blacksquare$$
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:.4rem;">Sezgi: Daha büyük bir kümeye dik olmak <em>daha katı</em> bir koşuldur; ona uyan vektör kümesi de küçülür.</p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

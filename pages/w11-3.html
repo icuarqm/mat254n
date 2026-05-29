@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Cayley–Hamilton Uygulamaları ve Köşegenleştirme</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Cayley–Hamilton Uygulamaları ve Köşegenleştirme</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 11 - Bölüm 3)</div>
+</div>
+
+<!-- ═══════════════ CAYLEY-HAMILTON UYGULAMALARI ═══════════════ -->
+<div class="section-title"><span>📋</span> Cayley–Hamilton Teoreminin Uygulamaları</div>
+
+<!-- 1) Ters Matris -->
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">1) Ters Matris Bulma</span>
+    <span class="tag prop">Uygulama</span>
+  </div>
+  <p><strong>Not:</strong> Karakteristik polinomu $f(x)$ için $f(0) \neq 0$ ise $A$ <strong>tersinirdir</strong>. Bu durumda $A^{-1}$, Cayley–Hamilton sayesinde polinomdan türetilebilir.</p>
+</div>
+
+<!-- Örnek 1: A^{-1} -->
+<div class="q-box" data-label="Örnek 1" style="margin-top:.5rem;">
+  <p>$A = \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix}$ matrisinin tersini Cayley–Hamilton ile bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom &amp; tersinirlik</div>
+    <div class="formula">
+      $$f(x) = |x I - A| = \begin{vmatrix} x - 1 & -2 \\ 0 & x - 3 \end{vmatrix} = (x - 1)(x - 3) = x^2 - 4 x + 3.$$
+    </div>
+    <p style="margin-top:.3rem;">$f(0) = 3 \neq 0$ (ayrıca $\det A = 3 \neq 0$) → $A$ tersinirdir.</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Cayley–Hamilton'u uygula</div>
+    <div class="formula">
+      $$A^2 - 4 A + 3 I = \mathbf{0}.$$
+    </div>
+    <p style="margin-top:.3rem;">İki tarafı $A^{-1}$ ile çarp:</p>
+    <div class="formula">
+      $$A^{-1} \bigl( A^2 - 4 A + 3 I \bigr) = \mathbf{0} \;\;\Longrightarrow\;\; A - 4 I + 3 A^{-1} = \mathbf{0}.$$
+    </div>
+    <div class="formula big" style="margin-top:.3rem;">
+      $$A^{-1} = \tfrac{1}{3} (4 I - A).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Sayısal sonuç</div>
+    <div class="formula">
+      $$A^{-1} = \tfrac{1}{3} \left( \begin{bmatrix} 4 & 0 \\ 0 & 4 \end{bmatrix} - \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix} \right) = \tfrac{1}{3} \begin{bmatrix} 3 & -2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & -2/3 \\ 0 & 1/3 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$A^{-1} = \begin{bmatrix} 1 & -2/3 \\ 0 & 1/3 \end{bmatrix}.$$
+  </div>
+</div>
+
+<!-- 2) Matris Gücü -->
+<div class="section-title" style="margin-top:1rem;"><span>📋</span> 2) Matrisin Yüksek Kuvvetini Bulma</div>
+
+<div class="q-box" data-label="Örnek 2">
+  <p>$A = \begin{bmatrix} 2 & 3 \\ 1 & -1 \end{bmatrix}$ için $A^6 = ?$</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom</div>
+    <div class="formula">
+      $$f(x) = \begin{vmatrix} x - 2 & -3 \\ -1 & x + 1 \end{vmatrix} = (x - 2)(x + 1) - 3 = x^2 - x - 5.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">Cayley–Hamilton → indirgeme bağıntısı</div>
+    <div class="formula">
+      $$A^2 - A - 5 I = \mathbf{0} \;\;\Longrightarrow\;\; A^2 = A + 5 I.$$
+    </div>
+    <p class="note" style="margin-top:.3rem;">Bu bağıntı her yüksek kuvveti $A$ ve $I$'ya indirger.</p>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$A^6$'yı hesapla</div>
+    <div class="formula">
+      $$A^6 = A^2 \cdot A^2 \cdot A^2 = (A + 5 I)(A + 5 I)(A + 5 I).$$
+    </div>
+    <p style="margin-top:.3rem;">İlk iki çarpan:</p>
+    <div class="formula">
+      $$(A + 5 I)^2 = A^2 + 10 A + 25 I = (A + 5 I) + 10 A + 25 I = 11 A + 30 I.$$
+    </div>
+    <p style="margin-top:.3rem;">Üçüncü çarpanla:</p>
+    <div class="formula">
+      $$(11 A + 30 I)(A + 5 I) = 11 A^2 + 85 A + 150 I = 11 (A + 5 I) + 85 A + 150 I = 96 A + 205 I.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">Matris formu</div>
+    <div class="formula">
+      $$A^6 = 96 \begin{bmatrix} 2 & 3 \\ 1 & -1 \end{bmatrix} + 205 \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 192 & 288 \\ 96 & -96 \end{bmatrix} + \begin{bmatrix} 205 & 0 \\ 0 & 205 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$A^6 = \begin{bmatrix} 397 & 288 \\ 96 & 109 \end{bmatrix}.$$
+  </div>
+</div>
+
+<!-- ═══════════════ KÖŞEGENLEŞTİRME TEOREMİ ═══════════════ -->
+<div class="section-title"><span>📐</span> Köşegenleştirme Karakterizasyonu</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — $n$ Bağımsız Özvektör Kriteri</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>Bir $n \times n$ matris <strong>köşegenleştirilebilirdir</strong> ancak ve ancak <strong>$n$ tane lineer bağımsız özvektörü</strong> varsa.</p>
+  <p class="note" style="margin-top:.4rem;">Pratik test: Her özdeğer için, o özdeğere ait özuzayın boyutu (geometrik katlılık) cebirsel katlılığa eşit olmalıdır.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 3 — TEKRARLI ÖZDEĞER AMA KÖŞEGENLEŞİR ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — Tekrarlı Özdeğer, Köşegenleştirilebilir Matris</div>
+
+<div class="q-box" data-label="Örnek">
+  <p>Aşağıdaki matris köşegenleştirilebilir mi?</p>
+  <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.4rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>−1</td><td>−4</td><td>4</td></tr>
+      <tr><td>−4</td><td>7</td><td>−4</td></tr>
+      <tr><td>−2</td><td>−2</td><td>1</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom</div>
+    <div class="formula">
+      $$\Delta_A(x) = \begin{vmatrix} x + 1 & 4 & -4 \\ -4 & x - 7 & 4 \\ -2 & -2 & x - 1 \end{vmatrix} = (x - 1)(x - 3)^2.$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$\lambda_1 = 1, \qquad \lambda_{2,3} = 3 \;\; (\text{cebirsel katlılık } 2).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_1 = 1$ için özvektör</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>4</td><td>−4</td></tr>
+        <tr><td>−4</td><td>−6</td><td>4</td></tr>
+        <tr><td>−2</td><td>−2</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_2 + 2 r_1,\; r_3 + r_1,$ sonra $r_3 - r_2$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">2</td><td>4</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">2</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$x_3 = t \Rightarrow x_2 = 2 t,\; x_1 = -2 t$. Özvektör:</p>
+    <div class="formula">
+      $$v_1 = t \begin{bmatrix} -2 \\ 2 \\ 1 \end{bmatrix}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_{2,3} = 3$ için özvektörler</div>
+    <p>$(3 I - A) x = \mathbf{0}$:</p>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>4</td><td>4</td><td>−4</td></tr>
+        <tr><td>−4</td><td>−4</td><td>4</td></tr>
+        <tr><td>−2</td><td>−2</td><td>2</td></tr>
+      </table></div>
+      <span class="arrow">→</span>
+      <div class="mb"><table>
+        <tr><td class="diag">4</td><td>4</td><td>−4</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">Tek denklem: $x_1 + x_2 - x_3 = 0$. $x_3 = t,\; x_2 = k$ serbest, $x_1 = t - k$:</p>
+    <div class="formula">
+      $$\begin{bmatrix} t - k \\ k \\ t \end{bmatrix} = t \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} + k \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}.$$
+    </div>
+    <p style="margin-top:.3rem;">$\lambda = 3$ için <strong>2 tane lineer bağımsız özvektör</strong> bulundu (geometrik katlılık $= 2 = $ cebirsel katlılık ✓).</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Toplam <strong>3 lineer bağımsız özvektör</strong> → $A$ <strong>köşegenleştirilebilirdir</strong>. &nbsp; ($P$'nin sütunları bu üç özvektör, $D = \operatorname{diag}(1, 3, 3)$.)
+  </div>
+</div>
+
+<!-- ═══════════════ SİMETRİK MATRİS TEOREMİ ═══════════════ -->
+<div class="section-title"><span>📐</span> Simetrik Matrislerin Özelliği</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Gerçel Simetrik Matrisler</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>Gerçel <strong>simetrik</strong> bir matris ($A^T = A$) için:</p>
+  <div class="prop-list" style="margin-top:.3rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>Tüm özdeğerler <strong>gerçeldir</strong>.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>Matris her zaman <strong>köşegenleştirilebilirdir</strong> (özvektörleri bile <em>ortogonal</em> seçilebilir).</div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.4rem;">Bu sonuç çok güçlüdür: simetrik matrisler için karakteristik polinom hep gerçel köklere sahiptir ve köşegenleştirme garantilenir — başka kontrol gerekmez.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Cayley–Hamilton uygulamaları:</strong>
+    <br>· <strong>Ters matris:</strong> $f(0) \neq 0$ ise $A$ tersinir; $f(A) = \mathbf{0}$'dan $A^{-1}$'i çek.
+    <br>· <strong>Yüksek kuvvet:</strong> $A^n = $ (düşük dereceli $A$ ve $I$ kombinasyonu) — $A^k$ formülünü ardışık indirgemeyle bul.
+    <br><br>
+    <strong>Köşegenleştirme kriteri:</strong> $n \times n$ matris köşegenleştirilebilir $\Leftrightarrow$ $n$ lineer bağımsız özvektör var.
+    <br><br>
+    <strong>Geometrik katlılık kontrolü:</strong> Her özdeğerin özuzay boyutu cebirsel katlılığa eşit olmalıdır. (Tekrarlı özdeğer her zaman engel değildir.)
+    <br><br>
+    <strong>Simetrik matrisler:</strong> Otomatik olarak gerçel özdeğerli ve köşegenleştirilebilir; özvektörler ortogonal seçilebilir.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

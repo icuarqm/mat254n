@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — İç Çarpım Uzayları</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>İç Çarpım Uzayları</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 9 - Bölüm 1)</div>
+</div>
+
+<!-- ═══════════════ HATIRLATMA ═══════════════ -->
+<div class="section-title"><span>🔁</span> Hatırlatma — $\mathbb{R}^3$'te Nokta Çarpım</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Nokta Çarpım (Dot Product)</span>
+    <span class="tag prop">Hatırlatma</span>
+  </div>
+  <p>$v = (x_1, x_2, x_3) = x_1 \mathbf{i} + x_2 \mathbf{j} + x_3 \mathbf{k}$ ve $w = (y_1, y_2, y_3)$ için:</p>
+  <div class="formula big">
+    $$v \cdot w \;=\; x_1 y_1 + x_2 y_2 + x_3 y_3$$
+  </div>
+  <p style="margin-top:.55rem;">Bu tanım sayesinde <strong>uzunluk, mesafe ve açı</strong> nokta çarpım cinsinden yazılabilir:</p>
+  <div style="display:grid; gap:.4rem; margin:.4rem 0 0 1rem;">
+    <div>·&nbsp;&nbsp;Uzunluk:&nbsp; $\|v\| = \sqrt{x_1^2 + x_2^2 + x_3^2} = \sqrt{v \cdot v}$</div>
+    <div>·&nbsp;&nbsp;$v$ ile $w$ arasındaki mesafe:&nbsp; $\sqrt{(w - v) \cdot (w - v)}$</div>
+    <div>·&nbsp;&nbsp;Açı:&nbsp; $\cos \theta = \dfrac{v \cdot w}{\|v\|\,\|w\|}$</div>
+  </div>
+  <p class="note" style="margin-top:.6rem;">Şimdi <em>nokta çarpım</em> kavramını genel vektör uzaylarına taşıyoruz.</p>
+</div>
+
+<!-- ═══════════════ TANIM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> İç Çarpım Tanımı</div>
+
+<div class="def-box" data-label="Tanım — İç Çarpım (Inner Product)">
+  <p>$V$ bir gerçel vektör uzayı olsun. $V \times V \to \mathbb{R}$ fonksiyonu, sıralı $(v, u)$ ikilisine $(v \mid u)$ değerini atasın. Aşağıdaki <strong>3 aksiyom</strong> sağlanırsa bu fonksiyona $V$ üzerinde <strong>iç çarpım</strong> denir:</p>
+
+  <div class="prop-list" style="margin-top:.55rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        <strong>Lineerlik (2. argümanda):</strong>
+        <div class="formula" style="margin-top:.2rem;">$$(u \mid a v + b w) = a (u \mid v) + b (u \mid w), \qquad u, v, w \in V,\; a, b \in \mathbb{R}$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>
+        <strong>Simetri:</strong>
+        <div class="formula" style="margin-top:.2rem;">$$(u \mid v) = (v \mid u), \qquad u, v \in V$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>
+        <strong>Pozitif tanımlılık:</strong>
+        <div class="formula" style="margin-top:.2rem;">$$(v \mid v) > 0, \qquad \text{her sıfırdan farklı } v \in V \text{ için}$$</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="def-box" data-label="Tanım — Gerçel İç Çarpım Uzayı / Öklid Uzayı" style="margin-top:.5rem;">
+  <p>Belirli bir iç çarpıma sahip gerçel vektör uzayına <strong>gerçel iç çarpım uzayı</strong> (real inner product space) denir.</p>
+  <p style="margin-top:.4rem;"><strong>Sonlu boyutlu</strong> bir gerçel iç çarpım uzayına <strong>Öklid uzayı</strong> (Euclidean space) denir.</p>
+</div>
+
+<!-- ═══════════════ ÖZELLİKLER ═══════════════ -->
+<div class="section-title"><span>📐</span> İç Çarpımın Özellikleri</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Özellikler — Aksiyomlardan Çıkan Sonuçlar</span>
+    <span class="tag prop">Önerme</span>
+  </div>
+  <p>$(\cdot \mid \cdot)$, $V$ üzerinde bir iç çarpım olsun. Her $u, v, w \in V$ ve $a, b \in \mathbb{R}$ için:</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>
+        <strong>Lineerlik (1. argümanda):</strong>
+        <div class="formula" style="margin-top:.2rem;">$$(a u + b v \mid w) = a (u \mid w) + b (v \mid w)$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>
+        Sıfır vektörle iç çarpım: $\;(u \mid \mathbf{0}) = (\mathbf{0} \mid u) = 0$.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iii)</span>
+      <div>
+        $(v \mid w) = 0 \;\Longleftrightarrow\; (w \mid v) = 0$ &nbsp;(simetri sonucu).
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">iv)</span>
+      <div>
+        $(v \mid v) = 0 \;\Longleftrightarrow\; v = \mathbf{0}$.
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">v)</span>
+      <div>
+        Skaler homojenlik: $\;(a v \mid u) = a (v \mid u),$ &nbsp;$(a v \mid a u) = a^2 (v \mid u)$.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ÖRNEK & KARŞI-ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek — Nokta Çarpım $\mathbb{R}^3$'te İç Çarpımdır</div>
+
+<div class="q-box" data-label="Örnek i">
+  <p>$\mathbb{R}^3$ üzerinde nokta çarpımın bir iç çarpım olduğunu gösteriniz:</p>
+  <div class="formula">
+    $$\bigl((x_1, y_1, z_1) \;\big|\; (x_2, y_2, z_2)\bigr) = x_1 x_2 + y_1 y_2 + z_1 z_2.$$
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">i) Lineerlik</div>
+    <p>$(a x_1 + b x_2,\; a y_1 + b y_2,\; a z_1 + b z_2)$ ile $(x_3, y_3, z_3)$ iç çarpımı doğrudan açarsak:</p>
+    <div class="formula">
+      $$(a x_1 + b x_2) x_3 + (a y_1 + b y_2) y_3 + (a z_1 + b z_2) z_3$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$= a (x_1 x_3 + y_1 y_3 + z_1 z_3) + b (x_2 x_3 + y_2 y_3 + z_2 z_3).$$
+    </div>
+    <p style="margin-top:.3rem;">Yani $a (v_1 \mid v_3) + b (v_2 \mid v_3)$ ✓</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">ii) Simetri</div>
+    <p>Çarpma değişmeli olduğundan: $x_1 x_2 + y_1 y_2 + z_1 z_2 = x_2 x_1 + y_2 y_1 + z_2 z_1$ ✓</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">iii) Pozitif tanımlılık</div>
+    <p>$\bigl((x, y, z) \mid (x, y, z)\bigr) = x^2 + y^2 + z^2 > 0$, &nbsp;$(x, y, z) \neq \mathbf{0}$ olduğunda ✓</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    Üç aksiyom da sağlandığı için nokta çarpım $\mathbb{R}^3$ üzerinde bir <strong>iç çarpımdır</strong>.
+  </div>
+</div>
+
+<!-- KARŞI-ÖRNEKLER -->
+<div class="section-title" style="margin-top:1.1rem;"><span>❌</span> Karşı-Örnekler — Hangileri İç Çarpım <em>Değil</em>?</div>
+
+<div class="q-box" data-label="Karşı-örnekler">
+  <p>$\mathbb{R}^2$ üzerinde, $v = (x_1, x_2),\; w = (y_1, y_2)$ alın. Aşağıdaki ifadelerin neden iç çarpım <strong>olmadığını</strong> belirleyiniz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>ii)</strong>&nbsp;&nbsp;$(v \mid w) = x_1^2 + y_1^2 + x_2^2 + y_2^2$</div>
+    <div><strong>iii)</strong>&nbsp;&nbsp;$(v \mid w) = x_1 y_2$</div>
+    <div><strong>iv)</strong>&nbsp;&nbsp;$(v \mid w) = x_1 y_2 + x_2 y_1$</div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm ii — Lineerlik İhlali</span>
+    <span class="tag warn">İç çarpım değil</span>
+  </div>
+  <p>$2w$ ile karşılaştıralım:</p>
+  <div class="formula">
+    $$(v \mid 2 w) = x_1^2 + 4 y_1^2 + x_2^2 + 4 y_2^2$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$2 (v \mid w) = 2 x_1^2 + 2 y_1^2 + 2 x_2^2 + 2 y_2^2$$
+  </div>
+  <p style="margin-top:.3rem;">Eşit değil → <strong>(i) lineerlik ihlal edildi.</strong></p>
+</div>
+
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm iii — Simetri İhlali</span>
+    <span class="tag warn">İç çarpım değil</span>
+  </div>
+  <div class="formula">
+    $$(v \mid w) = x_1 y_2, \qquad (w \mid v) = y_1 x_2$$
+  </div>
+  <p style="margin-top:.3rem;">Genel olarak farklı → <strong>(ii) simetri ihlal edildi.</strong></p>
+</div>
+
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm iv — Pozitif Tanımlılık İhlali</span>
+    <span class="tag warn">İç çarpım değil</span>
+  </div>
+  <p>$v = (1, 0) \neq \mathbf{0}$ alalım:</p>
+  <div class="formula">
+    $$(v \mid v) = 1 \cdot 0 + 0 \cdot 1 = 0$$
+  </div>
+  <p style="margin-top:.3rem;">$v \neq \mathbf{0}$ olduğu hâlde $(v \mid v) = 0$ → <strong>(iii) pozitif tanımlılık ihlal edildi.</strong></p>
+</div>
+
+<!-- ═══════════════ DOĞAL ÖRNEKLER ═══════════════ -->
+<div class="section-title"><span>📋</span> Gerçel İç Çarpım Uzaylarının Doğal Örnekleri</div>
+
+<!-- 1) R^n -->
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">1) $\mathbb{R}^n$'de Standart İç Çarpım</span>
+    <span class="tag prop">Örnek 1</span>
+  </div>
+  <p>$v = (x_1, \ldots, x_n),\; w = (y_1, \ldots, y_n) \in \mathbb{R}^n$ için:</p>
+  <div class="formula big">
+    $$(v \mid w) = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n = \sum_{k=1}^{n} x_k y_k.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Bu çarpım <strong>nokta çarpım</strong> ya da <strong>skaler çarpım</strong> adıyla da bilinir.</p>
+
+  <p style="margin-top:.6rem;"><strong>Örnek:</strong> $(-2, 1, -3, -1),\; (1, 0, 0, 4) \in \mathbb{R}^4$ için:</p>
+  <div class="formula">
+    $$\bigl((-2, 1, -3, -1) \;\big|\; (1, 0, 0, 4)\bigr) = (-2)(1) + (1)(0) + (-3)(0) + (-1)(4) = -6.$$
+  </div>
+</div>
+
+<!-- 2) Matrisler -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">2) $\mathbb{R}^{m \times n}$'de Frobenius İç Çarpımı</span>
+    <span class="tag prop">Örnek 2</span>
+  </div>
+  <p>$\mathbb{R}^{m \times n}$, $m \times n$ gerçel matris uzayı olsun. $A, B \in \mathbb{R}^{m \times n}$ için:</p>
+  <div class="formula big">
+    $$(A \mid B) = \sum_{i = 1}^{n} \sum_{k = 1}^{m} A_{k i}\, B_{k i}.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Yani karşılık gelen girdileri çarpıp topla — entry-by-entry. (<em>Egzersiz:</em> iç çarpım aksiyomlarını sağladığını gösteriniz.)</p>
+
+  <p style="margin-top:.6rem;"><strong>Örnek:</strong></p>
+  <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.3rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>1</td><td>2</td></tr>
+      <tr><td class="zero-cell">0</td><td>2</td><td>−1</td></tr>
+    </table></div>
+    <span class="ml" style="margin-left:.8rem;">$B \;=$</span>
+    <div class="mb"><table>
+      <tr><td>−3</td><td>−1</td><td>2</td></tr>
+      <tr><td>2</td><td>1</td><td>−1</td></tr>
+    </table></div>
+  </div>
+  <div class="formula" style="margin-top:.5rem;">
+    $$(A \mid B) = 1 \cdot (-3) + 1 \cdot (-1) + 2 \cdot 2 + 0 \cdot 2 + 2 \cdot 1 + (-1)(-1) = 3.$$
+  </div>
+  <div class="formula" style="margin-top:.3rem;">
+    $$(B \mid B) = (-3)^2 + (-1)^2 + 2^2 + 2^2 + 1^2 + (-1)^2 = 20.$$
+  </div>
+</div>
+
+<!-- 3) Sürekli fonksiyonlar -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">3) $C[a, b]$'de İntegral İç Çarpımı</span>
+    <span class="tag prop">Örnek 3</span>
+  </div>
+  <p>$C[a, b]$, $[a, b]$ aralığında sürekli gerçel değerli fonksiyonların uzayı olsun. Standart iç çarpım:</p>
+  <div class="formula big">
+    $$(f \mid g) = \int_{a}^{b} f(x)\, g(x)\, dx.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Bu iç çarpıma <strong>integral iç çarpımı</strong> denir. (<em>Egzersiz:</em> aksiyomları sağladığını gösteriniz.)</p>
+
+  <p style="margin-top:.6rem;"><strong>Örnek:</strong> $f(x) = x^2,\; g(x) = x - 1 \in C[0, 1]$ için:</p>
+  <div class="formula">
+    $$(f \mid g) = \int_{0}^{1} x^2 (x - 1)\, dx = \int_{0}^{1} (x^3 - x^2)\, dx = \tfrac{1}{4} - \tfrac{1}{3} = -\tfrac{1}{12}.$$
+  </div>
+  <div class="formula" style="margin-top:.3rem;">
+    $$(f \mid f) = \int_{0}^{1} x^4\, dx = \tfrac{1}{5}.$$
+  </div>
+  <div class="formula" style="margin-top:.3rem;">
+    $$(g \mid g) = \int_{0}^{1} (x - 1)^2\, dx = \tfrac{1}{3}.$$
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>İç çarpım $(\cdot \mid \cdot)$:</strong> $V \times V \to \mathbb{R}$ fonksiyonu; aksiyomlar — <em>lineerlik · simetri · pozitif tanımlılık</em>.
+    <br><br>
+    <strong>Çıkan özellikler:</strong> Her iki argümanda lineer, $(u \mid \mathbf{0}) = 0$, $(v \mid v) = 0 \Leftrightarrow v = \mathbf{0}$, $(a v \mid a u) = a^2 (v \mid u)$.
+    <br><br>
+    <strong>Öklid uzayı:</strong> Sonlu boyutlu gerçel iç çarpım uzayı.
+    <br><br>
+    <strong>Doğal örnekler:</strong>
+    <br>· $\mathbb{R}^n$ → standart nokta çarpım: $\sum x_k y_k$
+    <br>· $\mathbb{R}^{m \times n}$ → Frobenius: $\sum_{i,j} A_{ij} B_{ij}$
+    <br>· $C[a, b]$ → integral: $\int_a^b f g\, dx$
+    <br><br>
+    <strong>Karşı-örnek mantığı:</strong> 3 aksiyomdan birini ihlal eden her formül iç çarpım <em>değildir</em>; somut bir $v, w$ seçip kontrol etmek genellikle yeterlidir.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

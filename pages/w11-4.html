@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Pratik: Özdeğer ve Köşegenleştirme</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pratik: Özdeğer ve Köşegenleştirme</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 11 - Bölüm 4)</div>
+</div>
+
+<!-- ═══════════════ SORU 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 1 — Köşegenleştirme</div>
+
+<div class="q-box" data-label="Soru 1">
+  <p>$A = \begin{bmatrix} 1 & 2 & -1 \\ 1 & 0 & 1 \\ 4 & -4 & 5 \end{bmatrix}$ için tersinir $P$ ve köşegen $D$ matrislerini öyle bulunuz ki $D = P^{-1} A P$.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom</div>
+    <div class="formula">
+      $$\Delta_A(x) = \begin{vmatrix} x - 1 & -2 & 1 \\ -1 & x & -1 \\ -4 & 4 & x - 5 \end{vmatrix} \;\overset{\text{egzersiz}}{=}\; (x - 1)(x - 2)(x - 3).$$
+    </div>
+    <div class="formula big" style="margin-top:.3rem;">
+      $$\lambda_1 = 1, \qquad \lambda_2 = 2, \qquad \lambda_3 = 3.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_1 = 1$ için özvektör</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td>−2</td><td>1</td></tr>
+        <tr><td>−1</td><td>1</td><td>−1</td></tr>
+        <tr><td>−4</td><td>4</td><td>−4</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_3 - 4 r_2$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="zero-cell">0</td><td class="diag">−2</td><td>1</td></tr>
+        <tr><td class="diag">−1</td><td>1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$-2 x_2 + x_3 = 0 \Rightarrow x_2 = t,\; x_3 = 2 t$. $-x_1 + t - 2 t = 0 \Rightarrow x_1 = -t$. Özvektör: $\begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix}$.</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_2 = 2$ için özvektör</div>
+    <p>$(2 I - A)$ üzerinde indirgeme sonrası: $-4 x_2 + x_3 = 0 \Rightarrow x_2 = t,\; x_3 = 4 t$. Diğer denklemden $x_1 = -2 t$. Özvektör: $\begin{bmatrix} -2 \\ 1 \\ 4 \end{bmatrix}$.</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_3 = 3$ için özvektör</div>
+    <p>$(3 I - A)$ üzerinde indirgeme sonrası: $4 x_2 - x_3 = 0,\; -x_1 + 3 x_2 - x_3 = 0$. $x_2 = t \Rightarrow x_3 = 4 t,\; x_1 = -t$. Özvektör: $\begin{bmatrix} -1 \\ 1 \\ 4 \end{bmatrix}$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    <p>Özvektörleri sütun yapan matris ve karşılık gelen köşegen:</p>
+    <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.3rem;">
+      <span class="ml">$P \;=$</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table>
+          <tr><td>−1</td><td>−2</td><td>−1</td></tr>
+          <tr><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>2</td><td>4</td><td>4</td></tr>
+        </table>
+      </div>
+      <span class="ml" style="margin-left:1rem;">$D \;=$</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table>
+          <tr><td>1</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td>2</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>3</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 2 — Tekrarlı Özdeğer</div>
+
+<div class="q-box" data-label="Soru 2">
+  <p>$A = \begin{bmatrix} 2 & 0 & -1 \\ 1 & 1 & -1 \\ 0 & 0 & 1 \end{bmatrix}$ için özdeğerleri ve özvektörleri bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom (3. satır boyunca açılım)</div>
+    <div class="formula">
+      $$\Delta_A(x) = \begin{vmatrix} x - 2 & 0 & 1 \\ -1 & x - 1 & 1 \\ 0 & 0 & x - 1 \end{vmatrix} = (x - 1) \cdot (x - 1)(x - 2) = (x - 1)^2 (x - 2).$$
+    </div>
+    <div class="formula" style="margin-top:.3rem;">
+      $$\lambda_{1, 2} = 1 \;\;(\text{katlılık 2}), \qquad \lambda_3 = 2.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_{1,2} = 1$ için özvektörler</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>−1</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td>−1</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">$r_2 - r_1$</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">−1</td><td class="zero-cell">0</td><td>1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$-x_1 + x_3 = 0 \Rightarrow x_3 = t = x_1,\; x_2 = k$ serbest:</p>
+    <div class="formula">
+      $$x = t \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} + k \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}.$$
+    </div>
+    <p style="margin-top:.3rem;"><strong>2 lineer bağımsız özvektör</strong> (geometrik katlılık = cebirsel katlılık = 2 ✓).</p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">$\lambda_3 = 2$ için özvektör</div>
+    <p>$(2 I - A)$: 1. satır $x_3 = 0$, 2. satır $-x_1 + x_2 = 0 \Rightarrow x_1 = x_2 = t$. Özvektör: $\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Toplam 3 lineer bağımsız özvektör → $A$ köşegenleştirilebilir; özdeğerler $\{1, 1, 2\}$.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 3 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 3 — Özdeğer Tanımı Uygulaması</div>
+
+<div class="q-box" data-label="Soru 3">
+  <p>$A$ bir $3 \times 3$ matris ve $\lambda_1 = -1$, ona karşılık gelen özvektör $\begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}$. $A \cdot \begin{bmatrix} -2 \\ 2 \\ -2 \end{bmatrix}$'yi hesaplayınız.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$(-2, 2, -2) = (-2) \cdot (1, -1, 1)$ olduğundan, lineerlik ve özvektör tanımıyla:</p>
+  <div class="formula big">
+    $$A \begin{bmatrix} -2 \\ 2 \\ -2 \end{bmatrix} = A \cdot \bigl((-2) \cdot v\bigr) = (-2) \cdot A v = (-2) \cdot \lambda_1 v = (-2)(-1) v = 2 v.$$
+  </div>
+  <div class="result-box" style="margin-top:.4rem;">
+    $$A \begin{bmatrix} -2 \\ 2 \\ -2 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix} = \begin{bmatrix} 2 \\ -2 \\ 2 \end{bmatrix}.$$
+  </div>
+  <p class="note" style="margin-top:.3rem;">Hile: Özvektörler için $A$'yı bilmeye gerek yok — özdeğer çarpanı yeterli.</p>
+</div>
+
+<!-- ═══════════════ SORU 4 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 4 — Hangi $k$ için Farklı Özdeğerler?</div>
+
+<div class="q-box" data-label="Soru 4">
+  <p>$A = \begin{bmatrix} 3 & -1 & 1 \\ 0 & 2 & k \\ 0 & 1 & -1 \end{bmatrix}$ matrisinin <strong>farklı</strong> (gerçel) özdeğerlere sahip olması için $k$'nın hangi değerleri uygundur?</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Karakteristik polinom (1. sütun boyunca açılım)</div>
+    <div class="formula">
+      $$|x I - A| = \begin{vmatrix} x - 3 & 1 & -1 \\ 0 & x - 2 & -k \\ 0 & -1 & x + 1 \end{vmatrix} = (x - 3) \begin{vmatrix} x - 2 & -k \\ -1 & x + 1 \end{vmatrix} = (x - 3)\bigl(x^2 - x - 2 - k\bigr).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Koşul 1 — kuadratik faktörün gerçel kökü olması</div>
+    <p>$x^2 - x - (2 + k) = 0$'ın <strong>gerçel</strong> kökleri olması için diskriminant pozitif:</p>
+    <div class="formula">
+      $$b^2 - 4 a c = 1 + 4 (2 + k) = 9 + 4 k > 0 \;\;\Longrightarrow\;\; k > -\tfrac{9}{4}.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">Koşul 2 — kuadratik köklerin $3$'e eşit olmaması</div>
+    <p>Üç kökün <em>birbirinden</em> farklı olması için $x = 3$, kuadratiğin kökü olmamalı:</p>
+    <div class="formula">
+      $$9 - 3 - 2 - k = 4 - k \neq 0 \;\;\Longrightarrow\;\; k \neq 4.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$k > -\tfrac{9}{4} \quad \text{ve} \quad k \neq 4.$$
+  </div>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

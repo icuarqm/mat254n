@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Çekirdek, Görüntü ve İzomorfizm</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Çekirdek, Görüntü ve İzomorfizm</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 10 - Bölüm 2)</div>
+</div>
+
+<!-- ═══════════════ FONKSİYON OPERATÖRLERİ ═══════════════ -->
+<div class="section-title"><span>📋</span> Fonksiyonların Doğal Operatörleri</div>
+
+<!-- Diferansiyel -->
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">1) Diferansiyel Operatörü</span>
+    <span class="tag prop">Lineer Dönüşüm</span>
+  </div>
+  <p>$(a, b)$ üzerinde türevlenebilir fonksiyonların uzayından, $(a, b)$ üzerinde tanımlı fonksiyonların uzayına tanımlı $D$ dönüşümü, her $f$'i türevi $f'$'ye götürür:</p>
+  <div class="formula">
+    $$D(f) = f'.$$
+  </div>
+  <p style="margin-top:.4rem;">Lineerlik kontrolü:</p>
+  <div class="formula">
+    $$D(f + g) = (f + g)' = f' + g' = D(f) + D(g), \qquad D(c f) = (c f)' = c f' = c \cdot D(f).$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Aslında bu bir <em>operatör</em> değildir (alan ≠ değer kümesi). Yalnızca $V := $ sonsuz kez türevlenebilir fonksiyonlar kümesi alınırsa operatör olur; yine de yaygın olarak "diferansiyel operatörü" denir.</p>
+</div>
+
+<!-- İntegral -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">2) İntegrasyon Operatörü</span>
+    <span class="tag prop">Lineer Operatör</span>
+  </div>
+  <p>$C[a, b] \to C[a, b]$ dönüşümü</p>
+  <div class="formula big">
+    $$I(f)(x) = \int_a^x f(t)\, dt$$
+  </div>
+  <p style="margin-top:.4rem;">bir lineer operatördür; <strong>integrasyon operatörü</strong> olarak adlandırılır.</p>
+  <div class="formula" style="margin-top:.4rem;">
+    $$I(f_1 + f_2) = \int_a^x (f_1 + f_2)\, dt = \int_a^x f_1\, dt + \int_a^x f_2\, dt = I(f_1) + I(f_2)$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$I(c f) = \int_a^x c f\, dt = c \int_a^x f\, dt = c \cdot I(f).$$
+  </div>
+</div>
+
+<!-- ═══════════════ BAZLA BELİRLENME ═══════════════ -->
+<div class="section-title"><span>📐</span> Bazla Belirlenme Teoremi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Bir LT, Baz Değerleriyle Belirlenir</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$L : V \to W$ bir lineer dönüşüm, $V$ $n$-boyutlu ve $S = \{v_1, \ldots, v_n\}$ bir sıralı bazı olsun. Her $v \in V$ için $L(v)$, sadece</p>
+  <div class="formula big">
+    $$\{L(v_1),\; L(v_2),\; \ldots,\; L(v_n)\}$$
+  </div>
+  <p style="margin-top:.3rem;">değerleriyle <strong>tamamen belirlidir</strong>. Yani $v = c_1 v_1 + \cdots + c_n v_n$ ise:</p>
+  <div class="formula big">
+    $$L(v) = c_1 L(v_1) + c_2 L(v_2) + \cdots + c_n L(v_n).$$
+  </div>
+</div>
+
+<!-- Örnek -->
+<div class="q-box" data-label="Örnek" style="margin-top:.5rem;">
+  <p>$L : \mathbb{R}^4 \to \mathbb{R}^2$ lineer dönüşümü standart bazda şu değerleri alıyor:</p>
+  <div class="formula">
+    $$L(e_1) = (1, 2), \quad L(e_2) = (0, 3), \quad L(e_3) = (0, 0), \quad L(e_4) = (2, 0).$$
+  </div>
+  <p style="margin-top:.3rem;">$L(a, b, c, d)$'yi bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$(a, b, c, d) = a e_1 + b e_2 + c e_3 + d e_4$ olduğundan:</p>
+  <div class="formula">
+    $$L(a, b, c, d) = a L(e_1) + b L(e_2) + c L(e_3) + d L(e_4)$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$= a (1, 2) + b (0, 3) + c (0, 0) + d (2, 0) = (a + 2 d,\; 2 a + 3 b).$$
+  </div>
+  <div class="result-box" style="margin-top:.4rem;">
+    $$L(a, b, c, d) = (a + 2 d,\; 2 a + 3 b).$$
+  </div>
+</div>
+
+<!-- ═══════════════ INJECTIVE / SURJECTIVE / İZOMORFİZM ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Birebir, Örten ve İzomorfizm</div>
+
+<div class="def-box" data-label="Tanım — Birebir, Örten, İzomorfizm">
+  <p>$L : V \to W$ bir lineer dönüşüm olsun.</p>
+  <div class="prop-list" style="margin-top:.55rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>
+        $L$ <strong>birebir (injective / one-to-one)</strong> ise:
+        <div class="formula" style="margin-top:.2rem;">$$v_1 \neq v_2 \;\Longrightarrow\; L(v_1) \neq L(v_2), \quad \text{veya eşdeğer} \quad L(v_1) = L(v_2) \;\Longrightarrow\; v_1 = v_2.$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>
+        $L$ <strong>örten (surjective / onto)</strong> ise:
+        <div class="formula" style="margin-top:.2rem;">$$\forall\, w \in W,\; \exists\, v \in V \;:\; L(v) = w.$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">c)</span>
+      <div>
+        $L$ hem birebir hem örtense $V$ ile $W$ arasında bir <strong>izomorfizm</strong> olarak adlandırılır. Bu durumda $V$ ve $W$'ya <strong>izomorftur</strong> denir; $V \cong W$ ile gösterilir.
+        <br><br>
+        Özel olarak $V = W$ ise izomorfizme <strong>otomorfizm</strong> denir.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- İzomorfizm teoremi -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Teorem — Sonlu Boyutta İzomorfizmin Şartı</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$V$ ve $W$ sonlu boyutlu vektör uzayları olsun. O zaman:</p>
+  <div class="formula big">
+    $$V \cong W \;\;\Longleftrightarrow\;\; \dim V = \dim W.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;">Yani sonlu boyutta tek izomorfi sınıfı belirleyici parametre <em>boyut</em>tur.</p>
+</div>
+
+<!-- Example: R^4 ~ P_3 -->
+<div class="q-box" data-label="Örnek — $\mathbb{R}^4 \cong P_3$" style="margin-top:.5rem;">
+  <p>$\mathbb{R}^4 \cong P_3$ olduğunu gösteriniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$L : P_3 \to \mathbb{R}^4,\; a + b x + c x^2 + d x^3 \mapsto (a, b, c, d)$ tanımlansın. ($L$'nin lineer olduğunu göstermek <em>egzersiz</em>.)</p>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">i) Birebir</div>
+    <p>$L(p_1) = L(p_2) \Rightarrow (a_1, b_1, c_1, d_1) = (a_2, b_2, c_2, d_2) \Rightarrow$ tüm katsayılar eşit $\Rightarrow p_1 = p_2$ ✓</p>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">ii) Örten</div>
+    <p>Her $(a, b, c, d) \in \mathbb{R}^4$ için $p = a + b x + c x^2 + d x^3 \in P_3$ alındığında $L(p) = (a, b, c, d)$ ✓</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $L$ bir izomorfizmdir → $\mathbb{R}^4 \cong P_3$.
+  </div>
+</div>
+
+<!-- ═══════════════ ÇEKİRDEK & GÖRÜNTÜ ═══════════════ -->
+<div class="section-title"><span>⚙️</span> Çekirdek ve Görüntü</div>
+
+<div class="def-box" data-label="Tanım — Çekirdek ($\operatorname{Ker} L$) ve Görüntü ($\operatorname{im} L$)">
+  <p>$L : V \to W$ lineer dönüşüm olsun.</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>
+        <strong>Çekirdek</strong> (kernel / null):
+        <div class="formula" style="margin-top:.2rem;">$$\operatorname{Ker} L = \{\, v \in V \;:\; L(v) = \mathbf{0} \,\} \;\subseteq\; V.$$</div>
+      </div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>
+        <strong>Görüntü</strong> (image):
+        <div class="formula" style="margin-top:.2rem;">$$\operatorname{im} L = \{\, L(v) \;:\; v \in V \,\} = L(V) \;\subseteq\; W.$$</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Teorem: Ker ve im alt uzay -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Teorem — $\operatorname{Ker} L$ ve $\operatorname{im} L$ Alt Uzaylardır</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$\operatorname{Ker} L \leq V$ ve $\operatorname{im} L \leq W$ alt uzaylardır.</p>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">İspat — Boş Değiller</div>
+    <p>$L(\mathbf{0}_V) = \mathbf{0}_W$ olduğundan $\mathbf{0}_V \in \operatorname{Ker} L$ ve $\mathbf{0}_W \in \operatorname{im} L$.</p>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$\operatorname{Ker} L$ alt uzay (toplama + skaler katma altında kapalı)</div>
+    <p>$u, v \in \operatorname{Ker} L \Rightarrow L(u) = L(v) = \mathbf{0}$:</p>
+    <div class="formula">
+      $$L(u + v) = L(u) + L(v) = \mathbf{0} + \mathbf{0} = \mathbf{0} \;\Rightarrow\; u + v \in \operatorname{Ker} L.$$
+    </div>
+    <p style="margin-top:.3rem;">$c \in F,\; v \in \operatorname{Ker} L$: &nbsp;$L(c v) = c L(v) = c \cdot \mathbf{0} = \mathbf{0} \Rightarrow c v \in \operatorname{Ker} L$. ✓</p>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">$\operatorname{im} L$ alt uzay</div>
+    <p>$w_1, w_2 \in \operatorname{im} L \Rightarrow \exists\, v_1, v_2 : L(v_1) = w_1,\; L(v_2) = w_2$:</p>
+    <div class="formula">
+      $$w_1 + w_2 = L(v_1) + L(v_2) = L(v_1 + v_2) \;\Rightarrow\; w_1 + w_2 \in \operatorname{im} L.$$
+    </div>
+    <p style="margin-top:.3rem;">$c \in F,\; w \in \operatorname{im} L,\; L(v) = w$: &nbsp;$c w = c L(v) = L(c v) \Rightarrow c w \in \operatorname{im} L$. ✓ $\blacksquare$</p>
+  </div>
+</div>
+
+<!-- Nullity ve Rank -->
+<div class="def-box" data-label="Tanım — Nullity ve Rank" style="margin-top:.5rem;">
+  <p>$\dim(\operatorname{Ker} L)$ değerine $L$'nin <strong>nullity</strong>'si; &nbsp;$\dim(\operatorname{im} L)$ değerine $L$'nin <strong>rankı</strong> denir.</p>
+</div>
+
+<!-- ═══════════════ RANK-NULLITY ═══════════════ -->
+<div class="section-title"><span>📐</span> Rank–Nullity Teoremi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Rank + Nullity = $\dim V$</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$L : V \to W$ lineer dönüşüm ve $V$ sonlu boyutlu olsun. O zaman:</p>
+  <div class="formula big">
+    $$\dim V \;=\; \dim(\operatorname{Ker} L) \;+\; \dim(\operatorname{im} L).$$
+  </div>
+</div>
+
+<!-- Inj/Surj kriterleri -->
+<div class="card prop" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Teorem — Birebir / Örten Kriterleri</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$L : V \to W$ lineer dönüşüm olsun.</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">i)</span>
+      <div>$L$ birebirdir $\Longleftrightarrow\; \operatorname{Ker} L = \{\mathbf{0}_V\}$.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">ii)</span>
+      <div>$L$ örtendir $\Longleftrightarrow\; \operatorname{im} L = W$.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Example: P_2 -> R^2 -->
+<div class="q-box" data-label="Örnek" style="margin-top:.5rem;">
+  <p>$L : P_2 \to \mathbb{R}^2,\; L(a x^2 + b x + c) = (a + 2 b,\; b + c)$ verilsin. $\operatorname{Ker} L$, $\operatorname{im} L$, ve $L$'nin birebir/örten olup olmadığını belirleyiniz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Çekirdek</div>
+    <p>$L(p) = \mathbf{0} \Rightarrow a + 2 b = 0,\; b + c = 0$. $c = k$ alalım → $b = -k,\; a = 2 k$.</p>
+    <div class="formula">
+      $$\operatorname{Ker} L = \{\, 2 k x^2 - k x + k \;:\; k \in \mathbb{R} \,\} = \langle\, 2 x^2 - x + 1 \,\rangle.$$
+    </div>
+    <p style="margin-top:.3rem;">$\dim(\operatorname{Ker} L) = 1 \Rightarrow$ <strong>$L$ birebir değildir.</strong></p>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Görüntü</div>
+    <div class="formula">
+      $$\operatorname{im} L = \{(a + 2 b,\; b + c) \;:\; a, b, c \in \mathbb{R}\} = \langle (1, 0),\; (2, 1),\; (0, 1) \rangle.$$
+    </div>
+    <p style="margin-top:.3rem;">$(1, 0)$ ve $(0, 1)$ zaten $\mathbb{R}^2$'yi üretir → $\operatorname{im} L = \mathbb{R}^2$.</p>
+    <p style="margin-top:.3rem;">$\dim(\operatorname{im} L) = 2 \Rightarrow$ <strong>$L$ örtendir.</strong></p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Doğrulama (Rank–Nullity): $\dim P_2 = 3 = 1 + 2 = \dim(\operatorname{Ker} L) + \dim(\operatorname{im} L)$ ✓
+  </div>
+</div>
+
+<!-- ═══════════════ KARE BOYUT TEOREMİ ═══════════════ -->
+<div class="section-title"><span>📐</span> Sonlu Eşit Boyut Teoremi</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Aynı Boyutta Birebir ↔ Örten</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$L : V \to W$ lineer dönüşüm ve $\dim V = \dim W = n$ olsun.</p>
+  <div class="prop-list" style="margin-top:.4rem;">
+    <div class="prop-item">
+      <span class="prop-label">a)</span>
+      <div>$L$ birebir ise $L$ örtendir.</div>
+    </div>
+    <div class="prop-item">
+      <span class="prop-label">b)</span>
+      <div>$L$ örten ise $L$ birebirdir.</div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.5rem;">Sezgi: Rank–Nullity'den $\dim(\operatorname{Ker} L) + \dim(\operatorname{im} L) = n = \dim W$ olduğundan; biri sağlanırsa diğeri zorunlu olarak gelir.</p>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Doğal operatörler:</strong> Diferansiyel $D(f) = f'$ ve integrasyon $I(f) = \int f$ — ikisi de lineerdir.
+    <br><br>
+    <strong>Bazla belirlenme:</strong> Bir lineer dönüşüm, bir baz üzerindeki değerleriyle tamamen belirlidir.
+    <br><br>
+    <strong>Birebir / Örten:</strong> $L$ birebir $\Leftrightarrow$ farklı girdiler farklı çıktılara. $L$ örten $\Leftrightarrow$ her çıktı bir girdiye sahip.
+    <br><br>
+    <strong>İzomorfizm:</strong> hem birebir hem örten LT. Sonlu boyutta $V \cong W \Leftrightarrow \dim V = \dim W$.
+    <br><br>
+    <strong>Çekirdek &amp; Görüntü:</strong> $\operatorname{Ker} L \leq V$, $\operatorname{im} L \leq W$ — alt uzaylardır. &nbsp;Nullity $= \dim \operatorname{Ker} L$, &nbsp;Rank $= \dim \operatorname{im} L$.
+    <br><br>
+    <strong>Rank–Nullity:</strong> $\dim V = \dim(\operatorname{Ker} L) + \dim(\operatorname{im} L)$.
+    <br><br>
+    <strong>Kriter:</strong> $L$ birebir $\Leftrightarrow \operatorname{Ker} L = \{\mathbf{0}\}$. &nbsp;$L$ örten $\Leftrightarrow \operatorname{im} L = W$.
+    <br><br>
+    <strong>Sonlu eşit boyut:</strong> $\dim V = \dim W$ ise birebir $\Leftrightarrow$ örten.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

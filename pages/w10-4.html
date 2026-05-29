@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Pratik: Çekirdek ve Görüntü</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Pratik: Çekirdek ve Görüntü</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 10 - Bölüm 4)</div>
+</div>
+
+<!-- ═══════════════ SORU 5 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 5 — Üyelik Testi: $\operatorname{Ker}$ ve $\operatorname{im}$</div>
+
+<div class="q-box" data-label="Soru 5">
+  <p>$L : \mathbb{R}^5 \to \mathbb{R}^3$ kuralı:</p>
+  <div class="formula">
+    $$L(x, y, z, t, u) = (x - y + z - t,\;\; y - z - t + u,\;\; x - z + t - u).$$
+  </div>
+  <p style="margin-top:.4rem;"><strong>a)</strong>&nbsp;&nbsp;$(1, 1, 1, 1, 1)$ ve $(1, -1, 1, -1, 1)$ $\operatorname{Ker} L$'de midir?</p>
+  <p><strong>b)</strong>&nbsp;&nbsp;$(2, -1, 2)$ ve $(1, 0, 1)$ $\operatorname{im} L$'de midir?</p>
+</div>
+
+<!-- Çözüm a -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a — $\operatorname{Ker} L$ Testi</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$v \in \operatorname{Ker} L \Leftrightarrow L(v) = \mathbf{0}$.</p>
+
+  <div class="formula" style="margin-top:.3rem;">
+    $$L(1, 1, 1, 1, 1) = (1 - 1 + 1 - 1,\; 1 - 1 - 1 + 1,\; 1 - 1 + 1 - 1) = (0, 0, 0) \;\;\Rightarrow\;\; \in \operatorname{Ker} L \checkmark$$
+  </div>
+
+  <div class="formula" style="margin-top:.3rem;">
+    $$L(1, -1, 1, -1, 1) = (1 + 1 + 1 + 1,\; -1 - 1 + 1 + 1,\; 1 - 1 - 1 - 1) = (4, 0, -2) \neq \mathbf{0} \;\;\Rightarrow\;\; \notin \operatorname{Ker} L$$
+  </div>
+</div>
+
+<!-- Çözüm b -->
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm b — $\operatorname{im} L$ Testi</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <p>$w \in \operatorname{im} L \Leftrightarrow \exists\, v \in \mathbb{R}^5 : L(v) = w$. İki vektörü tek augmented matrisle aynı anda test edelim (sağdaki blok iki sütundan oluşur — sırasıyla $(2,-1,2)^T$ ve $(1,0,1)^T$):</p>
+
+  <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center; margin-top:.4rem;">
+    <div class="mb"><table>
+      <tr><td>1</td><td>−1</td><td>1</td><td>−1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">2</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td>1</td><td>−1</td><td>−1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">−1</td><td class="zero-cell">0</td></tr>
+      <tr><td>1</td><td class="zero-cell">0</td><td>−1</td><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">2</td><td>1</td></tr>
+    </table></div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div class="op-label">Egzersiz</div>
+      <span class="arrow">→</span>
+    </div>
+    <div class="mb"><table>
+      <tr><td class="diag">1</td><td>−1</td><td>1</td><td>−1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">2</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td class="diag">1</td><td>−1</td><td>−1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">−1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">−1</td><td>3</td><td>−2</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">1</td><td class="zero-cell">0</td></tr>
+    </table></div>
+  </div>
+
+  <p style="margin-top:.4rem;">3 pivot, $5$ bilinmeyen — sıfır satır yok, sistem her iki sağ taraf için <strong>tutarlıdır</strong>.</p>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    Her iki vektör de $\operatorname{im} L$'dedir: $(2, -1, 2) \in \operatorname{im} L$ ve $(1, 0, 1) \in \operatorname{im} L$.
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 6 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 6 — $\operatorname{Ker} L$ Bulma</div>
+
+<div class="q-box" data-label="Soru 6">
+  <p>$L(x_1, x_2, x_3, x_4) = (x_1 + x_3,\; x_2 - x_4)$ olsun. $\operatorname{Ker} L$'yi bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Çekirdek denklemleri</div>
+    <p>$L(x_1, x_2, x_3, x_4) = (0, 0)$:</p>
+    <div class="formula">
+      $$x_1 + x_3 = 0, \qquad x_2 - x_4 = 0.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.6rem;">
+    <div class="step-label">Parametrik çözüm</div>
+    <p>$x_4 = k$ alırsak $x_2 = k$. $x_3 = -t$ alırsak $x_1 = t$. &nbsp;($t, k \in \mathbb{R}$ serbest)</p>
+    <div class="formula">
+      $$(x_1, x_2, x_3, x_4) = (t, k, -t, k) = t \cdot (1, 0, -1, 0) + k \cdot (0, 1, 0, 1).$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\operatorname{Ker} L = \langle (1, 0, -1, 0),\; (0, 1, 0, 1) \rangle, \qquad \dim \operatorname{Ker} L = 2.$$
+  </div>
+</div>
+
+<!-- ═══════════════ SORU 7 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 7 — $\operatorname{im} L$ Bulma</div>
+
+<div class="q-box" data-label="Soru 7">
+  <p>$L(x, y, z, t) = (2 x + y + z,\; 2 x - y - z,\; x - z,\; z - t,\; y + z + t)$ olsun. $\operatorname{im} L$'yi bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Standart bazın görüntülerini topla</div>
+    <p>$L(x, y, z, t)$'yi $x, y, z, t$ bileşenleri cinsinden ayırırsak:</p>
+    <div class="formula">
+      $$L(x, y, z, t) = x \cdot (2, 2, 1, 0, 0) + y \cdot (1, -1, 0, 0, 1) + z \cdot (1, -1, -1, 1, 1) + t \cdot (0, 0, 0, -1, 1).$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $$\operatorname{im} L = \bigl\langle (2, 2, 1, 0, 0),\; (1, -1, 0, 0, 1),\; (1, -1, -1, 1, 1),\; (0, 0, 0, -1, 1) \bigr\rangle.$$
+  </div>
+
+  <p class="note" style="margin-top:.4rem;">Bağımsızlık kontrolü için bu 4 vektörü satırlara koyup indirgemek yeterlidir; pivot sayısı $\dim \operatorname{im} L$'yi (rank'i) verir.</p>
+</div>
+
+<!-- ═══════════════ SORU 8 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Soru 8 — $P_2$'ye Lineer Dönüşüm</div>
+
+<div class="q-box" data-label="Soru 8">
+  <p>$L : \mathbb{R}^3 \to P_2,\; L(a, b, c) = (a - b) + (b - c) x + (c - a) x^2$ olsun.</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>a)</strong>&nbsp;&nbsp;$\operatorname{Ker} L$ ve $\operatorname{im} L$ için baz bulunuz.</div>
+    <div><strong>b)</strong>&nbsp;&nbsp;$\dim \operatorname{Ker} L = ?$ ve $\dim \operatorname{im} L = ?$</div>
+  </div>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a — Çekirdek</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Denklem sistemi</div>
+    <p>$L(a, b, c) = 0$ ise (her katsayı sıfır):</p>
+    <div class="formula">
+      $$a - b = 0, \qquad b - c = 0, \qquad c - a = 0.$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.5rem;">
+    <div class="step-label">İndirgeme (egzersiz)</div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center;">
+      <div class="mb"><table>
+        <tr><td>1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>−1</td></tr>
+        <tr><td>−1</td><td class="zero-cell">0</td><td>1</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td>−1</td><td class="zero-cell">0</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td>−1</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$b = c$ ve $a = b$ → $a = b = c = t,\; t \in \mathbb{R}$.</p>
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $\operatorname{Ker} L = \{(t, t, t) : t \in \mathbb{R}\} = \langle (1, 1, 1) \rangle$. &nbsp;Baz: $\{(1, 1, 1)\}$.
+  </div>
+</div>
+
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm a — Görüntü</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <p>$L(a, b, c)$'yi standart bileşenler cinsinden ayır:</p>
+  <div class="formula">
+    $$L(a, b, c) = a (1 - x^2) + b (x - 1) + c (x^2 - x).$$
+  </div>
+  <p style="margin-top:.3rem;">Yani $\operatorname{im} L = \langle 1 - x^2,\;\; x - 1,\;\; x^2 - x \rangle$.</p>
+  <p style="margin-top:.3rem;">Ama $x^2 - x = -\bigl[(1 - x^2) + (x - 1)\bigr]$ olduğundan bağımlı:</p>
+  <div class="formula">
+    $$-\bigl[(1 - x^2) + (x - 1)\bigr] = -1 + x^2 - x + 1 = x^2 - x. \quad \checkmark$$
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    $\operatorname{im} L = \langle 1 - x^2,\; x - 1 \rangle$. &nbsp;Baz: $\{1 - x^2,\; x - 1\}$.
+  </div>
+</div>
+
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm b — Boyutlar</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula big">
+    $$\dim \operatorname{Ker} L = 1, \qquad \dim \operatorname{im} L = 2.$$
+  </div>
+  <p class="note" style="margin-top:.4rem;"><strong>Rank–Nullity doğrulama:</strong> &nbsp;$\dim \mathbb{R}^3 = 3 = 1 + 2 = \dim \operatorname{Ker} L + \dim \operatorname{im} L$ ✓</p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>

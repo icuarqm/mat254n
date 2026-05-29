@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineer Cebir — Lineer Dönüşümlerin Matris Temsili</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notes.css">
+<script>if(localStorage.getItem('dm')==='1')document.documentElement.classList.add('dark');</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Lineer Dönüşümlerin Matris Temsili</h1>
+  <div class="subtitle">Lineer Cebir — (Hafta 11 - Bölüm 1)</div>
+</div>
+
+<!-- ═══════════════ TEOREM ═══════════════ -->
+<div class="section-title"><span>📐</span> Temel Teorem</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Teorem — Matris Temsili</span>
+    <span class="tag prop">Teorem</span>
+  </div>
+  <p>$V$ ve $W$ sonlu boyutlu vektör uzayları olsun. $\beta = \{v_1, \ldots, v_n\}$ ve $C = \{w_1, \ldots, w_m\}$ sırasıyla $V$ ve $W$'nın sıralı bazları olsun. Her $L : V \to W$ lineer dönüşümü için <strong>tek bir</strong> $A$ matrisi vardır öyle ki her $v \in V$ için:</p>
+  <div class="formula big">
+    $$[L(v)]_C \;=\; \underset{m \times n}{A} \cdot [v]_\beta.$$
+  </div>
+</div>
+
+<!-- ═══════════════ İNŞA ═══════════════ -->
+<div class="section-title"><span>🔗</span> $A$'nın İnşası</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">İnşa Prosedürü</span>
+    <span class="tag prop">Yöntem</span>
+  </div>
+  <p>$A$ matrisinin sütunları, $\beta$ baz vektörlerinin $L$ altındaki görüntülerinin $C$ bazındaki koordinatlarıdır:</p>
+
+  <div class="formula">
+    $$\begin{aligned}
+      L(v_1) &= A_{11} w_1 + A_{21} w_2 + \cdots + A_{m1} w_m \\
+      L(v_2) &= A_{12} w_1 + A_{22} w_2 + \cdots + A_{m2} w_m \\
+      &\;\;\vdots \\
+      L(v_n) &= A_{1n} w_1 + A_{2n} w_2 + \cdots + A_{mn} w_m
+    \end{aligned}$$
+  </div>
+
+  <p style="margin-top:.4rem;">olarak yazılırsa:</p>
+  <div class="formula big">
+    $$A = \begin{bmatrix} A_{11} & A_{12} & \cdots & A_{1n} \\ A_{21} & A_{22} & \cdots & A_{2n} \\ \vdots & \vdots & & \vdots \\ A_{m1} & A_{m2} & \cdots & A_{mn} \end{bmatrix}_{m \times n}.$$
+  </div>
+
+  <p style="margin-top:.5rem;">Bu $A$ matrisine $L$'nin $\beta$ ve $C$ bazlarına göre <strong>matris temsili</strong> denir ve ${}_C[L]_\beta$ ile gösterilir.</p>
+
+  <p class="note" style="margin-top:.4rem;"><strong>Kural:</strong> $A$'nın $i$. sütunu $= [L(v_i)]_C$ (yani $\beta$'nın $i$. vektörünün görüntüsünün $C$ bazındaki koordinat matrisi).</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 1 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek 1 — $\mathbb{R}^4 \to \mathbb{R}^2$ İki Baz Seçimi</div>
+
+<div class="q-box" data-label="Örnek 1">
+  <p>$L(x_1, x_2, x_3, x_4) = (x_1 + x_3,\; -x_2 - x_4)$ verilsin. $L$'nin matris temsilini bulunuz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>a)</strong>&nbsp;&nbsp;Standart bazlara göre</div>
+    <div><strong>b)</strong>&nbsp;&nbsp;$\beta = \{e_1, e_2, e_3, e_4\}$ (yine standart) ve $C = \{(1, 1),\; (1, -1)\}$ bazlarına göre</div>
+  </div>
+</div>
+
+<!-- Çözüm a -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a — Standart Bazlar</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>$\mathbb{R}^2$'nin standart bazı $\{e_1, e_2\}$ olduğundan $[L(e_i)]_{\text{std}} = L(e_i)$ — koordinat zaten standart.</p>
+  <div class="formula">
+    $$\begin{aligned}
+      L(1, 0, 0, 0) &= (1, 0) = 1 \cdot e_1 + 0 \cdot e_2 \\
+      L(0, 1, 0, 0) &= (0, -1) = 0 \cdot e_1 + (-1) \cdot e_2 \\
+      L(0, 0, 1, 0) &= (1, 0) = 1 \cdot e_1 + 0 \cdot e_2 \\
+      L(0, 0, 0, 1) &= (0, -1) = 0 \cdot e_1 + (-1) \cdot e_2
+    \end{aligned}$$
+  </div>
+  <div class="result-box" style="margin-top:.4rem;">
+    <div class="mw" style="justify-content:center; align-items:center; gap:.6rem;">
+      <span class="ml">$A \;=$</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table>
+          <tr><td>1</td><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td>−1</td><td class="zero-cell">0</td><td>−1</td></tr>
+        </table>
+      </div>
+      <span class="ms" style="margin-left:.4rem;">$_{2 \times 4}$</span>
+    </div>
+  </div>
+</div>
+
+<!-- Çözüm b -->
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm b — Hedef Baz $C = \{(1,1), (1,-1)\}$</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <p>Her $L(e_i)$'yi $C$ bazında yaz: $(p, q) = c_1 (1, 1) + c_2 (1, -1)$ verir $c_1 = \tfrac{p + q}{2},\; c_2 = \tfrac{p - q}{2}$.</p>
+
+  <div class="formula" style="margin-top:.4rem;">
+    $$L(e_1) = (1, 0): \;\;\; c_1 + c_2 = 1,\; c_1 - c_2 = 0 \;\Rightarrow\; c_1 = c_2 = \tfrac{1}{2}.$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$L(e_2) = (0, -1): \;\;\; c_1 + c_2 = 0,\; c_1 - c_2 = -1 \;\Rightarrow\; c_1 = -\tfrac{1}{2},\; c_2 = \tfrac{1}{2}.$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$L(e_3) = (1, 0): \;\;\; c_1 = c_2 = \tfrac{1}{2}.$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$L(e_4) = (0, -1): \;\;\; c_1 = -\tfrac{1}{2},\; c_2 = \tfrac{1}{2}.$$
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    <div class="mw" style="justify-content:center; align-items:center; gap:.6rem;">
+      <span class="ml">$A \;=$</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table>
+          <tr><td>$1/2$</td><td>$-1/2$</td><td>$1/2$</td><td>$-1/2$</td></tr>
+          <tr><td>$1/2$</td><td>$1/2$</td><td>$1/2$</td><td>$1/2$</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.4rem;">Aynı $L$, farklı bazda farklı matris verir. Matris temsili <strong>baz seçimine bağlıdır</strong>.</p>
+</div>
+
+<!-- ═══════════════ ÖRNEK 2 ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek 2 — Türev Operatörü $P_2 \to P_1$</div>
+
+<div class="q-box" data-label="Örnek 2">
+  <p>$L : P_2 \to P_1,\; L(p) = p'$ (türev) verilsin. Aşağıdaki bazlarda matris temsilini bulunuz:</p>
+  <div style="display:grid; gap:.3rem; margin:.4rem 0 0 1rem;">
+    <div><strong>a)</strong>&nbsp;&nbsp;$S = \{t^2, t, 1\}$, &nbsp;$T = \{t, 1\}$</div>
+    <div><strong>b)</strong>&nbsp;&nbsp;$S = \{1, t, t^2\}$, &nbsp;$T = \{t + 1,\; t - 1\}$</div>
+  </div>
+</div>
+
+<!-- Çözüm a -->
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm a</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+  <div class="formula">
+    $$L(t^2) = 2 t = 2 \cdot t + 0 \cdot 1, \qquad L(t) = 1 = 0 \cdot t + 1 \cdot 1, \qquad L(1) = 0 = 0 \cdot t + 0 \cdot 1.$$
+  </div>
+  <div class="result-box" style="margin-top:.4rem;">
+    <div class="mw" style="justify-content:center; align-items:center; gap:.6rem;">
+      <span class="ml">$A \;=$</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table>
+          <tr><td>2</td><td class="zero-cell">0</td><td class="zero-cell">0</td></tr>
+          <tr><td class="zero-cell">0</td><td>1</td><td class="zero-cell">0</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Çözüm b -->
+<div class="card sol" style="margin-top:.5rem;">
+  <div class="card-header">
+    <span class="card-title">Çözüm b</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <p>$T = \{t+1,\; t-1\}$ için: $c_1 (t + 1) + c_2 (t - 1) = (c_1 + c_2) t + (c_1 - c_2)$.</p>
+
+  <div class="formula" style="margin-top:.3rem;">
+    $$L(1) = 0 \;\Rightarrow\; c_1 + c_2 = 0,\; c_1 - c_2 = 0 \;\Rightarrow\; c_1 = c_2 = 0.$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$L(t) = 1 \;\Rightarrow\; c_1' + c_2' = 0,\; c_1' - c_2' = 1 \;\Rightarrow\; c_1' = \tfrac{1}{2},\; c_2' = -\tfrac{1}{2}.$$
+  </div>
+  <div class="formula" style="margin-top:.2rem;">
+    $$L(t^2) = 2 t \;\Rightarrow\; c_1'' + c_2'' = 2,\; c_1'' - c_2'' = 0 \;\Rightarrow\; c_1'' = c_2'' = 1.$$
+  </div>
+
+  <div class="result-box" style="margin-top:.4rem;">
+    <div class="mw" style="justify-content:center; align-items:center; gap:.6rem;">
+      <span class="ml">$A \;=$</span>
+      <div class="mb" style="border-left-color:var(--accent);border-right-color:var(--accent);">
+        <table>
+          <tr><td class="zero-cell">0</td><td>$1/2$</td><td>1</td></tr>
+          <tr><td class="zero-cell">0</td><td>$-1/2$</td><td>1</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ STANDART BAZ ═══════════════ -->
+<div class="section-title"><span>📋</span> $\mathbb{R}^n \to \mathbb{R}^m$ — Standart Bazlarda Kestirme</div>
+
+<div class="card prop">
+  <div class="card-header">
+    <span class="card-title">Pratik Kural</span>
+    <span class="tag prop">Yöntem</span>
+  </div>
+  <p>$L : \mathbb{R}^n \to \mathbb{R}^m$ dönüşümü aşağıdaki biçimde verilirse:</p>
+  <div class="formula">
+    $$L(x_1, \ldots, x_n) = (A_{11} x_1 + \cdots + A_{1n} x_n,\;\; \ldots,\;\; A_{m1} x_1 + \cdots + A_{mn} x_n)$$
+  </div>
+  <p style="margin-top:.3rem;">o zaman standart bazlardaki matris temsili katsayıların doğrudan dizilimidir:</p>
+  <div class="formula big">
+    $$A = \begin{bmatrix} A_{11} & \cdots & A_{1n} \\ \vdots & & \vdots \\ A_{m1} & \cdots & A_{mn} \end{bmatrix}.$$
+  </div>
+
+  <p style="margin-top:.6rem;"><strong>Örnek:</strong> $L(x_1, x_2, x_3) = (2 x_1 - x_2,\; x_3,\; x_2 + 4 x_3,\; -x_2)$ için standart bazda:</p>
+  <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.3rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>2</td><td>−1</td><td class="zero-cell">0</td></tr>
+      <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td>1</td></tr>
+      <tr><td class="zero-cell">0</td><td>1</td><td>4</td></tr>
+      <tr><td class="zero-cell">0</td><td>−1</td><td class="zero-cell">0</td></tr>
+    </table></div>
+    <span class="ms" style="margin-left:.4rem;">$_{4 \times 3}$</span>
+  </div>
+</div>
+
+<!-- ═══════════════ ÖRNEK 3 — TERSİ ═══════════════ -->
+<div class="section-title"><span>✏️</span> Örnek 3 — Matristen $L$'nin Kuralını Bulma</div>
+
+<div class="q-box" data-label="Örnek 3">
+  <p>$S = \{(2, 0, -1),\; (2, 1, -1),\; (-1, -1, 1)\}$ ve $T = \{(2, -1),\; (-1, -1)\}$ verilsin. $L : \mathbb{R}^3 \to \mathbb{R}^2$ dönüşümünün matris temsili:</p>
+  <div class="mw" style="justify-content:center; align-items:center; gap:.6rem; margin-top:.3rem;">
+    <span class="ml">$A \;=$</span>
+    <div class="mb"><table>
+      <tr><td>1</td><td>−1</td><td>2</td></tr>
+      <tr><td>−3</td><td>−2</td><td class="zero-cell">0</td></tr>
+    </table></div>
+  </div>
+  <p style="margin-top:.4rem;">$L$'nin kuralını bulunuz.</p>
+</div>
+
+<div class="card sol">
+  <div class="card-header">
+    <span class="card-title">Çözüm</span>
+    <span class="tag sol">Çözüm</span>
+  </div>
+
+  <div class="step">
+    <div class="step-label">$S$'in her vektörünün $L$ altındaki görüntüsünü oku</div>
+    <p>$A$'nın $i$. sütunu = $[L(s_i)]_T$. $T$ koordinatlarından $L(s_i)$'yi geri kur:</p>
+    <div class="formula">
+      $$L(2, 0, -1) = 1 \cdot (2, -1) + (-3)(-1, -1) = (2, -1) + (3, 3) = (5, 2).$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$L(2, 1, -1) = (-1)(2, -1) + (-2)(-1, -1) = (-2, 1) + (2, 2) = (0, 3).$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$L(-1, -1, 1) = 2 (2, -1) + 0 \cdot (-1, -1) = (4, -2).$$
+    </div>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">Keyfi $(a, b, c)$'yi $S$ bazında yaz</div>
+    <p>$(a, b, c) = c_1 (2, 0, -1) + c_2 (2, 1, -1) + c_3 (-1, -1, 1)$:</p>
+    <div class="formula">
+      $$\begin{aligned}
+        2 c_1 + 2 c_2 - c_3 &= a \\
+        c_2 - c_3 \phantom{ + 0 c_1 } &= b \\
+        -c_1 - c_2 + c_3 &= c
+      \end{aligned}$$
+    </div>
+    <div class="mw" style="flex-wrap:wrap; gap:.8rem; align-items:center; margin-top:.4rem;">
+      <div class="mb"><table>
+        <tr><td>2</td><td>2</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a$</td></tr>
+        <tr><td class="zero-cell">0</td><td>1</td><td>−1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$b$</td></tr>
+        <tr><td>−1</td><td>−1</td><td>1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$c$</td></tr>
+      </table></div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="op-label">Egzersiz</div>
+        <span class="arrow">→</span>
+      </div>
+      <div class="mb"><table>
+        <tr><td class="diag">1</td><td class="zero-cell">0</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$-b - c$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="diag">1</td><td class="zero-cell">0</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a + b + 2 c$</td></tr>
+        <tr><td class="zero-cell">0</td><td class="zero-cell">0</td><td class="diag">1</td><td style="border-left:2px solid var(--accent);padding-left:.5rem;">$a + 2 c$</td></tr>
+      </table></div>
+    </div>
+    <p style="margin-top:.4rem;">$c_1 = -b - c,\; c_2 = a + b + 2 c,\; c_3 = a + 2 c$.</p>
+  </div>
+
+  <div class="step" style="margin-top:.7rem;">
+    <div class="step-label">$L$'nin lineerliğini uygula</div>
+    <div class="formula">
+      $$L(a, b, c) = c_1 L(2, 0, -1) + c_2 L(2, 1, -1) + c_3 L(-1, -1, 1)$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$= (-b - c)(5, 2) + (a + b + 2 c)(0, 3) + (a + 2 c)(4, -2).$$
+    </div>
+    <p style="margin-top:.3rem;">Bileşenleri açıp toplarsak:</p>
+    <div class="formula">
+      $$\text{1. bileşen: } -5 b - 5 c + 0 + 4 a + 8 c = 4 a - 5 b + 3 c.$$
+    </div>
+    <div class="formula" style="margin-top:.2rem;">
+      $$\text{2. bileşen: } -2 b - 2 c + 3 a + 3 b + 6 c - 2 a - 4 c = a + b.$$
+    </div>
+  </div>
+
+  <div class="result-box" style="margin-top:.5rem;">
+    $$L(a, b, c) = (4 a - 5 b + 3 c,\; a + b).$$
+  </div>
+</div>
+
+<!-- ÖZET -->
+<div class="summary-box">
+  <h3>Hızlı Özet</h3>
+  <p>
+    <strong>Matris temsili:</strong> Sıralı bazlar $\beta = \{v_i\}$ ve $C = \{w_j\}$ için tek anlamlı $A = {}_C[L]_\beta$ vardır:
+    <br><span style="margin-left:1.2rem;">$[L(v)]_C = A \cdot [v]_\beta$.</span>
+    <br><br>
+    <strong>İnşa kuralı:</strong> $A$'nın $i$. sütunu = $[L(v_i)]_C$.
+    <br><br>
+    <strong>Baz bağımlı:</strong> Aynı $L$, farklı bazda farklı $A$ verir.
+    <br><br>
+    <strong>Standart bazda kestirme:</strong> $\mathbb{R}^n \to \mathbb{R}^m$ için $L(x) = (A_{ij} x_j)$ ise $A$ doğrudan katsayılar matrisidir.
+    <br><br>
+    <strong>Pratik:</strong> $A$ ile $L$ arasında çift yönlü geçilir — kural verilince matris kurarsın; matris verilince keyfi $(a, b, \ldots)$'yi $S$ bazında yazıp lineerlik ile kuralı bulursun.
+  </p>
+</div>
+
+<script src="../assets/notes.js"></script>
+</body>
+</html>
